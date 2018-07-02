@@ -58,4 +58,34 @@ body {
 	color: #fff;
 	font-family: 'BrandonText', sans-serif;
 	background: #437ea3;
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	
+}
+
+#logo {
+	background-image: url('images/logo.png');
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center center;
+	width: 172px;
+	height: 172px;
+	display: inline-block;
+}
+
+.menu {
+	float: right;
+}
+
+.hero {
+	display: flex;
+	width: 50%;
+}
+
+.content {
+	background: #fff;
+	color: #000;
 }
