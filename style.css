@@ -118,9 +118,9 @@ nav {
 
 .hero {
 	width: 50%;
+	padding-bottom: 15%;
 	margin: 32px;
 	border: 1px solid #fff;
-	height: 30vh;
 	border-radius: 16px;
 }
 
@@ -130,6 +130,9 @@ nav {
 
 .hero img {
 	width: 75%;
+	position: relative;
+	left: 12.5%;
+	top: 35%;
 }
 
 .hero.squareknot {
