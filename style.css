@@ -62,14 +62,27 @@ body {
 	padding: 0;
 }
 
+a {
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.page-top, nav {
+	position: relative;
+}
+
+.page-top {
+	height: 97vh;
+}
+
 nav {
-	
+	height: 172px;
 }
 
 #logo {
 	background-image: url('images/logo.png');
 	background-repeat: no-repeat;
-	background-size: auto;
 	background-position: center center;
 	width: 172px;
 	height: 172px;
@@ -78,14 +91,65 @@ nav {
 
 .menu {
 	float: right;
+	display: flex;
+	flex-wrap: nowrap;
+	position: absolute;
+	bottom: 32px;
+	right: 32px;
+}
+
+.menu a {
+	margin-left: 2px;
+	padding: 2px 8px;
+	text-transform: uppercase;
+}
+
+.menu a.selected, .menu a:hover {
+	border-radius: 4px;
+	border: 1px solid rgba(255,255,255,.3);
+}
+
+.splash-content {
+	display: flex;
+	flex-wrap: nowrap;
+	position: absolute;
+	bottom: 0;
 }
 
 .hero {
-	display: flex;
 	width: 50%;
+	margin: 32px;
+	border: 1px solid #fff;
+	height: 30vh;
+	border-radius: 16px;
+}
+
+.hero:last-of-type {
+	margin-left: 0;
+}
+
+.hero img {
+	width: 75%;
+}
+
+.hero.squareknot {
+	
+}
+
+.hero.zelda-universe {
+	
 }
 
 .content {
 	background: #fff;
 	color: #000;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.content .item {
+	background: rgba(0,0,0,.2);
+	margin: 0 2px 2px 0;
+	width: 33vw;
+	height: 30vh;
 }
