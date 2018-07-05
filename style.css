@@ -119,9 +119,18 @@ nav {
 	bottom: 0;
 	left: 0;
 	right: 0;
+}
+
+.splash-bg.main {
 	background: url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 	url(images/zu-bg-preview.png) bottom right no-repeat;
 	background-size: 60%;
+}
+
+.splash-bg.zelda-universe {
+	background: url(images/zu-bg-full.png);
+	background-size: cover;
+	background-position: center top;
 }
 
 .splash-content {
@@ -141,7 +150,7 @@ nav {
 	margin: 32px;
 	position: relative;
 	background-position: center center;
-	background-size: contain;
+	background-size: 90%, auto;
 	background-repeat: no-repeat, repeat;
 }
 
@@ -157,26 +166,38 @@ nav {
 	bottom: 32px;
 	left: 0;
 	right: 0;
+	text-shadow: rgba(255,255,255,.8) 0 0 32px;
 }
 
 .hero.squareknot {
 	background-image: 
 		url(images/squareknot-logo.png),
-		linear-gradient(rgba(143,248,176,.8), rgba(53,1273,92,.65));
+		linear-gradient(rgba(143,248,176,.8), rgba(53,1273,92,.6));
 }
 
 .hero.zelda-universe {
 	background-image: 
 		url(images/zeldauniverse-logo.png),
-		linear-gradient(rgba(0,118,149,.5), rgba(0,33,80,.8));
+		linear-gradient(rgba(0,118,149,.7), rgba(0,33,80,.8));
 }
 
-.content {
+.content.index {
 	width: 100%;
 	background: #fff;
 	color: #000;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.content.page {
+	width: 100%;
+	background: #fff;
+	color: #000;
+}
+
+.page-padding {
+	max-width: 980px;
+	margin: 0 auto;
 }
 
 .content .item {
