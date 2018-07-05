@@ -238,6 +238,7 @@ nav {
 }
 
 .item.master-sword {
+	background-color: none;
 	background-image: url(images/master-sword-preview.png);
 }
 
