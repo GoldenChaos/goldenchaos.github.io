@@ -139,8 +139,10 @@ nav {
 }
 
 .splash-bg.main {
-	background: url(images/squareknot-illustration-preview.png) bottom left no-repeat,
-	url(images/zu-bg-preview.png) bottom right no-repeat;
+	background:
+		url(images/squareknot-illustration-preview.png) bottom left no-repeat,
+		url(images/squareknot-illustration-preview.png) bottom left no-repeat,
+		url(images/zu-bg-preview.png) bottom right no-repeat;
 	background-size: 60%;
 }
 
@@ -241,6 +243,10 @@ nav {
 
 .content .item:nth-of-type(3n) {
 	margin-right: 0;
+}
+
+.content .item:last-of-type {
+	margin-bottom: 2px;
 }
 
 .item.goldenchaos-btt {
