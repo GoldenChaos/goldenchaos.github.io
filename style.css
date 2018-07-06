@@ -268,19 +268,19 @@ nav {
 }
 
 .item.zelda-maps {
-	background-size: 80%;
+	background-size: 80%, cover;
 	background-repeat: no-repeat;
 	background-image:
 		url(images/zelda-maps-logo.png),
-		url(images/zelda-maps-preview.png);
+		url(images/zm-bg-preview.png);
 }
 
 .item.zelda-wiki {
-	background-size: 80%;
+	background-size: 80%, cover;
 	background-repeat: no-repeat;
 	background-image:
 		url(images/zelda-wiki-logo.png),
-		url(images/zelda-wiki-preview.png);
+		url(images/zw-bg-preview.png);
 }
 
 .item.app-icons {
