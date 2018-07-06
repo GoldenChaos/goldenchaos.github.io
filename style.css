@@ -1,5 +1,3 @@
-/* Web fonts */
-
 @font-face {
     font-family: 'BrandonText';
     font-weight: 300;
@@ -52,8 +50,6 @@
     src: url('fonts/brandon/264CA8_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/brandon/264CA8_0_0.woff') format('woff'),url('fonts/brandon/264CA8_0_0.ttf') format('truetype');
 }
 
-/* Global */
-
 body {
 	color: #fff;
 	font-family: 'BrandonText', sans-serif;
@@ -85,6 +81,7 @@ nav {
 
 #logo {
 	background-image: url('images/logo.png');
+	background-size: 74px;
 	background-repeat: no-repeat;
 	background-position: center center;
 	width: 172px;
@@ -113,6 +110,26 @@ nav {
 	border: 1px solid rgba(255,255,255,.3);
 }
 
+.page-top.squareknot {
+	background: #fff;
+}
+
+.page-top.squareknot a {
+	color: #437ea3;
+}
+
+.page-top.squareknot a.selected {
+	border-color: #437ea3;
+}
+
+.page-top.squareknot nav {
+	background: rgba(255,255,255,.8);
+}
+
+.page-top.squareknot #logo {
+	background-image: url('images/logo-blue.png');
+}
+
 .splash-bg {
 	position: absolute;
 	top: 0;
@@ -125,6 +142,13 @@ nav {
 	background: url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 	url(images/zu-bg-preview.png) bottom right no-repeat;
 	background-size: 60%;
+}
+
+.splash-bg.squareknot {
+	background: url(images/squareknot-illustration-full.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
 }
 
 .splash-bg.zelda-universe {
@@ -181,23 +205,29 @@ nav {
 		linear-gradient(rgba(0,118,149,.7), rgba(0,33,80,.8));
 }
 
-.content.index {
+.content {
 	width: 100%;
 	background: #fff;
 	color: #000;
+}
+
+.content.index {
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .content.page {
-	width: 100%;
-	background: #fff;
-	color: #000;
+	margin: 0;
 }
 
-.page-padding {
+.content.page .page-padding {
 	max-width: 980px;
-	margin: 0 auto;
+	margin: -22px auto;
+	padding: 32px 0;
+}
+
+.content.page p:first-of-type {
+	margin: 0;
 }
 
 .content .item {
@@ -256,4 +286,8 @@ nav {
 
 .item.venti {
 	background-image: url(images/venti-preview.png);
+}
+
+footer {
+	height: 150px;
 }
