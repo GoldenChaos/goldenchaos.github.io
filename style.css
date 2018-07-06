@@ -112,6 +112,7 @@ nav {
 
 .page-top.squareknot {
 	background: #fff;
+	height: auto;
 }
 
 .page-top.squareknot a {
@@ -142,21 +143,27 @@ nav {
 	background:
 		url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 		url(images/squareknot-illustration-preview.png) bottom left no-repeat,
-		url(images/zu-bg-preview.png) bottom right no-repeat;
-	background-size: 60%;
+		url(images/zu-bg-preview.jpg) bottom right no-repeat;
+	background-size: 60%, 60%, 62%;
 }
 
 .splash-bg.squareknot {
-	background: url(images/squareknot-illustration-full.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center top;
+	position: relative;
+	margin-top: -172px;
+}
+
+.splash-bg.squareknot img {
+	width: 100%;
 }
 
 .splash-bg.zelda-universe {
-	background: url(images/zu-bg-full.png);
-	background-size: cover;
-	background-position: center top;
+	background-image:
+		linear-gradient(rgba(68, 126, 163, .8), rgba(68, 126, 163, 0) 30%),
+		url(images/zu-logo-vertical.png),
+		url(images/zu-bg-full.jpg);
+	background-size: auto, 85vh, 150%;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 .splash-content {
@@ -178,10 +185,17 @@ nav {
 	background-position: center center;
 	background-size: 90%, auto;
 	background-repeat: no-repeat, repeat;
+	transition: .2s;
 }
 
 .hero:last-of-type {
 	margin-left: 0;
+}
+
+.hero:hover {
+	transform: scale(110%);
+	transition: .2s;
+	box-shadow: rgba(0,0,0,.7) 0 32px 64px;
 }
 
 .hero span {
@@ -203,8 +217,8 @@ nav {
 
 .hero.zelda-universe {
 	background-image: 
-		url(images/zeldauniverse-logo.png),
-		linear-gradient(rgba(0,118,149,.7), rgba(0,33,80,.8));
+		url(images/zu-logo.png),
+		linear-gradient(rgba(86, 163, 190, .5), rgba(0, 120, 158, .6), rgba(0, 20, 71, .8));
 }
 
 .content {
@@ -295,5 +309,13 @@ nav {
 }
 
 footer {
-	height: 150px;
+	font-size: 13px;
+	line-height: 44px;
+	height: 44px;
+}
+
+footer span {
+	display: block;
+	width: 100%;
+	text-align: center;
 }
