@@ -244,12 +244,8 @@ nav {
 
 .content.page .page-padding {
 	max-width: 980px;
-	margin: -22px auto;
+	margin: 0 auto;
 	padding: 32px 0;
-}
-
-.content.page p:first-of-type {
-	margin: 0;
 }
 
 .content .item {
