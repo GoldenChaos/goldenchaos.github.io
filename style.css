@@ -143,8 +143,9 @@ nav {
 	background:
 		url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 		url(images/squareknot-illustration-preview.png) bottom left no-repeat,
+		url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 		url(images/zu-bg-preview.jpg) bottom right no-repeat;
-	background-size: 60%, 60%, 62%;
+	background-size: 60vw, 60vw, 60vw, 62vw;
 }
 
 .splash-bg.squareknot {
@@ -215,7 +216,7 @@ nav {
 .hero.squareknot {
 	background-image: 
 		url(images/squareknot-logo.png),
-		linear-gradient(rgba(143,248,176,.8), rgba(53,1273,92,.6));
+		linear-gradient(rgba(142,247,176,.7), rgba(53,174,93,.8));
 }
 
 .hero.zelda-universe {
