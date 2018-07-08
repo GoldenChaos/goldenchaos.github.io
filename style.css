@@ -362,7 +362,7 @@ footer span {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-	.page-top.index {
+	.page-top.index, .page-top.zelda-universe {
 		height: 630px !important;
 		min-height: 0 !important;
 	}
@@ -403,7 +403,7 @@ footer span {
 	}
 	
 	.splash-bg.zelda-universe {
-		background-size: auto, 90vw, cover;
+		background-size: auto, 100vw, cover;
 	}
 	
 	.splash-content {
