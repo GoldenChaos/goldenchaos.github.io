@@ -444,3 +444,14 @@ footer span {
 		padding: 16px !important;
 	}
 }
+
+@media only screen and (max-width: 320px) {
+	.hero {
+		height: 10vw !important;
+	}
+	
+	.hero span,
+	.item span {
+		font-size: 12px !important;
+	}
+}
