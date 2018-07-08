@@ -356,3 +356,73 @@ footer span {
 	width: 100%;
 	text-align: center;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	nav {
+		height: 96px;
+	}
+	
+	#logo {
+		height: 96px;
+		width: 96px;
+		background-size: 48px;
+	}
+	
+	.menu {
+		display: none;
+	}
+	
+	.splash-bg.main {
+		background:
+			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
+			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
+			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
+			linear-gradient(rgba(66, 126, 163, 0), rgba(66, 126, 163, 1) 80%),
+			url(images/zu-bg-preview.jpg) top 64px left -60px no-repeat;
+		background-size: 120vw, 120vw, 120vw, auto, 160vw;
+	}
+	
+	.splash-content {
+		flex-wrap: wrap;
+		flex-flow: column-reverse;
+	}
+	
+	.hero {
+		width: auto;
+		height: 66vw;
+		border-radius: 12px;
+		margin: 16px;
+		z-index: 2;
+	}
+	
+	.hero:last-of-type {
+		z-index: 1;
+		margin: 16px 16px 0 16px;
+	}
+	
+	.hero:last-of-type:after {
+		content: " ";
+		width: 100vw;
+		height: 2px;
+		background-color: #fff;
+	}
+	
+	.hero span {
+		font-size: 14px;
+		bottom: 16px;
+	}
+	
+	.content.index {
+		flex-flow: column;
+	}
+	
+	.item {
+		width: 100vw !important;
+		height: 75vw !important;
+	}
+	
+	.page-padding {
+		padding: 16px !important;
+	}
+}
