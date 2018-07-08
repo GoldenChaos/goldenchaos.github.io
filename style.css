@@ -476,7 +476,7 @@ footer span {
 		height: 66vw !important;
 		margin: 24px 16px 0 16px !important;
 		border-radius: 16px;
-		box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.3) 0 16px 48px;
+		box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.4) 0 16px 48px;
 	}
 	
 	.item:last-of-type {
