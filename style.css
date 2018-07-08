@@ -368,11 +368,11 @@ footer span {
 	}
 	
 	nav {
-		height: 96px;
+		height: 104px;
 	}
 	
 	#logo {
-		height: 96px;
+		height: 104px;
 		width: 96px;
 		background-size: 48px;
 	}
@@ -392,12 +392,16 @@ footer span {
 	}
 	
 	.splash-bg.squareknot {
-		margin-top: -96px;
+		margin-top: -104px;
 	}
 	
 	.splash-bg.squareknot img {
 		width: 150vw;
 		margin-left: -25vw;
+	}
+	
+	.splash-bg.zelda-universe {
+		background-size: auto, 90vw, cover;
 	}
 	
 	.splash-content {
@@ -445,9 +449,10 @@ footer span {
 	}
 }
 
+/* iPhone SE */
 @media only screen and (max-width: 320px) {
-	.hero {
-		height: 10vw !important;
+	.page-top.index {
+		height: 560px !important;
 	}
 	
 	.hero span,
