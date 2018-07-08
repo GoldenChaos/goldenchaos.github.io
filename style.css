@@ -363,7 +363,8 @@ footer span {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 	.page-top.index {
-		height: auto;
+		height: 70vh !important;
+		min-height: none !important;
 	}
 	
 	nav {
