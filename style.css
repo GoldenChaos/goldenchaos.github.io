@@ -393,11 +393,13 @@ footer span {
 	
 	.splash-bg.squareknot {
 		margin-top: -104px;
+		background: url(images/squareknot-illustration-full.png) center top no-repeat;
+		background-size: cover;
+		height: 100vh;
 	}
 	
 	.splash-bg.squareknot img {
-		width: 150vw;
-		margin-left: -25vw;
+		display: none;
 	}
 	
 	.splash-bg.zelda-universe {
