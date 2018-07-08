@@ -380,6 +380,7 @@ footer span {
 	}
 	
 	.splash-bg.main {
+		top: -16px;
 		background:
 			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
