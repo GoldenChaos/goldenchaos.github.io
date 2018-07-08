@@ -359,7 +359,39 @@ footer span {
 	text-align: center;
 }
 
-/* Extra small devices (phones, 600px and down) */
+/* Tablet (Landscape) */
+@media only screen and (max-width: 1024px) {
+		.hero span {
+			font-size: 18px;
+			bottom: 24px;
+		}
+		
+		.item span {
+			font-size: 14px !important;
+			bottom: 24px !important;
+		}
+}
+
+
+/* Tablet (Portrait) */
+@media only screen and (max-width: 1000px) {
+		.page-top.index {
+			height: 520px;
+			min-height: 0 !important;
+		}
+		
+		.hero span {
+			font-size: 14px;
+			bottom: 24px;
+		}
+		
+		.item span {
+			font-size: 11px !important;
+			bottom: 16px !important;
+		}
+}
+
+/* Mobile */
 @media only screen and (max-width: 600px) {
 	.page-top.index, .page-top.zelda-universe {
 		height: 630px !important;
