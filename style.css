@@ -301,6 +301,7 @@ nav {
 
 .item.app-icons {
 	background-image: url(images/app-icons-preview.png);
+	background-color: transparent;
 }
 
 .item.master-sword {
