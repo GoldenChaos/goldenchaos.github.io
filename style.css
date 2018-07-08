@@ -400,7 +400,6 @@ footer span {
 	.splash-content {
 		flex-wrap: wrap;
 		flex-flow: column-reverse;
-		top: 96px;
 	}
 	
 	.hero {
