@@ -341,6 +341,7 @@ nav {
 
 .item.zodttd-icons {
 	background-image: url(images/zodttd-icons-preview.png);
+	background-color: transparent;
 }
 
 .item.venti {
