@@ -133,7 +133,6 @@ nav {
 
 .splash-bg {
 	position: absolute;
-	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -379,6 +378,10 @@ footer span {
 	
 	.menu {
 		display: none;
+	}
+	
+	.splash-bg {
+		top: 0;
 	}
 	
 	.splash-bg.main {
