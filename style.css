@@ -383,6 +383,15 @@ footer span {
 		background-size: 120vw, 120vw, 120vw, auto, 160vw;
 	}
 	
+	.splash-bg.squareknot {
+		margin-top: -96px;
+	}
+	
+	.splash-bg.squareknot img {
+		width: 150vw;
+		margin-left: -25vw;
+	}
+	
 	.splash-content {
 		flex-wrap: wrap;
 		flex-flow: column-reverse;
