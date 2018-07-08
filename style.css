@@ -453,7 +453,7 @@ footer span {
 	.hero {
 		width: auto;
 		height: 66vw;
-		margin: 16px;
+		margin: 24px 16px;
 		z-index: 2;
 	}
 	
@@ -474,9 +474,13 @@ footer span {
 	.item {
 		width: auto !important;
 		height: 66vw !important;
-		margin: 16px 16px 0 16px !important;
+		margin: 24px 16px 0 16px !important;
 		border-radius: 16px;
 		box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px;
+	}
+	
+	.item:last-of-type {
+		margin-bottom: 24px !important;
 	}
 	
 	.item span {
