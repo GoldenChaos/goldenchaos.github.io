@@ -394,7 +394,7 @@ footer span {
 /* Mobile */
 @media only screen and (max-width: 600px) {
 	.page-top.index, .page-top.zelda-universe {
-		height: 630px !important;
+		height: 635px !important;
 		min-height: 0 !important;
 	}
 	
