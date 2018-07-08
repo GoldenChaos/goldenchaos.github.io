@@ -405,7 +405,6 @@ footer span {
 	.hero {
 		width: auto;
 		height: 66vw;
-		border-radius: 12px;
 		margin: 16px;
 		z-index: 2;
 	}
@@ -435,7 +434,7 @@ footer span {
 		width: auto !important;
 		height: 75vw !important;
 		margin: 16px 16px 0 16px !important;
-		border-radius: 12px;
+		border-radius: 16px;
 		box-shadow: rgba(0,0,0,.5) 0 8px 32px;
 	}
 	
