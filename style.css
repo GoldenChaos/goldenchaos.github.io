@@ -336,7 +336,7 @@ nav {
 }
 
 .item.the-jason-effect {
-	background-image: url(images/the-jason-effect-preview.png);
+	background-image: url(images/tje-bg-preview.png);
 }
 
 .item.zodttd-icons {
@@ -344,7 +344,10 @@ nav {
 }
 
 .item.venti {
-	background-image: url(images/venti-preview.png);
+	background: 
+		url(images/venti-logo.png) center center no-repeat,
+		url(images/venti-bg.jpg) center bottom no-repeat;
+	background-size: 65%, cover;
 }
 
 footer {
