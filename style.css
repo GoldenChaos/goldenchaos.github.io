@@ -360,6 +360,10 @@ footer span {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+	.page-top.index {
+		height: auto;
+	}
+	
 	nav {
 		height: 96px;
 	}
@@ -380,7 +384,7 @@ footer span {
 			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 			linear-gradient(rgba(66, 126, 163, 0), rgba(66, 126, 163, 1) 80%),
-			url(images/zu-bg-preview.jpg) top 64px left -60px no-repeat;
+			url(images/zu-bg-preview.jpg) top 16px left -60px no-repeat;
 		background-size: 120vw, 120vw, 120vw, auto, 160vw;
 	}
 	
@@ -396,6 +400,7 @@ footer span {
 	.splash-content {
 		flex-wrap: wrap;
 		flex-flow: column-reverse;
+		top: 96px;
 	}
 	
 	.hero {
@@ -428,8 +433,15 @@ footer span {
 	}
 	
 	.item {
-		width: 100vw !important;
+		width: auto !important;
 		height: 75vw !important;
+		margin: 16px 16px 0 16px !important;
+		border-radius: 12px;
+		box-shadow: rgba(0,0,0,.5) 0 16px 32px;
+	}
+	
+	.item span {
+		font-size: 16px !important;
 	}
 	
 	.page-padding {
