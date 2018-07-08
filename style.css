@@ -347,8 +347,9 @@ nav {
 .item.venti {
 	background: 
 		url(images/venti-logo.png) center center no-repeat,
-		url(images/venti-bg.jpg) center bottom no-repeat;
-	background-size: 72%, cover;
+		url(images/venti-bg-preview.jpg) center bottom no-repeat;
+	background-size: 65%, cover;
+	background-color: transparent;
 }
 
 footer {
