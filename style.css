@@ -435,7 +435,7 @@ footer span {
 		height: 75vw !important;
 		margin: 16px 16px 0 16px !important;
 		border-radius: 16px;
-		box-shadow: rgba(0,0,0,.5) 0 8px 32px;
+		box-shadow: rgba(0,0,0,.5) 0 32px 64px;
 	}
 	
 	.item span {
