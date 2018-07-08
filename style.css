@@ -363,7 +363,7 @@ footer span {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 	.page-top.index {
-		height: 70vh !important;
+		height: auto !important;
 		min-height: none !important;
 	}
 	
@@ -418,15 +418,8 @@ footer span {
 		margin: 16px 16px 0 16px;
 	}
 	
-	.hero:last-of-type:after {
-		content: " ";
-		width: 100vw;
-		height: 2px;
-		background-color: #fff;
-	}
-	
 	.hero span {
-		font-size: 13px;
+		font-size: 14px;
 		bottom: 16px;
 	}
 	
@@ -443,7 +436,8 @@ footer span {
 	}
 	
 	.item span {
-		font-size: 16px !important;
+		font-size: 14px !important;
+		bottom: 16px !important;
 	}
 	
 	.page-padding {
