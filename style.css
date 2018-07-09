@@ -212,7 +212,7 @@ nav {
 	background-position: center center;
 	background-size: 90%, auto;
 	background-repeat: no-repeat, repeat;
-	transition: .2s;
+	transition: .1s;
 	flex-grow: 1;
 }
 
@@ -222,7 +222,7 @@ nav {
 
 .hero:hover {
 	transform: scale(110%);
-	transition: .2s;
+	transition: .1s;
 	box-shadow: rgba(0,0,0,.7) 0 32px 64px;
 	transform: scale(1.01);
 }
@@ -317,8 +317,7 @@ nav {
 	flex-grow: 1;
 	border-radius: 16px;
 	box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.4) 0 16px 48px;
-	transition: .2s;
-	overflow: hidden;
+	transition: .1s;
 }
 
 .content .item:nth-of-type(3n) {
@@ -334,7 +333,7 @@ nav {
 }
 
 .content .item:hover {
-	transition: .2s;
+	transition: .1s;
 	box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.6) 0 16px 48px;
 	transform: scale(1.01);
 }
@@ -389,11 +388,13 @@ nav {
 .item.zodttd-icons span {
 	color: #000;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 28px;
 	padding: 40% 0 22px 0;
 	background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
 	bottom: 0 !important;
 	text-shadow: rgba(255,255,255,1) 0 0 24px;
+	border-radius: 0 0 16px 16px;
+	display: none;
 }
 
 .item.master-sword {
