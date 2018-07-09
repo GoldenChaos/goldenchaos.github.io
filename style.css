@@ -236,7 +236,6 @@ nav {
 .content.index {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 }
 
 .content.page {
@@ -253,19 +252,31 @@ nav {
 	background-color: rgba(0,0,0,.2);
 	background-size: cover;
 	background-position: center center;
-	margin: 2px 2px 0 0;
-	width: 33vw;
-	height: 25vw;
-	flex-grow: 1;
+	width: 25vw;
+	height: 22vw;
 	position: relative;
+	margin: 32px 24px 0 0;
+	flex-grow: 1;
+	border-radius: 16px;
+	box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.4) 0 16px 48px;
+	transition: .2s;
 }
 
 .content .item:nth-of-type(3n) {
-	margin-right: 0;
+	margin-right: 32px;
+}
+
+.content .item:nth-of-type(3n+1) {
+	margin-left: 32px;
 }
 
 .content .item:last-of-type {
-	margin-bottom: 2px;
+	margin-bottom: 32px;
+}
+
+.content .item:hover {
+	transition: .2s;
+	box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.6) 0 16px 48px;
 }
 
 .content .item span {
@@ -281,6 +292,10 @@ nav {
 
 .item.goldenchaos-btt {
 	background-image: url(images/goldenchaos-btt-preview.png);
+}
+
+.item.goldenchaos-btt span {
+	top: 
 }
 
 .item.zelda-maps {
@@ -312,9 +327,10 @@ nav {
 .item.master-sword span {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 28px;
 	text-shadow: rgba(0,0,0,1) 0 0 32px;
 	color: rgba(255,255,255,.9);
+	bottom: 16px;
 }
 
 .item.master-sword span b {
@@ -480,8 +496,6 @@ footer span {
 		width: auto !important;
 		height: 66vw !important;
 		margin: 24px 16px 0 16px !important;
-		border-radius: 16px;
-		box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.4) 0 16px 48px;
 	}
 	
 	.item:last-of-type {
