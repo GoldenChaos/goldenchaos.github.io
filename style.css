@@ -123,24 +123,25 @@ nav {
 	margin-right: 12px;
 }
 
-.page-top.squareknot {
+.page-top.white {
 	background: #fff;
 	height: auto;
+	min-height: 0;
 }
 
-.page-top.squareknot a {
+.page-top.white a {
 	color: #437ea3;
 }
 
-.page-top.squareknot a.selected {
+.page-top.white a.selected {
 	border-color: #437ea3;
 }
 
-.page-top.squareknot nav {
+.page-top.white nav {
 	background: rgba(255,255,255,.8);
 }
 
-.page-top.squareknot #logo {
+.page-top.white #logo {
 	background-image: url('images/logo-blue.png');
 }
 
@@ -259,6 +260,16 @@ nav {
 	max-width: 980px;
 	margin: 0 auto;
 	padding: 32px 0;
+}
+
+.content.page h1:first-of-type {
+	margin-top: 0;
+}
+
+.content.app-icons img {
+	width: 128px;
+	height: auto;
+	margin: 0 24px 24px 0;
 }
 
 .content .item {
