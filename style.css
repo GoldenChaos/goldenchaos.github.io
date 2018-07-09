@@ -458,6 +458,10 @@ footer span {
 		margin-top: 4px;
 	}
 	
+	.menu .social:last-of-type {
+		margin-right: 8px;
+	}
+	
 	.splash-bg.main {
 		background:
 			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
