@@ -245,6 +245,7 @@ nav {
 	width: 100%;
 	background: #fff;
 	color: #000;
+	overflow: hidden;
 }
 
 .content.index {
@@ -256,14 +257,37 @@ nav {
 	margin: 0;
 }
 
+.content.page img.full-width {
+	width: 95%;
+	height: auto;
+	border-radius: 16px;
+	box-shadow: rgba(0,0,0,.3) 0 32px 64px;
+	margin: 0 32px;
+}
+
 .content.page .page-padding {
 	max-width: 980px;
 	margin: 0 auto;
 	padding: 32px 0;
 }
 
-.content.page h1:first-of-type {
+.page-padding a {
+	color: #437ea3;
+	border-bottom: 1px solid rgba(68, 126, 162, .2);
+	display: inline;
+}
+
+.page-padding a:hover {
+	border-bottom: 1px solid rgba(68, 126, 162, .8);
+}
+
+.page-padding h1:first-of-type {
 	margin-top: 0;
+}
+
+.page-padding img {
+	width: auto !important;
+	max-width: 100%;
 }
 
 .content.app-icons img {
@@ -319,7 +343,13 @@ nav {
 }
 
 .item.goldenchaos-btt span {
-	top: 
+	top: 31.5%;
+	text-shadow: rgba(0,0,0,.5) 0 0 24px;
+}
+
+.item.goldenchaos-btt span div {
+	font-size: 32px;
+	font-weight: bold;
 }
 
 .item.zelda-maps {
@@ -538,6 +568,14 @@ footer span {
 	.item span {
 		font-size: 14px !important;
 		bottom: 16px !important;
+	}
+	
+	.item.goldenchaos-btt span {
+		top: 32%;
+	}
+	
+	.item.goldenchaos-btt span div {
+		font-size: 24px;
 	}
 	
 	.page-padding {

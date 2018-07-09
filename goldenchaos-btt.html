@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>GoldenChaos</title>
+    <meta name="description" content="Interaction Design by Jason Rappaport">
+    <meta name="author" content="Jason Rappaport">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png" />
+	<link rel="mask-icon" href="website_icon.svg" color="#4083a0">
+	<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+</head>
+<body>
+	<div class="page-top white">
+		<nav>
+		    <a id="logo" href="index.html"></a>
+		    <div class="menu">
+			    <a class="selected" href="index.html">Work</a>
+			    <a href="projects.html">Projects</a>
+			    <a href="blog.goldenchaos.net">Blog</a>
+			    <a href="about.html">About</a>
+			    <br />
+			    <a class="social" href="https://twitter.com/goldenchaos"><i class="fab fa-twitter"></i></a>
+			    <a class="social" href="https://github.com/GoldenChaos"><i class="fab fa-github"></i></a>
+			    <a class="social" href="https://www.linkedin.com/in/goldenchaos"><i class="fab fa-linkedin"></i></a>
+			    <a class="social" href="mailto:jason@goldenchaos.net"><i class="fa fa-envelope-square"></i></a>
+		    </div>
+		</nav>
+    </div>
+    <div class="content page app-icons">
+		<img class="full-width" src="images/goldenchaos-btt-full.jpg" alt="goldenchaos-btt-full">
+	    <div class="page-padding">
+		    <h1>Your MacBook Pro's Touch Bar is finally useful.</h1>
+		    <p>Inspired by Vas3k's now well-known <a href="http://vas3k.com/blog/touchbar/">blog post</a>, I've spent a (frankly too large) amount of time reworking the foundations of the Touch Bar into a more consistent, usable, and functional experience. The result is <strong>GoldenChaos-BTT</strong>, a preset that will allow you to <em>completely</em> replace the stock Touch Bar interface. For good.</p>
+		    
+			<h2>Verified Preset Link: <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043">https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043</a></h2>
+			<p>BTT alpha version at time of latest preset update: <strong>2.513</strong><br>
+			<sub><em>Some preset features may not work on earlier versions of BetterTouchTool.</em></sub></p>
+			<p><sub><b>Not all features of this preset are currently compatible with macOS 10.14 Mojave beta</b>. Please check the latest posts in the community thread for Mojave beta-compatible updates.<sub></sub></sub></p>
+			
+			<h2>How to Install</h2>
+			<ol>
+				<li>Make sure you're using the latest <strong><em>alpha</em></strong> version of BetterTouchTool. Some features may not work properly if imported into an alpha version of BTT earlier than the one specified above.</li>
+				<li>Install the four required helper apps: <a href="http://milgra.com/high-sierra-media-key-enabler.html">High Sierra Media Key Enabler</a>, <a href="http://www.mousedown.net/mouseware/LocationHelper.html">Location Helper</a>, <a href="http://www.mousedown.net/mouseware/JSONHelper.html">JSON Helper</a>, and <a href="http://hasseg.org/icalBuddy/">icalBuddy</a>.</li>
+				<li>
+				<em>If upgrading from a previous version of GoldenChaos-BTT</em>: Remove the previous version by clicking "Manage Presets" inside of BetterTouchTool, selecting "goldenchaos-btt", and clicking "Delete".</li>
+				<li>Navigate to the <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043">official preset page</a> and click "Direct import to BTT" to automatically launch BetterTouchTool and import the latest preset.</li>
+				<li>Follow the short configuration instructions at the bottom of this post to finish setting up the media controls and calendar widget.</li>
+				<li>If there are any widgets for apps you don't use, uncheck "Visible" inside of BetterTouchTool to save on performance.</li>
+			</ol>
+			
+			<h2>Screenshot Tour</h2>
+			<p><sub>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</sub></p>
+			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true" alt="" width="690" height="19">
+			
+			<p><sub>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</sub></p>
+			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true" alt="" width="690" height="19">
+			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true" alt="" width="690" height="19">
+			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true" alt="" width="690" height="19">
+			
+			<p><sub>Emoji and app switcher widgets take over the scrollable container</sub></p>
+			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true" alt="" width="690" height="19">
+			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true" alt="" width="690" height="19">
+			
+			<p><sub>Hold down alt/option for an expanded control strip</sub></p>
+			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true" alt="" width="690" height="19">
+			
+			<h2>Currently Supported Apps</h2>
+			<ul>
+				<li>Finder</li>
+				<li>Safari</li>
+				<li>Chrome</li>
+				<li>Firefox</li>
+				<li>iTunes</li>
+				<li>Spotify</li>
+				<li>YouTube (in Safari and as a Fluid app)</li>
+				<li>Reminders</li>
+				<li>Things 3</li>
+				<li>Carrot Weather</li>
+				<li>Calendar</li>
+				<li>Fantastical 2</li>
+			</ul>
+			
+			<h2>Full List of Features</h2>
+			<ul>
+				<li>Designed to <em>completely</em> replace the stock Touch Bar interface</li>
+				<li>Fullscreen button doubles as esc key, always docked to the left</li>
+				<li>Two finger slide on the Touch Bar to change volume</li>
+				<li>Three finger slide on the Touch Bar to change brightness</li>
+				<li>Hold down Volume Down button to mute</li>
+				<li>Hold Option/Alt to expand the function strip</li>
+				<li>Emoji button toggles scrollable emoji widget</li>
+				<li>App Switcher button toggles scrollable app switcher widget</li>
+				<li>Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)</li>
+				<li>Weather widget shows condition emoji + temperature in Fahrenheit, toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)</li>
+				<li>Persistent Show Finder button for easy Finder access</li>
+				<li>Persistent Maximize Left, Center Window, and Maximize Right controls for window management</li>
+				<li>Refresh button appears next to Forward and Back buttons if Safari, Chrome, or Firefox is open</li>
+				<li>Media controls and iTunes/Spotify widgets appear only when iTunes or Spotify is running</li>
+				<li>Now Playing widgets show currently playing track info (with album art for iTunes!) or "Paused" if iTunes/Spotify are paused</li>
+				<li>Due Today widget shows reminders from Reminders.app that are due today, overdue, or without a due date</li>
+				<li>Reminders without a due date persist and automatically show the most recently added reminder</li>
+				<li>Next Thing widget grabs your next reminder from Things 3</li>
+				<li>Next Event widget uses <a href="http://hasseg.org/icalBuddy/">icalBuddy</a> to get just today's upcoming calendar events (requires extra configuration)</li>
+				<li>Tap on any widget to open its parent app</li>
+			</ul>
+			
+			<h2>Required Helper Apps</h2>
+			<ul>
+				<li><a href="http://milgra.com/high-sierra-media-key-enabler.html">High Sierra Media Key Enabler</a> with "Pause if no player is running" enabled for media controls</li>
+				<li><a href="http://www.mousedown.net/mouseware/LocationHelper.html">Location Helper</a> and <a href="http://www.mousedown.net/mouseware/JSONHelper.html">JSON Helper</a> for the weather widget</li>
+				<li><a href="http://hasseg.org/icalBuddy/">icalBuddy</a> for the calendar widget</li>
+			</ul>
+			
+			<h2>Media Controls Configuration</h2>
+			<p><a href="http://milgra.com/high-sierra-media-key-enabler.html">High Sierra Media Key Enabler</a> with "Pause if no player is running" enabled is strongly recommended. Appropriate media controls are displayed conditionally based on the following hierarchy:</p>
+			<ol>
+				<li>iTunes</li>
+				<li>Spotify</li>
+				<li>Safari (YouTube)</li>
+			</ol>
+			<p>If no media player is running, and Safari is open to a YouTube video, only the Play/Pause button will be shown. In any other case, all media controls are available.</p>
+			<h2>Calendar widget configuration</h2>
+			<p>For the Calendar widget to work properly, it must first be edited to include the names of calendars you wish to display. Replace my personal defaults with yours, and make sure you've installed <a href="http://hasseg.org/icalBuddy/">icalBuddy</a>. You can also configure the widget to display events for additional days, for example for up to a week, by changing "eventsToday" to "eventsToday+7".</p>
+			<h3>Uses modified versions of a bunch of widgets from <a href="https://github.com/vas3k/btt-touchbar-presets">https://github.com/vas3k/btt-touchbar-presets</a> and <a href="https://community.folivora.ai/c/setup-preset-sharing">https://community.folivora.ai/c/setup-preset-sharing</a>.</h3></div>
+    </div>
+    <footer>
+	    <span>&copy; 2005-2018 Jason Rappaport</span>
+	</footer>
+  </body>
+</html>
