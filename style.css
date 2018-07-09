@@ -306,6 +306,18 @@ nav {
 	margin: 0 24px 24px 0;
 }
 
+.content.app-icons img.large-icon {
+	width: 256px !important;
+}
+
+.content.app-icons img.medium-icon {
+	width: 128px !important;
+}
+
+.content.app-icons img.small-icon {
+	width: 59px !important;
+}
+
 .content .item {
 	background-color: rgba(0,0,0,.2);
 	background-size: cover;
