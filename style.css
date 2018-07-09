@@ -317,6 +317,7 @@ nav {
 	border-radius: 16px;
 	box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.4) 0 16px 48px;
 	transition: .2s;
+	overflow: hidden;
 }
 
 .content .item:nth-of-type(3n) {
@@ -380,6 +381,17 @@ nav {
 .item.app-icons {
 	background-image: url(images/app-icons-preview.png);
 	background-color: transparent;
+}
+
+.item.app-icons span,
+.item.zodttd-icons span {
+	color: #000;
+	font-weight: bold;
+	font-size: 24px;
+	padding: 40% 0 22px 0;
+	background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
+	bottom: 0px;
+	text-shadow: rgba(255,255,255,1) 0 0 24px;
 }
 
 .item.master-sword {
