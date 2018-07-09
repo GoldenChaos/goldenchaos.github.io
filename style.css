@@ -442,7 +442,12 @@ nav {
 }
 
 .item.the-jason-effect {
-	background-image: url(images/tje-bg-preview.png);
+	background-image:
+		url(images/tje-logo.png),
+		url(images/tje-bg-preview.png);
+	background-size: 60%, cover;
+	background-repeat: no-repeat;
+	background-position: center top -40%, center center;
 }
 
 .item.zodttd-icons {
