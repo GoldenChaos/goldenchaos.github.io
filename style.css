@@ -471,7 +471,7 @@ nav {
 		linear-gradient(rgba(162, 196, 146, 1), rgba(162, 196, 146, 0) 25%),
 		url(images/goodsemester-bg.jpg);
 	background-size: 80%, 130%, auto, auto;
-	background-position: center center, center center, auto, center bottom;
+	background-position: center center;
 	background-repeat: no-repeat, no-repeat, repeat, repeat;
 }
 
