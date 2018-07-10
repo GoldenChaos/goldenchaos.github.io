@@ -202,10 +202,6 @@ nav {
 	background-size: auto, 55%, cover;
 }
 
-.splash-bg.goldenchaos-btt {
-	height: auto;
-}
-
 .splash-bg.master-sword {
 	background-image: 
 		linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, 0) 30%),
@@ -503,6 +499,39 @@ nav {
 		url(images/venti-bg-preview.jpg) center bottom no-repeat;
 	background-size: 65%, cover;
 	background-color: transparent;
+}
+
+.meta {
+	background: rgba(0,0,0,.1);
+	border: 1px solid rgba(0,0,0,.2);
+	padding: 16px;
+	border-radius: 8px;
+	margin-bottom: 32px;
+	position: relative;
+}
+
+.meta label {
+	font-weight: bold;
+}
+
+.meta .visit-site {
+	border-radius: 4px;
+	background: rgba(109, 196, 136, 1);
+	color: #fff;
+	padding: 0 16px;
+	font-size: 20px;
+	line-height: 44px;
+	height: 44px;
+	position: absolute;
+	top: 50%;
+	right: 16px;
+	margin-top: -22px;
+	border: 0;
+}
+
+.meta .visit-site:hover {
+	background: rgba(94, 181, 113, 1) !important;
+	border: 0;
 }
 
 footer {
