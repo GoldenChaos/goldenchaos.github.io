@@ -826,7 +826,12 @@ footer span {
 	}
 
 	.content.page .full-width {
-		padding: 0 32px;
+		padding: 0 16px;
+	}
+
+	.full-width img {
+		border-radius: 12px;
+		box-shadow: rgba(0,0,0,.2) 0 32px 32px;
 	}
 	
 	.page-padding {
