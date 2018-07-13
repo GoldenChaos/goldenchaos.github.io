@@ -116,13 +116,14 @@ nav {
 	margin-right: 4px;
 	border: 1px solid rgba(255,255,0,.2);
 	font-style: italic;
+	margin-bottom: 8px;
 }
 
 .menu span .fas {
 	font-size: 13px;
 	position: relative;
 	top: -1px;
-	margin-right: 2px;
+	margin-right: 6px;
 	display: inline-block;
 }
 
@@ -740,7 +741,7 @@ footer span {
 	.splash-bg.zelda-wiki {
 		background-size: auto, 100vw, cover;
 	}
-	
+
 	.splash-bg.venti {
 		background-size: 80%, cover;
 	}
