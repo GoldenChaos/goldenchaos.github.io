@@ -521,8 +521,8 @@ nav {
 }
 
 .meta {
-	background: rgba(0,0,0,.1);
-	border: 1px solid rgba(0,0,0,.2);
+	background: rgba(255,255,255,.7);
+	border: 1px solid rgba(255,255,255,.2);
 	padding: 16px;
 	border-radius: 8px;
 	margin-bottom: 32px;
@@ -531,6 +531,7 @@ nav {
 	width: 980px;
 	left: 50%;
 	margin-left: -490px;
+	color: #000;
 }
 
 .meta label {
@@ -550,6 +551,11 @@ nav {
 	right: 16px;
 	margin-top: -22px;
 	border: 0;
+}
+
+.page-top.white .meta {
+	background: rgba(0,0,0,.1);
+	border: 1px solid rgba(0,0,0,.2);
 }
 
 .meta .visit-site:hover {
