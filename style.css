@@ -321,14 +321,18 @@ nav {
 
 .content.page {
 	margin: 0;
+	padding: 0;
 }
 
-.content.page img.full-width {
-	width: 95%;
+.content.page .full-width {
+	padding: 0 32px;
+}
+
+.full-width img {
+	width: 100%;
 	height: auto;
 	border-radius: 16px;
 	box-shadow: rgba(0,0,0,.3) 0 32px 64px;
-	margin: 0 32px;
 }
 
 .content.page .page-padding {
@@ -774,6 +778,10 @@ footer span {
 	
 	.item.master-sword span b {
 		font-size: 14px !important;
+	}
+
+	.content.page .full-width {
+		padding: 0 16px;
 	}
 	
 	.page-padding {
