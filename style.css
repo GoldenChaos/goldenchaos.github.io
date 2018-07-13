@@ -153,6 +153,10 @@ nav {
 	color: #437ea3;
 }
 
+.page-top.white a:hover {
+	border-color: #437ea3;
+}
+
 .page-top.white a.selected {
 	border-color: #437ea3;
 }
