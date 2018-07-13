@@ -784,6 +784,10 @@ footer span {
 		background-size: auto, 100vw, cover;
 	}
 
+	.splash-bg.goodsemester {
+		background-size: 90vw, 200vh, auto, contain;
+	}
+
 	.splash-bg.venti {
 		background-size: 80%, cover;
 	}
