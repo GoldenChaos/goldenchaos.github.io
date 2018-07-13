@@ -692,6 +692,15 @@ footer span {
 		margin: 0;
 		padding: 2px 4px;
 	}
+
+	.menu span {
+		margin-bottom: 4px;
+	}
+
+	.menu span .fas {
+		font-size: 10px !important;
+		margin-right: 6px !important;
+	}
 	
 	.menu .social {
 		font-size: 14px;
