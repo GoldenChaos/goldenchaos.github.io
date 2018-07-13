@@ -755,8 +755,8 @@ footer span {
 		margin-top: -104px;
 		background: url(images/squareknot-illustration-full.png) center top no-repeat,
 			url(images/squareknot-logo-text-green.png) center bottom 64px no-repeat;
-		background-size: 104vh, 90vw;
-		height: 100vh;
+		background-size: 82vh, 90vw;
+		height: 80vh;
 		position: relative;
 	}
 	
