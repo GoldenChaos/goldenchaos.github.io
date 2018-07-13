@@ -655,12 +655,6 @@ footer span {
 			bottom: 16px !important;
 		}
 
-		.page {
-			width: 100vw !important;
-			box-sizing: border-box;
-			padding: 32px !important;
-		}
-
 		.meta {
 			width: auto;
 		}
