@@ -600,7 +600,7 @@ nav {
 	height: 750px;
 	border-radius: 16px;
 	box-shadow: rgba(0,0,0,.3) 0 16px 32px;
-	margin: 32px;
+	margin: 16px;
 }
 
 .soon {
@@ -653,6 +653,21 @@ footer span {
 		.item span {
 			font-size: 11px !important;
 			bottom: 16px !important;
+		}
+
+		.page {
+			width: 100vw !important;
+			box-sizing: border-box;
+			padding: 32px !important;
+		}
+
+		.meta {
+			width: auto;
+		}
+
+		.iphone-screenshot {
+			height: 350px;
+			margin: 16px 0 0 0;
 		}
 }
 
@@ -801,6 +816,12 @@ footer span {
 	.meta .visit-site {
 		padding: 16px;
 		margin: 16px 0 0 0;
+	}
+
+	.iphone-screenshot {
+		width: auto;
+		height: auto;
+		margin: 0 0 32px 0;
 	}
 }
 
