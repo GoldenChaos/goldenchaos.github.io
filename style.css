@@ -591,7 +591,17 @@ nav {
 	border: 0;
 }
 
+.notice {
+	background: rgba(0,0,0,.1);
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 12px;
+	padding: 16px;
+	width: 100%;
+	margin: 32px 0;
+}
+
 .desktop-screenshot {
+	width: 100%;
 	border-radius: 16px;
 	box-shadow: rgba(0,0,0,.3) 0 16px 32px;
 	margin: 16px 0;
