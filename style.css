@@ -521,17 +521,16 @@ nav {
 }
 
 .meta {
-	background: rgba(255,255,255,.7);
+	background: rgba(255,255,255,.1);
 	border: 1px solid rgba(255,255,255,.2);
 	padding: 16px;
-	border-radius: 8px;
+	border-radius: 16px;
 	margin-bottom: 32px;
 	position: absolute;
 	bottom: 32px;
 	width: 980px;
 	left: 50%;
 	margin-left: -490px;
-	color: #000;
 }
 
 .meta label {
