@@ -240,7 +240,7 @@ nav {
 		url(images/goodsemester-rays.png),
 		linear-gradient(rgba(162, 196, 146, 1), rgba(162, 196, 146, 0) 25%),
 		url(images/goodsemester-bg.jpg);
-	background-size: 70%, cover, auto, contain;
+	background-size: 70%, 160vh, auto, contain;
 	background-repeat: no-repeat, no-repeat, repeat, repeat;
 }
 
