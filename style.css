@@ -108,6 +108,23 @@ nav {
 	border: 1px solid rgba(255,255,255,.3);
 }
 
+.menu span {
+	padding: 2px 8px;
+	background: rgba(255,255,0,.2);
+	border-radius: 4px;
+	display: inline-block;
+	margin-right: 4px;
+	border: 1px solid rgba(255,255,0,.2);
+}
+
+.menu span .fas {
+	font-size: 13px;
+	position: relative;
+	top: -1px;
+	margin-right: 2px;
+	display: inline-block;
+}
+
 .menu .social {
 	margin: 8px 6px;
 	padding: 0;
@@ -127,6 +144,7 @@ nav {
 	background: #fff;
 	height: auto;
 	min-height: 0;
+	color: #437ea3;
 }
 
 .page-top.white a {
@@ -181,7 +199,7 @@ nav {
 		linear-gradient(rgba(68, 126, 163, .8), rgba(68, 126, 163, 0) 30%),
 		url(images/zu-logo-vertical.png),
 		url(images/zu-bg-full.jpg);
-	background-size: auto, 85vh, 150%;
+	background-size: auto, 60vw, auto 130%;
 	background-position: center center;
 	background-repeat: no-repeat;
 }
@@ -507,7 +525,11 @@ nav {
 	padding: 16px;
 	border-radius: 8px;
 	margin-bottom: 32px;
-	position: relative;
+	position: absolute;
+	bottom: 32px;
+	width: 980px;
+	left: 50%;
+	margin-left: -490px;
 }
 
 .meta label {
@@ -545,6 +567,15 @@ nav {
 	border-radius: 16px;
 	box-shadow: rgba(0,0,0,.3) 0 16px 32px;
 	margin: 32px;
+}
+
+.soon {
+	font-size: 48px;
+	font-style: italic;
+	text-transform: uppercase;
+	color: rgba(0,0,0,.2);
+	text-align: center;
+	padding: 182px 32px 150px 32px;
 }
 
 footer {
