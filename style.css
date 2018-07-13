@@ -477,7 +477,7 @@ nav {
 .item.master-sword span {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 28px;
 	text-shadow: rgba(0,0,0,1) 0 0 32px;
 	color: rgba(255,255,255,.9);
 	bottom: 16px;
@@ -654,14 +654,6 @@ footer span {
 			font-size: 11px !important;
 			bottom: 16px !important;
 		}
-
-		.item.master-sword span {
-			font-size: 16px !important;
-		}
-
-		.item.master-sword span b {
-			font-size: 16px !important;
-		}
 }
 
 /* Mobile */
@@ -781,7 +773,7 @@ footer span {
 	}
 	
 	.item.master-sword span {
-		font-size: 18px !important;
+		font-size: 22px !important;
 	}
 	
 	.item.master-sword span b {
@@ -789,7 +781,7 @@ footer span {
 	}
 
 	.content.page .full-width {
-		padding: 0 16px;
+		padding: 0 32px;
 	}
 	
 	.page-padding {
