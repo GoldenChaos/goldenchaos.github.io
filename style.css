@@ -524,13 +524,20 @@ nav {
 	background: rgba(255,255,255,.1);
 	border: 1px solid rgba(255,255,255,.2);
 	padding: 16px;
-	border-radius: 16px;
+	border-radius: 12px;
 	margin-bottom: 32px;
 	position: absolute;
 	bottom: 32px;
 	width: 980px;
 	left: 50%;
 	margin-left: -490px;
+	display: table;
+}
+
+.page-top.white .meta,
+.page-padding .meta {
+	background: rgba(0,0,0,.1);
+	border: 1px solid rgba(0,0,0,.2);
 }
 
 .meta label {
@@ -538,23 +545,17 @@ nav {
 }
 
 .meta .visit-site {
-	border-radius: 4px;
+	border-radius: 6px;
 	background: rgba(109, 196, 136, 1);
 	color: #fff;
 	padding: 0 16px;
 	font-size: 20px;
-	line-height: 44px;
-	height: 44px;
-	position: absolute;
-	top: 50%;
-	right: 16px;
-	margin-top: -22px;
 	border: 0;
-}
-
-.page-top.white .meta {
-	background: rgba(0,0,0,.1);
-	border: 1px solid rgba(0,0,0,.2);
+	margin-left: 16px;
+	text-align: center;
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .meta .visit-site:hover {
@@ -687,7 +688,7 @@ footer span {
 	}
 	
 	.splash-bg.zelda-universe {
-		background-size: auto, 100vw, cover;
+		background-size: auto, 100vw, auto 200vw;
 	}
 	
 	.splash-bg.venti {
@@ -754,6 +755,21 @@ footer span {
 	
 	.page-padding {
 		padding: 16px !important;
+	}
+
+	.meta {
+		width: auto;
+		margin: 0;
+		bottom: 16px;
+		left: 16px;
+		right: 16px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.meta .visit-site {
+		padding: 16px;
+		margin: 16px 0 0 0;
 	}
 }
 
