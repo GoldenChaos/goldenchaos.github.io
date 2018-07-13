@@ -534,6 +534,19 @@ nav {
 	border: 0;
 }
 
+.desktop-screenshot {
+	border-radius: 16px;
+	box-shadow: rgba(0,0,0,.3) 0 16px 32px;
+	margin: 16px 0;
+}
+
+.iphone-screenshot {
+	height: 750px;
+	border-radius: 16px;
+	box-shadow: rgba(0,0,0,.3) 0 16px 32px;
+	margin: 32px;
+}
+
 footer {
 	font-size: 13px;
 	line-height: 44px;
