@@ -607,6 +607,7 @@ nav {
 	position: relative;
 	display: table-cell;
 	vertical-align: middle;
+	width: 25%;
 }
 
 .meta .visit-site:hover {
