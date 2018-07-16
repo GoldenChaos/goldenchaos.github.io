@@ -87,6 +87,16 @@ blockquote a:hover {
 	text-decoration: underline !important;
 }
 
+h1 {
+	font-size: 48px;
+	font-weight: medium;
+	text-transform: uppercase;
+	font-style: italic;
+	margin: 0;
+	padding: 0;
+	margin-top: 32px;
+}
+
 .page-top, nav {
 	position: relative;
 }
@@ -405,10 +415,6 @@ nav {
 	border-bottom: 1px solid rgba(68, 126, 162, .8);
 }
 
-.page-padding h1:first-of-type {
-	margin-top: 0;
-}
-
 .page-padding img {
 	width: auto !important;
 	max-width: 100%;
@@ -695,7 +701,12 @@ nav {
 
 .screenshot-grid-2-col img {
 	width: calc(100% * (1/2) - 18px);
-	max-width: 562.5px;
+	max-width: 578.5px;
+}
+
+.screenshot-grid-2-col img:first-of-type {
+	width: 100%;
+	max-width: none
 }
 
 .screenshot-grid-3-col img {
@@ -703,7 +714,7 @@ nav {
 	max-width: 375px;
 }
 
-.screenshot-grid-2-col img:nth-of-type(2n),
+.screenshot-grid-2-col img:nth-of-type(2n+1),
 .screenshot-grid-3-col img:nth-of-type(3n) {
 	margin-right: 0;
 }
