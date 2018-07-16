@@ -64,6 +64,29 @@ a {
 	display: inline-block;
 }
 
+blockquote {
+	font-size: 32px;
+	color: #888;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+blockquote span {
+	display: block;
+	width: auto;
+	font-size: 18px;
+	text-align: left;
+	color: #ccc;
+}
+
+blockquote a {
+	border-bottom: 0 !important;
+}
+
+blockquote a:hover {
+	text-decoration: underline !important;
+}
+
 .page-top, nav {
 	position: relative;
 }
