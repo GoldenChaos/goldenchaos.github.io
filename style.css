@@ -1012,6 +1012,17 @@ footer span {
 	}
 }
 
+/* iPhone X */
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) {
+	.page-top {
+		height: calc(100vh - 50px);
+		min-height: 0;
+	}	
+}
+
 /* iPhone SE */
 @media only screen and (max-width: 320px) {
 	.page-top.index {
