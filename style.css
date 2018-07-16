@@ -216,14 +216,17 @@ nav {
 	flex-direction: row;
 }
 
-.splash-bg.zelda-universe .site-logo {
+.splash-bg .site-logo {
 	position: relative;
 	left: 50%;
 	margin-left: -490px;
-	background-image: url(images/zu-logo-vertical.png);
 	background-position: center center;
 	background-repeat: no-repeat;
 	width: 980px;
+}
+
+.splash-bg.zelda-universe .site-logo {
+	background-image: url(images/zu-logo-vertical.png);
 	background-size: 60vw;
 }
 
@@ -238,9 +241,13 @@ nav {
 .splash-bg.zelda-wiki {
 	background-image:
 		linear-gradient(rgba(68, 126, 163, .8), rgba(68, 126, 163, 0) 30%),
-		url(images/zelda-wiki-logo.png),
 		url(images/zw-bg-full.png);
-	background-size: auto, 55%, cover;
+	background-size: auto, cover;
+}
+
+.splash-bg.zelda-wiki .site-logo {
+	background-image: url(images/zelda-wiki-logo.png);
+	background-size: 55vw;
 }
 
 .splash-bg.master-sword {
