@@ -179,8 +179,8 @@ nav {
 
 .page-top.white {
 	background: #fff;
-	height: auto;
-	min-height: 0;
+	height: auto !important;
+	min-height: 0 !important;
 	color: #437ea3;
 }
 
