@@ -103,8 +103,9 @@ h1 {
 }
 
 .page-top {
-	height: 97vh;
+	height: 100vh;
 	min-height: 650px;
+	max-height: 1024px;
 }
 
 nav {
@@ -247,7 +248,7 @@ nav {
 	background-position: center center;
 	background-repeat: no-repeat;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
 
 .splash-bg .site-logo {
@@ -256,6 +257,8 @@ nav {
 	background-repeat: no-repeat;
 	width: 980px;
 	margin: 0 auto;
+	flex-grow: 1;
+	margin-top: 140px;
 }
 
 .splash-bg.zelda-universe .site-logo {
@@ -607,17 +610,15 @@ nav {
 }
 
 .meta {
+	width: 980px;
+	margin: 0 auto;
 	padding: 16px;
 	border-radius: 12px;
 	margin-bottom: 32px;
-	position: absolute;
-	bottom: 32px;
-	width: 980px;
-	left: 50%;
-	margin-left: -490px;
 	display: table;
 	overflow: hidden;
 	box-sizing: border-box;
+	position: relative;
 }
 
 .page-top .meta {
@@ -842,6 +843,12 @@ footer span {
 			url(images/zu-bg-preview.jpg) top 16px left -60px no-repeat;
 		background-size: 120vw, 120vw, 120vw, auto, 160vw;
 	}
+
+	.splash-bg .site-logo {
+		width: 100vw;
+		margin-top: 104px;
+		background-size: 100vw !important;
+	}
 	
 	.splash-bg.squareknot {
 		margin-top: -104px;
@@ -868,22 +875,12 @@ footer span {
 	}
 	
 	.splash-bg.zelda-universe {
-		background-size: auto, auto 100vh;
-	}
-
-	.splash-bg.zelda-universe .site-logo {
-		background-size: 100vw;
-		background-position: top 104px center;
+		background-size: auto, 280vh;
 	}
 
 	.splash-bg.zelda-maps,
 	.splash-bg.zelda-wiki {
 		background-size: auto, cover;
-	}
-
-	.splash-bg.zelda-maps .site-logo {
-		background-size: 100vw;
-		background-position: center top 104px;
 	}
 
 	.splash-bg.goodsemester {
@@ -980,10 +977,7 @@ footer span {
 	.meta {
 		font-size: 14px;
 		width: auto;
-		margin: 0;
-		bottom: 16px;
-		left: 16px;
-		right: 16px;
+		margin: 16px;
 		display: flex;
 		flex-direction: column;
 	}
