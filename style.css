@@ -920,7 +920,7 @@ footer span {
 	}
 
 	.splash-bg.zelda-maps {
-		background-size: auto, 280vw;
+		background-size: auto, cover;
 		background-position: top, right top -50px;
 	}
 
