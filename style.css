@@ -560,7 +560,6 @@ nav {
 }
 
 .meta {
-	border: 1px solid rgba(255,255,255,.2);
 	padding: 16px;
 	border-radius: 12px;
 	margin-bottom: 32px;
@@ -572,6 +571,10 @@ nav {
 	display: table;
 	overflow: hidden;
 	box-sizing: border-box;
+}
+
+.page-top .meta {
+	box-shadow: rgba(0,0,0,.2) 0 16px 32px;
 }
 
 .page-top.white .meta,
@@ -589,14 +592,16 @@ nav {
 }
 
 .meta .meta-bg {
-	background: rgba(255,255,255,.1);
+	background-color: rgba(255,255,255,.15);
 	overflow: hidden;
 	border-radius: 12px;
 	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 }
 
 .page-padding .meta .meta-bg {
@@ -605,6 +610,11 @@ nav {
 
 .meta label {
 	font-weight: bold;
+}
+
+.meta .info {
+	position: relative;
+	z-index: 1;
 }
 
 .meta .visit-site {
