@@ -208,11 +208,23 @@ nav {
 .splash-bg.goodsemester {
 	background-image:
 		linear-gradient(rgba(68, 126, 163, .8), rgba(68, 126, 163, 0) 30%),
-		url(images/zu-logo-vertical.png),
 		url(images/zu-bg-full.jpg);
-	background-size: auto, 60vw, auto 130%;
+	background-size: auto, auto 170%;
 	background-position: center center;
 	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: row;
+}
+
+.splash-bg.zelda-universe .site-logo {
+	position: relative;
+	left: 50%;
+	margin-left: -490px;
+	background-image: url(images/zu-logo-vertical.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 980px;
+	background-size: 60vw;
 }
 
 .splash-bg.zelda-maps {
@@ -794,7 +806,12 @@ footer span {
 	}
 	
 	.splash-bg.zelda-universe {
-		background-size: auto, 100vw, auto 200vw;
+		background-size: auto, auto 100vh;
+	}
+
+	.splash-bg.zelda-universe .site-logo {
+		background-size: 100vw;
+		background-position: top 104px center;
 	}
 
 	.splash-bg.zelda-maps,
@@ -906,6 +923,7 @@ footer span {
 	.meta .visit-site {
 		padding: 16px;
 		margin: 16px 0 0 0;
+		width: auto;
 	}
 
 	.screenshot-grid-2-col,
