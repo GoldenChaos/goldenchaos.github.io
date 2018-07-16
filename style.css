@@ -88,7 +88,7 @@ blockquote a:hover {
 }
 
 h1 {
-	font-size: 48px;
+	font-size: 32px;
 	font-weight: medium;
 	text-transform: uppercase;
 	font-style: italic;
@@ -96,6 +96,18 @@ h1 {
 	padding: 0;
 	margin-top: 32px;
 	margin-bottom: 24px;
+}
+
+h1.title {
+	font-size: 48px;
+	margin-bottom: 32px;
+}
+
+h2 {
+	font-size: 20px;
+	line-height: 26px;
+	margin: 0;
+	font-weight: 500;
 }
 
 .page-top, nav {
@@ -792,9 +804,24 @@ footer span {
 @media only screen and (max-width: 600px) {
 	h1 {
 		font-size: 24px;
-		line-height: 26px;
+		line-height: 28px;
 		margin-top: 24px;
 		margin-bottom: 16px;
+		font-weight: 500;
+	}
+
+	h1.title {
+		font-size: 32px;
+		line-height: 34px;
+		margin-top: 0;
+		margin-bottom: 24px;
+	}
+
+	h2 {
+		font-size: 20px;
+		line-height: 26px;
+		margin: 0;
+		font-weight: 500;
 	}
 
 	.page-top {
@@ -956,16 +983,12 @@ footer span {
 		font-size: 14px !important;
 	}
 
-	.content.page h1 {
-		line-height: 36px;
-	}
-
 	.content.page .full-width {
 		padding: 0 16px;
 	}
 
 	.full-width img {
-		border-radius: 12px;
+		border-radius: 8px;
 		box-shadow: rgba(0,0,0,.2) 0 32px 64px;
 	}
 	
