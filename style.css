@@ -574,7 +574,7 @@ nav {
 }
 
 .page-top .meta {
-	box-shadow: rgba(0,0,0,.2) 0 16px 32px;
+	box-shadow: rgba(0,0,0,.2) 0 32px 64px;
 }
 
 .page-top.white .meta,
