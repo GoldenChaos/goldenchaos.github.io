@@ -281,8 +281,10 @@ nav {
 .splash-bg.zelda-maps {
 	background-image:
 		linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, 0) 30%),
-		url(images/zm-bg-full.png);
-	background-size: auto, cover;
+		radial-gradient(rgba(0,0,0, .8) 10%, rgba(0,0,0, 0)),
+		url(images/zm-bg-full.jpg);
+	background-size: auto, auto, 200vh;
+	background-position: top, center center, center top -100px;
 }
 
 .splash-bg.zelda-maps .site-logo {
