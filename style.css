@@ -873,7 +873,7 @@ footer span {
 
 	.splash-bg.zelda-universe .site-logo {
 		background-size: 100vw;
-		background-position: top 120px center;
+		background-position: top 104px center;
 	}
 
 	.splash-bg.zelda-maps,
@@ -883,7 +883,7 @@ footer span {
 
 	.splash-bg.zelda-maps .site-logo {
 		background-size: 100vw;
-		background-position: center top 120px;
+		background-position: center top 104px;
 	}
 
 	.splash-bg.goodsemester {
@@ -978,6 +978,7 @@ footer span {
 	}
 
 	.meta {
+		font-size: 14px;
 		width: auto;
 		margin: 0;
 		bottom: 16px;
@@ -988,7 +989,8 @@ footer span {
 	}
 
 	.meta .visit-site {
-		padding: 16px;
+		font-size: 18px;
+		padding: 12px 16px;
 		margin: 16px 0 0 0;
 		width: auto;
 	}
