@@ -252,11 +252,10 @@ nav {
 
 .splash-bg .site-logo {
 	position: relative;
-	left: 50%;
-	margin-left: -490px;
 	background-position: center center;
 	background-repeat: no-repeat;
 	width: 980px;
+	margin: 0 auto;
 }
 
 .splash-bg.zelda-universe .site-logo {
@@ -269,6 +268,11 @@ nav {
 		linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, 0) 30%),
 		url(images/zm-bg-full.png);
 	background-size: auto, cover;
+}
+
+.splash-bg.zelda-maps .site-logo {
+	background-image: url(images/zelda-maps-logo.png);
+	background-size: 60vw;
 }
 
 .splash-bg.zelda-wiki {
@@ -869,12 +873,17 @@ footer span {
 
 	.splash-bg.zelda-universe .site-logo {
 		background-size: 100vw;
-		background-position: top 104px center;
+		background-position: top 136px center;
 	}
 
 	.splash-bg.zelda-maps,
 	.splash-bg.zelda-wiki {
-		background-size: auto, 100vw, cover;
+		background-size: auto, cover;
+	}
+
+	.splash-bg.zelda-maps .site-logo {
+		background-size: 100vw;
+		background-position: center top 136px;
 	}
 
 	.splash-bg.goodsemester {
