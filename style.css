@@ -275,7 +275,7 @@ nav {
 
 .splash-bg.zelda-universe .site-logo {
 	background-image: url(images/zu-logo-vertical.png);
-	background-size: 60vw;
+	background-size: 75%;
 }
 
 .splash-bg.zelda-maps {
@@ -290,7 +290,7 @@ nav {
 	background-image:
 		url(images/zelda-maps-logo.png),
 		radial-gradient(rgba(0,0,0, .8) 20%, rgba(0,0,0, 0) 50%);
-	background-size: 80%, 100%;
+	background-size: 75%, 100%;
 }
 
 .splash-bg.zelda-wiki {
@@ -669,7 +669,7 @@ nav {
 
 .page-padding .meta .meta-bg {
 	background: rgba(0,0,0,.1);
-}
+}z
 
 .meta label {
 	font-weight: bold;
