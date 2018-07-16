@@ -789,8 +789,8 @@ footer span {
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
-	.page-top.index, .page-top.zelda-universe {
-		height: 635px !important;
+	.page-top {
+		height: 100vh !important;
 		min-height: 0 !important;
 	}
 	
@@ -873,7 +873,7 @@ footer span {
 
 	.splash-bg.zelda-universe .site-logo {
 		background-size: 100vw;
-		background-position: top 136px center;
+		background-position: top 104px center;
 	}
 
 	.splash-bg.zelda-maps,
@@ -883,7 +883,7 @@ footer span {
 
 	.splash-bg.zelda-maps .site-logo {
 		background-size: 100vw;
-		background-position: center top 136px;
+		background-position: center top 104px;
 	}
 
 	.splash-bg.goodsemester {
