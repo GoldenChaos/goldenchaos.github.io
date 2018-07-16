@@ -193,6 +193,7 @@ nav {
 	background: #fff;
 	height: auto !important;
 	min-height: 0 !important;
+	max-height: none !important;
 	color: #437ea3;
 }
 
@@ -646,7 +647,6 @@ nav {
 }
 
 .page-padding .meta {
-	position: relative;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -669,15 +669,15 @@ nav {
 
 .page-padding .meta .meta-bg {
 	background: rgba(0,0,0,.1);
-}z
-
-.meta label {
-	font-weight: bold;
 }
 
 .meta .info {
 	position: relative;
 	z-index: 1;
+}
+
+.meta .info label {
+	font-weight: bold;
 }
 
 .meta .visit-site {
