@@ -667,6 +667,10 @@ nav {
 	backdrop-filter: blur(10px);
 }
 
+.meta-bg.dark {
+	background-color: rgba(0,0,0,.7);
+}
+
 .page-padding .meta .meta-bg {
 	background: rgba(0,0,0,.1);
 }
