@@ -790,8 +790,8 @@ footer span {
 /* Mobile */
 @media only screen and (max-width: 600px) {
 	.page-top {
-		height: 100vh;
-		min-height: 0;
+		height: 100vh !important;
+		min-height: 0 !important;
 	}
 	
 	nav {
@@ -1018,8 +1018,8 @@ footer span {
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) {
 	.page-top {
-		height: calc(100vh - 50px);
-		min-height: 0;
+		height: calc(100vh - 50px) !important;
+		min-height: 0 !important;
 	}	
 }
 
