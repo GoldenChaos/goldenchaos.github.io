@@ -791,8 +791,8 @@ footer span {
 /* Mobile */
 @media only screen and (max-width: 600px) {
 	h1 {
-		font-size: 20px;
-		line-height: auto;
+		font-size: 24px;
+		line-height: 26px;
 		margin-top: 24px;
 		margin-bottom: 16px;
 	}
