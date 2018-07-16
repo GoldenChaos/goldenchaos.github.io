@@ -1020,7 +1020,7 @@ footer span {
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) {
 	.page-top {
-		height: calc(100vh - 115px) !important;
+		height: calc(100vh - 113px) !important;
 		min-height: 0 !important;
 	}	
 }
