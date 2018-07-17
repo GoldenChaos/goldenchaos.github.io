@@ -671,7 +671,7 @@ nav {
 }
 
 .meta .meta-bg {
-	background-color: rgba(255,255,255,.15);
+	background-color: rgba(255,255,255,.25);
 	overflow: hidden;
 	border-radius: 12px;
 	position: absolute;
