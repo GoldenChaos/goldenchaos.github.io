@@ -50,19 +50,25 @@
 			<div class="notice"><i><b>Note for Mojave users</b>: Not all features of this preset are currently compatible with macOS 10.14 Mojave beta</b>. Please check the latest posts in the official forum thread for Mojave beta-compatible updates.</i></div>
 		    
 
-			<h2 style="margin-bottom:4px;">Verified preset link: <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043">Install GoldenChaos-BTT 2.513 from the BetterTouchTool sharing site</a></h2>
-			<sup><em>Some preset features may not work on versions of BetterTouchTool earlier than 2.513.</em></sup></p>
+			<h2>Verified preset link: <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043">Install GoldenChaos-BTT 2.513 from the BetterTouchTool sharing site</a></h2>
+			<small><em>Some preset features may not work on versions of BetterTouchTool earlier than 2.513.</em></small>
 
+			<br /><br />
 
-			<h2 style="margin-bottom:4px;">For beta updates please <a href="">visit the official BetterTouchTool community thread</a>.</h2>
-			<sup><em>Current beta version: 2.530-2</em></sup></p>
+			<h2>Current beta version: <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/64?u=goldenchaos">2.530-2</a></h2>
+			<small>
+				<em>Mojave compatibility, new weather widget powered by Dark Sky, and support for even more apps</em>
+				<br />
+				<b>Weather widget requires python requests module and locateme</b>. Install with <pre>pip install requests</pre> and <pre>brew install locateme</pre> before updating. You can then delete Location and JSON Helper.
+			</small>
+			
 
 			<h1>How to Install</h1>
 			<ol>
 				<li>Make sure you're using the latest <strong><em>alpha</em></strong> version of BetterTouchTool. Some features may not work properly if imported into an alpha version of BTT earlier than the one specified above.</li>
 				<li>Install the four required helper apps: <a href="http://milgra.com/high-sierra-media-key-enabler.html">High Sierra Media Key Enabler</a>, <a href="http://www.mousedown.net/mouseware/LocationHelper.html">Location Helper</a>, <a href="http://www.mousedown.net/mouseware/JSONHelper.html">JSON Helper</a>, and <a href="http://hasseg.org/icalBuddy/">icalBuddy</a>.</li>
 				<li>
-				<em>If upgrading from a previous version of GoldenChaos-BTT</em>: Remove the previous version by clicking "Manage Presets" inside of BetterTouchTool, selecting "goldenchaos-btt", and clicking "Delete".</li>
+				<em>If upgrading from a previous version of GoldenChaos-BTT</em>: Unfortunately, there is no way to upgrade without losing your existing configuration. Remove the old version of GoldenChaos-BTT by clicking "Manage Presets" inside of BetterTouchTool, selecting "goldenchaos-btt", and clicking "Delete".</li>
 				<li>Navigate to the <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043">official preset page</a> and click "Direct import to BTT" to automatically launch BetterTouchTool and import the latest preset.</li>
 				<li>Follow the short configuration instructions at the bottom of this post to finish setting up the media controls and calendar widget.</li>
 				<li>If there are any widgets for apps you don't use, uncheck "Visible" inside of BetterTouchTool to save on performance.</li>
@@ -70,22 +76,22 @@
 			
 			<h1>Screenshot Tour</h1>
 			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true" alt="" />
-			<center><sup>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</sup></center>
+			<center><small>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</small></center>
 
 			<br />
 			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true" alt="" />
 			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true" alt="" />
 			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true" alt="" />
-			<center><sup>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</sup></center>
+			<center><small>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</small></center>
 			
 			<br />
 			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true" alt="" />
 			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true" alt="" />
-			<center><sup>Emoji and app switcher widgets take over the scrollable container</sup></center>
+			<center><small>Emoji and app switcher widgets take over the scrollable container</small></center>
 			
 			<br />
 			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true" alt="" />
-			<center><sup>Hold down alt/option for an expanded control strip</sup></center>
+			<center><small>Hold down alt/option for an expanded control strip</small></center>
 			
 			<h1>Currently Supported Apps</h1>
 			<ul>
@@ -101,6 +107,12 @@
 				<li>Carrot Weather</li>
 				<li>Calendar</li>
 				<li>Fantastical 2</li>
+				<li>Apple Mail (Beta)</li>
+				<li>Slack (Beta)</li>
+				<li>Skype (Beta)</li>
+				<li>Google Hangouts (Beta)</li>
+				<li>VLC (Beta)</li>
+				<li>QuickTime (Beta)</li>
 			</ul>
 			
 			<h1>Full List of Features</h1>
@@ -130,7 +142,9 @@
 			<h1>Required Helper Apps</h1>
 			<ul>
 				<li><a href="http://milgra.com/high-sierra-media-key-enabler.html">High Sierra Media Key Enabler</a> with "Pause if no player is running" enabled for media controls</li>
-				<li><a href="http://www.mousedown.net/mouseware/LocationHelper.html">Location Helper</a> and <a href="http://www.mousedown.net/mouseware/JSONHelper.html">JSON Helper</a> for the weather widget</li>
+				<li><a href="http://www.mousedown.net/mouseware/LocationHelper.html">Location Helper</a> and <a href="http://www.mousedown.net/mouseware/JSONHelper.html">JSON Helper</a> for the weather widget
+					<ul><li><b>Note for beta users</b>: The current beta version of GoldenChaos-BTT uses python requests and locateme instead of JSON and Location Helper. Install with <pre>pip install requests</pre> and <pre>brew install locateme</pre></li></ul>
+				</li>
 				<li><a href="http://hasseg.org/icalBuddy/">icalBuddy</a> for the calendar widget</li>
 			</ul>
 			

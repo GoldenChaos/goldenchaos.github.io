@@ -110,6 +110,22 @@ h2 {
 	font-weight: 500;
 }
 
+small {
+	font-size: 13px;co
+}
+
+pre {
+	display: inline-block;
+	background: #eee;
+	padding: 2px 4px;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+	position: relative;
+	top: -1px;
+	margin-bottom: -8px;
+	margin-top: -8px;
+}
+
 .page-top, nav {
 	position: relative;
 }
@@ -506,7 +522,7 @@ nav {
 	position: absolute;
 	bottom: 24px;
 	text-align: center;
-	font-size: 18px;
+	font-size: 1.4vw;
 	text-shadow: rgba(0,0,0,1) 0 0 24px;
 	color: rgba(255,255,255,.8);
 }
@@ -521,7 +537,7 @@ nav {
 }
 
 .item.goldenchaos-btt span div {
-	font-size: 32px;
+	font-size: 2vw;
 	font-weight: bold;
 }
 
@@ -567,14 +583,14 @@ nav {
 .item.master-sword span {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 2vw;
 	text-shadow: rgba(0,0,0,1) 0 0 32px;
 	color: rgba(255,255,255,.9);
 	bottom: 16px;
 }
 
 .item.master-sword span b {
-	font-size: 18px;
+	font-size: 1.4vw;
 }
 
 .item.goodsemester {
@@ -955,7 +971,7 @@ footer span {
 	}
 	
 	.hero span {
-		font-size: 14px;
+		font-size: 4vw;
 		bottom: 16px;
 	}
 	
@@ -974,24 +990,24 @@ footer span {
 	}
 	
 	.item span {
-		font-size: 14px !important;
 		bottom: 16px !important;
+		font-size: 4vw !important;
 	}
 	
 	.item.goldenchaos-btt span {
 		top: 32%;
 	}
-	
+
 	.item.goldenchaos-btt span div {
-		font-size: 24px;
+		font-size: 6vw;
 	}
-	
+
 	.item.master-sword span {
-		font-size: 22px !important;
+		font-size: 6vw !important;
 	}
-	
+
 	.item.master-sword span b {
-		font-size: 14px !important;
+		font-size: 4vw;
 	}
 
 	.content.page .full-width {
