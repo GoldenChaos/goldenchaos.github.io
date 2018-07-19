@@ -719,7 +719,7 @@ nav {
 	color: #fff;
 	padding: 0 16px;
 	font-size: 20px;
-	border: 0;
+	border: 0 !important;
 	margin-left: 16px;
 	text-align: center;
 	position: relative;
