@@ -544,6 +544,7 @@ nav {
 .item.zelda-maps {
 	background-size: 80%, cover;
 	background-repeat: no-repeat;
+	background-position: center top 45%, center center;
 	background-image:
 		url(images/zelda-maps-logo.png),
 		url(images/zm-bg-preview.png);
@@ -552,6 +553,7 @@ nav {
 .item.zelda-wiki {
 	background-size: 80%, cover;
 	background-repeat: no-repeat;
+	background-position: center top 45%, center center;
 	background-image:
 		url(images/zelda-wiki-logo.png),
 		url(images/zw-bg-preview.png);
@@ -600,7 +602,7 @@ nav {
 		linear-gradient(rgba(162, 196, 146, 1), rgba(162, 196, 146, 0) 25%),
 		url(images/goodsemester-bg.jpg);
 	background-size: 80%, 130%, auto, auto;
-	background-position: center center;
+	background-position: center top 48%, center top 50%, center center;
 	background-repeat: no-repeat, no-repeat, repeat, repeat;
 }
 
@@ -624,10 +626,12 @@ nav {
 
 .item.venti {
 	background: 
-		url(images/venti-logo.png) center center no-repeat,
-		url(images/venti-bg-preview.jpg) center bottom no-repeat;
+		url(images/venti-logo.png),
+		url(images/venti-bg-preview.jpg);
 	background-size: 65%, cover;
 	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center top 45%, center bottom;
 }
 
 .page-padding .squareknot-logo {
