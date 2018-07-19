@@ -730,7 +730,7 @@ nav {
 
 .meta .visit-site:hover {
 	background: rgba(94, 181, 113, 1) !important;
-	border: 0;
+	border: 0 !important;
 }
 
 .notice {
