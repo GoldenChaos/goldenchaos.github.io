@@ -625,13 +625,13 @@ nav {
 }
 
 .item.venti {
-	background: 
+	background:
 		url(images/venti-logo.png),
+		linear-gradient(rgba(120, 212, 235, 1), rgba(120, 212, 235, 0) 25%),
 		url(images/venti-bg-preview.jpg);
-	background-size: 65%, cover;
-	background-color: transparent;
+	background-size: 65%, auto, cover;
 	background-repeat: no-repeat;
-	background-position: center top 45%, center bottom;
+	background-position: center top 45%, center top, center bottom;
 }
 
 .page-padding .squareknot-logo {
