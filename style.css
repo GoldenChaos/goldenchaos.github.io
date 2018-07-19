@@ -657,6 +657,14 @@ nav {
 	box-shadow: rgba(0,0,0,.2) 0 32px 64px;
 }
 
+.page-top .meta a {
+	border-bottom: 1px solid rgba(255,255,255,.3);
+}
+
+.page-top .meta a:hover {
+	border-bottom: 1px solid rgba(255,255,255,.6);
+}
+
 .page-top.white .meta,
 .page-padding .meta {
 	border: 1px solid rgba(0,0,0,.2);
