@@ -628,7 +628,7 @@ nav {
 .item.venti {
 	background:
 		url(images/venti-logo.png),
-		linear-gradient(rgba(120, 212, 235, 1), rgba(120, 212, 235, 0) 25%),
+		linear-gradient(rgba(120, 212, 235, 1), rgba(120, 212, 235, 0) 50%),
 		url(images/venti-bg-preview.jpg);
 	background-size: 65%, auto, cover;
 	background-repeat: no-repeat;
