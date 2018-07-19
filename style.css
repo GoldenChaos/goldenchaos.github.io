@@ -751,7 +751,8 @@ nav {
 	max-width: 578.5px;
 }
 
-.screenshot-grid-2-col img:first-of-type {
+.screenshot-grid-2-col img:first-of-type,
+.screenshot-grid-2-col.alt img:nth-of-type(3n+1) {
 	width: 100%;
 	max-width: none
 }
@@ -761,9 +762,20 @@ nav {
 	max-width: 375px;
 }
 
+.screenshot-grid-2-col.alt img:nth-of-type(2n+1) {
+	margin-right: 32px;
+}
+
 .screenshot-grid-2-col img:nth-of-type(2n+1),
+.screenshot-grid-2-col.alt img:nth-of-type(3n),
 .screenshot-grid-3-col img:nth-of-type(3n) {
 	margin-right: 0;
+}
+
+.video {
+	width: 100%;
+	height: 553px;
+	box-shadow: rgba(0,0,0,.3) 0 16px 32px;
 }
 
 .soon {
@@ -1058,6 +1070,10 @@ footer span {
 		width: 100%;
 		max-width: 100%;
 		box-sizing: border-box;
+	}
+
+	.video {
+		height: 270px;
 	}
 
 	.soon {
