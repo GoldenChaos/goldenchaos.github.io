@@ -134,6 +134,7 @@ pre {
 	height: 100vh;
 	min-height: 650px;
 	max-height: 1024px;
+	overflow: hidden;
 }
 
 nav {
@@ -413,6 +414,7 @@ nav {
 	width: 100%;
 	background: #fff;
 	color: #000;
+	overflow: hidden;
 }
 
 .content.index {
@@ -622,6 +624,7 @@ nav {
 
 .item.the-jason-effect span {
 	color: #000;
+	text-shadow: none;
 }
 
 .item.zodttd-icons {
@@ -846,7 +849,7 @@ footer span {
 			font-size: 19px !important;
 			bottom: 15px !important;
 		}
-		
+
 		.page-padding .squareknot-logo {
 			margin-top: 0;
 			width: 80vw !important;
