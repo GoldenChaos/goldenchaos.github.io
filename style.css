@@ -1056,7 +1056,7 @@ footer span {
 		font-weight: 500;
 	}
 
-	.page-top {
+	.page-top, .page-top.index {
 		height: 100vh !important;
 		min-height: 0 !important;
 	}
