@@ -1057,7 +1057,7 @@ footer span {
 	}
 
 	.page-top, .page-top.index {
-		height: 80vh !important;
+		height: calc(100vh - 64px) !important;
 		min-height: 0 !important;
 	}
 	
