@@ -774,7 +774,7 @@ nav {
 .screenshot-grid-2-col img:first-of-type,
 .screenshot-grid-2-col.alt img:nth-of-type(3n+1) {
 	width: 100%;
-	max-width: none
+	max-width: none;
 }
 
 .screenshot-grid-3-col img {
@@ -797,6 +797,20 @@ nav {
 	height: 553px;
 	box-shadow: rgba(0,0,0,.3) 0 16px 32px;
 	margin-bottom: 8px;
+}
+
+.wiki-duo {
+	margin-bottom: -24px !important;
+}
+
+.wiki-duo img {
+	width: auto !important;
+	height: 585px;
+	margin-right: 32px !important;
+}
+
+.wiki-duo img:last-of-type {
+	margin-right: 0 !important;
 }
 
 .soon {
@@ -853,6 +867,15 @@ footer span {
 		.page-padding .squareknot-logo {
 			margin-top: 0;
 			width: 80vw !important;
+		}
+
+		.wiki-duo img {
+			height: 477px !important;
+			margin-right: 16px !important;
+		}
+
+		.wiki-duo img:last-of-type {
+			margin-right: 0 !important;
 		}
 }
 
@@ -997,6 +1020,15 @@ footer span {
 
 		.screenshot-grid-2-col.alt img:nth-of-type(2n+1) {
 			margin-right: 0;
+		}
+
+		.wiki-duo img {
+			height: 363px !important;
+			margin-right: 16px !important;
+		}
+
+		.wiki-duo img:last-of-type {
+			margin-right: 0 !important;
 		}
 }
 
@@ -1239,6 +1271,12 @@ footer span {
 
 	.video {
 		height: 194px;
+	}
+
+	.wiki-duo img {
+		height: auto !important;
+		width: 100% !important;
+		margin-right: 0 !important;
 	}
 
 	.soon {
