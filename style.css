@@ -881,6 +881,10 @@ footer span {
 			background-size: 70vw, cover;
 		}
 
+		.site-logo {
+			width: 100vw !important;
+		}
+
 		.item {
 			margin: 16px 0 0 16px !important;
 		}
@@ -906,6 +910,10 @@ footer span {
 		.meta {
 			width: auto;
 			margin: 16px;
+		}
+
+		.visit-site {
+			width: 33% !important;
 		}
 
 		.page-padding {
