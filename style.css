@@ -614,10 +614,14 @@ nav {
 .item.the-jason-effect {
 	background-image:
 		url(images/tje-logo.png),
-		url(images/tje-bg-preview.png);
+		url(images/tje-bg-preview-2.png);
 	background-size: 60%, cover;
 	background-repeat: no-repeat;
 	background-position: center top -40%, center center;
+}
+
+.item.the-jason-effect span {
+	color: #000;
 }
 
 .item.zodttd-icons {
