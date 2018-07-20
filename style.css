@@ -823,7 +823,7 @@ footer span {
 			height: calc(100vh - 31px) !important;
 			min-height: 0 !important;
 		}
-		
+
 		.hero span {
 			font-size: 18px;
 			bottom: 24px;
@@ -1199,7 +1199,7 @@ footer span {
 		font-size: 18px;
 		padding: 12px 16px;
 		margin: 16px 0 0 0;
-		width: auto;
+		width: auto !important;
 	}
 
 	.screenshot-grid-2-col,
