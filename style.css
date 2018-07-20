@@ -805,7 +805,8 @@ nav {
 
 .wiki-duo img {
 	width: auto !important;
-	height: 585px;
+	max-height: 585px;
+	height: 46vw !important;
 	margin-right: 32px !important;
 }
 
@@ -864,18 +865,17 @@ footer span {
 			bottom: 15px !important;
 		}
 
-		.page-padding .squareknot-logo {
-			margin-top: 0;
-			width: 80vw !important;
-		}
-
 		.wiki-duo img {
-			height: 477px !important;
 			margin-right: 16px !important;
 		}
 
 		.wiki-duo img:last-of-type {
 			margin-right: 0 !important;
+		}
+
+		.page-padding .squareknot-logo {
+			margin-top: 0;
+			width: 80vw !important;
 		}
 }
 
@@ -1020,15 +1020,6 @@ footer span {
 
 		.screenshot-grid-2-col.alt img:nth-of-type(2n+1) {
 			margin-right: 0;
-		}
-
-		.wiki-duo img {
-			height: 363px !important;
-			margin-right: 16px !important;
-		}
-
-		.wiki-duo img:last-of-type {
-			margin-right: 0 !important;
 		}
 }
 
