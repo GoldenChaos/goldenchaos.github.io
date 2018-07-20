@@ -824,6 +824,10 @@ footer span {
 			min-height: 0 !important;
 		}
 
+		.site-logo {
+			background-size: 60% !important;
+		}
+
 		.hero span {
 			font-size: 18px;
 			bottom: 24px;
