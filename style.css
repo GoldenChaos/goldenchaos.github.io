@@ -819,6 +819,10 @@ footer span {
 
 /* Tablet (Landscape) */
 @media only screen and (max-width: 1024px) {
+		h1 {
+			font-weight: 500;
+		}
+
 		.page-top {
 			height: calc(100vh - 31px) !important;
 			min-height: 0 !important;
