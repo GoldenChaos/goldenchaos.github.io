@@ -837,199 +837,199 @@ footer span {
 
 /* Tablet (Landscape) */
 @media only screen and (max-width: 1024px) {
-		h1 {
-			font-weight: 500;
-		}
+	h1 {
+		font-weight: 500;
+	}
 
-		.page-top {
-			height: calc(100vh - 31px) !important;
-			min-height: 0 !important;
-		}
+	.page-top {
+		height: calc(100vh - 31px) !important;
+		min-height: 0 !important;
+	}
 
-		.site-logo {
-			background-size: 60% !important;
-		}
+	.site-logo {
+		background-size: 60% !important;
+	}
 
-		.hero span {
-			font-size: 18px;
-			bottom: 24px;
-		}
-		
-		.item span {
-			font-size: 14px !important;
-			bottom: 16px !important;
-		}
+	.hero span {
+		font-size: 18px;
+		bottom: 24px;
+	}
+	
+	.item span {
+		font-size: 14px !important;
+		bottom: 16px !important;
+	}
 
-		.item.master-sword span {
-			font-size: 19px !important;
-			bottom: 15px !important;
-		}
+	.item.master-sword span {
+		font-size: 19px !important;
+		bottom: 15px !important;
+	}
 
-		.wiki-duo img {
-			margin-right: 16px !important;
-			height: 46.6vw !important;
-		}
+	.wiki-duo img {
+		margin-right: 16px !important;
+		height: 46.6vw !important;
+	}
 
-		.wiki-duo img:last-of-type {
-			margin-right: -30px !important;
-		}
+	.wiki-duo img:last-of-type {
+		margin-right: -30px !important;
+	}
 
-		.page-padding .squareknot-logo {
-			margin-top: 0;
-			width: 80vw !important;
-		}
+	.page-padding .squareknot-logo {
+		margin-top: 0;
+		width: 80vw !important;
+	}
 }
 
 
 /* Tablet (Portrait) */
 @media only screen and (max-width: 1000px) {
-		h1.title {
-			font-size: 36px !important;
-			margin-top: 16px;
-			margin-bottom: 12px;
-		}
+	h1.title {
+		font-size: 36px !important;
+		margin-top: 16px;
+		margin-bottom: 12px;
+	}
 
-		h1 {
-			margin-top: 24px;
-			margin-bottom: 12px;
-			font-weight: 500;
-		}
+	h1 {
+		margin-top: 24px;
+		margin-bottom: 12px;
+		font-weight: 500;
+	}
 
-		.page-top {
-			height: calc(100vh - 31px) !important;
-			min-height: 0 !important;
-		}
+	.page-top {
+		height: calc(100vh - 31px) !important;
+		min-height: 0 !important;
+	}
 
-		.page-top.index {
-			height: 520px !important;
-			min-height: 0 !important;
-		}
+	.page-top.index {
+		height: 520px !important;
+		min-height: 0 !important;
+	}
 
-		nav {
-			height: 152px;
-		}
+	nav {
+		height: 152px;
+	}
 
-		#logo {
-			width: 140px;
-			height: 152px;
-		}
+	#logo {
+		width: 140px;
+		height: 152px;
+	}
 
-		.menu {
-			right: 12px !important; 
-			bottom: 16px !important;
-		}
-		
-		.hero {
-			margin: 16px;
-		}
+	.menu {
+		right: 12px !important; 
+		bottom: 16px !important;
+	}
+	
+	.hero {
+		margin: 16px;
+	}
 
-		.hero, .item {
-			border-radius: 12px !important;
-		}
+	.hero, .item {
+		border-radius: 12px !important;
+	}
 
-		.hero span {
-			font-size: 14px;
-			bottom: 20px;
-		}
+	.hero span {
+		font-size: 14px;
+		bottom: 20px;
+	}
 
-		.splash-bg.venti {
-			background-size: 70vw, cover;
-		}
+	.splash-bg.venti {
+		background-size: 70vw, cover;
+	}
 
-		.site-logo {
-			width: 100vw !important;
-		}
+	.site-logo {
+		width: 100vw !important;
+	}
 
-		.item {
-			margin: 16px 0 0 16px !important;
-		}
+	.item {
+		margin: 16px 0 0 16px !important;
+	}
 
-		.item:nth-of-type(3n) {
-			margin-right: 16px !important;
-		}
+	.item:nth-of-type(3n) {
+		margin-right: 16px !important;
+	}
 
-		.item:last-of-type {
-			margin-bottom: 16px !important;
-		}
-		
-		.item span {
-			font-size: 10px !important;
-			bottom: 14px !important;
-		}
+	.item:last-of-type {
+		margin-bottom: 16px !important;
+	}
+	
+	.item span {
+		font-size: 10px !important;
+		bottom: 14px !important;
+	}
 
-		.item.master-sword span {
-			font-size: 15px !important;
-			bottom: 10px !important;
-		}
+	.item.master-sword span {
+		font-size: 15px !important;
+		bottom: 10px !important;
+	}
 
-		.meta {
-			width: auto;
-			margin: 16px;
-		}
+	.meta {
+		width: auto;
+		margin: 16px;
+	}
 
-		.visit-site {
-			width: 33% !important;
-		}
+	.visit-site {
+		width: 33% !important;
+	}
 
-		.page-padding {
-			padding: 0 16px;
-		}
+	.page-padding {
+		padding: 0 16px;
+	}
 
-		.page-padding:first-of-type {
-			padding-top: 16px !important;
-		}
+	.page-padding:first-of-type {
+		padding-top: 16px !important;
+	}
 
-		.page-padding:last-of-type {
-			padding-bottom: 16px !important;
-		}
+	.page-padding:last-of-type {
+		padding-bottom: 16px !important;
+	}
 
-		.page-padding .squareknot-logo {
-			margin-top: 0;
-			width: 80vw !important;
-		}
+	.page-padding .squareknot-logo {
+		margin-top: 0;
+		width: 80vw !important;
+	}
 
-		.full-width {
-			padding: 0 16px !important;
-		}
+	.full-width {
+		padding: 0 16px !important;
+	}
 
-		.full-width img {
-			border-radius: 12px !important;
-		}
+	.full-width img {
+		border-radius: 12px !important;
+	}
 
-		.video {
-			height: 415px;
-		}
+	.video {
+		height: 415px;
+	}
 
-		.screenshot-grid-2-col,
-		.screenshot-grid-3-col {
-			padding: 0 16px;
-		}
+	.screenshot-grid-2-col,
+	.screenshot-grid-3-col {
+		padding: 0 16px;
+	}
 
-		.screenshot-grid-2-col img {
-			margin: 0 16px 16px 0;
-			width: calc(50% - 10px);
-		}
+	.screenshot-grid-2-col img {
+		margin: 0 16px 16px 0;
+		width: calc(50% - 10px);
+	}
 
-		.screenshot-grid-3-col img {
-			margin: 0 16px 16px 0;
-			width: 30.2vw;
-		}
+	.screenshot-grid-3-col img {
+		margin: 0 16px 16px 0;
+		width: 30.2vw;
+	}
 
-		.screenshot-grid-2-col.alt img:nth-of-type(3n) {
-			margin-right: 0;
-		}
+	.screenshot-grid-2-col.alt img:nth-of-type(3n) {
+		margin-right: 0;
+	}
 
-		.screenshot-grid-2-col.alt img:nth-of-type(2n+1) {
-			margin-right: 0;
-		}
+	.screenshot-grid-2-col.alt img:nth-of-type(2n+1) {
+		margin-right: 0;
+	}
 
-		.wiki-duo img {
-			height: 47.3vw !important;
-		}
+	.wiki-duo img {
+		height: 47.3vw !important;
+	}
 
-		.wiki-duo img:last-of-type {
-			margin-right: -30px !important;
-		}
+	.wiki-duo img:last-of-type {
+		margin-right: -30px !important;
+	}
 }
 
 /* Mobile */
@@ -1057,8 +1057,8 @@ footer span {
 	}
 
 	.page-top, .page-top.index {
-		height: calc(100vh - 64px) !important;
-		min-height: 0 !important;
+		height: calc(100vh - 75px) !important;
+		min-height: 600px !important;
 	}
 	
 	nav {
@@ -1183,6 +1183,10 @@ footer span {
 		font-size: 4vw;
 		bottom: 16px;
 	}
+
+	.hero.zelda-universe {
+		background-position: center top 38%, center center;
+	}
 	
 	.content.index {
 		flex-flow: column;
@@ -1290,7 +1294,7 @@ footer span {
     and (device-width : 375px) 
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) {
-	.page-top {
+	.page-top, .page-top.index {
 		height: calc(100vh - 113px) !important;
 		min-height: 0 !important;
 	}	
@@ -1299,7 +1303,7 @@ footer span {
 /* iPhone SE */
 @media only screen and (max-width: 320px) {
 	.page-top.index {
-		height: 560px !important;
+		min-height: 560px !important;
 	}
 	
 	.hero span,
