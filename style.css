@@ -1268,6 +1268,7 @@ footer span {
 		height: auto !important;
 		width: 100% !important;
 		margin-right: 0 !important;
+		max-height: none;
 	}
 
 	.soon {
