@@ -845,8 +845,13 @@ footer span {
 			font-weight: 500;
 		}
 
+		.page-top {
+			height: calc(100vh - 32px) !important;
+			min-height: 0 !important;
+		}
+
 		.page-top.index {
-			height: 520px;
+			height: 520px !important;
 			min-height: 0 !important;
 		}
 
@@ -926,6 +931,11 @@ footer span {
 
 		.page-padding:last-of-type {
 			padding-bottom: 16px !important;
+		}
+
+		.page-padding .squareknot-logo {
+			margin-top: 0;
+			width: 80vw !important;
 		}
 
 		.full-width {
