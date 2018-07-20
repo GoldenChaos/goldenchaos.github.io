@@ -819,6 +819,11 @@ footer span {
 
 /* Tablet (Landscape) */
 @media only screen and (max-width: 1024px) {
+		.page-top {
+			height: calc(100vh - 31px) !important;
+			min-height: 0 !important;
+		}
+		
 		.hero span {
 			font-size: 18px;
 			bottom: 24px;
@@ -846,7 +851,7 @@ footer span {
 		}
 
 		.page-top {
-			height: calc(100vh - 32px) !important;
+			height: calc(100vh - 31px) !important;
 			min-height: 0 !important;
 		}
 
