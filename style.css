@@ -1034,6 +1034,10 @@ footer span {
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
+	blockquote {
+		line-height: 38px;
+	}
+
 	h1 {
 		font-size: 24px;
 		line-height: 28px;
@@ -1056,8 +1060,12 @@ footer span {
 		font-weight: 500;
 	}
 
-	.page-top, .page-top.index {
+	.page-top {
 		height: calc(100vh - 75px) !important;
+		min-height: 0 !important;
+	}
+
+	.page-top.index {
 		min-height: 600px !important;
 	}
 	
@@ -1302,7 +1310,7 @@ footer span {
 
 /* iPhone SE */
 @media only screen and (max-width: 320px) {
-	.page-top.index {
+	.page-top, .page-top.index {
 		min-height: 560px !important;
 	}
 	
