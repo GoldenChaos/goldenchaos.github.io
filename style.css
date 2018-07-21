@@ -425,7 +425,7 @@ nav {
 }
 
 .hero.zelda-universe {
-	background-position: center top 35%, center center;
+	background-position: center top 34%, center center;
 	background-image: 
 		url(images/zu-logo.png),
 		linear-gradient(rgba(86, 163, 190, .5), rgba(0, 120, 158, .6), rgba(0, 20, 71, .8));
@@ -1091,7 +1091,7 @@ footer span {
 	}
 
 	.page-top.index {
-		min-height: 600px !important;
+		min-height: 622px !important;
 	}
 	
 	nav {
@@ -1146,7 +1146,7 @@ footer span {
 	.splash-bg .site-logo {
 		width: 100vw;
 		margin-top: 104px;
-		background-size: 100vw !important;
+		background-size: contain !important;
 	}
 	
 	.splash-bg.squareknot {
@@ -1223,7 +1223,7 @@ footer span {
 	}
 
 	.hero.zelda-universe {
-		background-position: center top 38%, center center;
+		background-position: center top 32%, center center;
 	}
 	
 	.content.index {
