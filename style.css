@@ -352,12 +352,18 @@ nav {
 
 .splash-bg.goodsemester {
 	background-image:
-		url(images/goodsemester-logo.png),
 		url(images/goodsemester-rays.png),
 		linear-gradient(rgba(162, 196, 146, 1), rgba(162, 196, 146, 0) 25%),
 		url(images/goodsemester-bg.jpg);
-	background-size: 70%, max(160vh,160vw), auto, contain;
-	background-repeat: no-repeat, no-repeat, repeat, repeat;
+	background-size: max(160vh,160vw), auto, contain;
+	background-repeat: no-repeat, repeat, repeat;
+	background-position: center bottom 50%;
+}
+
+.splash-bg.goodsemester .site-logo {
+	background-image:
+		url(images/goodsemester-logo.png);
+	background-size: 80%;
 }
 
 .splash-bg.venti {
@@ -918,7 +924,7 @@ footer span {
 
 
 /* Tablet (Portrait) */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
 	h1.title {
 		font-size: 36px !important;
 		margin-top: 16px;
@@ -968,6 +974,10 @@ footer span {
 		bottom: 20px;
 	}
 
+	.splash-bg.goodsemester .site-logo {
+		background-size: 90vw !important;
+	}
+
 	.splash-bg.venti {
 		background-size: 70vw, cover;
 	}
@@ -999,7 +1009,7 @@ footer span {
 	}
 
 	.meta {
-		width: auto;
+		width: calc(100% - 32px);
 		margin: 16px 16px 40px 16px;
 	}
 
@@ -1196,7 +1206,11 @@ footer span {
 	}
 
 	.splash-bg.goodsemester {
-		background-size: 90vw, 200vh, auto, contain;
+		background-position: center bottom 44%;
+	}
+
+	.splash-bg.goodsemester .site-logo {
+		width: 90vw !important;
 	}
 
 	.splash-bg.venti {
