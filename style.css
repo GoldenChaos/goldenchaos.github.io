@@ -404,7 +404,7 @@ nav {
 }
 
 .hero.zelda-universe {
-	background-position: center top 41.5%, center center;
+	background-position: center top 35%, center center;
 	background-image: 
 		url(images/zu-logo.png),
 		linear-gradient(rgba(86, 163, 190, .5), rgba(0, 120, 158, .6), rgba(0, 20, 71, .8));
