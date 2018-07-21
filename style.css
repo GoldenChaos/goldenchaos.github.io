@@ -75,6 +75,7 @@ blockquote span {
 	display: block;
 	width: auto;
 	font-size: 18px;
+	line-height: 20px;
 	text-align: left;
 	color: #ababab;
 }
@@ -820,6 +821,19 @@ nav {
 	margin-bottom: 8px;
 }
 
+.quote-grid {
+	display: flex;
+}
+
+.quote-grid blockquote {
+	font-size: 24px;
+	width: 100%;
+}
+
+.quote-grid blockquote span {
+	font-size: 14px;
+}
+
 .wiki-duo {
 	margin-bottom: -24px !important;
 }
@@ -1313,6 +1327,14 @@ footer span {
 
 	.video {
 		height: 194px;
+	}
+
+	.quote-grid {
+		flex-direction: column-reverse;
+	}
+
+	.quote-grid blockquote {
+		width: auto;
 	}
 
 	.wiki-duo img {
