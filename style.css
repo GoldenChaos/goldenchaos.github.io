@@ -624,11 +624,10 @@ nav {
 	background-image:
 		url(images/goodsemester-logo.png),
 		url(images/goodsemester-rays.png),
-		linear-gradient(rgba(162, 196, 146, 1), rgba(162, 196, 146, 0) 25%),
 		url(images/goodsemester-bg.jpg);
-	background-size: 80%, 130%, auto, auto;
-	background-position: center top 48%, center top 50%, center center;
-	background-repeat: no-repeat, no-repeat, repeat, repeat;
+	background-size: 80%, 130%, contain;
+	background-position: center top 48%, center center;
+	background-repeat: no-repeat, no-repeat, repeat;
 }
 
 .item.goodsemester span {
