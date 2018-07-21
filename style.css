@@ -974,6 +974,10 @@ footer span {
 		bottom: 20px;
 	}
 
+	.splash-bg.goodsemester {
+		background-position: center bottom 46%;
+	}
+
 	.splash-bg.goodsemester .site-logo {
 		background-size: 90vw !important;
 	}
