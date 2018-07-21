@@ -871,6 +871,10 @@ footer span {
 		background-size: 60% !important;
 	}
 
+	.hero {
+		margin-bottom: 40px !important;
+	}
+
 	.hero span {
 		font-size: 18px;
 		bottom: 24px;
@@ -1199,13 +1203,18 @@ footer span {
 	.hero {
 		width: auto;
 		height: 66vw;
-		margin: 24px 16px;
+		margin: 24px 16px !important;
+		margin-bottom: 24px;
 		z-index: 2;
+	}
+
+	.hero:first-of-type {
+		margin-bottom: 40px !important;
 	}
 	
 	.hero:last-of-type {
 		z-index: 1;
-		margin: 16px 16px 0 16px;
+		margin: 16px 16px 0px 16px !important;
 	}
 	
 	.hero span {
