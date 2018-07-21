@@ -1210,7 +1210,7 @@ footer span {
 	}
 
 	.splash-bg.goodsemester {
-		background-position: center bottom 44%;
+		background-position: center bottom 38%;
 	}
 
 	.splash-bg.goodsemester .site-logo {
@@ -1377,6 +1377,10 @@ footer span {
 @media only screen and (max-width: 320px) {
 	.page-top, .page-top.index {
 		min-height: 560px !important;
+	}
+
+	.splash-bg.goodsemester {
+		background-position: center bottom 25%;
 	}
 	
 	.hero span,
