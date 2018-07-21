@@ -328,7 +328,7 @@ nav {
 	background-image:
 		url(images/zelda-maps-logo.png),
 		radial-gradient(circle, rgba(0,0,0, .8) 20%, rgba(0,0,0, 0) 50%);
-	background-size: 75%, 120%;
+	background-size: 75%, 100%;
 }
 
 .splash-bg.zelda-wiki {
@@ -753,6 +753,7 @@ nav {
 	font-size: 20px;
 	border: 0 !important;
 	margin-left: 16px;
+	margin-right: 16px;
 	text-align: center;
 	position: relative;
 	display: table-cell;
@@ -988,6 +989,7 @@ footer span {
 
 	.site-logo {
 		width: 100vw !important;
+		background-size: 70vw, 100% !important;
 	}
 
 	.item {
