@@ -132,7 +132,7 @@ pre {
 
 .page-top {
 	height: 100vh;
-	min-height: 650px;
+	min-height: 768px;
 	max-height: 1024px;
 	overflow: hidden;
 }
@@ -206,6 +206,23 @@ nav {
 	margin-right: 12px;
 }
 
+.chevron {
+	background-image: url(images/chevron.png);
+	background-size: 40px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 32px;
+	opacity: 0.4;
+}
+
+.page-top.index .chevron {
+	opacity: 0.6;
+}
+
 .page-top.white {
 	background: #fff;
 	height: auto !important;
@@ -232,6 +249,10 @@ nav {
 
 .page-top.white #logo {
 	background-image: url('images/logo-blue.png');
+}
+
+.page-top.white .chevron {
+	display: none;
 }
 
 .splash-bg {
@@ -365,7 +386,7 @@ nav {
 	border-radius: 16px;
 	box-shadow: rgba(0,0,0,.5) 0 32px 64px;
 	height: 33vw;
-	margin: 32px;
+	margin: 32px 32px 40px 32px;
 	position: relative;
 	background-size: 90%, auto;
 	background-repeat: no-repeat, repeat;
@@ -658,7 +679,7 @@ nav {
 	margin: 0 auto;
 	padding: 16px;
 	border-radius: 12px;
-	margin-bottom: 32px;
+	margin-bottom: 40px;
 	display: table;
 	overflow: hidden;
 	box-sizing: border-box;
@@ -964,7 +985,7 @@ footer span {
 
 	.meta {
 		width: auto;
-		margin: 16px;
+		margin: 16px 16px 40px 16px;
 	}
 
 	.visit-site {
@@ -1255,7 +1276,7 @@ footer span {
 	.meta {
 		font-size: 14px;
 		width: auto;
-		margin: 16px;
+		margin: 16px 16px 40px 16px;
 		display: flex;
 		flex-direction: column;
 	}
