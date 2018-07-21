@@ -1147,11 +1147,9 @@ footer span {
 	.splash-bg.main {
 		background:
 			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
-			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
-			url(images/squareknot-illustration-preview.png) bottom left no-repeat,
 			linear-gradient(rgba(66, 126, 163, 0), rgba(66, 126, 163, 1) 80%),
 			url(images/zu-bg-preview.jpg) top 16px left -60px no-repeat;
-		background-size: 120vw, 120vw, 120vw, auto, 160vw;
+		background-size: 120vw, auto, 160vw;
 	}
 
 	.splash-bg .site-logo {
