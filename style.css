@@ -1157,6 +1157,14 @@ footer span {
 		width: auto !important;
 		max-width: 100%;
 	}
+
+	.video {
+		height: 53vw;
+	}
+
+	.wiki-duo img {
+		height: 44.5vw !important;
+	}
 }
 
 /* Large Tablet (Portrait) */
@@ -1435,7 +1443,7 @@ footer span {
 	}
 
 	.video {
-		height: 194px;
+		height: 53vw;
 	}
 
 	.quote-grid {
