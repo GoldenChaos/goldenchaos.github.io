@@ -1520,9 +1520,9 @@ footer span {
 
 	.about .wrap img {
 		float: none;
-		width: 100vw !important;
+		width: calc(100% - 32px) !important;
 		height: auto;
-		margin-right: 0;
+		margin: 0 auto 16px auto;
 	}
 
 	.soon {
