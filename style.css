@@ -1186,6 +1186,10 @@ footer span {
 		min-height: 700px !important;
 	}
 
+	.meta {
+		max-width: none;
+	}
+
 	.splash-bg.venti {
 		background-size: 62vw, auto, cover !important;
 	}
