@@ -994,7 +994,7 @@ footer span {
 
 	.item.master-sword span {
 		font-size: 19px !important;
-		bottom: 15px !important;
+		bottom: 10px !important;
 	}
 
 	.wiki-duo img {
@@ -1178,8 +1178,24 @@ footer span {
 	and (max-device-width : 1366px) 
 	and (orientation : portrait) {
 
+	.page-top {
+		max-height: 1024px;
+	}
+
 	.page-top.index {
 		min-height: 700px !important;
+	}
+
+	.hero span {
+		font-size: 18px !important;
+	}
+
+	.item span {
+		font-size: 14px !important;
+	}
+
+	.item.master-sword span {
+		font-size: 20px !important;
 	}
 
 	.video {
@@ -1189,6 +1205,34 @@ footer span {
 	.wiki-duo img {
 		height: 48.1vw !important;
 		margin-right: 16px !important;
+	}
+}
+
+/* Large Tablet (Landscape) */
+@media only screen
+	and (min-device-width : 1024px)
+	and (max-device-width : 1366px) 
+	and (orientation : landscape) {
+
+	.splash-bg.zelda-universe .site-logo,
+	.splash-bg.zelda-maps .site-logo,
+	.splash-bg.zelda-wiki .site-logo {
+		background-size: 60vw !important;
+	}
+
+	.hero span {
+		font-size: 24px !important;
+		bottom: 32px !important;
+	}
+
+	.item span {
+		font-size: 18px !important;
+		bottom: 20px !important;
+	}
+
+	.item.master-sword span {
+		font-size: 28px !important;
+		bottom: 14px !important;
 	}
 }
 
