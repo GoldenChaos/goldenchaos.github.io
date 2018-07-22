@@ -375,10 +375,11 @@ nav {
 .splash-bg.venti {
 	background-image:
 		url(images/venti-logo.png),
-		url(images/venti-bg-full.jpg);
-	background-size: 50%, contain;
-	background-position: center center, center bottom;
-	background-repeat: no-repeat, repeat-x;
+		linear-gradient(rgba(120, 212, 235, 1), rgba(120, 212, 235, 0) 50%),
+		url(images/venti-bg-full-boring.jpg);
+	background-size: 50%, auto, cover;
+	background-position: center center, top, center bottom;
+	background-repeat: no-repeat, repeat, repeat-x;
 }
 
 .splash-content {
@@ -1004,7 +1005,7 @@ footer span {
 	}
 
 	.splash-bg.venti {
-		background-size: 70vw, cover;
+		background-size: 80vw, auto, cover;
 	}
 
 	.item {
@@ -1259,7 +1260,7 @@ footer span {
 	}
 
 	.splash-bg.venti {
-		background-size: 80%, cover;
+		background-size: 80vw, auto, cover;
 	}
 	
 	.splash-content {
