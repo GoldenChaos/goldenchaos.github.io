@@ -1109,9 +1109,9 @@ footer span {
 }
 
 /* Small Desktop */
-@media only screen and (max-width : 980px) {
+@media only screen and (max-width : 1024px) {
 	.page-top {
-		max-height: 700px;
+		max-height: 768px;
 	}
 
 	.hero span {
@@ -1144,7 +1144,7 @@ footer span {
 		margin: 0 32px 32px 32px;
 	}
 
-	.page-top.meta {
+	.page-top .meta {
 		width: calc(100% - 64px);
 		margin: 0 32px 40px 32px;
 	}
