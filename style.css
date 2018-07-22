@@ -134,7 +134,6 @@ pre {
 .page-top {
 	height: 100vh;
 	min-height: 700px;
-	max-height: 1024px;
 	overflow: hidden;
 }
 
@@ -1111,9 +1110,29 @@ footer span {
 
 /* Small Desktop */
 @media only screen and (max-width : 980px) {
+	.page-top {
+		max-height: 700px;
+	}
+
 	.hero span {
 		font-size: 16px;
 		bottom: 24px;
+	}
+
+	.content .item {
+		margin: 16px 16px 0 0;
+	}
+
+	.content .item:nth-of-type(3n) {
+		margin-right: 16px;
+	}
+
+	.content .item:nth-of-type(3n+1) {
+		margin-left: 16px;
+	}
+
+	.content .item:last-of-type {
+		margin-bottom: 16px;
 	}
 
 	.item span {
