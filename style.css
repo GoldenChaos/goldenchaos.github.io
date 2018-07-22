@@ -861,6 +861,18 @@ nav {
 	margin-right: -30px !important;
 }
 
+.about .wrap {
+	display: flex;
+}
+
+.about .wrap img {
+	float: left;
+	border-radius: 1000px;
+	width: 256px !important;
+	height: 256px;
+	margin-right: 32px;
+}
+
 .soon {
 	font-size: 48px;
 	font-style: italic;
@@ -1397,6 +1409,17 @@ footer span {
 		width: 100% !important;
 		margin-right: 0 !important;
 		max-height: none;
+	}
+
+	.about .wrap {
+		flex-direction: column;
+	}
+
+	.about .wrap img {
+		float: none;
+		width: 100vw !important;
+		height: auto;
+		margin-right: 0;
 	}
 
 	.soon {
