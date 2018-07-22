@@ -255,6 +255,10 @@ nav {
 	background-image: url('images/logo-blue.png');
 }
 
+.page-top.white .menu .social:hover {
+	color: rgba(67,126,162,.8);
+}
+
 .page-top.white .chevron {
 	display: none;
 }
