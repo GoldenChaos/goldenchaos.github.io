@@ -133,7 +133,7 @@ pre {
 
 .page-top {
 	height: 100vh;
-	min-height: 768px;
+	min-height: 700px;
 	max-height: 1024px;
 	overflow: hidden;
 }
@@ -878,27 +878,22 @@ footer span {
 	text-align: center;
 }
 
-/* Large Tablet (Landscape) */
-@media only screen 
-  and (min-device-width: 1366px) 
-  and (max-device-width: 1366px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-  	.page-top {
-		height: calc(100vh - 51px) !important;
-		min-height: 0 !important;
-	}
-}
-
 /* Tablet (Landscape) */
-@media only screen and (max-width: 1024px) {
+@media only screen and
+	(min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : landscape)  {
+
 	h1 {
 		font-weight: 500;
 	}
 
 	.page-top {
 		height: calc(100vh - 31px) !important;
-		min-height: 0 !important;
+	}
+
+	.page-top.index {
+		min-height: 650px !important;
 	}
 
 	.site-logo {
@@ -939,9 +934,12 @@ footer span {
 	}
 }
 
-
 /* Tablet (Portrait) */
-@media only screen and (max-width: 1024px) {
+@media only screen
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : portrait) {
+
 	h1.title {
 		font-size: 36px !important;
 		margin-top: 16px;
@@ -956,12 +954,11 @@ footer span {
 
 	.page-top {
 		height: calc(100vh - 31px) !important;
-		min-height: 0 !important;
 	}
 
 	.page-top.index {
 		height: 520px !important;
-		min-height: 0 !important;
+		min-height: 520px !important;
 	}
 
 	nav {
@@ -979,7 +976,7 @@ footer span {
 	}
 	
 	.hero {
-		margin: 16px;
+		margin: 16px 16px 40px 16px;
 	}
 
 	.hero, .item {
@@ -989,6 +986,11 @@ footer span {
 	.hero span {
 		font-size: 14px;
 		bottom: 20px;
+	}
+
+	.site-logo {
+		width: 100vw !important;
+		background-size: 80vw, 100% !important;
 	}
 
 	.splash-bg.goodsemester {
@@ -1001,11 +1003,6 @@ footer span {
 
 	.splash-bg.venti {
 		background-size: 70vw, cover;
-	}
-
-	.site-logo {
-		width: 100vw !important;
-		background-size: 70vw, 100% !important;
 	}
 
 	.item {
@@ -1074,29 +1071,46 @@ footer span {
 	}
 
 	.screenshot-grid-2-col img {
-		margin: 0 16px 16px 0;
+		margin: 0 16px 16px 0 !important;
 		width: calc(50% - 10px);
 	}
 
 	.screenshot-grid-3-col img {
-		margin: 0 16px 16px 0;
+		margin: 0 16px 16px 0 !important;
 		width: 30.2vw;
 	}
 
 	.screenshot-grid-2-col.alt img:nth-of-type(3n) {
-		margin-right: 0;
-	}
-
-	.screenshot-grid-2-col.alt img:nth-of-type(2n+1) {
-		margin-right: 0;
+		margin-right: 0 !important;
 	}
 
 	.wiki-duo img {
 		height: 47.3vw !important;
+		margin-right: 16px !important;
 	}
 
 	.wiki-duo img:last-of-type {
 		margin-right: -30px !important;
+	}
+}
+
+/* Large Tablet (Portrait) */
+@media only screen
+	and (min-device-width : 1024px)
+	and (max-device-width : 1366px) 
+	and (orientation : portrait) {
+
+	.page-top.index {
+		min-height: 700px !important;
+	}
+
+	.video {
+		height: 550px;
+	}
+
+	.wiki-duo img {
+		height: 48.1vw !important;
+		margin-right: 16px !important;
 	}
 }
 
@@ -1213,9 +1227,9 @@ footer span {
 		left: 16px;
 		right: 16px;
 	}
-	
-	.splash-bg.zelda-universe {
-		background-size: auto, 280vh;
+
+	.splash-bg.zelda-universe .site-logo {
+		background-size: 90vw !important;
 	}
 
 	.splash-bg.zelda-maps {
