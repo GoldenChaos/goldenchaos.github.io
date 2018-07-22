@@ -1416,7 +1416,7 @@ footer span {
 	.meta {
 		font-size: 14px;
 		width: auto;
-		margin: 16px 16px 40px 16px;
+		margin: 16px 16px 40px 16px !important;
 		display: flex;
 		flex-direction: column;
 	}
