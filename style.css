@@ -303,13 +303,15 @@ nav {
 	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
+	box-sizing: border-box;
 }
 
 .splash-bg .site-logo {
 	position: relative;
 	background-position: center center;
 	background-repeat: no-repeat;
-	width: 980px;
+	width: 100vw;
+	max-width: 980px;
 	margin: 0 auto;
 	flex-grow: 1;
 	margin-top: 140px;
@@ -323,7 +325,7 @@ nav {
 .splash-bg.zelda-maps {
 	background-image:
 		linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, 0) 30%),
-		url(images/zm-bg-full.jpg);
+		url(images/zm-bg-full.png);
 	background-size: auto, cover;
 	background-position: top, right top 25%;
 }
@@ -683,7 +685,8 @@ nav {
 }
 
 .meta {
-	width: 980px;
+	width: 100vw;
+	max-width: 980px;
 	margin: 0 auto;
 	padding: 16px;
 	border-radius: 12px;
@@ -897,7 +900,7 @@ footer span {
 	}
 
 	.site-logo {
-		background-size: 60% !important;
+		background-size: 70% !important;
 	}
 
 	.hero {
@@ -989,7 +992,6 @@ footer span {
 	}
 
 	.site-logo {
-		width: 100vw !important;
 		background-size: 80vw, 100% !important;
 	}
 
@@ -1091,6 +1093,14 @@ footer span {
 
 	.wiki-duo img:last-of-type {
 		margin-right: -30px !important;
+	}
+}
+
+/* Small Desktop */
+@media only screen and (max-width : 980px) {
+	.meta {
+		width: calc(100% - 64px);
+		margin: 0 32px 40px 32px;
 	}
 }
 
@@ -1199,7 +1209,6 @@ footer span {
 	}
 
 	.splash-bg .site-logo {
-		width: 100vw;
 		margin-top: 104px;
 		background-size: contain !important;
 	}
@@ -1233,8 +1242,8 @@ footer span {
 	}
 
 	.splash-bg.zelda-maps {
-		background-size: auto, 100vh;
-		background-position: top, right top -70px;
+		background-size: auto, cover;
+		background-position: top, right top;
 	}
 
 	.splash-bg.zelda-wiki {
