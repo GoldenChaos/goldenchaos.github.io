@@ -1186,6 +1186,10 @@ footer span {
 		min-height: 700px !important;
 	}
 
+	.splash-bg.venti {
+		background-size: 62vw, auto, cover !important;
+	}
+
 	.hero span {
 		font-size: 18px !important;
 	}
