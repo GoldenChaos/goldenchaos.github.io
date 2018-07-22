@@ -1112,8 +1112,22 @@ footer span {
 /* Small Desktop */
 @media only screen and (max-width : 980px) {
 	.meta {
+		width: auto;
+		margin: 0 32px 32px 32px;
+	}
+
+	.page-top.meta {
 		width: calc(100% - 64px);
 		margin: 0 32px 40px 32px;
+	}
+
+	.page-padding {
+		padding: 0 32px;
+	}
+
+	.page-padding .squareknot-logo {
+		width: auto !important;
+		max-width: 100%;
 	}
 }
 
