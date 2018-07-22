@@ -1243,7 +1243,8 @@ footer span {
 /* Mobile */
 @media only screen and (max-width: 600px) {
 	blockquote {
-		line-height: 38px;
+		line-height: 32px;
+		margin: 24px 16px 0 16px;
 	}
 
 	h1 {
