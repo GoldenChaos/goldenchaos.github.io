@@ -325,16 +325,16 @@ nav {
 .splash-bg.zelda-maps {
 	background-image:
 		linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, 0) 30%),
+		radial-gradient(circle, rgba(0,0,0, .8) 20%, rgba(0,0,0, 0) 50%),
 		url(images/zm-bg-full.png);
-	background-size: auto, cover;
-	background-position: top, right top 25%;
+	background-size: auto, auto, cover;
+	background-position: top, center center, top right;
 }
 
 .splash-bg.zelda-maps .site-logo {
 	background-image:
-		url(images/zelda-maps-logo.png),
-		radial-gradient(circle, rgba(0,0,0, .8) 20%, rgba(0,0,0, 0) 50%);
-	background-size: 75%, 100%;
+		url(images/zelda-maps-logo.png);
+	background-size: 75%;
 }
 
 .splash-bg.zelda-wiki {
@@ -1242,8 +1242,8 @@ footer span {
 	}
 
 	.splash-bg.zelda-maps {
-		background-size: auto, cover;
-		background-position: top, right top;
+		background-size: auto, auto, cover;
+		background-position: top, center bottom 80px, right top;
 	}
 
 	.splash-bg.zelda-wiki {
