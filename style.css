@@ -838,11 +838,13 @@ nav {
 
 .quote-grid {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .quote-grid blockquote {
 	font-size: 24px;
-	width: 100%;
+	width: calc(50% - 64px);
+	margin: 16px 32px;
 }
 
 .quote-grid blockquote span {
