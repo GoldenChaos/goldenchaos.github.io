@@ -70,15 +70,12 @@
 			</div>
 
 			<div class="notice">
-				<h2>Latest verified version: <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043" rel="nofollow noopener">GoldenChaos-BTT 2.513</a> (Jun 1 2018 - Initial Public Release)</h2>
-				<small><em>Some preset features may not work on versions of BetterTouchTool earlier than 2.513. <b>Note for Mojave users</b>: GoldenChaos-BTT 2.513 is not compatible with macOS Mojave</b>. Please use the latest unverified version if you require Mojave compatibility.</em></small>
+				<h2>Latest verified version: <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043" rel="nofollow noopener">GoldenChaos-BTT 2.536-3</a> (Jul 30 2018 - <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/164?u=goldenchaos" target="_blank">Release Notes</a>)</h2>
+				<small>Zero-config installation, macOS Mojave compatibility, Dark Sky weather widget with automatic units, all-new reminders widget, and support for even more apps</small>
 
 				<br /><br />
 
-				<h2>Latest unverified version: <a href="https://share.folivora.ai/sharedPreset/96df1486-847e-471e-a588-fb924221ad8f" target="_blank">2.536-3</a> (Jul 30 2018 - <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/164?u=goldenchaos" target="_blank">Release Notes</a>)</h2>
-				<small>
-					<em>Mojave compatibility, Dark Sky weather widget with automatic units, no-config calendar widget, better reminders widget, and support for even more apps</em>
-				</small>
+				<h2>Latest unverified version: No current unverified version 😮</h2>
 			</div>
 
 			<h1>How to Install</h1>
@@ -181,7 +178,7 @@
 			The reminders and calendar widget display only items happening today by default. If you prefer to see items for additional days, for example for up to a week, by changing the <pre>eventsToday</pre> attribute to <pre>eventsToday+7</pre> in the widget's settings. Check out <a href="http://hasseg.org/icalBuddy/examples.html">iCalBuddy's examples page</a> for all the cool ways you can customize your reminders and calendar widget's output.
 			
 			<h1>Supplemental reading: Now Playing output hierarchy</h1>
-			<p>Appropriate media controls, as well as associated track information, are displayed conditionally based on what media players, if any, are currently running. By default, GoldenChaos-BTT will try to match the media controls with the associated media it's controlling. However, lesser-used players like YouTube will override the track information display and take priority. This means that if Safari is open to a YouTube video and iTunes is playing music, the media controls will control iTunes but the track information will be the title of the YouTube video. The full hierarchy is as follows, with hier numbers taking precedence:</p>
+			<p>Appropriate media controls, as well as associated track information, are displayed conditionally based on what media players, if any, are currently running. By default, GoldenChaos-BTT will try to match the media controls with the associated media it's controlling. However, lesser-used players like YouTube will override the track information display and take priority. This means that if Safari is open to a YouTube video and iTunes is playing music, the media controls will control iTunes but the track information will be the title of the YouTube video. The full hierarchy is as follows, with higher numbers taking precedence:</p>
 			<ol>
 				<li>iTunes</li>
 				<li>Spotify</li>
