@@ -842,9 +842,17 @@ nav {
 }
 
 .quote-grid blockquote {
-	font-size: 24px;
-	width: calc(50% - 64px);
-	margin: 16px 32px;
+	font-size: 22px;
+	width: calc(25% - 32px);
+	margin: 16px;
+}
+
+.quote-grid blockquote:first-of-type {
+	margin-left: 0;
+}
+
+.quote-grid blockquote:nth-of-type(4n+1) {
+	margin-left: 0;
 }
 
 .quote-grid blockquote span {
@@ -1524,6 +1532,11 @@ footer span {
 
 	.quote-grid blockquote {
 		width: auto;
+		margin: 16px !important;
+	}
+
+	.quote-grid blockquote:nth-of-type(even) {
+		display: none;
 	}
 
 	.wiki-duo img {
