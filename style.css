@@ -29,8 +29,7 @@
 }
 
 @font-face {
-    font-family: 'BrandonText';
-    font-weight: 500;
+    font-family: 'BrandonText';    font-weight: 500;
     src: url('fonts/brandon/265406_2_0.eot');
     src: url('fonts/brandon/265406_2_0.eot?#iefix') format('embedded-opentype'),url('fonts/brandon/265406_2_0.woff') format('woff'),url('fonts/brandon/265406_2_0.ttf') format('truetype');
 }

@@ -1,303 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-317947-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
 
-	  gtag('config', 'UA-317947-1');
-	</script>
-	<meta charset="utf-8">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-317947-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-317947-1');
+    </script>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>GoldenChaos-BTT - Replacement Touch Bar UI for BetterTouchTool - GoldenChaos</title>
+    <title>GoldenChaos-BTT - Replacement Touch Bar UI for BetterTouchTool - GoldenChaos</title>
     <meta name="description" content="Interaction Design by Jason Rappaport, creator of Squareknot, Zelda Universe, Zelda Maps, and Zelda Wiki.">
     <meta name="author" content="Jason Rappaport">
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-	<link rel="icon" href="favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png" />
-	<link rel="mask-icon" href="website_icon.svg" color="#4083a0">
-	<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png" />
+    <link rel="mask-icon" href="website_icon.svg" color="#4083a0">
+    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
 </head>
+
 <body>
-	<div class="page-top white">
-		<nav style="z-index: 1;">
-		    <a id="logo" href="index.html"></a>
-		    <div class="menu">
-		    	<!-- <span><i class="fas fa-lemon"></i>Now with less than 10% fruit juice</span><br /> -->
-			    <a class="selected" href="index.html">Work</a>
-			    <a href="https://goldenchao.tumblr.com" target="_blank">Blog</a>
-			    <a href="about.html">About</a>
-			    <a href="contact.html">Contact</a>
-			    <br />
-			    <a class="social" href="https://twitter.com/goldenchaos" target="_blank"><i class="fab fa-twitter"></i></a>
-			    <a class="social" href="https://github.com/GoldenChaos" target="_blank"><i class="fab fa-github"></i></a>
-			    <a class="social" href="https://www.linkedin.com/in/goldenchaos" target="_blank"><i class="fab fa-linkedin"></i></a>
-			    <a class="social" href="mailto:jason@goldenchaos.net"><i class="fa fa-envelope-square"></i></a>
-		    </div>
-		</nav>
+    <div class="page-top white">
+        <nav style="z-index: 1;">
+            <a id="logo" href="index.html"></a>
+            <div class="menu">
+                <!-- <span><i class="fas fa-lemon"></i>Now with less than 10% fruit juice</span><br /> -->
+                <a class="selected" href="index.html">Work</a>
+                <a href="https://goldenchao.tumblr.com" target="_blank">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <br />
+                <a class="social" href="https://twitter.com/goldenchaos" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="social" href="https://github.com/GoldenChaos" target="_blank"><i class="fab fa-github"></i></a>
+                <a class="social" href="https://www.linkedin.com/in/goldenchaos" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a class="social" href="mailto:jason@goldenchaos.net"><i class="fa fa-envelope-square"></i></a>
+            </div>
+        </nav>
     </div>
     <div class="content page">
-    	<div class="full-width">
-    		<img src="images/goldenchaos-btt-full.jpg" alt="goldenchaos-btt-full" />
-    	</div>
-	    <div class="page-padding">
-		    <h1 class="title">Take back the Touch Bar.</h1>
-
-		    <p>I <i>love</i> the Touch Bar. That's why I was so upset that Apple just sat on its useless its user interface. So, inspired by Vas3k's popular <a href="http://vas3k.com/blog/touchbar/" target="_blank">blog post</a> on the subject, and determined to make good on the promise that Apple broke, I've spent a (ridiculous) amount of time reworking the foundations of the Touch Bar into <strong>GoldenChaos-BTT</strong>: a true general purpose Touch Bar UI with support for tons of apps that's intuitive enough to make you love your Touch Bar again - or, more likely, for the first time. You might even start to <i>miss</i> it on keyboards that don't have it.</p>
-
-		    <h2>Nice words about GoldenChaos-BTT:</h2>
-		    <div class="quote-grid">
-			     <blockquote>
-			    	"Singlehandedly vindicates the Touch Bar's existence."
-			    	<span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/77?u=goldenchaos" target="_blank">kdhyde</a> on the BetterTouchTool forums</span>
-			    </blockquote>
-			    <blockquote>
-			    	"Whenever someone calls the Touch Bar useless, I just show them this."
-			    	<span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/77?u=goldenchaos" target="_blank">KungFuJoe</a> on the BetterTouchTool forums</span>
-			    </blockquote>
-			    <blockquote>
-			    	"The way Apple should have implemented the Touch Bar in the first place."
-			    	<span><a href="https://www.producthunt.com/posts/goldenchaos-btt#comment-643067" target="_blank">@wowthatisrandom</a>, developer of Forecastbar and InstaCal</span>
-				</blockquote>
-				<blockquote>
-			    	"What I would have wanted the Touch Bar to be stock."
-			    	<span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/176?u=goldenchaos" target="_blank">truublue</a> on the BetterTouchTool forums</span>
-				</blockquote>
-			    <blockquote>
-			    	"SUPERB."
-			    	<span><a href="https://www.reddit.com/r/apple/comments/8o37o0/goldenchaosbtt_a_complete_touch_bar_replacement/e01d3c4/" target="_blank">u/townfox</a> on Reddit</span>
-			    </blockquote>
-			    <blockquote>
-			    	"Genius."
-			    	<span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/129?u=goldenchaos" target="_blank">Harrumph</a> on the BetterTouchTool forums</span>
-			    </blockquote>
-			    <blockquote>
-			    	"INCREDIBLE."
-			    	<span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/165?u=goldenchaos" target="_blank">peripatew</a> on the BetterTouchTool forums</span>
-			    </blockquote>
-			    <blockquote>
-			    	"A very big preset"
-			    	<span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/2?u=goldenchaos" target="_blank">Andreas Hegenberg</a>, developer of BetterTouchTool</span>
-			    </blockquote>
-			</div>
-
-			<div class="notice">
-				<h2>Latest stable version: <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043" target="_blank">GoldenChaos-BTT 2.536-4</a></h2>
-				<small><b>(Aug 1 2018 - <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/164?u=goldenchaos" target="_blank">Release Notes</a>)</b>
+        <div class="full-width">
+            <img src="images/goldenchaos-btt-full.jpg" alt="goldenchaos-btt-full" />
+        </div>
+        <div class="page-padding">
+            <h1 class="title">Take back the Touch Bar.</h1>
+            <p>I <i>love</i> the Touch Bar. That's why I was so upset that Apple just sat on its useless its user interface. So, inspired by Vas3k's popular <a href="http://vas3k.com/blog/touchbar/" target="_blank">blog post</a> on the subject, and determined to make good on the promise that Apple broke, I've spent a (ridiculous) amount of time reworking the foundations of the Touch Bar into <strong>GoldenChaos-BTT</strong>: a true general purpose Touch Bar UI with support for tons of apps that's intuitive enough to make you love your Touch Bar again - or, more likely, for the first time. You might even start to <i>miss</i> it on keyboards that don't have it.</p>
+            <h2>Nice words about GoldenChaos-BTT:</h2>
+            <div class="quote-grid">
+                <blockquote>
+                    "Singlehandedly vindicates the Touch Bar's existence."
+                    <span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/77?u=goldenchaos" target="_blank">kdhyde</a> on the BetterTouchTool forums</span>
+                </blockquote>
+                <blockquote>
+                    "Whenever someone calls the Touch Bar useless, I just show them this."
+                    <span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/77?u=goldenchaos" target="_blank">KungFuJoe</a> on the BetterTouchTool forums</span>
+                </blockquote>
+                <blockquote>
+                    "The way Apple should have implemented the Touch Bar in the first place."
+                    <span><a href="https://www.producthunt.com/posts/goldenchaos-btt#comment-643067" target="_blank">@wowthatisrandom</a>, developer of Forecastbar and InstaCal</span>
+                </blockquote>
+                <blockquote>
+                    "What I would have wanted the Touch Bar to be stock."
+                    <span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/176?u=goldenchaos" target="_blank">truublue</a> on the BetterTouchTool forums</span>
+                </blockquote>
+                <blockquote>
+                    "SUPERB."
+                    <span><a href="https://www.reddit.com/r/apple/comments/8o37o0/goldenchaosbtt_a_complete_touch_bar_replacement/e01d3c4/" target="_blank">u/townfox</a> on Reddit</span>
+                </blockquote>
+                <blockquote>
+                    "Genius."
+                    <span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/129?u=goldenchaos" target="_blank">Harrumph</a> on the BetterTouchTool forums</span>
+                </blockquote>
+                <blockquote>
+                    "INCREDIBLE."
+                    <span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/165?u=goldenchaos" target="_blank">peripatew</a> on the BetterTouchTool forums</span>
+                </blockquote>
+                <blockquote>
+                    "A very big preset"
+                    <span><a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/2?u=goldenchaos" target="_blank">Andreas Hegenberg</a>, developer of BetterTouchTool</span>
+                </blockquote>
+            </div>
+            <div class="notice">
+                <h2>Latest stable version: <a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043" target="_blank">GoldenChaos-BTT 2.536-4</a></h2>
+                <small><b>(Aug 1 2018 - <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/164?u=goldenchaos" target="_blank">Release Notes</a>)</b>
 				Zero-config installation, macOS Mojave compatibility, Dark Sky weather widget with automatic units, all-new reminders widget, and support for even more apps</small>
-
-				<br /><br />
-
-				<h2>Latest experimental version: <a href="https://share.folivora.ai/sharedPreset/bbcb00a7-7934-40bb-8eff-66ea380eafe6" target="_blank">GoldenChaos-BTT 2.543</a></h2>
-				<small><b>(Aug 7 2018 - <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/253?u=goldenchaos" target="_blank">Release Notes</a>)</b>
+                <br />
+                <br />
+                <h2>Latest experimental version: <a href="https://share.folivora.ai/sharedPreset/bbcb00a7-7934-40bb-8eff-66ea380eafe6" target="_blank">GoldenChaos-BTT 2.543</a></h2>
+                <small><b>(Aug 7 2018 - <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/253?u=goldenchaos" target="_blank">Release Notes</a>)</b>
 				New buttons for AirDrop, Dark Mode, and True Tone; Long press iTunes widget for expanded music controls; Hold command for app switcher; Hold control for expanded window snap controls; Contextual refresh button; New Tab button long press functionality</small>
-			</div>
-
-			<h1>How to Install</h1>
-			<ol>
-				<li>Make sure you're using an <strong><em>alpha</em></strong> version of BetterTouchTool that is equal to or greater than the version of GoldenChaos-BTT you're installing.</li>
-				<li>Install the <a href="#required-helpers">required helpers</a>.</li>
-				<li><b>Only if upgrading versions</b>: Currently, there is no way to upgrade without losing your customizations. Remove the old version of GoldenChaos-BTT by clicking "Manage Presets" inside of BetterTouchTool, selecting "goldenchaos-btt", and clicking "Delete".</li>
-				<li>Navigate to one of the two latest release links on this page and click "Direct import to BTT" to automatically launch BetterTouchTool and import the latest preset.</li>
-				<li>Make your Touch Bar perfect using the additional customization options documented below.</li>
-			</ol>
-			
-			<h1>Screenshot Tour</h1>
-			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true" alt="screenshot" />
-			<center><small>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</small></center>
-
-			<br />
-			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true" alt="screenshot" />
-			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true" alt="screenshot" />
-			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true" alt="screenshot" />
-			<center><small>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</small></center>
-			
-			<br />
-			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true" alt="screenshot" />
-			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true" alt="screenshot" />
-			<center><small>Emoji and app switcher widgets take over the scrollable container</small></center>
-			
-			<br />
-			<img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true" alt="screenshot" />
-			<center><small>Hold down alt/option for an expanded control strip</small></center>
-			
-			<h1>Currently Supported Apps</h1>
-			<ul>
-				<li>Finder</li>
-				<li>Safari</li>
-				<li>Chrome</li>
-				<li>Firefox</li>
-				<li>iTunes</li>
-				<li>Spotify</li>
-				<li>YouTube (in Safari/Chrome tabs)</li>
-				<li>Reminders</li>
-				<li>Things 3</li>
-				<li>Carrot Weather</li>
-				<li>Calendar</li>
-				<li>Fantastical 2</li>
-				<li>Apple Mail</li>
-				<li>Slack</li>
-				<li>Skype</li>
-				<li>Google Hangouts</li>
-				<li>VLC</li>
-				<li>QuickTime</li>
-			</ul>
-			
-			<h1>Full List of Features</h1>
-			<ul>
-				<li>Designed to <em>completely</em> replace the stock Touch Bar interface</li>
-				<li>Fullscreen button doubles as esc key, always docked to the left</li>
-				<li>Two finger slide on the Touch Bar to change volume</li>
-				<li>Three finger slide on the Touch Bar to change brightness</li>
-				<li>Hold down Volume Down button to mute</li>
-				<li>Hold Option/Alt to expand the function strip</li>
-				<li>Emoji button toggles scrollable emoji widget</li>
-				<li>App Switcher button toggles scrollable app switcher widget</li>
-				<li>Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)</li>
-				<li>Weather widget shows condition emoji + temperature with correct units for your location, toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)</li>
-				<li>Persistent Show Finder button for easy Finder access</li>
-				<li>Persistent Maximize Left, Center Window, and Maximize Right controls for window management</li>
-				<li>Refresh button appears next to Forward and Back buttons if Safari, Chrome, or Firefox is open</li>
-				<li>Media controls and iTunes/Spotify widgets appear only when iTunes or Spotify is running</li>
-				<li>Now Playing widgets show currently playing track info (with album art!) or "Paused" if iTunes/Spotify are paused</li>
-				<li>Due Today widget uses <a href="http://hasseg.org/icalBuddy/" target="_blank">icalBuddy</a> to get reminders that are due today, overdue, or without a due date</li>
-				<li>Reminders without a due date persist and automatically show the most recently added reminder</li>
-				<li>Next Thing widget grabs your next reminder from Things 3</li>
-				<li>Next Event widget uses <a href="http://hasseg.org/icalBuddy/" target="_blank">icalBuddy</a> to get just today's upcoming calendar events</li>
-				<li>Tap on any widget to open its parent app</li>
-			</ul>
-			
-			<h1 id="required-helpers">Required Helpers</h1>
-			<ul>
-				<li><a href="http://milgra.com/high-sierra-media-key-enabler.html" target="_blank">High Sierra Media Key Enabler</a> with "Pause if no player is running" enabled for media controls</li>
-				<li><a href="http://hasseg.org/icalBuddy/" target="_blank">icalBuddy</a> for the reminders and calendar widget</li>
-				<li>
-					Python requests module for the weather widget
-					<ul>
-						<li>Install with <pre>pip install requests</pre></li>
-					</ul>
-				</li>
-				<li>Locateme for the weather widget
-					<ul>
-						<li>Install with <pre>brew install locateme</pre></li>
-					</ul>
-				</li>
-			</ul>
-
-			<h1>Optional but appreciated: Get a free Dark Sky API key</h1>
-			<p>By default, this preset comes bundled with a weather widget that uses my own personal free Dark Sky API key so that you can get up and running with GoldenChaos-BTT with no special configuration at all. However, since I only get 1000 API requests per day, please consider <a href="https://darksky.net/dev" target="_blank">getting your own free API key from the Dark Sky developer website</a> if you want to use GoldenChaos-BTT as your main Touch Bar interface. Once you've got your key, simply replace my API key with yours inside the weather widget configuration.</p>
-
-			<h1>Reminders and calendar widget customization</h1>
-			The reminders and calendar widget display only items happening today by default. If you prefer to see items for additional days, for example for up to a week, by changing the <pre>eventsToday</pre> attribute to <pre>eventsToday+7</pre> in the widget's settings. Check out <a href="http://hasseg.org/icalBuddy/examples.html" target="_blank">iCalBuddy's examples page</a> for all the cool ways you can customize your reminders and calendar widget's output.
-			
-			<h1>Supplemental reading: Now Playing output hierarchy</h1>
-			<p>Appropriate media controls, as well as associated track information, are displayed conditionally based on what media players, if any, are currently running. By default, GoldenChaos-BTT will try to match the media controls with the associated media it's controlling. However, lesser-used players like YouTube will override the track information display and take priority. This means that if Safari is open to a YouTube video and iTunes is playing music, the media controls will control iTunes but the track information will be the title of the YouTube video. The full hierarchy is as follows, with higher numbers taking precedence:</p>
-			<ol>
-				<li>iTunes</li>
-				<li>Spotify</li>
-				<li>VLC (WiP)</li>
-				<li>QuickTime</li>
-				<li>Safari (YouTube)</li>
-				<li>Google Chrome (YouTube)</li>
-			</ol>
-
-			<h1>Previous versions</h1>
-			<p>Only install the latest version unless you have a specific troubleshooting reason. If you do need to install an older version for whatever reason, make sure the version of BetterTouchTool you're running is greater than or equal to the GoldenChaos-BTT version you're installing.</p>
-
-			<p><strong>Notes</strong>:</p>
-			<ul>
-				<li><b>v2.531 and earlier</b>: The calendar widget must first be edited to include the names of calendars you wish to display.</li>
-				<li><b>v2.516 and earlier</b>: Requires <a href="http://www.mousedown.net/mouseware/LocationHelper.html" target="_blank">Location Helper</a> and <a href="http://www.mousedown.net/mouseware/JSONHelper.html" target="_blank">JSON Helper</a> for the weather widget to work; not compatible with macOS Mojave.</li>
-			</ul>
-
-			<p><strong>Version history</strong>:</p>
-			<ul>
-				<li>
-					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/bbcb00a7-7934-40bb-8eff-66ea380eafe6" target="_blank">2.543</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/253?u=goldenchaos" target="_blank">Aug 7 2018</a>)
-				</li>
-				<li>
-					<b>[Verified]</b> [Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/3bc3e084-64dd-4aa0-9187-dc7c7774db3e" target="_blank">2.536-5</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/179?u=goldenchaos" target="_blank">Aug 2 2018</a>)
-				</li>
-				<li>
-					<b>[Verified]</b> [Stable]
-					<a href="https://share.folivora.ai/sharedPreset/96df1486-847e-471e-a588-fb924221ad8f" target="_blank">2.536-3</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/164?u=goldenchaos" target="_blank">Jul 30 2018</a>)</li>
-				<li>
-					<b>[Verified]</b> [Stable]
-					<a href="https://share.folivora.ai/sharedPreset/12064a3a-7bd2-4d44-a997-7451f9bf6a93" target="_blank">2.536-2</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/155?u=goldenchaos" target=_blank">Jul 27 2018</a>)</li>
+            </div>
+            <h1>How to Install</h1>
+            <ol>
+                <li>Make sure you're using an <strong><em>alpha</em></strong> version of BetterTouchTool that is equal to or greater than the version of GoldenChaos-BTT you're installing.</li>
+                <li>Install the <a href="#required-helpers">required helpers</a>.</li>
+                <li><b>Only if upgrading versions</b>: Currently, there is no way to upgrade without losing your customizations. Remove the old version of GoldenChaos-BTT by clicking "Manage Presets" inside of BetterTouchTool, selecting "goldenchaos-btt", and clicking "Delete".</li>
+                <li>Navigate to one of the two latest release links on this page and click "Direct import to BTT" to automatically launch BetterTouchTool and import the latest preset.</li>
+                <li>Make your Touch Bar perfect using the additional customization options documented below.</li>
+            </ol>
+            <h1>Screenshot Tour</h1>
+            <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true" alt="screenshot" />
+            <center><small>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</small></center>
+            <br />
+            <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true" alt="screenshot" />
+            <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true" alt="screenshot" />
+            <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true" alt="screenshot" />
+            <center><small>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</small></center>
+            <br />
+            <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true" alt="screenshot" />
+            <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true" alt="screenshot" />
+            <center><small>Emoji and app switcher widgets take over the scrollable container</small></center>
+            <br />
+            <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true" alt="screenshot" />
+            <center><small>Hold down alt/option for an expanded control strip</small></center>
+            <h1>Currently Supported Apps</h1>
+            <ul>
+                <li>Finder</li>
+                <li>Safari</li>
+                <li>Chrome</li>
+                <li>Firefox</li>
+                <li>iTunes</li>
+                <li>Spotify</li>
+                <li>YouTube (in Safari/Chrome tabs)</li>
+                <li>Reminders</li>
+                <li>Things 3</li>
+                <li>Carrot Weather</li>
+                <li>Calendar</li>
+                <li>Fantastical 2</li>
+                <li>Apple Mail</li>
+                <li>Slack</li>
+                <li>Skype</li>
+                <li>Google Hangouts</li>
+                <li>VLC</li>
+                <li>QuickTime</li>
+            </ul>
+            <h1>Full List of Features</h1>
+            <ul>
+                <li>Designed to <em>completely</em> replace the stock Touch Bar interface</li>
+                <li>Fullscreen button doubles as esc key, always docked to the left</li>
+                <li>Two finger slide on the Touch Bar to change volume</li>
+                <li>Three finger slide on the Touch Bar to change brightness</li>
+                <li>Hold down Volume Down button to mute</li>
+                <li>Hold Option/Alt to expand the function strip</li>
+                <li>Emoji button toggles scrollable emoji widget</li>
+                <li>App Switcher button toggles scrollable app switcher widget</li>
+                <li>Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)</li>
+                <li>Weather widget shows condition emoji + temperature with correct units for your location, toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)</li>
+                <li>Persistent Show Finder button for easy Finder access</li>
+                <li>Persistent Maximize Left, Center Window, and Maximize Right controls for window management</li>
+                <li>Refresh button appears next to Forward and Back buttons if Safari, Chrome, or Firefox is open</li>
+                <li>Media controls and iTunes/Spotify widgets appear only when iTunes or Spotify is running</li>
+                <li>Now Playing widgets show currently playing track info (with album art!) or "Paused" if iTunes/Spotify are paused</li>
+                <li>Due Today widget uses <a href="http://hasseg.org/icalBuddy/" target="_blank">icalBuddy</a> to get reminders that are due today, overdue, or without a due date</li>
+                <li>Reminders without a due date persist and automatically show the most recently added reminder</li>
+                <li>Next Thing widget grabs your next reminder from Things 3</li>
+                <li>Next Event widget uses <a href="http://hasseg.org/icalBuddy/" target="_blank">icalBuddy</a> to get just today's upcoming calendar events</li>
+                <li>Tap on any widget to open its parent app</li>
+            </ul>
+            <h1 id="required-helpers">Required Helpers</h1>
+            <ul>
+                <li><a href="http://milgra.com/high-sierra-media-key-enabler.html" target="_blank">High Sierra Media Key Enabler</a> with "Pause if no player is running" enabled for media controls</li>
+                <li><a href="http://hasseg.org/icalBuddy/" target="_blank">icalBuddy</a> for the reminders and calendar widget</li>
+                <li>
+                    Python requests module for the weather widget
+                    <ul>
+                        <li>Install with <pre>pip install requests</pre></li>
+                    </ul>
+                </li>
+                <li>Locateme for the weather widget
+                    <ul>
+                        <li>Install with <pre>brew install locateme</pre></li>
+                    </ul>
+                </li>
+            </ul>
+            <h1>Optional but appreciated: Get a free Dark Sky API key</h1>
+            <p>By default, this preset comes bundled with a weather widget that uses my own personal free Dark Sky API key so that you can get up and running with GoldenChaos-BTT with no special configuration at all. However, since I only get 1000 API requests per day, please consider <a href="https://darksky.net/dev" target="_blank">getting your own free API key from the Dark Sky developer website</a> if you want to use GoldenChaos-BTT as your main Touch Bar interface. Once you've got your key, simply replace my API key with yours inside the weather widget configuration.</p>
+            <h1>Reminders and calendar widget customization</h1> The reminders and calendar widget display only items happening today by default. If you prefer to see items for additional days, for example for up to a week, by changing the <pre>eventsToday</pre> attribute to <pre>eventsToday+7</pre> in the widget's settings. Check out <a href="http://hasseg.org/icalBuddy/examples.html" target="_blank">iCalBuddy's examples page</a> for all the cool ways you can customize your reminders and calendar widget's output.
+            <h1>Supplemental reading: Now Playing output hierarchy</h1>
+            <p>Appropriate media controls, as well as associated track information, are displayed conditionally based on what media players, if any, are currently running. By default, GoldenChaos-BTT will try to match the media controls with the associated media it's controlling. However, lesser-used players like YouTube will override the track information display and take priority. This means that if Safari is open to a YouTube video and iTunes is playing music, the media controls will control iTunes but the track information will be the title of the YouTube video. The full hierarchy is as follows, with higher numbers taking precedence:</p>
+            <ol>
+                <li>iTunes</li>
+                <li>Spotify</li>
+                <li>VLC (WiP)</li>
+                <li>QuickTime</li>
+                <li>Safari (YouTube)</li>
+                <li>Google Chrome (YouTube)</li>
+            </ol>
+            <h1>Previous versions</h1>
+            <p>Only install the latest version unless you have a specific troubleshooting reason. If you do need to install an older version for whatever reason, make sure the version of BetterTouchTool you're running is greater than or equal to the GoldenChaos-BTT version you're installing.</p>
+            <p><strong>Notes</strong>:</p>
+            <ul>
+                <li><b>v2.531 and earlier</b>: The calendar widget must first be edited to include the names of calendars you wish to display.</li>
+                <li><b>v2.516 and earlier</b>: Requires <a href="http://www.mousedown.net/mouseware/LocationHelper.html" target="_blank">Location Helper</a> and <a href="http://www.mousedown.net/mouseware/JSONHelper.html" target="_blank">JSON Helper</a> for the weather widget to work; not compatible with macOS Mojave.</li>
+            </ul>
+            <p><strong>Version history</strong>:</p>
+            <ul>
+                <li>
+                    [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/bbcb00a7-7934-40bb-8eff-66ea380eafe6" target="_blank">2.543</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/253?u=goldenchaos" target="_blank">Aug 7 2018</a>)
+                </li>
+                <li>
+                    <b>[Verified]</b> [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/3bc3e084-64dd-4aa0-9187-dc7c7774db3e" target="_blank">2.536-5</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/179?u=goldenchaos" target="_blank">Aug 2 2018</a>)
+                </li>
+                <li>
+                    <b>[Verified]</b> [Stable]
+                    <a href="https://share.folivora.ai/sharedPreset/96df1486-847e-471e-a588-fb924221ad8f" target="_blank">2.536-3</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/164?u=goldenchaos" target="_blank">Jul 30 2018</a>)</li>
+                <li>
+                    <b>[Verified]</b> [Stable]
+                    <a href="https://share.folivora.ai/sharedPreset/12064a3a-7bd2-4d44-a997-7451f9bf6a93" target="_blank">2.536-2</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/155?u=goldenchaos" target=_blank ">Jul 27 2018</a>)</li>
 				<li>
 					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/6fe03dd3-5ec6-47be-8919-3d4af731d804" target="_blank">2.536</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/151?u=goldenchaos" target=_blank">Jul 27 2018</a>)</li>
+					<a href="https://share.folivora.ai/sharedPreset/6fe03dd3-5ec6-47be-8919-3d4af731d804 " target="_blank ">2.536</a>
+					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/151?u=goldenchaos " target=_blank">Jul 27 2018</a>)</li>
+                <li>
+                    [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/10f16d6d-aa23-4102-8867-19eda845a1d1" target="_blank">2.532</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/120?u=goldenchaos" target=_blank ">Jul 24 2018</a>)</li>
 				<li>
 					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/10f16d6d-aa23-4102-8867-19eda845a1d1" target="_blank">2.532</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/120?u=goldenchaos" target=_blank">Jul 24 2018</a>)</li>
+					<a href="https://share.folivora.ai/sharedPreset/7d804a90-e42c-437b-9a9c-e12a5d968dcf " target="_blank ">2.531-3</a>
+					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/110?u=goldenchaos " target=_blank">Jul 24 2018</a>)</li>
+                <li>
+                    [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/754bafa8-8503-4a6c-98af-bd817cd9d160" target="_blank">2.531-2</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/92?u=goldenchaos" target=_blank ">Jul 24 2018</a>)</li>
 				<li>
 					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/7d804a90-e42c-437b-9a9c-e12a5d968dcf" target="_blank">2.531-3</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/110?u=goldenchaos" target=_blank">Jul 24 2018</a>)</li>
+					<a href="https://share.folivora.ai/sharedPreset/a6a7a966-9e0c-49b2-add8-1563771a4a2a " target="_blank ">2.531</a>
+					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/88?u=goldenchaos " target=_blank">Jul 24 2018</a>)</li>
+                <li>
+                    [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/7f4c3c26-7d1d-45fe-8d6f-05f9e0d6dc69" target="_blank">2.530-2</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/64?u=goldenchaos" target=_blank ">Jul 12 2018</a>)</li>
 				<li>
 					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/754bafa8-8503-4a6c-98af-bd817cd9d160" target="_blank">2.531-2</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/92?u=goldenchaos" target=_blank">Jul 24 2018</a>)</li>
+					<a href="https://share.folivora.ai/sharedPreset/5c011f73-1fc5-4b8d-98e6-bbbfd4274d21 " target="_blank ">2.530</a>
+					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/61?u=goldenchaos " target=_blank">Jul 10 2018</a>)</li>
+                <li>
+                    [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/e7946192-b164-43d9-b158-ec4f690d8d8d" target="_blank">2.526</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/40?u=goldenchaos" target=_blank ">Jun 27 2018</a>)</li>
 				<li>
 					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/a6a7a966-9e0c-49b2-add8-1563771a4a2a" target="_blank">2.531</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/88?u=goldenchaos" target=_blank">Jul 24 2018</a>)</li>
+					<a href="https://share.folivora.ai/sharedPreset/7edf3f74-07d1-4019-ab2a-615119692b65 " target="_blank ">2.525-2</a>
+					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/40?u=goldenchaos " target=_blank">Jun 23 2018</a>)</li>
+                <li>
+                    [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/60a1cf01-c8f8-40f8-b0b2-485015f3eb29" target="_blank">2.525</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/39?u=goldenchaos" target=_blank ">Jun 21 2018</a>)</li>
 				<li>
 					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/7f4c3c26-7d1d-45fe-8d6f-05f9e0d6dc69" target="_blank">2.530-2</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/64?u=goldenchaos" target=_blank">Jul 12 2018</a>)</li>
-				<li>
-					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/5c011f73-1fc5-4b8d-98e6-bbbfd4274d21" target="_blank">2.530</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/61?u=goldenchaos" target=_blank">Jul 10 2018</a>)</li>
-				<li>
-					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/e7946192-b164-43d9-b158-ec4f690d8d8d" target="_blank">2.526</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/40?u=goldenchaos" target=_blank">Jun 27 2018</a>)</li>
-				<li>
-					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/7edf3f74-07d1-4019-ab2a-615119692b65" target="_blank">2.525-2</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/40?u=goldenchaos" target=_blank">Jun 23 2018</a>)</li>
-				<li>
-					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/60a1cf01-c8f8-40f8-b0b2-485015f3eb29" target="_blank">2.525</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/39?u=goldenchaos" target=_blank">Jun 21 2018</a>)</li>
-				<li>
-					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/f6db5d05-236a-4814-b83d-2de174294e6b" target="_blank">2.518-3</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/31?u=goldenchaos" target=_blank">Jun 15 2018</a>)</li>
-				<li>
-					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/e38094fc-e6a2-4b26-aaed-2fc3c7c68cea" target="_blank">2.518-2</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/26?u=goldenchaos" target=_blank">Jun 14 2018</a>)</li>
+					<a href="https://share.folivora.ai/sharedPreset/f6db5d05-236a-4814-b83d-2de174294e6b " target="_blank ">2.518-3</a>
+					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/31?u=goldenchaos " target=_blank">Jun 15 2018</a>)</li>
+                <li>
+                    [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/e38094fc-e6a2-4b26-aaed-2fc3c7c68cea" target="_blank">2.518-2</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/26?u=goldenchaos" target=_blank ">Jun 14 2018</a>)</li>
 				<li>
 					[Experimental]
 					2.518
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/24?u=goldenchaos" target=_blank">Jun 13 2018</a>, download unavailable)</li>
+					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/24?u=goldenchaos " target=_blank">Jun 13 2018</a>, download unavailable)</li>
+                <li>
+                    [Experimental]
+                    <a href="https://share.folivora.ai/sharedPreset/9e625ac1-cc19-446d-8545-734a04c3875d" target="_blank">2.516</a> (
+                    <a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/14?u=goldenchaos" target=_blank ">Jun 6 2018</a>)</li>
 				<li>
 					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/9e625ac1-cc19-446d-8545-734a04c3875d" target="_blank">2.516</a>
-					(<a href="https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/14?u=goldenchaos" target=_blank">Jun 6 2018</a>)</li>
-				<li>
-					[Experimental]
-					<a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043" target="_blank">2.513</a>
+					<a href="https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043 " target="_blank ">2.513</a>
 					(Jun 1 2018, initial public release)
 				</li>
 			</ul>
 
-			<h3>Uses modified versions of a bunch of widgets from <a href="https://github.com/vas3k/btt-touchbar-presets" target="_blank">https://github.com/vas3k/btt-touchbar-presets</a> and <a href="https://community.folivora.ai/c/setup-preset-sharing" target="_blank">https://community.folivora.ai/c/setup-preset-sharing</a>.</h3>
+			<h3>Uses modified versions of a bunch of widgets from <a href="https://github.com/vas3k/btt-touchbar-presets " target="_blank ">https://github.com/vas3k/btt-touchbar-presets</a> and <a href="https://community.folivora.ai/c/setup-preset-sharing " target="_blank ">https://community.folivora.ai/c/setup-preset-sharing</a>.</h3>
 		</div>
     </div>
     <footer>
