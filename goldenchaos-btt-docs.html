@@ -14,7 +14,7 @@
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Making the Master Sword - GoldenChaos</title>
+    <title>GoldenChaos-BTT - Replacement Touch Bar UI for BetterTouchTool - GoldenChaos</title>
     <meta name="description" content="Product Design by Jason Rappaport, creator of GoldenChaos-BTT, Zelda Universe, Zelda Maps, and Zelda Wiki.">
     <meta name="author" content="Jason Rappaport">
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -26,8 +26,8 @@
 </head>
 
 <body>
-    <div class="page-top master-sword">
-        <nav>
+    <div class="page-top white">
+        <nav style="z-index: 1;">
             <a id="logo" href="index.html"></a>
             <div class="menu">
                 <!-- <span><i class="fas fa-lemon"></i>Now with less than 10% fruit juice</span><br /> -->
@@ -42,18 +42,41 @@
                 <a class="social" href="mailto:jason@goldenchaos.net"><i class="fa fa-envelope-square"></i></a>
             </div>
         </nav>
-        <div class="splash-bg master-sword">
-            <div class="chevron"></div>
-        </div>
     </div>
     <div class="content page">
-        <div class="page-padding">
-            <h1 class="soon">More coming<br />s o o n &trade;</h1>
+        <div class="full-width">
+            <img src="images/goldenchaos-btt-full.jpg" alt="goldenchaos-btt-full" />
         </div>
+        <div class="page-padding">
+	        <div class="gc-btt-nav">
+		        <a href="https://share.folivora.ai/sharedPreset/c6391e3f-e539-45f5-9ce7-3d311a0dd625">Install from Folivora.ai</a>
+		        <a href="./goldenchaos-btt.html">Home</a>
+		        <a class="selected" href="./goldenchaos-btt-docs.html">Documentation</a>
+		        <a href="./goldenchaos-btt-sdk.html">SDK</a>
+	        </div>
+   		</div>
     </div>
     <footer>
-        <span>&copy; 2005-<script>document.write(new Date().getFullYear())</script> Jason Rappaport</span>
-    </footer>
-</body>
-
+	    <span>&copy; 2005-<script>document.write(new Date().getFullYear())</script> Jason Rappaport</span>
+	</footer>
+  </body>
 </html>
+
+<style>
+	.gc-btt-nav {
+		display: flex;
+		width: 100%;
+	}
+	.gc-btt-nav a {
+		width: 100%;
+		padding: 8px;
+		border-radius: 100px;
+		flex-grow: 1;
+		text-align: center;
+		background: #437da3;
+		color: #fff;
+		margin-right: 24px;
+	}
+	.gc-btt-nav a:last-of-type {
+		margin-right: 0;
+	}
