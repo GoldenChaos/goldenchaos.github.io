@@ -52,9 +52,15 @@
 body {
 	color: #fff;
 	font-family: 'BrandonText', sans-serif;
-	background: #437ea3;
+	background: #fff;
 	margin: 0;
 	padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+  		background: #1a1c1d;
+	}
 }
 
 a {
@@ -233,6 +239,7 @@ nav {
 	max-height: none !important;
 	color: #437ea3;
 }
+
 
 .page-top.white a {
 	color: #437ea3;
@@ -431,20 +438,6 @@ nav {
 	text-shadow: rgba(255,255,255,.8) 0 0 32px;
 }
 
-.hero.squareknot {
-	background-position: center top 46.5%, center center;
-	background-image: 
-		url(images/squareknot-logo.png),
-		linear-gradient(rgba(142,247,176,.7), rgba(53,174,93,.8));
-}
-
-.hero.zelda-universe {
-	background-position: center top 34%, center center;
-	background-image: 
-		url(images/zu-logo.png),
-		linear-gradient(rgba(86, 163, 190, .5), rgba(0, 120, 158, .6), rgba(0, 20, 71, .8));
-}
-
 .content {
 	width: 100%;
 	background: #fff;
@@ -526,21 +519,22 @@ nav {
 	background-color: rgba(0,0,0,.2);
 	background-size: cover;
 	background-position: center center;
-	width: 25vw;
-	height: 22vw;
+	width: 33vw;
+	height: 30vw;
 	position: relative;
 	margin: 32px 24px 0 0;
 	flex-grow: 1;
 	border-radius: 16px;
-	box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.4) 0 16px 48px;
+	// box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.4) 0 16px 48px;
 	transition: .1s;
+	overflow: hidden;
 }
 
-.content .item:nth-of-type(3n) {
+.content .item:nth-of-type(2n) {
 	margin-right: 32px;
 }
 
-.content .item:nth-of-type(3n+1) {
+.content .item:nth-of-type(2n+1) {
 	margin-left: 32px;
 }
 
@@ -550,7 +544,7 @@ nav {
 
 .content .item:hover {
 	transition: .1s;
-	box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.6) 0 16px 48px;
+	box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.2) 0 16px 48px;
 	transform: scale(1.01);
 }
 
@@ -566,17 +560,55 @@ nav {
 }
 
 .item.goldenchaos-btt {
+	background-size: 106%;
 	background-image: url(images/goldenchaos-btt-preview.png);
+	background-position: center bottom;
 }
 
-.item.goldenchaos-btt span {
-	top: 31.5%;
-	text-shadow: rgba(0,0,0,.5) 0 0 24px;
+.item.faceports {
+	background-color: #e4e4e4;
+	background-image: url(images/faceports-preview.png);
+	background-repeat: no-repeat;
+	background-size: 112%;
+	background-position: top center;
 }
 
-.item.goldenchaos-btt span div {
-	font-size: 2vw;
-	font-weight: bold;
+.item.collx {
+	background-image: url(images/collx-preview.png);
+	background-repeat: no-repeat;
+	box-shadow: inset rgba(0,0,0,.02) 0 0 0 1px;
+}
+
+.item.crossbeam {
+	background-image: url(images/crossbeam-preview.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	box-shadow: inset rgba(0,0,0,.1) 0 0 0 1px;
+}
+
+.item.squareknot {
+	background: #fff;
+	background-size: 80%, 130%, 100%, 100%;
+	background-repeat: no-repeat;
+	background-position: center top 45%, center bottom;
+	background-image:
+		url(images/squareknot-logo.png),
+		url(images/squareknot-illustration-preview.png),
+		radial-gradient(rgba(53,174,93,.6), rgba(53,174,93,0) 80%),
+		linear-gradient(rgba(142,247,176,1), rgba(53,174,93,1));
+}
+
+.item.squareknot span {
+	object-shadow: rgba(53,174,93,1) 0 0 1px;
+}
+
+.item.zelda-universe {
+	background-size: 80%, 400%;
+	background-repeat: no-repeat;
+	background-position: center top 45%, center 30%;
+	background-image:
+		url(images/zu-logo.png),
+		url(images/zu-bg-full.jpg);
 }
 
 .item.zelda-maps {
@@ -638,7 +670,7 @@ nav {
 		url(images/goodsemester-logo.png),
 		url(images/goodsemester-rays.png),
 		url(images/goodsemester-bg.jpg);
-	background-size: 80%, 130%, contain;
+	background-size: 80%, 140%, contain;
 	background-position: center top 48%, center center;
 	background-repeat: no-repeat, no-repeat, repeat;
 }
@@ -882,14 +914,23 @@ nav {
 
 .about .wrap {
 	display: flex;
+	border-radius: 24px;
+	background: linear-gradient(#d507fe,#36bcfd);
+	color: #fff !important;
+}
+
+.about .wrap h1 {
+	color: #fff;
 }
 
 .about .wrap img {
 	float: left;
 	border-radius: 1000px;
-	width: 256px !important;
-	height: 256px;
-	margin-right: 32px;
+	width: 200px;
+	height: 200px;
+	margin: 32px;
+	box-shadow: rgba(255,255,255,.2) 0 3px 0,
+				rgba(0,0,0,.2) 0 -3px 0;
 }
 
 .soon {
@@ -902,6 +943,7 @@ nav {
 }
 
 footer {
+	color: #000;
 	font-size: 13px;
 	line-height: 44px;
 	height: 44px;
@@ -911,6 +953,61 @@ footer span {
 	display: block;
 	width: 100%;
 	text-align: center;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+	nav .menu a {
+		color: #5bb1e2 !important;
+	}
+	
+	.menu a:hover {
+		border-color: rgba(92,177,227,.3) !important;
+	}
+	
+	#logo {
+		background-image: url('images/logo.png') !important;
+	}
+	
+	.page-top.white {
+		  background: rgba(32,32,32,1);
+	}
+	
+	.page-top.white nav {
+		background: rgba(32,32,32,.8);
+	}
+	
+	.content {
+		color: #fff;
+		background: rgba(32,32,32,1);
+	}
+	
+	.item.crossbeam {
+		background-color: rgba(50,50,50,1);
+		background-image: url(images/crossbeam-preview-dark.png);
+		box-shadow: inset rgba(255,255,255,.05) 0 0 0 1px;
+	}
+	
+	.item.faceports {
+		background-color: rgba(50,50,50,1);
+		background-image: url(images/faceports-preview-dark.png);
+		box-shadow: inset rgba(255,255,255,.05) 0 0 0 1px;
+	}
+	
+	.item.squareknot {
+		background-color: #323232;
+	}
+	
+	.item.collx {
+		background-color: rgba(50,50,50,1);
+		background-image: url(images/collx-preview-dark.png);
+		box-shadow: inset rgba(255,255,255,.05) 0 0 0 1px;
+	}
+	
+	footer {
+		background: rgba(32,32,32,1);
+		color: #fff;
+	}
 }
 
 /* Small Desktop */
@@ -928,11 +1025,11 @@ footer span {
 		margin: 16px 16px 0 0;
 	}
 
-	.content .item:nth-of-type(3n) {
+	.content .item:nth-of-type(2n) {
 		margin-right: 16px;
 	}
 
-	.content .item:nth-of-type(3n+1) {
+	.content .item:nth-of-type(2n+1) {
 		margin-left: 16px;
 	}
 
@@ -1107,7 +1204,7 @@ footer span {
 		margin: 16px 0 0 16px !important;
 	}
 
-	.item:nth-of-type(3n) {
+	.item:nth-of-type(2n) {
 		margin-right: 16px !important;
 	}
 
