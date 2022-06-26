@@ -228,6 +228,10 @@ nav {
 	opacity: 0.6;
 }
 
+.page-top.crossbeam nav {
+	background: #fff;
+}
+
 .page-top.white {
 	background: #fff;
 	height: auto !important;
@@ -235,7 +239,6 @@ nav {
 	max-height: none !important;
 	color: #437ea3;
 }
-
 
 .page-top.white a {
 	color: #437ea3;
@@ -299,7 +302,9 @@ nav {
 .splash-bg.zelda-maps,
 .splash-bg.zelda-wiki,
 .splash-bg.master-sword,
-.splash-bg.goodsemester {
+.splash-bg.goodsemester,,
+.splash-bg.crossbeam,
+.splash-bg.collx {
 	background-image:
 		linear-gradient(rgba(68, 126, 163, .8), rgba(68, 126, 163, 0) 30%),
 		url(images/zu-bg-full.jpg);
@@ -375,6 +380,23 @@ nav {
 	background-image:
 		url(images/goodsemester-logo.png);
 	background-size: 80%;
+}
+
+.splash-bg.crossbeam {
+	background-image: url(images/crossbeam-city.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: #fff;
+	margin-top: 172px;
+}
+
+.splash-bg.crossbeam .site-logo {
+	background-image: url(images/crossbeam-logo.png);
+	background-size: 25%;
+	background-position: top left;
+	background-color: #ff0000;
+	z-index: 100;
 }
 
 .splash-bg.venti {
