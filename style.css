@@ -912,13 +912,14 @@ nav {
 }
 
 .about {
-	margin: 16px 0 32px 0;
+	margin: 16px auto 32px auto;
 	background: linear-gradient(#d507fe,#36bcfd);
 	display: flex;
 	align-items: center;
 	border-radius: 24px;
 	padding: 32px;
 	color: #fff !important;
+	max-width: 1376px;
 }
 
 .about .desc {
@@ -1680,17 +1681,6 @@ footer span {
 		width: 100% !important;
 		margin-right: 0 !important;
 		max-height: none;
-	}
-
-	.about .wrap {
-		flex-direction: column;
-	}
-
-	.about .wrap img {
-		float: none;
-		width: calc(100% - 32px) !important;
-		height: auto;
-		margin: 0 auto 16px auto;
 	}
 
 	.soon {
