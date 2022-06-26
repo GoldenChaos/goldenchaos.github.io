@@ -1117,10 +1117,6 @@ footer span {
 		height: calc(100vh - 31px) !important;
 	}
 
-	.page-top.index {
-		min-height: 650px !important;
-	}
-
 	.site-logo {
 		background-size: 70% !important;
 	}
