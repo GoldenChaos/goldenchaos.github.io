@@ -941,7 +941,7 @@ nav {
 	margin-right: 32px;
 	margin-bottom: -3px;
 	min-width: 190px;
-	max-width: 250px;
+	max-width: 210px;
 	flex-grow: 1;
 }
 
@@ -1093,9 +1093,8 @@ footer span {
 		height: 44.5vw !important;
 	}
 	
-	.about .page-padding {
-		padding: 0;
-		margin: -16px;
+	.about .me {
+		max-width: 150px;
 	}
 }
 
