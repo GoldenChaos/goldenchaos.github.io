@@ -943,8 +943,8 @@ nav {
 .about .me {
 	margin-right: 32px;
 	margin-bottom: -3px;
-	min-width: 200px;
-	max-width: 200px;
+	min-width: 190px;
+	max-width: 250px;
 	flex-grow: 1;
 }
 
