@@ -1333,7 +1333,7 @@ footer span {
 	}
 
 	.page-top.index {
-		min-height: 700px !important;
+		min-height: 0 !important;
 	}
 
 	.meta {
