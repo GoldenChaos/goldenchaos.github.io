@@ -1676,6 +1676,10 @@ footer span {
 		margin-top: 4px;
 	}
 	
+	.about .desc p {
+		margin-right: 0;
+	}
+	
 	.about .me {
 		margin: 0 0 18px 0;
 	}
