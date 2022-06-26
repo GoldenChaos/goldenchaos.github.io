@@ -224,10 +224,6 @@ nav {
 	opacity: 0.4;
 }
 
-.page-top.index .chevron {
-	opacity: 0.6;
-}
-
 .page-top.zelda-maps .chevron {
 	opacity: 0.6;
 }
@@ -1668,6 +1664,24 @@ footer span {
 
 	.soon {
 		font-size: 24px;
+	}
+	
+	.about {
+		flex-direction: column;
+	}
+	
+	.about .desc h1 div {
+		font-size: 18px;
+		line-height: 24px;
+		margin-top: 4px;
+	}
+	
+	.about .me {
+		margin: 0 0 18px 0;
+	}
+	
+	.about .me img {
+		max-width: none;
 	}
 }
 
