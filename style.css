@@ -911,25 +911,38 @@ nav {
 	margin-right: -30px !important;
 }
 
+.about {
+	margin: 32px;
+}
+
 .about .wrap {
 	display: flex;
+	align-items: center;
 	border-radius: 24px;
+	padding: 32px;
 	background: linear-gradient(#d507fe,#36bcfd);
 	color: #fff !important;
 }
 
 .about .wrap h1 {
 	color: #fff;
+	margin-top: 0;
 }
 
 .about .wrap img {
-	float: left;
+	width: auto;
+	height: auto;
 	border-radius: 1000px;
-	width: 200px;
-	height: 200px;
-	margin: 32px;
 	box-shadow: rgba(255,255,255,.2) 0 3px 0,
 				rgba(0,0,0,.2) 0 -3px 0;
+}
+
+.about .wrap .me {
+	margin-right: 32px;
+	max-width: 300px;
+}
+
+.about .wrap .desc {
 }
 
 .soon {
@@ -1070,6 +1083,11 @@ footer span {
 
 	.wiki-duo img {
 		height: 44.5vw !important;
+	}
+	
+	.about .page-padding {
+		padding: 0;
+		margin: 0 -16px;
 	}
 }
 
