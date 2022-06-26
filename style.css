@@ -957,16 +957,16 @@ footer span {
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
-	nav .menu a {
-		color: #5bb1e2 !important;
+	a {
+		color: #5bb1e2;
 	}
 	
 	.menu a:hover {
-		border-color: rgba(92,177,227,.3) !important;
+		border-color: rgba(92,177,227,.3);
 	}
 	
 	#logo {
-		background-image: url('images/logo.png') !important;
+		background-image: url('images/logo-lightblue.png');
 	}
 	
 	.page-top.white {
