@@ -948,7 +948,7 @@ nav {
 .about .me img {
 	width: 100%;
 	height: auto;
-	border-radius: 1000px;
+	border-radius: 1000px !important;
 	box-shadow: rgba(255,255,255,.25) 0 3px 0,
 				rgba(0,0,0,.2) 0 -3px 0;
 }
