@@ -725,9 +725,9 @@ nav {
 	padding: 16px;
 	border-radius: 12px;
 	margin-bottom: 40px;
-	display: table;
-	overflow: hidden;
+	display: flex;
 	box-sizing: border-box;
+	overflow: hidden;
 	position: relative;
 }
 
@@ -956,7 +956,7 @@ footer span {
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
-	a {
+	.page-top.white a, .page-padding a {
 		color: #5bb1e2;
 	}
 	
@@ -964,7 +964,7 @@ footer span {
 		border-color: rgba(92,177,227,.3);
 	}
 	
-	#logo {
+	.page-top.white #logo {
 		background-image: url('images/logo-lightblue.png');
 	}
 	
@@ -1007,6 +1007,10 @@ footer span {
 	footer {
 		background: rgba(32,32,32,1);
 		color: #fff;
+	}
+	
+	.quote-grid blockquote, .squareknot-slogan {
+		color: #ccc !important;
 	}
 }
 
