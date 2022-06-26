@@ -912,34 +912,42 @@ nav {
 }
 
 .about {
-	margin: 32px;
-}
-
-.about .wrap {
+	margin: 16px 0 32px 0;
+	background: linear-gradient(#d507fe,#36bcfd);
+	max-width: 1500px;
 	display: flex;
 	align-items: center;
 	border-radius: 24px;
 	padding: 32px;
-	background: linear-gradient(#d507fe,#36bcfd);
 	color: #fff !important;
 }
 
-.about .wrap h1 {
+.about .desc h1 {
 	color: #fff;
 	margin-top: 0;
 }
 
-.about .wrap img {
-	width: auto;
+.about .desc div {
+	font-size: 32px;
+}
+
+.about .desc p {
+	margin: 0;
+	padding: 0;
+}
+
+.about .me img {
+	width: 100%;
 	height: auto;
 	border-radius: 1000px;
 	box-shadow: rgba(255,255,255,.2) 0 3px 0,
 				rgba(0,0,0,.2) 0 -3px 0;
 }
 
-.about .wrap .me {
+.about .me {
 	margin-right: 32px;
-	max-width: 300px;
+	max-width: 256px;
+	flex-grow: 1;
 }
 
 .about .wrap .desc {
@@ -1087,7 +1095,7 @@ footer span {
 	
 	.about .page-padding {
 		padding: 0;
-		margin: 0 -16px;
+		margin: -16px;
 	}
 }
 
