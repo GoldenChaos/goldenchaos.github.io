@@ -1182,11 +1182,6 @@ footer span {
 		max-height: none;
 	}
 
-	.page-top.index {
-		height: 520px !important;
-		min-height: 520px !important;
-	}
-
 	nav {
 		height: 152px;
 	}
@@ -1329,10 +1324,6 @@ footer span {
 		max-height: 1024px;
 	}
 
-	.page-top.index {
-		min-height: 0 !important;
-	}
-
 	.meta {
 		max-width: none;
 	}
@@ -1427,10 +1418,6 @@ footer span {
 	.page-top {
 		height: calc(100vh - 75px) !important;
 		min-height: 0 !important;
-	}
-
-	.page-top.index {
-		min-height: 622px !important;
 	}
 	
 	nav {
@@ -1689,7 +1676,7 @@ footer span {
     and (device-width : 375px) 
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) {
-	.page-top, .page-top.index {
+	.page-top {
 		height: calc(100vh - 113px) !important;
 		min-height: 0 !important;
 	}	
@@ -1697,7 +1684,7 @@ footer span {
 
 /* iPhone SE */
 @media only screen and (max-width: 320px) {
-	.page-top, .page-top.index {
+	.page-top {
 		min-height: 560px !important;
 	}
 
