@@ -914,7 +914,6 @@ nav {
 .about {
 	margin: 16px 0 32px 0;
 	background: linear-gradient(#d507fe,#36bcfd);
-	max-width: 1500px;
 	display: flex;
 	align-items: center;
 	border-radius: 24px;
@@ -922,35 +921,39 @@ nav {
 	color: #fff !important;
 }
 
+.about .desc {
+	flex-shrink: 1;
+}
+
 .about .desc h1 {
 	color: #fff;
 	margin-top: 0;
 }
 
-.about .desc div {
+.about .desc h1 div {
 	font-size: 32px;
 }
 
 .about .desc p {
-	margin: 0;
+	margin: 10px 32px 0 0;
 	padding: 0;
+	max-width: 820px;
+}
+
+.about .me {
+	margin-right: 32px;
+	margin-bottom: -3px;
+	min-width: 200px;
+	max-width: 200px;
+	flex-grow: 1;
 }
 
 .about .me img {
 	width: 100%;
 	height: auto;
 	border-radius: 1000px;
-	box-shadow: rgba(255,255,255,.2) 0 3px 0,
+	box-shadow: rgba(255,255,255,.25) 0 3px 0,
 				rgba(0,0,0,.2) 0 -3px 0;
-}
-
-.about .me {
-	margin-right: 32px;
-	max-width: 256px;
-	flex-grow: 1;
-}
-
-.about .wrap .desc {
 }
 
 .soon {
