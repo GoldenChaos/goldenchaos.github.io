@@ -409,13 +409,14 @@ nav {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #fff;
+	margin-top: 160px;
 }
 
 .splash-bg.crossbeam .site-logo {
 	background-image: url(images/crossbeam-logo.png);
 	background-size: 55% !important;
 	background-position: top left;
-	margin: 40px auto !;
+	margin: 12px auto;
 	max-width: 980px;
 }
 
@@ -764,7 +765,6 @@ nav {
 	padding: 16px;
 	border-radius: 12px;
 	margin-bottom: 40px;
-	display: flex;
 	box-sizing: border-box;
 	overflow: hidden;
 	position: relative;
@@ -820,6 +820,10 @@ nav {
 	position: relative;
 	z-index: 1;
 	display: flex;
+}
+
+.meta .info div:first-of-type {
+	flex-grow: 1;
 }
 
 .meta .info label {
