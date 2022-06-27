@@ -1406,6 +1406,23 @@ footer span {
 	}
 }
 
+/* Small Tablet (Portraitf) */
+@media only screen
+	and (min-device-width : 744px)
+	and (orientation : portrait) {
+	h1 {
+		font-size: 32px !important;
+	}
+	
+	.about h1 div {
+		font-size: 24px !important;
+	}
+	
+	.about p {
+		margin-right: 0 !important;
+	}
+}
+
 /* Mobile */
 @media only screen and (max-width: 600px) {
 	blockquote {
@@ -1746,5 +1763,9 @@ footer span {
 	.hero span,
 	.item span {
 		font-size: 12px !important;
+	}
+	
+	.about h1 {
+		font-size: 24px;
 	}
 }
