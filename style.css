@@ -385,10 +385,10 @@ nav {
 	background: #f2f7f9;
 	background-image: url(images/collx-bg.svg),
 		url(images/collx-bg-2.svg);
-	background-size: cover;
+	background-size: cover, 50vw, 50%;
 	background-repeat: no-repeat;
 	background-position: top left, bottom right;
-	margin-top: 132px;
+	margin-top: 0;
 }
 
 .splash-bg.collx .site-logo {
