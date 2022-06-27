@@ -244,7 +244,9 @@ nav {
 	color: #437ea3;
 }
 
-.page-top.white a, .page-top.crossbeam a {
+.page-top.white a,
+.page-top.crossbeam a,
+.page-top.collx a {
 	color: #437ea3;
 }
 
@@ -263,6 +265,7 @@ nav {
 .page-top.white #logo, .page-top.crossbeam #logo {
 	background-image: url('images/logo-blue.png');
 }
+
 
 .page-top.white .menu .social:hover, .page-top.crossbeam .menu .social:hover {
 	color: rgba(67,126,162,.8);
@@ -396,10 +399,6 @@ nav {
 	background-size: 60%;
 }
 
-.splash-bg.crossbeam .splash-content {
-	flex-direction: column;
-}
-
 .splash-bg.crossbeam a {
 	color: #fff;
 }
@@ -410,7 +409,6 @@ nav {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #fff;
-	margin-top: 132px;
 }
 
 .splash-bg.crossbeam .site-logo {
@@ -821,6 +819,7 @@ nav {
 .meta .info {
 	position: relative;
 	z-index: 1;
+	display: flex;
 }
 
 .meta .info label {
@@ -829,11 +828,10 @@ nav {
 
 .meta .visit-site {
 	border-radius: 6px;
-	background: #437ea2;
+	border: 1px solid #437ea2 !important;
 	color: #fff;
 	padding: 0 16px;
 	font-size: 20px;
-	border: 0 !important;
 	margin-left: 16px;
 	margin-right: 16px;
 	text-align: center;
@@ -846,6 +844,10 @@ nav {
 .meta .visit-site:hover {
 	background: rgba(94, 181, 113, 1) !important;
 	border: 0 !important;
+}
+
+.splash-bg.collx .meta {
+	color: #000;
 }
 
 .notice {
