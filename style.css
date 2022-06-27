@@ -227,9 +227,12 @@ nav {
 .page-top.zelda-maps .chevron {
 	opacity: 0.6;
 }
+.page-top.crossbeam {
+	background-color: #fff;
+}
 
 .page-top.crossbeam nav {
-	background: #fff;
+	background: none;
 }
 
 .page-top.white {
@@ -240,15 +243,15 @@ nav {
 	color: #437ea3;
 }
 
-.page-top.white a {
+.page-top.white a, .page-top.crossbeam a {
 	color: #437ea3;
 }
 
-.page-top.white a:hover {
+.page-top.white a:hover, .page-top.crossbeam a:hover {
 	border-color: #437ea3;
 }
 
-.page-top.white a.selected {
+.page-top.white a.selected, .page-top.crossbeam a.selected {
 	border-color: #437ea3;
 }
 
@@ -256,11 +259,11 @@ nav {
 	background: rgba(255,255,255,.8);
 }
 
-.page-top.white #logo {
+.page-top.white #logo, .page-top.crossbeam #logo {
 	background-image: url('images/logo-blue.png');
 }
 
-.page-top.white .menu .social:hover {
+.page-top.white .menu .social:hover, .page-top.crossbeam .menu .social:hover {
 	color: rgba(67,126,162,.8);
 }
 
@@ -342,14 +345,12 @@ nav {
 }
 
 .splash-bg.zelda-maps .site-logo {
-	background-image:
-		url(images/zelda-maps-logo.png);
+	background-image: url(images/zelda-maps-logo.png);
 	background-size: 75%;
 }
 
 .splash-bg.zelda-wiki {
-	background-image:
-		linear-gradient(rgba(68, 126, 163, .8), rgba(68, 126, 163, 0) 30%),
+	background-image: linear-gradient(rgba(68, 126, 163, .8), rgba(68, 126, 163, 0) 30%),
 		url(images/zw-bg-full.png);
 	background-size: auto, cover;
 }
@@ -360,15 +361,13 @@ nav {
 }
 
 .splash-bg.master-sword {
-	background-image: 
-		linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, 0) 30%),
+	background-image: linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, 0) 30%),
 		url(images/master-sword-full.png);
 	background-size: cover;
 }
 
 .splash-bg.goodsemester {
-	background-image:
-		url(images/goodsemester-rays.png),
+	background-image: url(images/goodsemester-rays.png),
 		linear-gradient(rgba(162, 196, 146, 1), rgba(162, 196, 146, 0) 25%),
 		url(images/goodsemester-bg.jpg);
 	background-size: max(160vh,160vw), auto, contain;
@@ -377,9 +376,16 @@ nav {
 }
 
 .splash-bg.goodsemester .site-logo {
-	background-image:
-		url(images/goodsemester-logo.png);
+	background-image: url(images/goodsemester-logo.png);
 	background-size: 80%;
+}
+
+.splash-bg.crossbeam .splash-content {
+	flex-direction: column;
+}
+
+.splash-bg.crossbeam a {
+	color: #fff;
 }
 
 .splash-bg.crossbeam {
@@ -388,20 +394,19 @@ nav {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #fff;
-	margin-top: 172px;
+	margin-top: 132px;
 }
 
 .splash-bg.crossbeam .site-logo {
 	background-image: url(images/crossbeam-logo.png);
-	background-size: 25%;
+	background-size: 55%;
 	background-position: top left;
-	background-color: #ff0000;
-	z-index: 100;
+	margin: 40px auto;
+	max-width: 980px;
 }
 
 .splash-bg.venti {
-	background-image:
-		url(images/venti-logo.png),
+	background-image: url(images/venti-logo.png),
 		linear-gradient(rgba(120, 212, 235, 1), rgba(120, 212, 235, 0) 50%),
 		url(images/venti-bg-full-boring.jpg);
 	background-size: 50%, auto, cover;
@@ -418,6 +423,7 @@ nav {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	top: 0;
 	z-index: 1;
 }
 
