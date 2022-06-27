@@ -594,7 +594,7 @@ nav {
 	background-color: #e4e4e4;
 	background-image: url(images/faceports-preview.png);
 	background-repeat: no-repeat;
-	background-size: 112%;
+	background-size: 110%;
 	background-position: top center;
 }
 
@@ -1583,7 +1583,7 @@ footer span {
 	
 	.item {
 		width: auto !important;
-		height: 66vw !important;
+		height: 58vw !important;
 		margin: 24px 16px 0 16px !important;
 	}
 	
@@ -1696,6 +1696,7 @@ footer span {
 	
 	.about {
 		flex-direction: column;
+		padding: 24px;
 	}
 	
 	.about .desc h1 div {
@@ -1725,7 +1726,11 @@ footer span {
 	.page-top {
 		height: calc(100vh - 113px) !important;
 		min-height: 0 !important;
-	}	
+	}
+	
+	.about {
+		padding: 18px;
+	}
 }
 
 /* iPhone SE */
