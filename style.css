@@ -820,10 +820,20 @@ nav {
 	position: relative;
 	z-index: 1;
 	display: flex;
+	align-items: center;
 }
 
 .meta .info div:first-of-type {
 	flex-grow: 1;
+}
+
+.meta .info div:last-of-type {
+	display: flex;
+	flex-direction: column;
+}
+
+.meta .info div h1 {
+	margin: 0 0 12px 0;
 }
 
 .meta .info label {
@@ -832,22 +842,29 @@ nav {
 
 .meta .visit-site {
 	border-radius: 6px;
-	border: 1px solid #437ea2 !important;
-	color: #fff;
-	padding: 0 16px;
+	background: #5bb0e1;
+	border: 0 !important;
+	color: #fff !important;
+	padding: 16px;
 	font-size: 20px;
-	margin-left: 16px;
-	margin-right: 16px;
 	text-align: center;
 	position: relative;
 	display: table-cell;
 	vertical-align: middle;
-	width: 25%;
+	margin-bottom: 12px;
+}
+
+.meta .visit-site:last-of-type {
+	margin: 0;
 }
 
 .meta .visit-site:hover {
-	background: rgba(94, 181, 113, 1) !important;
+	opacity: 0.8;
 	border: 0 !important;
+}
+
+.splash-bg.crossbeam .meta .visit-site {
+	background: #f53150;
 }
 
 .splash-bg.collx .meta {
