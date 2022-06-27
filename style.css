@@ -399,9 +399,9 @@ nav {
 
 .splash-bg.crossbeam .site-logo {
 	background-image: url(images/crossbeam-logo.png);
-	background-size: 55%;
+	background-size: 55% !important;
 	background-position: top left;
-	margin: 40px auto;
+	margin: 40px auto !important;
 	max-width: 980px;
 }
 
