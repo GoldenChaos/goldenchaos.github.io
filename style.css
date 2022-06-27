@@ -161,7 +161,7 @@ nav {
 .menu {
 	text-align: right;
 	position: absolute;
-	bottom: 24px;
+	bottom: 32px;
 	right: 32px;
 }
 
@@ -197,9 +197,10 @@ nav {
 }
 
 .menu .social {
-	margin: 8px 6px;
+	margin: 8px;
 	padding: 0;
 	border: 0;
+	font-size: 21px;
 }
 
 .menu .social:hover {
@@ -378,6 +379,21 @@ nav {
 .splash-bg.goodsemester .site-logo {
 	background-image: url(images/goodsemester-logo.png);
 	background-size: 80%;
+}
+
+.splash-bg.collx {
+	background: #f2f7f9;
+	background-image: url(images/collx-bg.svg),
+		url(images/collx-bg-2.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left, bottom right;
+	margin-top: 132px;
+}
+
+.splash-bg.collx .site-logo {
+	background-image: url(images/collx-logo.svg);
+	background-size: 60%;
 }
 
 .splash-bg.crossbeam .splash-content {
@@ -1406,12 +1422,13 @@ footer span {
 	}
 }
 
-/* Small Tablet (Portraitf) */
+/* Small Tablet (Portrait) */
 @media only screen
 	and (min-device-width : 744px)
 	and (orientation : portrait) {
 	h1 {
 		font-size: 32px !important;
+		font-weight: 500;
 	}
 	
 	.about h1 div {
@@ -1492,8 +1509,8 @@ footer span {
 	}
 	
 	.menu .social {
-		font-size: 14px;
-		margin-top: 4px;
+		font-size: 21px;
+		margin: 8px;
 	}
 	
 	.menu .social:last-of-type {
@@ -1758,6 +1775,10 @@ footer span {
 
 	.splash-bg.goodsemester {
 		background-position: center bottom 25%;
+	}
+	
+	nav a:not(.social) {
+		display: none;
 	}
 	
 	.hero span,
