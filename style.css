@@ -759,7 +759,7 @@ nav {
 }
 
 .meta {
-	width: 100vw;
+	width: 60vw;
 	max-width: 980px;
 	margin: 0 auto;
 	padding: 16px;
@@ -846,7 +846,7 @@ nav {
 	border: 0 !important;
 	color: #fff !important;
 	padding: 16px;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
 	position: relative;
 	display: table-cell;
