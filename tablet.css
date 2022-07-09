@@ -13,7 +13,7 @@
     background-size: 60% !important;
   }
   .page-top.index {
-    height: auto;
+    height: auto !important;
   }
   .content .item-content span {
     font-size: 14px !important;
