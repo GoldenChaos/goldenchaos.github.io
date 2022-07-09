@@ -95,8 +95,11 @@ h2 {
 			font-size: 14px;
 			width: auto !important;
 			margin: 16px !important;
-			display: flex;
 			flex-direction: column;
+			.info {
+				display: flex;
+				flex-direction: column;
+			}
 			.visit-site {
 				font-size: 18px;
 				padding: 12px 16px;

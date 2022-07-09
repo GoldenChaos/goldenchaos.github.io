@@ -90,6 +90,9 @@
     font-size: 14px;
     width: auto !important;
     margin: 16px !important;
+    flex-direction: column;
+  }
+  .page-top .splash-bg .meta .info {
     display: flex;
     flex-direction: column;
   }

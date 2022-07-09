@@ -1121,6 +1121,134 @@ footer span {
     color: #5ab1e1;
   }
 }
+/* Tablet (Landscape) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .page-top {
+    height: calc(100vh - 31px) !important;
+  }
+  .page-top .splash-bg .site-logo {
+    background-size: 70% !important;
+  }
+  .page-top .splash-bg.zelda-universe .site-logo {
+    background-size: 60% !important;
+  }
+  .page-top.index {
+    height: auto !important;
+  }
+  .content .page-padding .squareknot-logo {
+    margin-top: 0;
+    width: 80vw !important;
+  }
+  .content .page-padding .wiki-duo img {
+    margin-right: 16px !important;
+    height: 46.6vw !important;
+  }
+  .content .page-padding .wiki-duo img:last-of-type {
+    margin-right: -30px !important;
+  }
+}
+/* Tablet (Portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .page-top {
+    height: calc(100vh - 31px) !important;
+    max-height: none;
+  }
+  .page-top nav {
+    height: 152px;
+  }
+  .page-top nav #logo {
+    width: 140px;
+    height: 152px;
+  }
+  .page-top nav .menu {
+    right: 12px !important;
+    bottom: 16px !important;
+  }
+  .page-top .splash-bg .site-logo {
+    background-size: 80vw, 100% !important;
+  }
+  .page-top .splash-bg.goodsemester {
+    background-position: center bottom 48%;
+  }
+  .page-top .splash-bg.goodsemester .site-logo {
+    background-size: 90vw !important;
+  }
+  .page-top .splash-bg.venti {
+    background-size: 80vw, auto, cover;
+  }
+  .page-top .meta {
+    width: calc(100% - 32px) !important;
+    margin: 16px 16px 40px 16px !important;
+  }
+  .page-top .meta .visit-site {
+    width: 33% !important;
+  }
+  .content .full-width {
+    padding: 0 16px !important;
+  }
+  .content .full-width img {
+    border-radius: 12px !important;
+  }
+  .content .page-padding {
+    padding: 0 16px;
+  }
+  .content .page-padding:first-of-type {
+    padding-top: 16px !important;
+  }
+  .content .page-padding:last-of-type {
+    padding-bottom: 16px !important;
+  }
+  .content .page-padding .squareknot-logo {
+    margin-top: 0;
+    width: 80vw !important;
+  }
+  .content .page-padding .wiki-duo img {
+    height: 47.3vw !important;
+    margin-right: 16px !important;
+  }
+  .content .page-padding .wiki-duo img:last-of-type {
+    margin-right: -30px !important;
+  }
+  .content .item {
+    margin: 16px 0 0 16px !important;
+    border-radius: 12px !important;
+  }
+  .content .item:nth-of-type(2n) {
+    margin-right: 16px !important;
+  }
+  .content .item:last-of-type {
+    margin-bottom: 16px !important;
+  }
+  .content .item span {
+    font-size: 10px !important;
+    bottom: 14px !important;
+  }
+  .content .item-content.master-sword span {
+    font-size: 15px !important;
+    bottom: 10px !important;
+  }
+  .video {
+    height: 415px;
+  }
+  .screenshot-grid-2-col,
+.screenshot-grid-3-col {
+    padding: 0 16px;
+  }
+  .screenshot-grid-2-col img {
+    margin: 0 16px 16px 0 !important;
+    width: calc(50% - 10px);
+  }
+  .screenshot-grid-3-col img {
+    margin: 0 16px 16px 0 !important;
+    width: 30.2vw;
+  }
+  .screenshot-grid-2-col.alt img:nth-of-type(3n) {
+    margin-right: 0 !important;
+  }
+}
+/* Large Tablet (Portrait) */
+/* Large Tablet (Landscape) */
+/* Small Tablet (Portrait) */
 /* Mobile */
 @media only screen and (max-width: 700px) {
   .desktop {
@@ -1213,6 +1341,9 @@ footer span {
     font-size: 14px;
     width: auto !important;
     margin: 16px !important;
+    flex-direction: column;
+  }
+  .page-top .splash-bg .meta .info {
     display: flex;
     flex-direction: column;
   }
