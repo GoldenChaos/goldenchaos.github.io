@@ -45,8 +45,8 @@
   }
   .page-top nav .menu {
     font-size: 11px;
-    right: 8px;
-    bottom: 8px;
+    right: 0px;
+    bottom: 0px;
   }
   .page-top nav .menu div {
     display: flex;
@@ -66,15 +66,18 @@
     margin-right: 6px !important;
   }
   .page-top nav .menu .social {
-    width: 50px;
+    width: 44px;
     height: 50px;
-    font-size: 21px;
+    font-size: 22px;
     line-height: 50px;
     padding: 0;
-    align-self: center;
+    margin: 0;
+    align-content: center;
+    align-items: center;
+    text-align: center;
   }
   .page-top nav .menu .social:last-of-type {
-    margin-right: 8px;
+    margin: 0;
   }
   .page-top .splash-bg {
     position: absolute;

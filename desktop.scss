@@ -41,7 +41,7 @@ blockquote {
 
 h1 {
 	font-size: 32px;
-	font-weight: medium;
+	font-weight: 500;
 	text-transform: uppercase;
 	font-style: italic;
 	margin: 0;
@@ -100,8 +100,6 @@ pre {
 	nav {
 		height: 172px;
 		position: relative;
-		z-index: 1000;
-		backdrop-filter: blur(40px) !important;
 		#logo {
 			background-image: url('images/logo.png');
 			background-size: 74px;
@@ -153,7 +151,7 @@ pre {
 					color: rgba(255,255,255,.8);
 				}
 				&:last-of-type {
-					margin-right: 12px;
+					margin-right: 8px;
 				}
 			}
 		}
@@ -340,7 +338,6 @@ pre {
 			overflow: visible;
 			width: 100vw;
 			align-items: center;
-			z-index: 1000;
 			.about {
 				margin: 48px 32px 56px 32px;
 				text-align: left;
@@ -648,8 +645,12 @@ pre {
 	flex-wrap: wrap;
 }
 
-.content.index.page {
-		animation: 1s ease-in-out 0s 1 slideUp;
+.content.index.page:first-of-type {
+	animation: 1s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:first-of-type {
+	animation: 1s ease-in-out 0s 1 slideUp;
 }
 
 .content.page {

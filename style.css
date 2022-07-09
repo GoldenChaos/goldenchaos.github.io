@@ -156,7 +156,7 @@ blockquote a a:hover {
 
 h1 {
   font-size: 32px;
-  font-weight: medium;
+  font-weight: 500;
   text-transform: uppercase;
   font-style: italic;
   margin: 0;
@@ -216,8 +216,6 @@ pre {
 .page-top nav {
   height: 172px;
   position: relative;
-  z-index: 1000;
-  backdrop-filter: blur(40px) !important;
 }
 .page-top nav #logo {
   background-image: url("images/logo.png");
@@ -272,7 +270,7 @@ pre {
   color: rgba(255, 255, 255, 0.8);
 }
 .page-top nav .menu .social:last-of-type {
-  margin-right: 12px;
+  margin-right: 8px;
 }
 .page-top .splash-bg {
   position: absolute;
@@ -446,7 +444,6 @@ pre {
   overflow: visible;
   width: 100vw;
   align-items: center;
-  z-index: 1000;
 }
 .page-top.index .splash-bg .about {
   margin: 48px 32px 56px 32px;
@@ -730,7 +727,11 @@ pre {
   flex-wrap: wrap;
 }
 
-.content.index.page {
+.content.index.page:first-of-type {
+  animation: 1s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:first-of-type {
   animation: 1s ease-in-out 0s 1 slideUp;
 }
 
@@ -1350,8 +1351,8 @@ footer span {
   }
   .page-top nav .menu {
     font-size: 11px;
-    right: 8px;
-    bottom: 8px;
+    right: 0px;
+    bottom: 0px;
   }
   .page-top nav .menu div {
     display: flex;
@@ -1371,15 +1372,18 @@ footer span {
     margin-right: 6px !important;
   }
   .page-top nav .menu .social {
-    width: 50px;
+    width: 44px;
     height: 50px;
-    font-size: 21px;
+    font-size: 22px;
     line-height: 50px;
     padding: 0;
-    align-self: center;
+    margin: 0;
+    align-content: center;
+    align-items: center;
+    text-align: center;
   }
   .page-top nav .menu .social:last-of-type {
-    margin-right: 8px;
+    margin: 0;
   }
   .page-top .splash-bg {
     position: absolute;
