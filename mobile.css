@@ -271,9 +271,10 @@
     line-height: 18px;
   }
   .about .me {
+    margin: -4px auto 12px auto !important;
     min-width: 0 !important;
     max-width: none !important;
-    width: 24% !important;
+    width: 29% !important;
   }
 }
 /* iPhone 13 mini */
@@ -284,7 +285,7 @@
   .about .me {
     min-width: 0 !important;
     max-width: none !important;
-    width: 49% !important;
+    width: 50% !important;
   }
 }
 /* iPhone 13/13 Pro */
@@ -292,7 +293,7 @@
   .about .me {
     min-width: 0 !important;
     max-width: none !important;
-    width: 58% !important;
+    width: 59% !important;
   }
 }
 /* iPhone 13 Pro Max */
@@ -300,7 +301,7 @@
   .about .me {
     min-width: 0 !important;
     max-width: none !important;
-    width: 80% !important;
+    width: 81% !important;
   }
 }
 

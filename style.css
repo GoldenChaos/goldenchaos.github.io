@@ -216,6 +216,7 @@ pre {
 .page-top nav {
   height: 172px;
   position: relative;
+  z-index: 1000;
 }
 .page-top nav #logo {
   background-image: url("images/logo.png");
@@ -297,7 +298,7 @@ pre {
   height: auto;
   width: auto;
   margin: 32px auto 64px auto;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 24px;
   box-sizing: border-box;
   display: flex;
@@ -727,30 +728,6 @@ pre {
   flex-wrap: wrap;
 }
 
-.content.index.page:nth-of-type(2) {
-  animation: 3.5s ease-in-out 0s 1 slideUp;
-}
-
-.content.index.page:nth-of-type(3) {
-  animation: 4s ease-in-out 0s 1 slideUp;
-}
-
-.content.index.page:nth-of-type(4) {
-  animation: 5s ease-in-out 0s 1 slideUp;
-}
-
-.content.index.page:nth-of-type(5) {
-  animation: 5.3s ease-in-out 0s 1 slideUp;
-}
-
-.content.index.page:nth-of-type(6) {
-  animation: 6.4s ease-in-out 0s 1 slideUp;
-}
-
-.content.index.page:nth-of-type(7) {
-  animation: 6.8s ease-in-out 0s 1 slideUp;
-}
-
 .content.page {
   margin: 0;
   padding: 0;
@@ -797,6 +774,30 @@ pre {
   font-size: 28px;
   color: #888;
   margin-bottom: 48px;
+}
+
+.content.index.page:nth-of-type(2) {
+  animation: 3.5s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(3) {
+  animation: 4s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(4) {
+  animation: 5s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(5) {
+  animation: 5.3s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(6) {
+  animation: 6.4s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(7) {
+  animation: 6.8s ease-in-out 0s 1 slideUp;
 }
 
 .content.app-icons img {
@@ -1123,203 +1124,6 @@ footer span {
     color: #5ab1e1;
   }
 }
-/* Tablet (Landscape) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  h1 {
-    font-weight: 500;
-  }
-  .page-top {
-    height: calc(100vh - 31px) !important;
-  }
-  .page-top .splash-bg .site-logo {
-    background-size: 70% !important;
-  }
-  .page-top .splash-bg.zelda-universe .site-logo {
-    background-size: 60% !important;
-  }
-  .page-top.index {
-    height: auto !important;
-  }
-  .content .item-content span {
-    font-size: 14px !important;
-    bottom: 16px !important;
-  }
-  .content .item-content.master-sword span {
-    font-size: 19px !important;
-    bottom: 10px !important;
-  }
-  .content .page-padding .squareknot-logo {
-    margin-top: 0;
-    width: 80vw !important;
-  }
-  .content .page-padding .wiki-duo img {
-    margin-right: 16px !important;
-    height: 46.6vw !important;
-  }
-  .content .page-padding .wiki-duo img:last-of-type {
-    margin-right: -30px !important;
-  }
-}
-/* Tablet (Portrait) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  h1 {
-    margin-top: 24px;
-    margin-bottom: 12px;
-    font-weight: 500;
-  }
-  h1.title {
-    font-size: 36px !important;
-    margin-top: 16px;
-    margin-bottom: 12px;
-  }
-  .page-top {
-    height: calc(100vh - 31px) !important;
-    max-height: none;
-  }
-  .page-top nav {
-    height: 152px;
-  }
-  .page-top nav #logo {
-    width: 140px;
-    height: 152px;
-  }
-  .page-top nav .menu {
-    right: 12px !important;
-    bottom: 16px !important;
-  }
-  .page-top .splash-bg .site-logo {
-    background-size: 80vw, 100% !important;
-  }
-  .page-top .splash-bg.goodsemester {
-    background-position: center bottom 48%;
-  }
-  .page-top .splash-bg.goodsemester .site-logo {
-    background-size: 90vw !important;
-  }
-  .page-top .splash-bg.venti {
-    background-size: 80vw, auto, cover;
-  }
-  .page-top .meta {
-    width: calc(100% - 32px) !important;
-    margin: 16px 16px 40px 16px !important;
-  }
-  .page-top .meta .visit-site {
-    width: 33% !important;
-  }
-  .content .full-width {
-    padding: 0 16px !important;
-  }
-  .content .full-width img {
-    border-radius: 12px !important;
-  }
-  .content .page-padding {
-    padding: 0 16px;
-  }
-  .content .page-padding:first-of-type {
-    padding-top: 16px !important;
-  }
-  .content .page-padding:last-of-type {
-    padding-bottom: 16px !important;
-  }
-  .content .page-padding .squareknot-logo {
-    margin-top: 0;
-    width: 80vw !important;
-  }
-  .content .page-padding .wiki-duo img {
-    height: 47.3vw !important;
-    margin-right: 16px !important;
-  }
-  .content .page-padding .wiki-duo img:last-of-type {
-    margin-right: -30px !important;
-  }
-  .content .item {
-    margin: 16px 0 0 16px !important;
-    border-radius: 12px !important;
-  }
-  .content .item:nth-of-type(2n) {
-    margin-right: 16px !important;
-  }
-  .content .item:last-of-type {
-    margin-bottom: 16px !important;
-  }
-  .content .item span {
-    font-size: 10px !important;
-    bottom: 14px !important;
-  }
-  .content .item-content.master-sword span {
-    font-size: 15px !important;
-    bottom: 10px !important;
-  }
-  .video {
-    height: 415px;
-  }
-  .screenshot-grid-2-col,
-.screenshot-grid-3-col {
-    padding: 0 16px;
-  }
-  .screenshot-grid-2-col img {
-    margin: 0 16px 16px 0 !important;
-    width: calc(50% - 10px);
-  }
-  .screenshot-grid-3-col img {
-    margin: 0 16px 16px 0 !important;
-    width: 30.2vw;
-  }
-  .screenshot-grid-2-col.alt img:nth-of-type(3n) {
-    margin-right: 0 !important;
-  }
-}
-/* Large Tablet (Portrait) */
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
-  .page-top {
-    max-height: 1024px;
-  }
-  .page-top .meta {
-    max-width: none;
-  }
-  .page-top .splash-bg.venti {
-    background-size: 62vw, auto, cover !important;
-  }
-  .content .page-padding .video {
-    height: 550px;
-  }
-  .content .page-padding .wiki-duo img {
-    height: 48.1vw !important;
-    margin-right: 16px !important;
-  }
-  .content .item-content span {
-    font-size: 14px !important;
-  }
-  .content .item-content.master-sword span {
-    font-size: 20px !important;
-  }
-}
-/* Large Tablet (Landscape) */
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
-  .splash-bg.zelda-universe .site-logo,
-.splash-bg.zelda-maps .site-logo,
-.splash-bg.zelda-wiki .site-logo {
-    background-size: 60vw !important;
-  }
-  .hero span {
-    font-size: 24px !important;
-    bottom: 32px !important;
-  }
-  .item-content span {
-    font-size: 18px !important;
-    bottom: 20px !important;
-  }
-  .item-content.master-sword span {
-    font-size: 28px !important;
-    bottom: 14px !important;
-  }
-}
-/* Small Tablet (Portrait) */
-@media only screen and (min-device-width: 744px) and (orientation: portrait) {
-  .about p {
-    margin-right: 0 !important;
-  }
-}
 /* Mobile */
 @media only screen and (max-width: 700px) {
   .desktop {
@@ -1593,9 +1397,10 @@ footer span {
     line-height: 18px;
   }
   .about .me {
+    margin: -4px auto 12px auto !important;
     min-width: 0 !important;
     max-width: none !important;
-    width: 24% !important;
+    width: 29% !important;
   }
 }
 /* iPhone 13 mini */
@@ -1606,7 +1411,7 @@ footer span {
   .about .me {
     min-width: 0 !important;
     max-width: none !important;
-    width: 49% !important;
+    width: 50% !important;
   }
 }
 /* iPhone 13/13 Pro */
@@ -1614,7 +1419,7 @@ footer span {
   .about .me {
     min-width: 0 !important;
     max-width: none !important;
-    width: 58% !important;
+    width: 59% !important;
   }
 }
 /* iPhone 13 Pro Max */
@@ -1622,7 +1427,7 @@ footer span {
   .about .me {
     min-width: 0 !important;
     max-width: none !important;
-    width: 80% !important;
+    width: 81% !important;
   }
 }
 
