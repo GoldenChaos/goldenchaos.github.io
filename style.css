@@ -727,12 +727,28 @@ pre {
   flex-wrap: wrap;
 }
 
-.content.index.page:first-of-type {
-  animation: 1s ease-in-out 0s 1 slideUp;
+.content.index.page:nth-of-type(2) {
+  animation: 3s ease-in-out 0s 1 slideUp;
 }
 
-.content.index.page:first-of-type {
-  animation: 1s ease-in-out 0s 1 slideUp;
+.content.index.page:nth-of-type(3) {
+  animation: 3.5s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(4) {
+  animation: 4.5s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(5) {
+  animation: 5s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(6) {
+  animation: 6.5s ease-in-out 0s 1 slideUp;
+}
+
+.content.index.page:nth-of-type(7) {
+  animation: 7s ease-in-out 0s 1 slideUp;
 }
 
 .content.page {
