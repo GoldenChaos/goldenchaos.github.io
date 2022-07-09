@@ -2,11 +2,9 @@
 @media (prefers-color-scheme: dark) {
 
 
-body {
+body, .page-top.white {
 	background: rgba(32,32,32,1);
 }
-
-
 
 .page-top.white a, .page-padding a {
 	color: #5bb1e2;

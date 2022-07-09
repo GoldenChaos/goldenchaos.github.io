@@ -1038,7 +1038,7 @@ footer span {
   }
 }
 @media (prefers-color-scheme: dark) {
-  body {
+  body, .page-top.white {
     background: rgb(32, 32, 32);
   }
   .page-top.white a, .page-padding a {
