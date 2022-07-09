@@ -411,9 +411,6 @@ pre {
   background-position: center center, top, center bottom;
   background-repeat: no-repeat, repeat, repeat-x;
 }
-.page-top .splash-bg .chevron {
-  display: none;
-}
 .page-top .chevron {
   background-image: url(images/chevron.png);
   background-size: 55px;
