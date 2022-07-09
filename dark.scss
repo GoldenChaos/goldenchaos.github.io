@@ -1,0 +1,92 @@
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+
+
+body {
+	background: rgba(32,32,32,1);
+}
+
+
+
+.page-top.white a, .page-padding a {
+	color: #5bb1e2;
+}
+
+.page-top.white {
+	#logo {
+  		background-image: url('images/logo-lightblue.png');
+	}
+	nav {
+  		background: rgba(32,32,32,.8);
+	}
+	.menu {
+  		a:hover {
+	  		border-color: rgba(92,177,227,.3);
+  		}
+	}
+}
+
+.segmented-control {
+	border: 1px solid rgba(255,255,255,.1) !important;
+	a {
+		color: #fff !important;
+		border-left: 1px solid rgba(255,255,255,.1) !important;
+	}
+	img {
+		filter: invert(100%);
+	}
+}
+
+.content {
+	color: #fff;
+	background: rgba(32,32,32,1);
+	.item-content {
+		&:hover {
+			box-shadow: inset rgba(255,255,255,.05) 0 0 0 1px;
+		}
+		&.faceports {
+			background-color: rgba(50,50,50,1);
+			background-image: url(images/faceports-preview-dark.png);
+		}
+		&.collx {
+			background-color: rgba(50,50,50,1);
+			background-image: url(images/collx-preview-dark.png);
+		}
+		&.crossbeam {
+			background-color: rgba(50,50,50,1);
+			background-image: url(images/crossbeam-preview-dark.png);
+		}
+		&.squareknot {
+			background-color: #323232;
+		}
+	}
+}
+
+footer {
+	background: rgba(32,32,32,1);
+	color: #fff;
+}
+
+.quote-grid blockquote, .squareknot-slogan {
+	color: #ccc !important;
+}
+
+
+.page-top.index {
+	nav {
+		background: rgba(32,32,32,.8);
+		#logo {
+			background-image: url('images/logo-lightblue.png');
+		}
+		a, .social {
+			color: #5ab1e1;
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+
+}
+
+
+}

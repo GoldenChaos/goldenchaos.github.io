@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     
     <!-- HTML Meta Tags -->
-    <title>GoldenChaos - Product Design by Jess Rappaport.</title>
+    <title>GoldenChaos - Product Design by Jess Rappaport</title>
     <meta name="description" content="Product Design by Jess Rappaport.">
     
     <!-- Facebook Meta Tags -->
@@ -33,6 +33,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Jess Rappaport">
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
     <script src="https://kit.fontawesome.com/ede7ed9b9e.js" crossorigin="anonymous"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png" />
@@ -40,7 +42,7 @@
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
 </head>
 <body>
-    <div class="page-top white index">
+    <div class="page-top index">
         <nav>
             <a id="logo" href="index.html"></a>
             <div class="menu">
@@ -48,71 +50,133 @@
                 <a class="social" href="https://github.com/GoldenChaos" target="_blank"><i class="fab fa-github"></i></a>
                 <a class="social" href="https://www.linkedin.com/in/goldenchaos" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a class="social" href="mailto:jess@goldenchaos.net"><i class="fa fa-envelope-square"></i></a>
-                <br>
-                <a href="#utilities">Utilities</a>
-                <a href="#apps">Apps &amp; Services</a>
-                <a href="#games">Games Industry</a>
+                <div class="desktop">
+                    <a href="#apps">Apps &amp; Services</a>
+                    <a href="#games">Games Industry</a>
+                    <a href="#utilities">Utilities</a>
+                </div>
             </div>
         </nav>
-    </div>
-    <div class="content page">
-        <div class="full-width">
-            <div class="about">
-                <div class="me">
-                    <img src="images/me.png" alt="me">
-                </div>
-                <div class="desc">
-                    <h1 class="title" style="margin-bottom:0;">I'm Jess Rappaport,
-                    <div>
-                        🏳️‍⚧️ proud product designer and developer.
+        <div class="splash-bg index">
+            <center>
+                <div class="about">
+                    <div class="me">
+                        <img src="images/me.png" alt="me">
                     </div>
-                    </h1>
-                    <p>I've been designing and developing apps, services, and communities for over 18 years. I'm always working on cool new projects in the tech and games industries. Check out my work below.</p>
+                    <div class="desc">
+                        <h1 class="title" style="margin-bottom:0;">I'm Jess Rappaport,
+                        <div>
+                            🏳️‍⚧️ proud product designer and developer.
+                        </div>
+                        </h1>
+                        <p>I've been designing and developing apps, services, and communities for over 18 years. I'm always working on cool new projects in the tech and games industries. Check out my work below.</p>
+                    </div>
                 </div>
+            </center>
+            <div class="segmented-control">
+                <a href="#utilities">
+                    <center>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        Utilities
+                    </center>
+                </a>
+                <a href="#apps">
+                    <center>
+                        <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/touchbar-icons/dock.png?raw=true" alt="">
+                        Apps &amp; Services
+                    </center>
+                </a>
+                <a href="#games">
+                    <center>
+                        <img src="https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/touchbar-icons/gamepad.png?raw=true" alt="">
+                        Games Industry
+                    </center>
+                </a>
             </div>
+            <div class="chevron"></div>
         </div>
     </div>
     <div class="content index page">
         <h1 id="utilities" class="title" style="padding-left:32px;margin-bottom:0;">Utilities</h1>
     </div>
     <div class="content index page" style="padding-bottom:24px;">
-        <a class="item goldenchaos-btt" href="goldenchaos-btt.html"></a>
-        <a class="item faceports" href="faceports.html">
-            <span>
-            </span>
-        </a>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content goldenchaos-btt" href="goldenchaos-btt.html"></a>
+            </div>
+        </div>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content faceports" href="faceports.html">
+                    <span></span>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="content index page">
-        <h1 id="apps" class="title" style="padding-left:32px;margin:0;">Apps and Services</h1></div>
+        <h1 id="apps" class="title" style="padding-left:32px;margin:0;">Apps and Services</h1>
+    </div>
     <div class="content index page" style="padding-bottom:32px;">
-        <a class="item collx" href="collx.html"></a>
-        <a class="item crossbeam" href="crossbeam.html"></a>
-        <a class="item squareknot" href="squareknot.html">
-            <span>Beautiful, branching step-by-step guides.</span>
-        </a>
-        <a class="item goodsemester" href="goodsemester.html">
-			<span>Revolutionary online learning platform.</span>
-	    </a>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content collx" href="collx.html"></a>
+            </div>
+        </div>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content crossbeam" href="crossbeam.html"></a>
+            </div>
+        </div>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content squareknot" href="squareknot.html">
+                    <span>Beautiful, branching step-by-step guides.</span>
+                </a>
+            </div>
+        </div>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content goodsemester" href="goodsemester.html">
+			        <span>Revolutionary online learning platform.</span>
+	            </a>
+            </div>
+        </div>
     </div>
     <div class="content index page">
         <h1 id="games" class="title" style="padding-left:32px;margin:0;">Games Industry</h1>
     </div>
     <div class="content index page" style="padding-bottom:24px;">
-        <a class="item zelda-universe" href="zelda-universe.html">
-            <div class="site-logo"></div>
-            <span class="subtitle">The world's largest <i>Legend of Zelda</i> fan community.</span>
-        </a>
-        <a class="item zelda-maps" href="zelda-maps.html">
-            <div class="site-logo"></div>
-            <span>Comprehensive maps for <i>Breath of the Wild</i> and more.</span>
-        </a>
-        <a class="item zelda-wiki" href="zelda-wiki.html">
-            <div class="site-logo"></div>
-            <span>The definitive <i>Zelda</i> encyclopedia, now part of the Twitch family.</span>
-        </a>
-        <a class="item master-sword" href="https://zeldauniverse.net/features/making-the-master-sword/" target="_blank">
-            <span>Making <b>the</b> Master Sword</span>
-        </a>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content zelda-universe" href="zelda-universe.html">
+                    <div class="site-logo"></div>
+                    <span class="subtitle">The world's largest <i>Legend of Zelda</i> fan community.</span>
+                </a>
+            </div>
+        </div>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content zelda-maps" href="zelda-maps.html">
+                    <div class="site-logo"></div>
+                    <span>Comprehensive maps for <i>Breath of the Wild</i> and more.</span>
+                </a>
+            </div>
+        </div>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content zelda-wiki" href="zelda-wiki.html">
+                    <div class="site-logo"></div>
+                    <span>The definitive <i>Zelda</i> encyclopedia, now part of the Twitch family.</span>
+                </a>
+            </div>
+        </div>
+        <div class="item-wrapper">
+            <div class="item item-transition">
+                <a class="item-content master-sword" href="https://zeldauniverse.net/features/making-the-master-sword/" target="_blank">
+                    <span>Making <b>the</b> Master Sword</span>
+                </a>
+            </div>
+        </div>
         <!-- a class="item zodttd-icons" href="zodttd-icons.html">
             <span>ZodTTD Emulator Icons</span>
         </a -->
@@ -120,5 +184,20 @@
     <footer>
         <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
     </footer>
+    
+    <!--script>
+        const square = document.querySelector('.item');
+        
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              square.classList.add('item-transition');
+              return;
+            }
+          });
+        });
+        
+        observer.observe(document.querySelector('.item-wrapper'));
+    </script-->
 </body>
 </html>
