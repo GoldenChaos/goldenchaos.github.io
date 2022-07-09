@@ -48,6 +48,9 @@
     right: 8px;
     bottom: 8px;
   }
+  .page-top nav .menu div {
+    display: flex;
+  }
   .page-top nav .menu div:last-of-type {
     display: none;
   }
@@ -63,10 +66,11 @@
     margin-right: 6px !important;
   }
   .page-top nav .menu .social {
-    width: 21px;
-    height: 50%;
+    width: 50px;
+    height: 50px;
     font-size: 21px;
-    margin-top: 4px;
+    line-height: 50px;
+    padding: 0;
     align-self: center;
   }
   .page-top nav .menu .social:last-of-type {

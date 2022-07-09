@@ -52,6 +52,9 @@ h2 {
 			font-size: 11px;
 			right: 8px;
 			bottom: 8px;
+			div {
+				display: flex;
+			}
 			div:last-of-type {
 				display: none;
 			}
@@ -67,10 +70,11 @@ h2 {
 				}
 			}
 			.social {
-				width: 21px;
-				height: 50%;
+				width: 50px;
+				height: 50px;
 				font-size: 21px;
-				margin-top: 4px;
+				line-height: 50px;
+				padding: 0;
 				align-self: center;
 				&:last-of-type {
 					margin-right: 8px;

@@ -449,7 +449,7 @@ pre {
   z-index: 1000;
 }
 .page-top.index .splash-bg .about {
-  margin: 48px 32px 48px 32px;
+  margin: 48px 32px 56px 32px;
   text-align: left;
   background: linear-gradient(#d507fe, #36bcfd);
   display: flex;
@@ -1295,13 +1295,6 @@ footer span {
 }
 /* Small Tablet (Portrait) */
 @media only screen and (min-device-width: 744px) and (orientation: portrait) {
-  h1 {
-    font-size: 32px !important;
-    font-weight: 500;
-  }
-  .about h1 div {
-    font-size: 24px !important;
-  }
   .about p {
     margin-right: 0 !important;
   }
@@ -1356,6 +1349,9 @@ footer span {
     right: 8px;
     bottom: 8px;
   }
+  .page-top nav .menu div {
+    display: flex;
+  }
   .page-top nav .menu div:last-of-type {
     display: none;
   }
@@ -1371,10 +1367,11 @@ footer span {
     margin-right: 6px !important;
   }
   .page-top nav .menu .social {
-    width: 21px;
-    height: 50%;
+    width: 50px;
+    height: 50px;
     font-size: 21px;
-    margin-top: 4px;
+    line-height: 50px;
+    padding: 0;
     align-self: center;
   }
   .page-top nav .menu .social:last-of-type {
