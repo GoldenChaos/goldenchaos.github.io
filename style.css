@@ -740,11 +740,11 @@ pre {
 }
 
 .content.index.page:nth-of-type(5) {
-  animation: 5.5s ease-in-out 0s 1 slideUp;
+  animation: 5.3s ease-in-out 0s 1 slideUp;
 }
 
 .content.index.page:nth-of-type(6) {
-  animation: 6.5s ease-in-out 0s 1 slideUp;
+  animation: 6s ease-in-out 0s 1 slideUp;
 }
 
 .content.index.page:nth-of-type(7) {
