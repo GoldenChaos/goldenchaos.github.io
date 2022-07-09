@@ -1116,6 +1116,9 @@ footer span {
   .page-top .splash-bg.zelda-universe .site-logo {
     background-size: 60% !important;
   }
+  .page-top.index {
+    height: auto;
+  }
   .content .item-content span {
     font-size: 14px !important;
     bottom: 16px !important;
