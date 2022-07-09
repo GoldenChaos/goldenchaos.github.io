@@ -628,11 +628,11 @@ pre {
 }
 
 .content.index.page:nth-of-type(6) {
-  animation: 6s ease-in-out 0s 1 slideUp;
+  animation: 6.4s ease-in-out 0s 1 slideUp;
 }
 
 .content.index.page:nth-of-type(7) {
-  animation: 7s ease-in-out 0s 1 slideUp;
+  animation: 6.8s ease-in-out 0s 1 slideUp;
 }
 
 .content.page {
