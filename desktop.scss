@@ -93,9 +93,6 @@ pre {
 		min-height: 0 !important;
 		max-height: none !important;
 		color: #437ea3;
-		nav {
-			background: rgba(245,245,247,.8);
-		}
 	}
 	nav {
 		height: 172px;
@@ -678,7 +675,7 @@ pre {
 			}
 		}
 		img {
-			width: auto !important;
+			width: auto;
 			max-width: 100%;
 		}
 		.squareknot-logo {

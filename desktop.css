@@ -94,9 +94,6 @@ pre {
   max-height: none !important;
   color: #437ea3;
 }
-.page-top.white nav {
-  background: rgba(245, 245, 247, 0.8);
-}
 .page-top nav {
   height: 172px;
   position: relative;
@@ -644,7 +641,7 @@ pre {
   border-bottom: 1px solid rgba(68, 126, 162, 0.8);
 }
 .content.page .page-padding img {
-  width: auto !important;
+  width: auto;
   max-width: 100%;
 }
 .content.page .page-padding .squareknot-logo {
