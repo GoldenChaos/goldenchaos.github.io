@@ -19,11 +19,11 @@
     border-color: rgba(92, 177, 227, 0.3) !important;
   }
   .segmented-control {
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
   .segmented-control a {
     color: #fff !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
   .segmented-control img {
     filter: invert(100%);

@@ -2,7 +2,7 @@
 @media only screen and (max-width: 700px) {
 
 .desktop {
-	display: none;
+	display: none !important;
 }
 
 .mobile {
@@ -111,21 +111,25 @@ h2 {
 			width: auto !important;
 			margin: 20px 20px 48px 20px !important;
 			padding: 20px;
+			flex-direction: column;
 			.info {
 			}
-			.links {
-				
-				a {
-					font-size: 14px;
-					padding: 8px;
-					margin-top: 8px;
+			.links-wrapper {
+				width: 100%;
+				gap: 0;
+				.links {
+					width: 100%;
+					a {
+						font-size: 14px;
+						padding: 8px;
+						margin-top: 8px;
+					}
 				}
 			}
 		}
 		.chevron {
 			bottom: 10px;
 			display: block;
-			animation: 4.4s ease-in-out 0s 1 bounce2;
 		}
 		&.index {
 			display: flex;
@@ -164,6 +168,10 @@ h2 {
 				display: flex;
 				margin-top: 20px;
 				max-width: calc(100vw - 32px);
+				animation: 4s ease-in-out 0s 1 bounce3;
+			}
+			.chevron {
+				animation: 4.4s ease-in-out 0s 1 bounce2;
 			}
 		}
 	}
