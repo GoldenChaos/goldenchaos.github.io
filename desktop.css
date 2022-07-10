@@ -294,7 +294,7 @@ pre {
   background-repeat: no-repeat, repeat, repeat-x;
 }
 .page-top .chevron {
-  background-image: url(images/chevron.png);
+  background-image: url(images/chevron-shadow.png);
   background-size: 55px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -710,6 +710,9 @@ pre {
 }
 .meta .info .info-bit a:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+.meta .info .info-bit:last-of-type span {
+  margin-bottom: 0;
 }
 .meta .links-wrapper {
   align-self: center;

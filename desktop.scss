@@ -311,7 +311,7 @@ pre {
 		}
 	}
 	.chevron {
-		background-image: url(images/chevron.png);
+		background-image: url(images/chevron-shadow.png);
 		background-size: 55px;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -758,6 +758,11 @@ pre {
 				border-bottom: 1px solid rgba(0,0,0,.3);
 				&:hover {
 					border-bottom: 1px solid rgba(0,0,0,.6);
+				}
+			}
+			&:last-of-type {
+				span {
+					margin-bottom: 0;
 				}
 			}
 		}
