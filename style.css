@@ -391,15 +391,17 @@ pre {
   opacity: 0.75;
 }
 .page-top .splash-bg.squareknot {
-  position: relative;
-  margin-top: -172px;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-image: url(images/squareknot-illustration.png);
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: bottom center;
 }
-.page-top .splash-bg.squareknot img {
-  width: 100%;
-}
-.page-top .splash-bg.squareknot .slogan {
-  display: none;
+.page-top .splash-bg.squareknot .site-logo {
+  background-image: url(images/squareknot-logo-green.png);
+  background-size: 55% !important;
+  background-position: center 10%;
 }
 .page-top .splash-bg.goodsemester {
   background-image: url(images/goodsemester-rays.png), linear-gradient(rgb(162, 196, 146), rgba(162, 196, 146, 0) 25%), url(images/goodsemester-bg.jpg);
@@ -787,15 +789,6 @@ pre {
   width: auto;
   max-width: 100%;
 }
-.content.page .page-padding .squareknot-logo {
-  margin: -32px 0 0 0;
-  max-width: 900px;
-}
-.content.page .page-padding .squareknot-slogan {
-  font-size: 28px;
-  color: #888;
-  margin-bottom: 48px;
-}
 
 .content.index.page:nth-of-type(2) {
   animation: 3.5s ease-in-out 0s 1 slideUp;
@@ -1082,10 +1075,6 @@ footer span {
   }
   .content .page-padding {
     padding: 0 32px;
-  }
-  .content .page-padding .squareknot-logo {
-    width: auto !important;
-    max-width: 100%;
   }
   .content .page-padding .video {
     height: 53vw;
@@ -1502,24 +1491,10 @@ footer span {
     background-size: 80vw !important;
   }
   .page-top .splash-bg.squareknot {
-    margin-top: -104px;
-    background: url(images/squareknot-illustration-full.png) center top no-repeat, url(images/squareknot-logo-text-green.png) center bottom 48px no-repeat;
-    background-size: 80vh, 90vw;
-    height: 80vh;
-    position: relative;
+    background-size: 100vh;
   }
-  .page-top .splash-bg.squareknot img {
-    display: none;
-  }
-  .page-top .splash-bg.squareknot .slogan {
-    display: block;
-    color: #888;
-    font-size: 18px;
-    text-align: center;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+  .page-top .splash-bg.squareknot .site-logo {
+    background-size: 90vw !important;
   }
   .page-top .splash-bg.zelda-universe .site-logo {
     background-size: 90vw !important;

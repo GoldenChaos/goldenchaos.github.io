@@ -175,24 +175,10 @@
     background-size: 80vw !important;
   }
   .page-top .splash-bg.squareknot {
-    margin-top: -104px;
-    background: url(images/squareknot-illustration-full.png) center top no-repeat, url(images/squareknot-logo-text-green.png) center bottom 48px no-repeat;
-    background-size: 80vh, 90vw;
-    height: 80vh;
-    position: relative;
+    background-size: 100vh;
   }
-  .page-top .splash-bg.squareknot img {
-    display: none;
-  }
-  .page-top .splash-bg.squareknot .slogan {
-    display: block;
-    color: #888;
-    font-size: 18px;
-    text-align: center;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+  .page-top .splash-bg.squareknot .site-logo {
+    background-size: 90vw !important;
   }
   .page-top .splash-bg.zelda-universe .site-logo {
     background-size: 90vw !important;

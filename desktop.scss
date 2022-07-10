@@ -243,13 +243,16 @@ pre {
 			}
 		}
 		&.squareknot {
-			position: relative;
-			margin-top: -172px;
-			z-index: 1;
-			img {
-				width: 100%;
-			}.slogan {
-				display: none;
+			display: flex;
+			flex-direction: column;
+			background-image: url(images/squareknot-illustration.png);
+			background-size: 100vw;
+			background-repeat: no-repeat;
+			background-position: bottom center;
+			.site-logo {
+				background-image: url(images/squareknot-logo-green.png);
+				background-size: 55% !important;
+				background-position: center 10%;
 			}
 		}
 		&.goodsemester {
@@ -673,15 +676,6 @@ pre {
 			width: auto;
 			max-width: 100%;
 		}
-		.squareknot-logo {
-			margin: -32px 0 0 0;
-			max-width: 900px;
-		}
-		.squareknot-slogan {
-			font-size: 28px;
-			color: #888;
-			margin-bottom: 48px;
-		}
 	}
 }
 
@@ -991,10 +985,6 @@ footer {
 	.content {
 		.page-padding {
 			padding: 0 32px;
-			.squareknot-logo {
-				width: auto !important;
-				max-width: 100%;
-			}
 			.video {
 				height: 53vw;
 			}

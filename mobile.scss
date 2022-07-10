@@ -189,24 +189,9 @@ h2 {
 		background-position: center 250px;
 	}
 	.splash-bg.squareknot {
-		margin-top: -104px;
-		background: url(images/squareknot-illustration-full.png) center top no-repeat,
-			url(images/squareknot-logo-text-green.png) center bottom 48px no-repeat;
-		background-size: 80vh, 90vw;
-		height: 80vh;
-		position: relative;
-		img {
-			display: none;
-		}
-		.slogan {
-			display: block;
-			color: #888;
-			font-size: 18px;
-			text-align: center;
-			position: absolute;
-			bottom: 20px;
-			left: 20px;
-			right: 20px;
+		background-size: 100vh;
+		.site-logo {
+			background-size: 90vw !important;
 		}
 	}
 	.splash-bg.zelda-universe {
