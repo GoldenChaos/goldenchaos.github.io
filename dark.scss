@@ -78,7 +78,7 @@ footer {
 			#logo {
 				background-image: url('images/logo-lightblue.png');
 			}
-			a, .social {
+			.menu a, .social {
 				color: #5ab1e1;
 			}
 		}
@@ -99,6 +99,11 @@ footer {
 				border-bottom: 1px solid rgba(255,255,255,.3);
 				&:hover {
 					border-bottom: 1px solid rgba(255,255,255,.6);
+				}
+			}
+			.round-link {
+				.desc {
+					color: #fff;
 				}
 			}
 		}

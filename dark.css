@@ -59,7 +59,7 @@
   .page-top.index nav #logo {
     background-image: url("images/logo-lightblue.png");
   }
-  .page-top.index nav a, .page-top.index nav .social {
+  .page-top.index nav .menu a, .page-top.index nav .social {
     color: #5ab1e1;
   }
   .page-top.collx nav a, .page-top.collx nav .social {
@@ -75,6 +75,9 @@
   }
   .page-top .splash-bg .meta a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .page-top .splash-bg .meta .round-link .desc {
+    color: #fff;
   }
   .page-top .splash-bg.collx {
     background-color: #2f3235;
