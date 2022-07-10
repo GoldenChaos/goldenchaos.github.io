@@ -347,6 +347,20 @@ pre {
 		opacity: 0.6;
 	}
 	&.index {
+		nav {
+			color: #437ea3;
+			#logo {
+				background-image: url(images/logo-blue.png);
+			}
+			.menu a, .social {
+				color: #437ea3;
+			}
+			.menu a:hover {
+				border-color: rgba(67, 125, 162, 0.3)
+			}
+		}
+	}
+	&.index {
 		position: relative;
 		min-height: 0;
 		height: auto;

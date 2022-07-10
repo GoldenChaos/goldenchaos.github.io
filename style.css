@@ -472,6 +472,18 @@ pre {
 .page-top.zelda-maps .chevron {
   opacity: 0.6;
 }
+.page-top.index nav {
+  color: #437ea3;
+}
+.page-top.index nav #logo {
+  background-image: url(images/logo-blue.png);
+}
+.page-top.index nav .menu a, .page-top.index nav .social {
+  color: #437ea3;
+}
+.page-top.index nav .menu a:hover {
+  border-color: rgba(67, 125, 162, 0.3);
+}
 .page-top.index {
   position: relative;
   min-height: 0;
