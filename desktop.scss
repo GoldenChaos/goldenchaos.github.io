@@ -211,7 +211,7 @@ pre {
 			animation: 7s ease-in-out 3s 10 pulseBounce;
 		}
 		&.collx {
-			background: #f2f7f9 !important;
+			background-color: #f2f7f9;
 			background-image: url(images/collx-bg.svg),
 				url(images/collx-bg-2.svg);
 			background-size: 70%, 55%;
@@ -311,7 +311,7 @@ pre {
 		}
 	}
 	.chevron {
-		background-image: url(images/chevron-shadow.png);
+		background-image: url(images/chevron.png);
 		background-size: 55px;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -760,11 +760,6 @@ pre {
 					border-bottom: 1px solid rgba(0,0,0,.6);
 				}
 			}
-			&:last-of-type {
-				span {
-					margin-bottom: 0;
-				}
-			}
 		}
 	}
 	.links-wrapper {
@@ -819,7 +814,6 @@ pre {
 				}
 				.desc {
 					font-size: 12px;
-					color: #000;
 				}
 			}
 		}

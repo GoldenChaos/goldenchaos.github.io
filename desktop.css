@@ -211,7 +211,7 @@ pre {
   animation: 7s ease-in-out 3s 10 pulseBounce;
 }
 .page-top .splash-bg.collx {
-  background: #f2f7f9 !important;
+  background-color: #f2f7f9;
   background-image: url(images/collx-bg.svg), url(images/collx-bg-2.svg);
   background-size: 70%, 55%;
   background-repeat: no-repeat;
@@ -294,7 +294,7 @@ pre {
   background-repeat: no-repeat, repeat, repeat-x;
 }
 .page-top .chevron {
-  background-image: url(images/chevron-shadow.png);
+  background-image: url(images/chevron.png);
   background-size: 55px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -711,9 +711,6 @@ pre {
 .meta .info .info-bit a:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 }
-.meta .info .info-bit:last-of-type span {
-  margin-bottom: 0;
-}
 .meta .links-wrapper {
   align-self: center;
   width: auto;
@@ -768,7 +765,6 @@ pre {
 }
 .meta .links-wrapper .links .round-link .desc {
   font-size: 12px;
-  color: #000;
 }
 .meta label {
   font-weight: 500;
