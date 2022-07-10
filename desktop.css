@@ -211,7 +211,7 @@ pre {
   animation: 7s ease-in-out 3s 10 pulseBounce;
 }
 .page-top .splash-bg.collx {
-  background: #f2f7f9;
+  background: #fff;
   background-image: url(images/collx-bg.svg), url(images/collx-bg-2.svg);
   background-size: 70%, 55%;
   background-repeat: no-repeat;
@@ -304,6 +304,9 @@ pre {
   right: 0;
   height: 32px;
   opacity: 0.4;
+}
+.page-top.collx nav #logo {
+  color: #fff;
 }
 .page-top.collx nav .menu a {
   color: #0285fe;
