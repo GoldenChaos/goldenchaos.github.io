@@ -5,14 +5,19 @@
   .page-top.white a, .page-padding a {
     color: #5bb1e2;
   }
-  .page-top.white #logo {
-    background-image: url("images/logo-lightblue.png");
+  .page-top.white #logo, .page-top.crossbeam #logo {
+    background-image: url("images/logo-lightblue.png") !important;
+    color: rgb(92, 177, 227);
   }
-  .page-top.white nav {
+  .page-top.white nav, .page-top.crossbeam nav {
+    color: rgb(92, 177, 227);
     background: rgba(32, 32, 32, 0.8);
   }
-  .page-top.white .menu a:hover {
-    border-color: rgba(92, 177, 227, 0.3);
+  .page-top.white .menu a, .page-top.white .menu .social, .page-top.crossbeam .menu a, .page-top.crossbeam .menu .social {
+    color: rgb(92, 177, 227);
+  }
+  .page-top.white .menu a:hover, .page-top.crossbeam .menu a:hover {
+    border-color: rgba(92, 177, 227, 0.3) !important;
   }
   .segmented-control {
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -53,14 +58,27 @@
   .quote-grid blockquote, .squareknot-slogan {
     color: #ccc !important;
   }
-  .page-top.index nav {
-    background: rgba(32, 32, 32, 0.8);
-  }
   .page-top.index nav #logo {
     background-image: url("images/logo-lightblue.png");
   }
   .page-top.index nav a, .page-top.index nav .social {
     color: #5ab1e1;
+  }
+  .page-top.collx nav a, .page-top.collx nav .social {
+    color: #fff;
+  }
+  .page-top .splash-bg .meta {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .page-top .splash-bg.collx {
+    background-color: #2f3235;
+  }
+  .page-top .splash-bg.collx .site-logo {
+    background-image: url(images/collx-logo-white.png);
+  }
+  .page-top .splash-bg.crossbeam .site-logo {
+    background-image: url(images/crossbeam-logo-white.png);
   }
 }
 

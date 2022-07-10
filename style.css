@@ -199,12 +199,11 @@ pre {
 
 .page-top {
   height: 100vh;
-  min-height: 700px;
+  max-height: 1024px;
   overflow: hidden;
   position: relative;
 }
 .page-top.white {
-  background: #fff;
   height: auto !important;
   min-height: 0 !important;
   max-height: none !important;
@@ -329,7 +328,7 @@ pre {
 .page-top .splash-bg.collx {
   background: #f2f7f9;
   background-image: url(images/collx-bg.svg), url(images/collx-bg-2.svg);
-  background-size: cover, 50vw, 50%;
+  background-size: 70%, 55%;
   background-repeat: no-repeat;
   background-position: top left, bottom right;
   margin-top: 0;
@@ -342,16 +341,12 @@ pre {
   background-image: url(images/crossbeam-city.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center top;
-  background-color: #fff;
-  margin-top: 160px;
+  background-position: center 500px;
 }
 .page-top .splash-bg.crossbeam .site-logo {
   background-image: url(images/crossbeam-logo.png);
   background-size: 55% !important;
-  background-position: top left;
-  margin: 12px auto;
-  max-width: 980px;
+  background-position: center 20%;
 }
 .page-top .splash-bg.crossbeam a {
   color: #fff;
@@ -419,12 +414,6 @@ pre {
   right: 0;
   height: 32px;
   opacity: 0.4;
-}
-.page-top.crossbeam {
-  background-color: #fff;
-}
-.page-top.crossbeam nav {
-  background: none;
 }
 .page-top.zelda-maps .chevron {
   opacity: 0.6;
@@ -820,66 +809,61 @@ pre {
   overflow: hidden;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.2) 0 32px 64px;
-}
-.meta .meta-bg {
-  background-color: rgba(255, 255, 255, 0.25);
-  overflow: hidden;
-  border-radius: 12px;
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-}
-.meta .meta-bg.dark {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-.meta a {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-.meta a:hover {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
 }
 .meta .info {
-  position: relative;
-  z-index: 1;
   display: flex;
-  align-items: center;
+  flex-direction: row;
 }
-.meta .info div:first-of-type {
+.meta .info .info-bit {
+  width: 100%;
   flex-grow: 1;
 }
-.meta .info div:last-of-type {
+.meta .info .info-bit label {
+  font-weight: 500;
+  display: block;
+  text-transform: uppercase;
+  font-size: 13px;
+  opacity: 0.5;
+  letter-spacing: 0.5px;
+}
+.meta .info .info-bit span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.meta .info .info-bit a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.meta .info .info-bit a:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+.meta .links {
   display: flex;
-  flex-direction: column;
+  gap: 20px;
+  margin-top: 8px;
 }
-.meta .info div h1 {
-  margin: 0 0 12px 0;
-}
-.meta .info div label {
-  font-weight: bold;
-}
-.meta .info div .visit-site {
+.meta .links a {
+  width: 100%;
+  display: block;
   border-radius: 6px;
   background: #5bb0e1;
   border: 0 !important;
   color: #fff !important;
-  padding: 16px;
+  padding: 12px;
   font-size: 18px;
   text-align: center;
-  position: relative;
-  display: table-cell;
   vertical-align: middle;
-  margin-bottom: 12px;
 }
-.meta .info div .visit-site:last-of-type {
-  margin: 0;
-}
-.meta .info div .visit-site:hover {
+.meta .links a:hover {
   opacity: 0.8;
-  border: 0 !important;
+}
+.meta .links a i {
+  font-size: 22px;
+  margin-right: 4px;
 }
 
 .crossbeam .meta .visit-site {
@@ -1060,14 +1044,19 @@ footer span {
   .page-top.white a, .page-padding a {
     color: #5bb1e2;
   }
-  .page-top.white #logo {
-    background-image: url("images/logo-lightblue.png");
+  .page-top.white #logo, .page-top.crossbeam #logo {
+    background-image: url("images/logo-lightblue.png") !important;
+    color: rgb(92, 177, 227);
   }
-  .page-top.white nav {
+  .page-top.white nav, .page-top.crossbeam nav {
+    color: rgb(92, 177, 227);
     background: rgba(32, 32, 32, 0.8);
   }
-  .page-top.white .menu a:hover {
-    border-color: rgba(92, 177, 227, 0.3);
+  .page-top.white .menu a, .page-top.white .menu .social, .page-top.crossbeam .menu a, .page-top.crossbeam .menu .social {
+    color: rgb(92, 177, 227);
+  }
+  .page-top.white .menu a:hover, .page-top.crossbeam .menu a:hover {
+    border-color: rgba(92, 177, 227, 0.3) !important;
   }
   .segmented-control {
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -1108,14 +1097,27 @@ footer span {
   .quote-grid blockquote, .squareknot-slogan {
     color: #ccc !important;
   }
-  .page-top.index nav {
-    background: rgba(32, 32, 32, 0.8);
-  }
   .page-top.index nav #logo {
     background-image: url("images/logo-lightblue.png");
   }
   .page-top.index nav a, .page-top.index nav .social {
     color: #5ab1e1;
+  }
+  .page-top.collx nav a, .page-top.collx nav .social {
+    color: #fff;
+  }
+  .page-top .splash-bg .meta {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .page-top .splash-bg.collx {
+    background-color: #2f3235;
+  }
+  .page-top .splash-bg.collx .site-logo {
+    background-image: url(images/collx-logo-white.png);
+  }
+  .page-top .splash-bg.crossbeam .site-logo {
+    background-image: url(images/crossbeam-logo-white.png);
   }
 }
 /* Tablet (Landscape) */
@@ -1251,6 +1253,9 @@ footer span {
   .desktop {
     display: none;
   }
+  .mobile {
+    display: block !important;
+  }
   blockquote {
     line-height: 36px;
     margin: 20px 20px 0 20px;
@@ -1290,6 +1295,14 @@ footer span {
     height: 50px;
     width: 50px;
     background-size: 21px;
+  }
+  .page-top nav #logo.back-logo {
+    width: 90px;
+  }
+  .page-top nav #logo.back-logo i {
+    font-size: 22px;
+    line-height: 50px;
+    padding-left: 12px;
   }
   .page-top nav .menu {
     font-size: 11px;
@@ -1340,18 +1353,13 @@ footer span {
   .page-top .splash-bg .meta {
     font-size: 14px;
     width: auto !important;
-    margin: 20px !important;
+    margin: 20px 20px 64px 20px !important;
+    padding: 20px;
   }
-  .page-top .splash-bg .meta .info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .page-top .splash-bg .meta .visit-site {
-    font-size: 18px;
-    padding: 12px 20px;
-    margin: 20px;
-    width: 100% !important;
+  .page-top .splash-bg .meta .links a {
+    font-size: 14px;
+    padding: 8px;
+    margin-top: 8px;
   }
   .page-top .splash-bg .chevron {
     bottom: 10px;
@@ -1391,6 +1399,12 @@ footer span {
     display: flex;
     margin-top: 20px;
     max-width: calc(100vw - 32px);
+  }
+  .page-top .splash-bg.collx .site-logo {
+    background-size: 90vw !important;
+  }
+  .page-top .splash-bg.crossbeam .site-logo {
+    background-size: 80vw !important;
   }
   .page-top .splash-bg.squareknot {
     margin-top: -104px;

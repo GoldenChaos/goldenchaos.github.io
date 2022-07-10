@@ -5,6 +5,10 @@
 	display: none;
 }
 
+.mobile {
+	display: block !important;
+}
+
 blockquote {
 	line-height: 36px;
 	margin: 20px 20px 0 20px;
@@ -47,6 +51,14 @@ h2 {
 			height: 50px;
 			width: 50px;
 			background-size: 21px;
+			&.back-logo {
+				width: 90px;
+				i {
+					font-size: 22px;
+					line-height: 50px;
+					padding-left: 12px;
+				}
+			}
 		}
 		.menu {
 			font-size: 11px;
@@ -97,17 +109,17 @@ h2 {
 		.meta {
 			font-size: 14px;
 			width: auto !important;
-			margin: 20px !important;
+			margin: 20px 20px 64px 20px !important;
+			padding: 20px;
 			.info {
-				display: flex;
-				flex-direction: column;
-				width: 100%;
 			}
-			.visit-site {
-				font-size: 18px;
-				padding: 12px 20px;
-				margin: 20px;
-				width: 100% !important;
+			.links {
+				
+				a {
+					font-size: 14px;
+					padding: 8px;
+					margin-top: 8px;
+				}
 			}
 		}
 		.chevron {
@@ -153,6 +165,16 @@ h2 {
 				margin-top: 20px;
 				max-width: calc(100vw - 32px);
 			}
+		}
+	}
+	.splash-bg.collx {
+		.site-logo {
+			background-size: 90vw !important;
+		}
+	}
+	.splash-bg.crossbeam {
+		.site-logo {
+			background-size: 80vw !important;
 		}
 	}
 	.splash-bg.squareknot {

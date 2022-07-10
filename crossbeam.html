@@ -44,7 +44,9 @@
 <body>
     <div class="page-top crossbeam">
         <nav>
-            <a id="logo" href="index.html"></a>
+            <a id="logo" class="back-logo" href="index.html">
+                <i class="fas fa-chevron-left mobile"></i>
+            </a>
             <div class="menu">
                 <div>
                     <a class="social" href="https://twitter.com/goldenchaos" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -52,24 +54,41 @@
                     <a class="social" href="https://www.linkedin.com/in/goldenchaos" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a class="social" href="mailto:jess@goldenchaos.net"><i class="fa fa-envelope-square"></i></a>
                 </div>
-                <a href="index.html" class="desktop"><i class="fas fa-chevron-left" style="font-size:14px;margin-right:3px;"></i> Back to Home</a>
+                <div class="desktop">
+                    <a href="index.html">
+                        <i class="fas fa-chevron-left" style="font-size:14px;margin-right:3px;"></i> Back to Home
+                    </a>
+                </div>
             </div>
         </nav>
         <div class="splash-bg crossbeam">
             <div class="site-logo"></div>
             <div class="meta">
-                <div class="meta-bg dark"></div>
                 <div class="info">
-                    <div>
-                        <h1 style="margin-top:0;"><i>Quick Info</i></h1>
-                        <label>Years Employed</label>: 2018-2020<br>
-                        <label>Role</label>: Lead Designer<br>
-                        <!-- label>Venture Funding</label>: $101 million (Series A &bull; Series B &bull; Series C)<br>
-                        <label>Investors</label>: <a href="http://www.a16z.com">Andressen Horowitz</a>, First Round Capital, Uncorked Capital, FirstMark Capital -->
+                    <div class="info-bit">
+                        <label>Years Employed</label>
+                        <span>2018-2020</span>
                     </div>
-                    <div>
-                        <a class="visit-site" href="https://crossbeam.com/" target="_blank">Crossbeam on the Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="info-bit">
+                        <label>Role</label>
+                        <span>Lead Designer (Founding Team)</span>
                     </div>
+                    <div class="info-bit">
+                        <label>Venture Funding</label>
+                        <span>$101 million</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info-bit">
+                        <label>Key Investors</label>
+                        <span><a href="http://www.a16z.com">Andressen Horowitz</a>, First Round Capital, Uncorked Capital, FirstMark Capital</span>
+                    </div>
+                </div>
+                <div class="links">
+                    <a href="https://crossbeam.com/" target="_blank">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        Crossbeam on the Web
+                    </a>
                 </div>
             </div>
             <div class="chevron"></div>
