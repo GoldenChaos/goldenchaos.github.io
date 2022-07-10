@@ -444,14 +444,14 @@ pre {
   left: 0;
   right: 0;
   border-radius: 16px;
-  box-shadow: inset rgba(0, 0, 0, 0.02) 0 0 0 1px;
+  box-shadow: inset rgba(0, 0, 0, 0.03) 0 0 0 1px;
   transition: 0.1s;
   overflow: hidden;
   transform: none;
 }
 .content .item-content:hover {
   transition: 0.1s;
-  box-shadow: inset rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.2) 0 16px 48px;
+  box-shadow: inset rgba(0, 0, 0, 0.03) 0 0 0 1px, rgba(0, 0, 0, 0.2) 0 16px 48px;
   transform: scale(1.01);
 }
 .content .item-content span {

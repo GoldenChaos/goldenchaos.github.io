@@ -473,13 +473,13 @@ pre {
 		right: 0;
 		border-radius: 16px;
 		// box-shadow: inset rgba(0,0,0,.1) 0 0 0 .5px, rgba(0,0,0,.4) 0 16px 48px;
-		box-shadow: inset rgba(0,0,0,.02) 0 0 0 1px;
+		box-shadow: inset rgba(0,0,0,.03) 0 0 0 1px;
 		transition: .1s;
 		overflow: hidden;
 		transform: none;
 		&:hover {
 			transition: .1s;
-			box-shadow: inset rgba(0,0,0,.02) 0 0 0 1px, rgba(0,0,0,.2) 0 16px 48px;
+			box-shadow: inset rgba(0,0,0,.03) 0 0 0 1px, rgba(0,0,0,.2) 0 16px 48px;
 			transform: scale(1.01);
 		}
 		span {
