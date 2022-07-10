@@ -31,7 +31,6 @@
   }
   .content {
     color: #fff;
-    background: rgb(32, 32, 32);
   }
   .content .item-content:hover {
     box-shadow: inset rgba(255, 255, 255, 0.05) 0 0 0 1px;
