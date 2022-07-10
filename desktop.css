@@ -305,6 +305,16 @@ pre {
   height: 32px;
   opacity: 0.4;
 }
+.page-top.collx nav .menu a {
+  color: #0285fe;
+}
+.page-top.squareknot nav #logo {
+  color: #70c289;
+  background-image: url(images/logo-green.png);
+}
+.page-top.squareknot nav .menu a {
+  color: #70c289;
+}
 .page-top.zelda-maps .chevron {
   opacity: 0.6;
 }
@@ -366,37 +376,6 @@ pre {
 }
 .page-top.index .chevron {
   display: none;
-}
-
-.page-top.white a,
-.page-top.index a,
-.page-top.crossbeam a,
-.page-top.collx a {
-  color: #437ea3;
-}
-
-.page-top.white a:hover,
-.page-top.white a:hover,
-.page-top.crossbeam a:hover {
-  border-color: #437ea3;
-}
-
-.page-top.white a.selected,
-.page-top.index a.selected,
-.page-top.crossbeam a.selected {
-  border-color: #437ea3;
-}
-
-.page-top.white #logo,
-.page-top.index #logo,
-.page-top.crossbeam #logo {
-  background-image: url("images/logo-blue.png");
-}
-
-.page-top.white .menu .social:hover,
-.page-top.index .menu .social:hover,
-.page-top.crossbeam .menu .social:hover {
-  color: rgba(67, 126, 162, 0.8);
 }
 
 .splash-bg.zelda-universe,
