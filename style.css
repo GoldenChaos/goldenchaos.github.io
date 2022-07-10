@@ -916,6 +916,7 @@ pre {
 }
 .meta .links-wrapper .links .round-link .desc {
   font-size: 12px;
+  color: #000;
 }
 .meta label {
   font-weight: 500;
