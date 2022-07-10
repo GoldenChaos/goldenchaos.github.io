@@ -95,6 +95,13 @@ footer {
 		.meta {
 			color: #fff;
 			background-color: rgba(0,0,0,.7);
+			a {
+				color: #fff;
+				border-bottom: 1px solid rgba(255,255,255,.3);
+				&:hover {
+					border-bottom: 1px solid rgba(255,255,255,.6);
+				}
+			}
 		}
 		&.collx {
 			background-color: #2f3235;

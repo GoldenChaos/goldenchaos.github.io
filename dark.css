@@ -70,6 +70,13 @@
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
   }
+  .page-top .splash-bg .meta a {
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .page-top .splash-bg .meta a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  }
   .page-top .splash-bg.collx {
     background-color: #2f3235;
   }

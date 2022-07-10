@@ -798,6 +798,7 @@ pre {
 }
 
 .meta {
+  color: #000;
   width: 60vw;
   max-width: 980px;
   margin: 0 auto;
@@ -810,7 +811,7 @@ pre {
   box-shadow: rgba(0, 0, 0, 0.2) 0 32px 64px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
 }
 .meta .info {
@@ -835,10 +836,11 @@ pre {
   font-size: 16px;
 }
 .meta .info .info-bit a {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 .meta .info .info-bit a:hover {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 }
 .meta .links {
   display: flex;
@@ -1107,6 +1109,13 @@ footer span {
   .page-top .splash-bg .meta {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
+  }
+  .page-top .splash-bg .meta a {
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .page-top .splash-bg .meta a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   }
   .page-top .splash-bg.collx {
     background-color: #2f3235;
