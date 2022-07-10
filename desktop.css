@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -381,7 +380,7 @@ pre {
   border-color: #437ea3;
 }
 
-å .page-top.white #logo,
+.page-top.white #logo,
 .page-top.index #logo,
 .page-top.crossbeam #logo {
   background-image: url("images/logo-blue.png");
