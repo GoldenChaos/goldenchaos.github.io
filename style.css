@@ -1398,8 +1398,14 @@ footer span {
     margin-top: 20px;
     max-width: calc(100vw - 32px);
   }
+  .page-top .splash-bg.collx {
+    background-size: 100%, 85%;
+  }
   .page-top .splash-bg.collx .site-logo {
     background-size: 90vw !important;
+  }
+  .page-top .splash-bg.crossbeam {
+    background-position: center 250px;
   }
   .page-top .splash-bg.crossbeam .site-logo {
     background-size: 80vw !important;
