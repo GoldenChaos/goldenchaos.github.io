@@ -84,7 +84,7 @@ pre {
 
 .page-top {
 	height: 100vh;
-	max-height: 1024px;
+	max-height: 768px;
 	overflow: hidden;
 	position: relative;
 	&.white {
@@ -201,10 +201,15 @@ pre {
 				}
 			}
 			img, i {
-				font-size: 30px;
+				font-size: 26px;
 				width: 36px;
 				height: 36px;
 				display: block;
+			}
+			img {
+				width: 36px;
+				height: 36px;
+				margin-top: -4px;
 			}
 		}
 		.chevron {
@@ -251,8 +256,14 @@ pre {
 			background-position: bottom center;
 			.site-logo {
 				background-image: url(images/squareknot-logo-green.png);
-				background-size: 55% !important;
-				background-position: center 10%;
+				background-size: 60% !important;
+				background-position: center bottom;
+			}
+			.slogan {
+				text-align: center;
+				margin-bottom: 5%;
+				font-size: 24px;
+				margin-top: 4px;
 			}
 		}
 		&.goodsemester {
@@ -335,11 +346,11 @@ pre {
 	&.squareknot {
 		nav {
 			#logo {
-				color: #70c289;
-				background-image: url(images/logo-green.png);
+				//color: #70c289;
+				//background-image: url(images/logo-green.png);
 			}
 			.menu a {
-				color: #70c289;
+				//color: #70c289;
 			}
 		}
 	}
