@@ -777,6 +777,9 @@ pre {
 					border-bottom: 1px solid rgba(0,0,0,.6);
 				}
 			}
+			&:last-of-type span {
+				margin-bottom: 0;
+			}
 		}
 	}
 	.links-wrapper {

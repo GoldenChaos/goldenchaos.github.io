@@ -867,6 +867,9 @@ pre {
 .meta .info .info-bit a:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 }
+.meta .info .info-bit:last-of-type span {
+  margin-bottom: 0;
+}
 .meta .links-wrapper {
   align-self: center;
   width: auto;
