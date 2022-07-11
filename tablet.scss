@@ -4,7 +4,7 @@
 	and (max-device-width : 1024px) 
 	and (orientation : landscape)  {
 	.page-top {
-		height: calc(100vh - 31px) !important;
+		//height: calc(100vh - 31px) !important;
 		.splash-bg {
 			.site-logo {
 				background-size: 70% !important;
@@ -40,8 +40,8 @@
 	and (max-device-width : 1024px) 
 	and (orientation : portrait) {
 	.page-top {
-		height: calc(100vh - 31px) !important;
-		max-height: none;
+		//height: calc(100vh - 31px) !important;
+		//max-height: none;
 		nav {
 			height: 152px;
 			#logo {
