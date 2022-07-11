@@ -275,7 +275,7 @@ pre {
 				url(images/goodsemester-bg.jpg);
 			background-size: max(160vh,160vw), auto, contain;
 			background-repeat: no-repeat, repeat, repeat;
-			background-position: center bottom 50%;
+			background-position: center bottom 46%;
 			.site-logo {
 				background-image: url(images/goodsemester-logo.png);
 				background-size: 80%;
@@ -284,7 +284,7 @@ pre {
 		&.zelda-universe {
 			.site-logo {
 				background-image: url(images/zu-logo-vertical.png);
-				background-size: 75%;
+				background-size: 60%;
 			}
 		}
 		&.zelda-maps {
@@ -296,7 +296,7 @@ pre {
 			background-position: top, center center, top right;
 			.site-logo {
 				background-image: url(images/zelda-maps-logo.png);
-				background-size: 75%;
+				background-size: 60%;
 			}
 		}
 		&.zelda-wiki {
@@ -305,7 +305,7 @@ pre {
 			background-size: auto, cover;
 			.site-logo {
 				background-image: url(images/zelda-wiki-logo.png);
-				background-size: 75%;
+				background-size: 60%;
 			}
 		}
 		&.master-sword {
