@@ -228,6 +228,7 @@ pre {
   background-size: 60%;
 }
 .page-top .splash-bg.crossbeam {
+  background-color: #fff;
   background-image: url(images/crossbeam-city.svg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -251,6 +252,7 @@ pre {
   background-size: 100vw;
   background-repeat: no-repeat;
   background-position: bottom center;
+  background-color: #fff;
 }
 .page-top .splash-bg.squareknot .site-logo {
   background-image: url(images/squareknot-logo-green.png);

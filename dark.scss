@@ -114,9 +114,13 @@ footer {
 			}
 		}
 		&.crossbeam {
+			background-color: #313131;
 			.site-logo {
 				background-image: url(images/crossbeam-logo-white.png);
 			}
+		}
+		&.squareknot {
+			background-color: #313131;
 		}
 	}
 }
