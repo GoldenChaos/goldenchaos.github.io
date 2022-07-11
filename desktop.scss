@@ -336,7 +336,12 @@ pre {
 		height: 32px;
 		opacity: 0.4;
 	}
-	&.index, &.crossbeam, &.collx, &.squareknot {
+	&.index,
+	&.goldenchaos-btt,
+	&.faceports,
+	&.collx,
+	&.crossbeam,
+	&.squareknot {
 		nav {
 			color: #437ea3;
 			#logo {

@@ -56,20 +56,23 @@
   .quote-grid blockquote, .squareknot-slogan {
     color: #ccc !important;
   }
-  .page-top.index nav #logo, .page-top.collx nav #logo, .page-top.crossbeam nav #logo {
+  .page-top.index nav #logo, .page-top.goldenchaos-btt nav #logo, .page-top.faceports nav #logo, .page-top.collx nav #logo, .page-top.crossbeam nav #logo {
     background-image: url("images/logo-lightblue.png");
   }
-  .page-top.index nav .menu a, .page-top.index nav .social, .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.crossbeam nav .menu a, .page-top.crossbeam nav .social {
+  .page-top.index nav .menu a, .page-top.index nav .social, .page-top.goldenchaos-btt nav .menu a, .page-top.goldenchaos-btt nav .social, .page-top.faceports nav .menu a, .page-top.faceports nav .social, .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.crossbeam nav .menu a, .page-top.crossbeam nav .social {
     color: #5ab1e1;
   }
-  .page-top.index nav .menu a:hover, .page-top.collx nav .menu a:hover, .page-top.crossbeam nav .menu a:hover {
+  .page-top.index nav .menu a:hover, .page-top.goldenchaos-btt nav .menu a:hover, .page-top.faceports nav .menu a:hover, .page-top.collx nav .menu a:hover, .page-top.crossbeam nav .menu a:hover {
     border-color: rgba(90, 177, 225, 0.3);
   }
-  .page-top.collx nav #logo {
+  .page-top.collx nav #logo, .page-top.squareknot nav #logo {
     background-image: url("images/logo.png");
   }
-  .page-top.collx nav a, .page-top.collx nav .social {
+  .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.squareknot nav .menu a, .page-top.squareknot nav .social {
     color: #fff;
+  }
+  .page-top.collx nav .menu a:hover, .page-top.squareknot nav .menu a:hover {
+    border-color: rgba(255, 255, 255, 0.3);
   }
   .page-top .splash-bg .meta {
     color: #fff;
@@ -99,6 +102,9 @@
   }
   .page-top .splash-bg.squareknot {
     background-color: #313131;
+  }
+  .page-top .splash-bg.squareknot .slogan {
+    color: #fff;
   }
 }
 

@@ -73,7 +73,11 @@ footer {
 
 
 .page-top {
-	&.index, &.collx, &.crossbeam {
+	&.index,
+	&.goldenchaos-btt,
+	&.faceports,
+	&.collx,
+	&.crossbeam {
 		nav {
 			#logo {
 				background-image: url('images/logo-lightblue.png');
@@ -86,13 +90,17 @@ footer {
 			}
 		}
 	}
-	&.collx {
+	&.collx,
+	&.squareknot {
 		nav {
 			#logo {
 				background-image: url('images/logo.png');
 			}
-			a, .social {
+			.menu a, .social {
 				color: #fff;
+			}
+			.menu a:hover {
+				border-color: rgba(255, 255, 255, 0.3);
 			}
 		}
 	}
@@ -127,6 +135,9 @@ footer {
 		}
 		&.squareknot {
 			background-color: #313131;
+			.slogan {
+				color: #fff;
+			}
 		}
 	}
 }
