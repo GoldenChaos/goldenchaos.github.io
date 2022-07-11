@@ -668,6 +668,9 @@ pre {
 	z-index: 100;
 	.full-width {
 		padding: 0 32px;
+		margin: 0 auto;
+		max-width: 1440px;
+		align-self: center;
 		img {
 			width: 100%;
 			height: auto;

@@ -758,6 +758,9 @@ pre {
 }
 .content.page .full-width {
   padding: 0 32px;
+  margin: 0 auto;
+  max-width: 1440px;
+  align-self: center;
 }
 .content.page .full-width img {
   width: 100%;
