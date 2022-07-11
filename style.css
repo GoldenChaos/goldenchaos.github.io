@@ -1266,13 +1266,6 @@ footer span {
   .page-top .splash-bg.venti {
     background-size: 80vw, auto, cover;
   }
-  .page-top .meta {
-    width: calc(100% - 32px) !important;
-    margin: 16px 16px 40px 16px !important;
-  }
-  .page-top .meta .visit-site {
-    width: 33% !important;
-  }
   .content .full-width {
     padding: 0 16px !important;
   }
