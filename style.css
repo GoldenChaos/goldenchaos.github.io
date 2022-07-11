@@ -367,7 +367,7 @@ pre {
   animation: 7s ease-in-out 3s 10 pulseBounce;
 }
 .page-top .splash-bg.collx {
-  background-color: #f2f7f9;
+  background-color: #fafeff;
   background-image: url(images/collx-bg.svg), url(images/collx-bg-2.svg);
   background-size: 70%, 55%;
   background-repeat: no-repeat;
@@ -411,6 +411,7 @@ pre {
   background-position: center bottom;
 }
 .page-top .splash-bg.squareknot .slogan {
+  color: #000;
   text-align: center;
   margin-bottom: 5%;
   font-size: 24px;
@@ -469,26 +470,24 @@ pre {
   height: 32px;
   opacity: 0.4;
 }
+.page-top.index nav, .page-top.crossbeam nav, .page-top.collx nav, .page-top.squareknot nav {
+  color: #437ea3;
+}
+.page-top.index nav #logo, .page-top.crossbeam nav #logo, .page-top.collx nav #logo, .page-top.squareknot nav #logo {
+  background-image: url(images/logo-blue.png);
+}
+.page-top.index nav .menu a, .page-top.index nav .social, .page-top.crossbeam nav .menu a, .page-top.crossbeam nav .social, .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.squareknot nav .menu a, .page-top.squareknot nav .social {
+  color: #437ea3;
+}
+.page-top.index nav .menu a:hover, .page-top.crossbeam nav .menu a:hover, .page-top.collx nav .menu a:hover, .page-top.squareknot nav .menu a:hover {
+  border-color: rgba(67, 125, 162, 0.3);
+}
 .page-top.collx nav #logo {
   color: #fff;
-}
-.page-top.collx nav .menu a {
-  color: #0285fe;
+  background-image: url(images/logo.png);
 }
 .page-top.zelda-maps .chevron {
   opacity: 0.6;
-}
-.page-top.index nav {
-  color: #437ea3;
-}
-.page-top.index nav #logo {
-  background-image: url(images/logo-blue.png);
-}
-.page-top.index nav .menu a, .page-top.index nav .social {
-  color: #437ea3;
-}
-.page-top.index nav .menu a:hover {
-  border-color: rgba(67, 125, 162, 0.3);
 }
 .page-top.index {
   position: relative;
@@ -1165,11 +1164,17 @@ footer span {
   .quote-grid blockquote, .squareknot-slogan {
     color: #ccc !important;
   }
-  .page-top.index nav #logo {
+  .page-top.index nav #logo, .page-top.collx nav #logo, .page-top.crossbeam nav #logo {
     background-image: url("images/logo-lightblue.png");
   }
-  .page-top.index nav .menu a, .page-top.index nav .social {
+  .page-top.index nav .menu a, .page-top.index nav .social, .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.crossbeam nav .menu a, .page-top.crossbeam nav .social {
     color: #5ab1e1;
+  }
+  .page-top.index nav .menu a:hover, .page-top.collx nav .menu a:hover, .page-top.crossbeam nav .menu a:hover {
+    border-color: rgba(90, 177, 225, 0.3);
+  }
+  .page-top.collx nav #logo {
+    background-image: url("images/logo.png");
   }
   .page-top.collx nav a, .page-top.collx nav .social {
     color: #fff;

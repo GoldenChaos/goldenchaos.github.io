@@ -216,7 +216,7 @@ pre {
 			animation: 7s ease-in-out 3s 10 pulseBounce;
 		}
 		&.collx {
-			background-color: #f2f7f9;
+			background-color: #fafeff;
 			background-image: url(images/collx-bg.svg),
 				url(images/collx-bg-2.svg);
 			background-size: 70%, 55%;
@@ -262,6 +262,7 @@ pre {
 				background-position: center bottom;
 			}
 			.slogan {
+				color: #000;
 				text-align: center;
 				margin-bottom: 5%;
 				font-size: 24px;
@@ -335,13 +336,25 @@ pre {
 		height: 32px;
 		opacity: 0.4;
 	}
+	&.index, &.crossbeam, &.collx, &.squareknot {
+		nav {
+			color: #437ea3;
+			#logo {
+				background-image: url(images/logo-blue.png);
+			}
+			.menu a, .social {
+				color: #437ea3;
+			}
+			.menu a:hover {
+				border-color: rgba(67, 125, 162, 0.3)
+			}
+		}
+	}
 	&.collx {
 		nav {
 			#logo {
 				color: #fff;
-			}
-			.menu a {
-				color: #0285fe;
+				background-image: url(images/logo.png);
 			}
 		}
 	}
@@ -358,20 +371,6 @@ pre {
 	}
 	&.zelda-maps .chevron {
 		opacity: 0.6;
-	}
-	&.index {
-		nav {
-			color: #437ea3;
-			#logo {
-				background-image: url(images/logo-blue.png);
-			}
-			.menu a, .social {
-				color: #437ea3;
-			}
-			.menu a:hover {
-				border-color: rgba(67, 125, 162, 0.3)
-			}
-		}
 	}
 	&.index {
 		position: relative;

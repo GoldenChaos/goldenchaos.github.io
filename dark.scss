@@ -73,7 +73,7 @@ footer {
 
 
 .page-top {
-	&.index {
+	&.index, &.collx, &.crossbeam {
 		nav {
 			#logo {
 				background-image: url('images/logo-lightblue.png');
@@ -81,10 +81,16 @@ footer {
 			.menu a, .social {
 				color: #5ab1e1;
 			}
+			.menu a:hover {
+				border-color: rgba(90, 177, 225, 0.3);
+			}
 		}
 	}
 	&.collx {
 		nav {
+			#logo {
+				background-image: url('images/logo.png');
+			}
 			a, .social {
 				color: #fff;
 			}
