@@ -3,7 +3,7 @@
     background: rgb(32, 32, 32);
   }
   .page-top.white a, .page-padding a {
-    color: #5bb1e2;
+    color: #5bb1e2 !important;
   }
   .page-top.white #logo, .page-top.crossbeam #logo {
     background-image: url("images/logo-lightblue.png") !important;
