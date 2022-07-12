@@ -39,6 +39,16 @@
     <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png">
     <link rel="mask-icon" href="website_icon.svg" color="#4083a0">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+    
+    <script>
+        if (window.sessionStorage.getItem('animated') === null) {
+            document.getElementById("about").classList.add('animate');
+            document.getElementById("segmented-control").classList.add('animate');
+            document.getElementById("chevron").classList.add('animate');
+            document.getElementById("chevron").classList.add('animate');
+            window.sessionStorage.setItem('animated', 1);
+        }
+    </script>
 </head>
 <body>
     <div class="page-top index">
@@ -60,7 +70,7 @@
         </nav>
         <div class="splash-bg index">
             <center>
-                <div class="about">
+                <div class="about" id="about">
                     <div class="me">
                         <img src="images/me.png" alt="me">
                     </div>
@@ -74,7 +84,7 @@
                     </div>
                 </div>
             </center>
-            <div class="segmented-control">
+            <div class="segmented-control" id="segmented-control">
                 <a href="#utilities">
                     <center>
                         <i class="fa-solid fa-screwdriver-wrench"></i>
@@ -94,13 +104,13 @@
                     </center>
                 </a>
             </div>
-            <div class="chevron"></div>
+            <div class="chevron" id="chevron"></div>
         </div>
     </div>
-    <div class="content index page">
+    <div class="content index page" id="section-1">
         <h1 id="utilities" class="title" style="padding-left:32px;margin-bottom:0;">Utilities</h1>
     </div>
-    <div class="content index page" style="padding-bottom:24px;">
+    <div class="content index page" style="padding-bottom:24px;" id="section-2">
         <div class="item-wrapper">
             <div class="item item-transition">
                 <a class="item-content goldenchaos-btt" href="goldenchaos-btt.html"></a>
@@ -114,7 +124,7 @@
             </div>
         </div>
     </div>
-    <div class="content index page">
+    <div class="content index page" id="section-3">
         <h1 id="apps" class="title" style="padding-left:32px;margin:0;">Apps and Services</h1>
     </div>
     <div class="content index page" style="padding-bottom:32px;">
@@ -143,10 +153,10 @@
             </div>
         </div>
     </div>
-    <div class="content index page">
+    <div class="content index page" id="section-4">
         <h1 id="games" class="title" style="padding-left:32px;margin:0;">Games Industry</h1>
     </div>
-    <div class="content index page" style="padding-bottom:24px;">
+    <div class="content index page" id="section-5">
         <div class="item-wrapper">
             <div class="item item-transition">
                 <a class="item-content zelda-universe" href="zelda-universe.html">

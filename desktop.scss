@@ -213,7 +213,7 @@ pre {
 			}
 		}
 		.chevron {
-			animation: 7s ease-in-out 3s 10 pulseBounce;
+			//animation: 7s ease-in-out 3s 10 pulseBounce;
 		}
 		&.collx {
 			background-color: #fafeff;
@@ -397,7 +397,7 @@ pre {
 				padding: 32px;
 				color: #fff !important;
 				max-width: 1000px;
-				animation: 2.7s ease-in-out 0s 1 slideDown;
+				//animation: 2.7s ease-in-out 0s 1 slideDown;
 				.desc {
 					flex-shrink: 1;
 					h1 {
@@ -703,28 +703,28 @@ pre {
 	}
 }
 
-.content.index.page:nth-of-type(2) {
-	animation: 3.5s ease-in-out 0s 1 slideUp;
+.content.index.page#section-1.animate {
+	//animation: 3.5s ease-in-out 0s 1 slideUp;
 }
 
-.content.index.page:nth-of-type(3) {
-	animation: 4s ease-in-out 0s 1 slideUp;
+.content.index.page#section-2.animate {
+	//animation: 4s ease-in-out 0s 1 slideUp;
 }
 
-.content.index.page:nth-of-type(4) {
-	animation: 5s ease-in-out 0s 1 slideUp;
+.content.index.page#section-3.animate {
+	//animation: 5s ease-in-out 0s 1 slideUp;
 }
 
-.content.index.page:nth-of-type(5) {
-	animation: 5.3s ease-in-out 0s 1 slideUp;
+.content.index.page#section-4.animate {
+	//animation: 5.3s ease-in-out 0s 1 slideUp;
 }
 
-.content.index.page:nth-of-type(6) {
-	animation: 6.4s ease-in-out 0s 1 slideUp;
+.content.index.page#section-5.animate {
+	//animation: 6.4s ease-in-out 0s 1 slideUp;
 }
 
-.content.index.page:nth-of-type(7) {
-	animation: 6.8s ease-in-out 0s 1 slideUp;
+.content.index.page#section-6.animate {
+	//animation: 6.8s ease-in-out 0s 1 slideUp;
 }
 
 .content.app-icons {
