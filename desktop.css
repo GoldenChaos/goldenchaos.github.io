@@ -212,6 +212,9 @@ pre {
   height: 36px;
   margin-top: -4px;
 }
+.page-top .splash-bg .chevron {
+  animation: 7s ease-in-out 3s 10 pulseBounce;
+}
 .page-top .splash-bg.collx {
   background-color: #fafeff;
   background-image: url(images/collx-bg.svg), url(images/collx-bg-2.svg);

@@ -168,10 +168,10 @@ h2 {
 				display: flex;
 				margin-top: 20px;
 				max-width: calc(100vw - 32px);
-				animation: 4s ease-in-out 0s 1 bounce3;
+				//animation: 4s ease-in-out 0s 1 bounce3;
 			}
 			.chevron {
-				animation: 4.4s ease-in-out 0s 1 bounce2;
+				//animation: 4.4s ease-in-out 0s 1 bounce2;
 			}
 		}
 	}
@@ -277,14 +277,6 @@ h2 {
 	&.index {
 		flex-flow: column;
 	}
-}
-
-.content.index.page:nth-of-type(6) {
-	animation: none;
-}
-
-.content.index.page:nth-of-type(7) {
-	animation: none;
 }
 
 .screenshot-grid-2-col,

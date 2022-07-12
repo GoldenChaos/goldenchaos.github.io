@@ -363,6 +363,9 @@ pre {
   height: 36px;
   margin-top: -4px;
 }
+.page-top .splash-bg .chevron {
+  animation: 7s ease-in-out 3s 10 pulseBounce;
+}
 .page-top .splash-bg.collx {
   background-color: #fafeff;
   background-image: url(images/collx-bg.svg), url(images/collx-bg-2.svg);
@@ -1473,10 +1476,6 @@ footer span {
     display: flex;
     margin-top: 20px;
     max-width: calc(100vw - 32px);
-    animation: 4s ease-in-out 0s 1 bounce3;
-  }
-  .page-top .splash-bg.index .chevron {
-    animation: 4.4s ease-in-out 0s 1 bounce2;
   }
   .page-top .splash-bg.collx {
     background-size: 100%, 85%;
@@ -1567,12 +1566,6 @@ footer span {
   }
   .content.index {
     flex-flow: column;
-  }
-  .content.index.page:nth-of-type(6) {
-    animation: none;
-  }
-  .content.index.page:nth-of-type(7) {
-    animation: none;
   }
   .screenshot-grid-2-col,
 .screenshot-grid-3-col,
