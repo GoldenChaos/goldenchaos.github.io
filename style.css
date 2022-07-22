@@ -1054,21 +1054,6 @@ footer span {
   text-align: center;
 }
 
-/* Small Desktop */
-@media only screen and (max-width: 1024px) {
-  .page-top .about h1 div {
-    font-size: 23px !important;
-  }
-}
-/* Smaller Desktop */
-@media only screen and (max-width: 1000px) {
-  .page-top .about .desc h1 {
-    font-size: 38px;
-  }
-  .page-top .about .desc h1 div {
-    font-size: 20px !important;
-  }
-}
 @media (prefers-color-scheme: dark) {
   body, .page-top.white {
     background: rgb(32, 32, 32);
@@ -1289,9 +1274,6 @@ footer span {
     margin-right: 0 !important;
   }
 }
-/* Large Tablet (Portrait) */
-/* Large Tablet (Landscape) */
-/* Small Tablet (Portrait) */
 /* Mobile */
 @media only screen and (max-width: 700px) {
   .desktop {
@@ -1582,7 +1564,7 @@ footer span {
   }
 }
 /* iPhone SE 2020 */
-@media only screen and (device-width: 375px) and (-webkit-device-pixel-ratio: 2) {
+@media only screen and (max-width: 375px) and (device-width: 375px) and (-webkit-device-pixel-ratio: 2) {
   .about .desc .title {
     font-size: 24px;
     line-height: 24px;
@@ -1598,7 +1580,7 @@ footer span {
   }
 }
 /* iPhone 13 mini */
-@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (max-width: 375px) and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .about .desc .title {
     font-size: 30px;
   }
@@ -1609,7 +1591,7 @@ footer span {
   }
 }
 /* iPhone 13/13 Pro */
-@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (max-width: 390px) and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
   .about .me {
     min-width: 0 !important;
     max-width: none !important;
@@ -1617,11 +1599,26 @@ footer span {
   }
 }
 /* iPhone 13 Pro Max */
-@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (max-width: 428px) and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
   .about .me {
     min-width: 0 !important;
     max-width: none !important;
     width: 81% !important;
+  }
+}
+/* Small Desktop */
+@media only screen and (max-width: 1024px) {
+  .page-top .about h1 div {
+    font-size: 23px !important;
+  }
+}
+/* Smaller Desktop */
+@media only screen and (max-width: 1000px) {
+  .page-top .about .desc h1 {
+    font-size: 38px;
+  }
+  .page-top .about .desc h1 div {
+    font-size: 20px !important;
   }
 }
 

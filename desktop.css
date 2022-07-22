@@ -903,20 +903,4 @@ footer span {
   text-align: center;
 }
 
-/* Small Desktop */
-@media only screen and (max-width: 1024px) {
-  .page-top .about h1 div {
-    font-size: 23px !important;
-  }
-}
-/* Smaller Desktop */
-@media only screen and (max-width: 1000px) {
-  .page-top .about .desc h1 {
-    font-size: 38px;
-  }
-  .page-top .about .desc h1 div {
-    font-size: 20px !important;
-  }
-}
-
 /*# sourceMappingURL=desktop.css.map */

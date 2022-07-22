@@ -132,26 +132,3 @@
 		margin-right: 0 !important;
 	}
 }
-
-/* Large Tablet (Portrait) */
-@media only screen
-	and (min-device-width : 1024px)
-	and (max-device-width : 1366px) 
-	and (orientation : portrait) {
-
-}
-
-/* Large Tablet (Landscape) */
-@media only screen
-	and (min-device-width : 1024px)
-	and (max-device-width : 1366px) 
-	and (orientation : landscape) {
-		
-}
-
-/* Small Tablet (Portrait) */
-@media only screen
-	and (min-device-width : 744px)
-	and (orientation : portrait) {
-		
-	}
