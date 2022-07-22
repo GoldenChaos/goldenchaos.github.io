@@ -109,5 +109,14 @@
     margin-right: 0 !important;
   }
 }
+/* iPad mini 6 (Portrait) */
+@media only screen and (min-device-width: 744px) and (max-device-width: 1133px) and (orientation: portrait) {
+  .about .desc .title {
+    font-size: 36px;
+  }
+  .about .desc .title div {
+    font-size: 24px !important;
+  }
+}
 
 /*# sourceMappingURL=tablet.css.map */
