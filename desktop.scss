@@ -1008,48 +1008,26 @@ footer {
 /* Small Desktop */
 @media only screen and (max-width : 1024px) {
 	.page-top {
-		max-height: 768px;
 		.about {
-			.me {
-				max-width: 150px;
+			h1 {
+				div {
+					font-size: 23px !important;
+				}
 			}
-		}
-		.meta {
-			width: calc(100% - 64px);
-			margin: 0 32px 40px 32px;
 		}
 	}
-	
+}
 
-	.hero span {
-		font-size: 16px;
-		bottom: 24px;
-	}
-
-	.content {
-		.page-padding {
-			padding: 0 32px;
-			.video {
-				height: 53vw;
-			}
-			.wiki-duo img {
-				height: 44.5vw !important;
-			}
-		}
-		.item-wrapper {
-			margin: 16px 16px 0 0;
-			&:nth-of-type(2n) {
-				margin-right: 16px;
-			}
-			&:nth-of-type(2n+1) {
-				margin-left: 16px;
-			}
-			&:last-of-type {
-				margin-bottom: 16px;
-			}
-			.item-content {
-				span {
-					bottom: 16px !important;
+/* Smaller Desktop */
+@media only screen and (max-width : 1000px) {
+	.page-top {
+		.about {
+			.desc {
+				h1 {
+					font-size: 38px;
+					div {
+						font-size: 20px !important;
+					}
 				}
 			}
 		}
