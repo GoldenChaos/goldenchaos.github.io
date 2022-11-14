@@ -688,7 +688,7 @@ pre {
   background-image: url(images/zelda-maps-logo.png), url(images/zm-bg-preview.png);
 }
 .content .item-content.zelda-wiki {
-  background-size: 80%, cover;
+  background-size: 70%, cover;
   background-repeat: no-repeat;
   background-position: center top 45%, center center;
   background-image: url(images/zelda-wiki-logo.png), url(images/zw-bg-preview.png);
