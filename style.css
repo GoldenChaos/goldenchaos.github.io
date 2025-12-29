@@ -321,12 +321,12 @@ pre {
   flex-grow: 1;
   margin-top: 140px;
 }
-.page-top .splash-bg .segmented-control {
+.segmented-control {
   width: auto;
   max-width: 600px;
   height: auto;
   width: auto;
-  margin: 32px auto 64px auto;
+  margin: 0 16px 64px 16px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 24px;
   box-sizing: border-box;
@@ -336,8 +336,8 @@ pre {
   align-self: center;
   text-align: center;
 }
-.page-top .splash-bg .segmented-control a {
-  color: #000;
+.segmented-control a {
+  color: #437ea3 !important;
   display: block;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   align-items: center;
@@ -348,17 +348,18 @@ pre {
   white-space: nowrap;
   flex-grow: 1;
   width: 100vw;
+  text-transform: none;
 }
-.page-top .splash-bg .segmented-control a:first-of-type {
+.segmented-control a:first-of-type {
   border-left: none !important;
 }
-.page-top .splash-bg .segmented-control img, .page-top .splash-bg .segmented-control i {
+.segmented-control img, .segmented-control i {
   font-size: 26px;
   width: 36px;
   height: 36px;
   display: block;
 }
-.page-top .splash-bg .segmented-control img {
+.segmented-control img {
   width: 36px;
   height: 36px;
   margin-top: -4px;
@@ -747,6 +748,10 @@ pre {
 .content.index {
   display: flex;
   flex-wrap: wrap;
+}
+
+.content.index.page#comic-title {
+  justify-content: center;
 }
 
 .content.page {
@@ -1323,7 +1328,8 @@ footer span {
   }
   .page-top nav {
     height: 50px;
-    width: 100vw;
+    width: calc(100vw - 32px);
+    left: 16px;
     z-index: 1000;
   }
   .page-top nav #logo {
@@ -1613,6 +1619,25 @@ footer span {
     min-width: 0 !important;
     max-width: none !important;
     width: 81% !important;
+  }
+}
+
+.comic-img {
+  max-width: 720px;
+  height: auto;
+  margin: 16px auto;
+}
+
+@media (max-width: 720px) {
+  .comic-img {
+    width: calc(100% - 32px);
+    margin: 16px;
+  }
+}
+
+@media (min-width: 721px) {
+  .segmented-control {
+    margin: 0 auto 64px auto;
   }
 }
 
