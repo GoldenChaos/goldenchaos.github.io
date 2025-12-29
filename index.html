@@ -41,13 +41,15 @@
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
     
     <script>
-        if (window.sessionStorage.getItem('animated') === null) {
-            document.getElementById("about").classList.add('animate');
-            document.getElementById("segmented-control").classList.add('animate');
-            document.getElementById("chevron").classList.add('animate');
-            document.getElementById("chevron").classList.add('animate');
-            window.sessionStorage.setItem('animated', 1);
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.sessionStorage.getItem('animated') === null) {
+                ['about', 'segmented-control', 'chevron'].forEach(function(id) {
+                    var el = document.getElementById(id);
+                    if (el && el.classList) el.classList.add('animate');
+                });
+                window.sessionStorage.setItem('animated', 1);
+            }
+        });
     </script>
 </head>
 <body>
