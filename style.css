@@ -326,7 +326,7 @@ pre {
   max-width: 600px;
   height: auto;
   width: auto;
-  margin: 0 16px 64px 16px;
+  margin: 0 16px 16px 16px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 24px;
   box-sizing: border-box;
@@ -1637,7 +1637,7 @@ footer span {
 
 @media (min-width: 721px) {
   .segmented-control {
-    margin: 0 auto 64px auto;
+    margin: 0 auto 16px auto;
   }
 }
 
