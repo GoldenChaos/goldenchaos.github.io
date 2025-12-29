@@ -12,23 +12,23 @@
     <meta charset="utf-8">
     
     <!-- HTML Meta Tags -->
-    <title>GoldenChaos Comics - #1 Alopecia</title>
-    <meta name="description" content="GoldenChaos Comics - #1 Alopecia">
+    <title>GoldenChaos Comics - All Comics</title>
+    <meta name="description" content="GoldenChaos Comics - All Comics">
     
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://goldenchaos.net/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="GoldenChaos Comics - #1 Alopecia">
+    <meta property="og:title" content="GoldenChaos Comics - All Comics">
     <meta property="og:description" content="Comics by Jess Rappaport!">
-    <meta property="og:image" content="https://goldenchaos.net/images/comics/1_alopecia.png">
+    <meta property="og:image" content="https://goldenchaos.net/images/comics/5_dont_tell_me_my_age.png">
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="goldenchaos.net">
     <meta property="twitter:url" content="https://goldenchaos.net/">
-    <meta name="twitter:title" content="GoldenChaos Comics - #1 Alopecia">
+    <meta name="twitter:title" content="GoldenChaos Comics - All Comics">
     <meta name="twitter:description" content="Comics by Jess Rappaport!">
-    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/1_alopecia.png">
+    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/5_dont_tell_me_my_age.png">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Jess Rappaport">
@@ -51,6 +51,39 @@
             }
         });
     </script>
+    <style>
+        .comics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        @media (max-width: 720px) {
+            .comics-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+        .comic-item {
+            text-align: center;
+        }
+        .comic-item a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        .comic-item img {
+            width: 100%;
+            height: auto;
+        }
+        .comic-item h3 {
+            margin: 16px 0 0 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <div class="page-top white">
@@ -75,52 +108,38 @@
         </nav>
     </div>
     <div class="content index page" id="comic-title">
-        <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">#1 - Alopecia</h1>
+        <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">All Comics</h1>
     </div>
-    <div class="content page" style="text-align:center;">
-        <img src="../../images/comics/1_alopecia.png" alt="1 - Alopecia" class="comic-img">
-        <div class="segmented-control">
-            <a href="../all/">
-                <center>
-                    <i class="fa-solid fa-th"></i>
-                    View All
-                </center>
-            </a>
-            <a href="../2/">
-                <center>
-                    <i class="fa-solid fa-forward"></i>
-                    Next
-                </center>
-            </a>
-            <a href="../">
-                <center>
-                    <i class="fa-solid fa-fast-forward"></i>
-                    Latest
-                </center>
-            </a>
-        </div>
-        <div class="segmented-control">
-            <a id="copyBtn" onclick="copyComicLink()" style="cursor:pointer;">
-                <center>
-                    <i class="fa-solid fa-link"></i>
-                    Copy Link to This Comic
-                </center>
-            </a>
+    <div class="content page">
+        <div class="comics-grid">
+            <div class="comic-item">
+                <a href="../1/">
+                    <img src="../../images/comics/1_alopecia.png" alt="Comic #1 - Alopecia">
+                    <h3>#1 - Alopecia</h3>
+                </a>
+            </div>
+            <div class="comic-item">
+                <a href="../2/">
+                    <img src="../../images/comics/2_latte_art.png" alt="Comic #2 - Latte Art">
+                    <h3>#2 - Latte Art</h3>
+                </a>
+            </div>
+            <div class="comic-item">
+                <a href="../3/">
+                    <img src="../../images/comics/3_yuri_mustache.png" alt="Comic #3 - Yuri Mustache">
+                    <h3>#3 - Yuri Mustache</h3>
+                </a>
+            </div>
+            <div class="comic-item">
+                <a href="../">
+                    <img src="../../images/comics/5_dont_tell_me_my_age.png" alt="Latest Comic - #4 Don't Tell Me My Age">
+                    <h3>#4 - Don't Tell Me My Age</h3>
+                </a>
+            </div>
         </div>
     </div>
     <footer>
         <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
     </footer>
 </body>
-<script>
-function copyComicLink() {
-    navigator.clipboard.writeText(window.location.href);
-    const btn = document.getElementById('copyBtn');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<center><i class="fa-solid fa-check"></i>Copied!</center>';
-    setTimeout(() => {
-        btn.innerHTML = originalHTML;
-    }, 2000);
-}
-</script>
 </html>
