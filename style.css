@@ -265,6 +265,9 @@ pre {
 .page-top nav #logo.back-logo i {
   color: #fff !important;
 }
+.page-top.squareknot nav #logo.back-logo i {
+  color: #437ea3 !important;
+}
 .page-top.white nav #logo.back-logo i {
   color: #437ea3 !important;
 }
@@ -296,7 +299,7 @@ pre {
   opacity: 0.75;
 }
 .page-top nav #logo.back-logo:hover i {
-  opacity: 0.75;
+  opacity: 1;
 }
 .page-top nav .menu span {
   padding: 2px 8px;
@@ -1121,6 +1124,10 @@ footer span {
     color: rgb(92, 177, 227);
     color: rgb(92, 177, 227) !important;
   }
+  .page-top.squareknot nav #logo.back-logo i,
+  .page-top.crossbeam nav #logo.back-logo i {
+    color: #5ab1e1 !important;
+  }
   .page-top.white nav, .page-top.crossbeam nav {
     color: rgb(92, 177, 227);
   }
@@ -1423,6 +1430,10 @@ footer span {
     padding-left: 4px;
     color: #4083a0;
     transform: translateY(2px);
+  }
+  .page-top.squareknot nav #logo.back-logo i,
+  .page-top.crossbeam nav #logo.back-logo i {
+    color: #437ea3 !important;
   }
   .page-top nav .menu {
     font-size: 11px;
