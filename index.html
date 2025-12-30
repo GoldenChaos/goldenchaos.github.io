@@ -261,7 +261,7 @@
 </body>
 <script>
 function copyComicLink() {
-    navigator.clipboard.writeText(window.location.href + 'comics/');
+    navigator.clipboard.writeText(window.location.origin + '/comics/4/');
     const btn = document.getElementById('copyBtn');
     const originalHTML = btn.innerHTML;
     btn.innerHTML = '<center><i class="fa-solid fa-check"></i>Copied!</center>';
