@@ -20,7 +20,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="GoldenChaos Comics - All Comics">
     <meta property="og:description" content="Comics by Jess Rappaport!">
-    <meta property="og:image" content="https://goldenchaos.net/images/comics/5_dont_tell_me_my_age.png">
+    <meta property="og:image" content="https://goldenchaos.net/images/comics/4_dont_tell_me_my_age.png">
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +28,7 @@
     <meta property="twitter:url" content="https://goldenchaos.net/">
     <meta name="twitter:title" content="GoldenChaos Comics - All Comics">
     <meta name="twitter:description" content="Comics by Jess Rappaport!">
-    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/5_dont_tell_me_my_age.png">
+    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/4_dont_tell_me_my_age.png">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Jess Rappaport">
@@ -62,21 +62,32 @@
         }
         @media (max-width: 720px) {
             .comics-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4px;
+                padding: 0;
+            }
+            .comic-item h3 {
+                display: none;
+                margin: 0;
             }
         }
         .comic-item {
             text-align: center;
+            margin: 0;
         }
         .comic-item a {
             display: block;
             text-decoration: none;
             color: inherit;
+            margin: 0;
+            padding: 0;
         }
         .comic-item img {
             width: 100%;
             height: auto;
+            display: block;
+            margin: 0;
+            padding: 0;
         }
         .comic-item h3 {
             margin: 16px 0 0 0;
@@ -111,7 +122,7 @@
         <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">All Comics</h1>
     </div>
     <div class="content page">
-        <div class="comics-grid">
+        <div class="comics-grid" style="margin-top: 32px;">
             <div class="comic-item">
                 <a href="../1/">
                     <img src="../../images/comics/1_alopecia.png" alt="Comic #1 - Alopecia">
@@ -132,7 +143,7 @@
             </div>
             <div class="comic-item">
                 <a href="../">
-                    <img src="../../images/comics/5_dont_tell_me_my_age.png" alt="Latest Comic - #4 Don't Tell Me My Age">
+                    <img src="../../images/comics/4_dont_tell_me_my_age.png" alt="Latest Comic - #4 Don't Tell Me My Age">
                     <h3>#4 - Don't Tell Me My Age</h3>
                 </a>
             </div>

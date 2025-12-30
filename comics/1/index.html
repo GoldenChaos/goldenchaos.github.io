@@ -80,6 +80,18 @@
     <div class="content page" style="text-align:center;">
         <img src="../../images/comics/1_alopecia.png" alt="1 - Alopecia" class="comic-img">
         <div class="segmented-control">
+            <a disabled>
+                <center>
+                    <i class="fa-solid fa-fast-backward"></i>
+                    First
+                </center>
+            </a>
+            <a disabled>
+                <center>
+                    <i class="fa-solid fa-backward"></i>
+                    Previous
+                </center>
+            </a>
             <a href="../all/">
                 <center>
                     <i class="fa-solid fa-th"></i>
@@ -103,7 +115,13 @@
             <a id="copyBtn" onclick="copyComicLink()" style="cursor:pointer;">
                 <center>
                     <i class="fa-solid fa-link"></i>
-                    Copy Link to This Comic
+                    Copy Comic Link
+                </center>
+            </a>
+            <a id="copyImgBtn" onclick="copyComicImageLink()" style="cursor:pointer;">
+                <center>
+                    <i class="fa-solid fa-image"></i>
+                    Copy Comic Image Link
                 </center>
             </a>
         </div>
@@ -116,6 +134,18 @@
 function copyComicLink() {
     navigator.clipboard.writeText(window.location.href);
     const btn = document.getElementById('copyBtn');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<center><i class="fa-solid fa-check"></i>Copied!</center>';
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+    }, 2000);
+}
+function copyComicImageLink() {
+    const img = document.querySelector('.comic-img');
+    const imagePath = img.src;
+    const fullURL = new URL(imagePath, window.location.origin).href;
+    navigator.clipboard.writeText(fullURL);
+    const btn = document.getElementById('copyImgBtn');
     const originalHTML = btn.innerHTML;
     btn.innerHTML = '<center><i class="fa-solid fa-check"></i>Copied!</center>';
     setTimeout(() => {

@@ -350,6 +350,11 @@ pre {
   width: 100vw;
   text-transform: none;
 }
+.segmented-control a[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
 .segmented-control a:first-of-type {
   border-left: none !important;
 }
@@ -1632,6 +1637,9 @@ footer span {
   .comic-img {
     width: calc(100% - 32px);
     margin: 16px;
+  }
+  .content.index.page#comic-title h1 {
+    padding-top: 24px;
   }
 }
 

@@ -20,7 +20,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="GoldenChaos Comics - Latest Comic">
     <meta property="og:description" content="Comics by Jess Rappaport!">
-    <meta property="og:image" content="https://goldenchaos.net/images/comics/5_dont_tell_me_my_age.png">
+    <meta property="og:image" content="https://goldenchaos.net/images/comics/4_dont_tell_me_my_age.png">
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +28,7 @@
     <meta property="twitter:url" content="https://goldenchaos.net/">
     <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic">
     <meta name="twitter:description" content="Comics by Jess Rappaport!">
-    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/5_dont_tell_me_my_age.png">
+    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/4_dont_tell_me_my_age.png">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Jess Rappaport">
@@ -81,7 +81,7 @@
         <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#4 - Don't Tell Me My Age</h2>
     </div>
     <div class="content page" style="text-align:center;">
-        <img src="../images/comics/5_dont_tell_me_my_age.png" alt="&quot;People are going to think I'm 37!! ;_;&quot;" title="&quot;People are going to think I'm 37!! ;_;&quot;" class="comic-img">
+        <img src="../images/comics/4_dont_tell_me_my_age.png" alt="&quot;People are going to think I'm 37!! ;_;&quot;" title="&quot;People are going to think I'm 37!! ;_;&quot;" class="comic-img">
         <div class="segmented-control">
             <a href="1/">
                 <center>
@@ -101,12 +101,30 @@
                     View All
                 </center>
             </a>
+            <a disabled>
+                <center>
+                    <i class="fa-solid fa-forward"></i>
+                    Next
+                </center>
+            </a>
+            <a disabled>
+                <center>
+                    <i class="fa-solid fa-fast-forward"></i>
+                    Latest
+                </center>
+            </a>
         </div>
         <div class="segmented-control">
             <a id="copyBtn" onclick="copyComicLink()" style="cursor:pointer;">
                 <center>
                     <i class="fa-solid fa-link"></i>
-                    Copy Link to This Comic
+                    Copy Comic Link
+                </center>
+            </a>
+            <a id="copyImgBtn" onclick="copyComicImageLink()" style="cursor:pointer;">
+                <center>
+                    <i class="fa-solid fa-image"></i>
+                    Copy Comic Image Link
                 </center>
             </a>
         </div>
@@ -119,6 +137,18 @@
 function copyComicLink() {
     navigator.clipboard.writeText(window.location.href);
     const btn = document.getElementById('copyBtn');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<center><i class="fa-solid fa-check"></i>Copied!</center>';
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+    }, 2000);
+}
+function copyComicImageLink() {
+    const img = document.querySelector('.comic-img');
+    const imagePath = img.src;
+    const fullURL = new URL(imagePath, window.location.origin).href;
+    navigator.clipboard.writeText(fullURL);
+    const btn = document.getElementById('copyImgBtn');
     const originalHTML = btn.innerHTML;
     btn.innerHTML = '<center><i class="fa-solid fa-check"></i>Copied!</center>';
     setTimeout(() => {
