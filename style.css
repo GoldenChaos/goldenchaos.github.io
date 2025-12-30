@@ -1356,6 +1356,7 @@ footer span {
     height: 50px;
     width: 50px;
     background-size: 21px;
+    background-position-y: 13px;
   }
   .page-top nav #logo.back-logo {
     width: 90px;
