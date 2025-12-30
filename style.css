@@ -511,14 +511,15 @@ pre {
 }
 .page-top.index {
   position: relative;
-  min-height: 0;
+  min-height: auto;
   height: auto;
+  max-height: none;
 }
 .page-top.index .splash-bg {
-  position: relative;
+  position: static;
   overflow: visible;
-  width: 100vw;
-  align-items: center;
+  height: auto;
+  display: block;
 }
 .page-top.index .splash-bg .about {
   margin: 44px 32px 56px 32px;
