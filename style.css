@@ -170,7 +170,7 @@ a {
 blockquote {
   font-size: 32px;
   color: #888;
-  text-transform: uppercase;
+  text-transform: none;
   font-style: italic;
 }
 blockquote span {
@@ -191,7 +191,7 @@ blockquote a a:hover {
 h1 {
   font-size: 32px;
   font-weight: 500;
-  text-transform: uppercase;
+  text-transform: none;
   font-style: italic;
   margin: 0;
   padding: 0;
@@ -719,7 +719,7 @@ pre {
   background-image: url(images/master-sword-preview.png);
 }
 .content .item-content.master-sword span {
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: bold;
   font-size: 2vw;
   text-shadow: rgb(0, 0, 0) 0 0 32px;
@@ -932,7 +932,7 @@ pre {
 .meta label {
   font-weight: 500;
   display: block;
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 13px;
   opacity: 0.5;
   letter-spacing: 0.5px;
@@ -1061,7 +1061,7 @@ pre {
 .soon {
   font-size: 48px;
   font-style: italic;
-  text-transform: uppercase;
+  text-transform: none;
   color: rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 182px 32px 150px 32px;
@@ -1343,7 +1343,7 @@ footer span {
     font-weight: 500;
   }
   .page-top {
-    height: calc(100vh - 75px) !important;
+    height: calc(143vw) !important;
     min-height: 0 !important;
   }
   .page-top nav {
