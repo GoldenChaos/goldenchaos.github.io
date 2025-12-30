@@ -1090,6 +1090,10 @@ footer span {
     background-image: url("images/logo-lightblue.png") !important;
     color: rgb(92, 177, 227);
   }
+  .page-top nav #logo.back-logo i {
+    color: rgb(92, 177, 227);
+    color: rgb(92, 177, 227) !important;
+  }
   .page-top.white nav, .page-top.crossbeam nav {
     color: rgb(92, 177, 227);
   }
@@ -1359,12 +1363,14 @@ footer span {
     background-position-y: 13px;
   }
   .page-top nav #logo.back-logo {
-    width: 90px;
+    width: 85px;
   }
   .page-top nav #logo.back-logo i {
     font-size: 22px;
     line-height: 50px;
-    padding-left: 12px;
+    padding-left: 8px;
+    color: #4083a0;
+    transform: translateY(2px);
   }
   .page-top nav .menu {
     font-size: 11px;
