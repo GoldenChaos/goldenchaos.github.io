@@ -1396,8 +1396,8 @@ footer span {
     font-weight: 500;
   }
   .page-top {
-    height: calc(143vw) !important;
-    min-height: 375px !important;
+    height: calc(175vw) !important;
+    min-height: 720px !important;
   }
   .page-top.index {
     height: auto !important;
@@ -1407,8 +1407,8 @@ footer span {
   }
   .page-top nav {
     height: 54px;
-    width: calc(100vw - 40px);
-    left: 20px;
+    width: calc(100vw - 32px);
+    left: 16px;
     z-index: 1000;
     min-width: 315px;
   }
@@ -1417,7 +1417,7 @@ footer span {
     width: 54px;
     background-size: 21px;
     background-position-y: 16px;
-    background-position-x: 4px;
+    background-position-x: 10px;
   }
   .page-top nav #logo.back-logo {
     width: 89px;
@@ -1480,13 +1480,20 @@ footer span {
   .page-top .splash-bg .site-logo {
     margin-top: 104px;
     background-size: contain !important;
+    height: 40vh;
+    min-height: 200px;
+    max-height: 360px;
   }
   .page-top .splash-bg .meta {
     font-size: 14px;
-    width: auto !important;
+    width: calc(100% - 40px) !important;
+    max-width: 980px;
     margin: 20px 20px 48px 20px !important;
     padding: 20px;
+    box-sizing: border-box;
     flex-direction: column;
+    flex-shrink: 0;
+    align-self: center;
   }
   .page-top .splash-bg .meta .links-wrapper {
     width: 100%;
