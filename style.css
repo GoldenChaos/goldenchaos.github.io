@@ -349,14 +349,28 @@ pre {
   flex-grow: 1;
   width: 100vw;
   text-transform: none;
+  background-color: transparent;
+  transition: background-color 0.2s linear;
 }
 .segmented-control a[disabled] {
   opacity: 0.5;
   pointer-events: none;
   cursor: not-allowed;
 }
+.segmented-control a:not([disabled]):hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+@media (prefers-color-scheme: dark) {
+  .segmented-control a:not([disabled]):hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+}
 .segmented-control a:first-of-type {
   border-left: none !important;
+  border-radius: 24px 0 0 24px;
+}
+.segmented-control a:last-of-type {
+  border-radius: 0 24px 24px 0;
 }
 .segmented-control img, .segmented-control i {
   font-size: 26px;
