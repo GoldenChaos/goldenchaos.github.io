@@ -1581,6 +1581,9 @@ footer span {
   .page-top .splash-bg.zelda-universe .site-logo {
     background-size: 90vw !important;
   }
+  .page-top .splash-bg.zelda-wiki .site-logo {
+    background-size: 90vw !important;
+  }
   .page-top .splash-bg.zelda-maps {
     background-size: auto, auto, cover;
     background-position: top, center bottom 80px, right top;

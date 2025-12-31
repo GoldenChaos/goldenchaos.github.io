@@ -1,5 +1,4 @@
 [
-  { "from": "index.html", "to": "/" },
   { "from": "squareknot.html", "to": "/squareknot/" },
   { "from": "crossbeam.html", "to": "/crossbeam/" },
   { "from": "goodsemester.html", "to": "/goodsemester/" },
