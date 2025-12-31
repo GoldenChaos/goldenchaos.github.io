@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+---
+<div class="page-top {{ slug }}">
+    {% include "nav.njk" %}
+    <div class="splash-bg {{ slug }}">
+        <div class="site-logo"></div>
+        {% if slogan %}
+        <div class="slogan">
+            {{ slogan | safe }}
+        </div>
+        {% endif %}
+        {% if heroMeta or availableFrom %}
+        <div class="meta">
+            {% if heroMeta %}
+            <div class="info">
+                {% for item in heroMeta %}
+                <div class="info-bit">
+                    <label>{{ item.label }}</label>
+                    <span>{{ item.value | safe }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if availableFrom %}
+            <div class="links-wrapper">
+                <label class="mobile">Available On</label>
+                <div class="links">
+                    {% for link in availableFrom %}
+                    <a class="round-link" style="width:100%;" href="{{ link.href }}" target="_blank">
+                        <span class="fa-stack fa-2x">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="{{ link.icon }} fa-stack-1x"></i>
+                        </span>
+                        <span class="desc">{{ link.label }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+        <div class="chevron"></div>
+    </div>
+</div>
+<div class="content page">
+    {{ content | safe }}
+</div>
+<footer>
+    <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
+</footer>

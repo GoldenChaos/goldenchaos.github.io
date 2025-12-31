@@ -1,0 +1,223 @@
+---
+layout: layouts/base.njk
+title: "GoldenChaos - UI Design and Comics by Jess Rappaport"
+description: "UI Design and Comics by Jess Rappaport"
+ogImage: "/og-image.png"
+navLinks:
+  - href: "#games"
+    label: "Games Industry"
+  - href: "#utilities"
+    label: "Utilities"
+  - href: "#apps"
+    label: "Apps & Services"
+bodyClass: ""
+---
+<div class="page-top index">
+    {% include "nav.njk" %}
+</div>
+<div class="splash-bg index">
+    <center>
+        <div class="about" id="about">
+            <div class="me">
+                <img src="images/me2.png" alt="me">
+            </div>
+            <div class="desc">
+                <h1 class="title" style="margin-bottom:0;">I'm Jess Rappaport,
+                <div>
+                    <img class="inline-emoji flag" src="images/trans-flag-emoji.png" alt="Trans pride flag"> proud UI/UX designer and illustrator.
+                </div>
+                </h1>
+                <p>I've been creating apps, services, and communities since 2002. I also make little 4-panel comics about my life!</p>
+            </div>
+        </div>
+    </center>
+    <div class="segmented-control" id="segmented-control">
+        <a href="#games">
+            <center>
+                    <i class="fa-solid fa-gamepad"></i>
+                Games Industry
+            </center>
+        </a>
+        <a href="#utilities">
+            <center>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Utilities
+            </center>
+        </a>
+        <a href="#apps">
+            <center>
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;display:block;margin:0 auto 8px;">
+                        <rect x="4" y="4" width="14" height="14" rx="2" ry="2" fill="currentColor"></rect>
+                        <rect x="23" y="1" width="14" height="14" rx="2" ry="2" fill="currentColor" transform="rotate(17 30 8)"></rect>
+                        <rect x="4" y="21" width="14" height="14" rx="2" ry="2" fill="currentColor"></rect>
+                        <rect x="21" y="21" width="14" height="14" rx="2" ry="2" fill="currentColor"></rect>
+                    </svg>
+                Apps &amp; Services
+            </center>
+        </a>
+    </div>
+</div>
+{% set latestComic = comics[comics.length - 1] %}
+{% set firstComic = comics[0] %}
+{% if comics.length > 1 %}
+    {% set prevComic = comics[comics.length - 2] %}
+{% endif %}
+<div class="content index page" id="comic-title">
+    <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">Latest Comic</h1>
+</div>
+<div class="content index page" id="comic-title">
+    <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#{{ latestComic.number }} - {{ latestComic.title }}</h2>
+</div>
+<div class="content page" style="text-align:center;">
+    <a href="/comics/">
+        <img src="{{ latestComic.image }}" alt="{{ latestComic.alt }}"{% if latestComic.titleText %} title="{{ latestComic.titleText }}"{% endif %} class="comic-img">
+    </a>
+    <div class="segmented-control">
+        <a{% if latestComic.slug == firstComic.slug %} disabled{% else %} href="/comics/{{ firstComic.slug }}/"{% endif %}>
+            <center>
+                <i class="fa-solid fa-fast-backward"></i>
+                First
+            </center>
+        </a>
+        <a{% if prevComic %} href="/comics/{{ prevComic.slug }}/"{% else %} disabled{% endif %}>
+            <center>
+                <i class="fa-solid fa-backward"></i>
+                Previous
+            </center>
+        </a>
+        <a href="/comics/all/">
+            <center>
+                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" style="width: 26px; height: 26px; display: block; margin: 0 auto 8px;">
+                    <rect x="2" y="2" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                    <rect x="11" y="2" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                    <rect x="20" y="2" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                    <rect x="2" y="11" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                    <rect x="11" y="11" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                    <rect x="20" y="11" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                    <rect x="2" y="20" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                    <rect x="11" y="20" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                    <rect x="20" y="20" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+                </svg>
+                View All
+            </center>
+        </a>
+        <a id="copyBtn" onclick="copyComicLink()" style="cursor:pointer;">
+            <center>
+                <i class="fa-solid fa-link"></i>
+                Copy Link
+            </center>
+        </a>
+    </div>
+</div>
+<div class="content index page" id="section-4">
+    <h1 id="games" class="title" style="padding-left:32px;padding-top:32px;margin:0;">Games Industry</h1>
+</div>
+<div class="content index page" id="section-5">
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content zelda-universe" href="/zelda-universe/">
+                <div class="site-logo"></div>
+                <span class="subtitle">The world's largest <i>Legend of Zelda</i> fan community.</span>
+            </a>
+        </div>
+    </div>
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content zelda-maps" href="/zelda-maps/">
+                <div class="site-logo"></div>
+                <span>Comprehensive maps for <i>Breath of the Wild</i> and more.</span>
+            </a>
+        </div>
+    </div>
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content zelda-wiki" href="/zelda-wiki/">
+                <div class="site-logo"></div>
+                <span>The definitive <i>Zelda</i> encyclopedia.</span>
+            </a>
+        </div>
+    </div>
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content master-sword" href="https://zeldauniverse.net/features/making-the-master-sword/" target="_blank">
+                <span>MAKING <b>THE</b> MASTER SWORD</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="content index page" id="section-1">
+    <h1 id="utilities" class="title" style="padding-left:32px;margin-top:32px;margin-bottom:0;">Utilities</h1>
+</div>
+<div class="content index page" style="padding-bottom:24px;" id="section-2">
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content goldenchaos-btt" href="/goldenchaos-btt/"></a>
+        </div>
+    </div>
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content faceports" href="/faceports/">
+                <span></span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="content index page" id="section-3">
+    <h1 id="apps" class="title" style="padding-left:32px;margin:0;">Apps and Services</h1>
+</div>
+<div class="content index page" style="padding-bottom:32px;">
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content collx" href="/collx/"></a>
+        </div>
+    </div>
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content crossbeam" href="/crossbeam/"></a>
+        </div>
+    </div>
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content squareknot" href="/squareknot/">
+                <span>Beautiful, branching step-by-step guides.</span>
+            </a>
+        </div>
+    </div>
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content goodsemester" href="/goodsemester/">
+                <span>Revolutionary online learning platform.</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="content index page" id="section-6">
+    <h1 id="misc" class="title" style="padding-left:32px;margin:0;">Misc</h1>
+</div>
+<div class="content index page" style="padding-bottom:32px;">
+    <div class="item-wrapper">
+        <div class="item item-transition">
+            <a class="item-content zodttd-icons" href="/zodttd-icons/">
+                <span>ZodTTD Emulator Icons</span>
+            </a>
+        </div>
+    </div>
+</div>
+<footer>
+    <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
+</footer>
+
+{% set pageScripts %}
+<script>
+function copyComicLink() {
+    const link = window.location.origin + '/comics/{{ latestComic.slug }}/';
+    navigator.clipboard.writeText(link);
+    const btn = document.getElementById('copyBtn');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<center><i class="fa-solid fa-check"></i>Copied!</center>';
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+    }, 2000);
+}
+</script>
+{% endset %}

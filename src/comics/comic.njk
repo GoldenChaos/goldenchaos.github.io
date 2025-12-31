@@ -1,0 +1,146 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: comics
+  size: 1
+  alias: comic
+  addAllPagesToCollections: true
+permalink: "comics/{{ comic.slug }}/index.html"
+bodyClass: ""
+eleventyComputed:
+  title: "GoldenChaos Comics - #{{ comic.number }} {{ comic.title }}"
+  description: "GoldenChaos Comics - #{{ comic.number }} {{ comic.title }}"
+  ogImage: "{{ comic.ogImage }}"
+  twitterImage: "{{ comic.twitterImage }}"
+---
+{% set comicsList = comics %}
+{% set firstComic = comicsList[0] %}
+{% set latestComic = comicsList[comicsList.length - 1] %}
+{% set currentIndex = -1 %}
+{% for c in comicsList %}
+  {% if c.slug == comic.slug %}
+    {% set currentIndex = loop.index0 %}
+  {% endif %}
+{% endfor %}
+{% if currentIndex > 0 %}
+  {% set prevComic = comicsList[currentIndex - 1] %}
+{% endif %}
+{% if currentIndex + 1 < comicsList.length %}
+  {% set nextComic = comicsList[currentIndex + 1] %}
+{% endif %}
+{% set backHref = '/' %}
+{% set desktopBack = { href: '/', label: 'Back to Home', icon: 'fas fa-chevron-left', iconStyle: 'font-size:14px;margin-right:3px;' } %}
+<div class="page-top white goldenchaos-btt">
+  {% include "nav.njk" %}
+</div>
+<div class="content index page" id="comic-title">
+  <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">#{{ comic.number }} - {{ comic.title }}</h1>
+</div>
+<div class="content page" style="text-align:center;">
+  <img src="{{ comic.image }}" alt="{{ comic.alt }}"{% if comic.titleText %} title="{{ comic.titleText }}"{% endif %} class="comic-img">
+  <div class="segmented-control">
+    <a{% if currentIndex == 0 %} disabled{% else %} href="/comics/{{ firstComic.slug }}/"{% endif %}>
+      <center>
+        <i class="fa-solid fa-fast-backward"></i>
+        First
+      </center>
+    </a>
+    <a{% if prevComic %} href="/comics/{{ prevComic.slug }}/"{% else %} disabled{% endif %}>
+      <center>
+        <i class="fa-solid fa-backward"></i>
+        Previous
+      </center>
+    </a>
+    <a href="/comics/all/">
+      <center>
+        <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" style="width: 26px; height: 26px; display: block; margin: 0 auto 8px;">
+          <rect x="2" y="2" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+          <rect x="11" y="2" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+          <rect x="20" y="2" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+          <rect x="2" y="11" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+          <rect x="11" y="11" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+          <rect x="20" y="11" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+          <rect x="2" y="20" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+          <rect x="11" y="20" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+          <rect x="20" y="20" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
+        </svg>
+        View All
+      </center>
+    </a>
+    <a{% if nextComic %} href="/comics/{{ nextComic.slug }}/"{% else %} disabled{% endif %}>
+      <center>
+        <i class="fa-solid fa-forward"></i>
+        Next
+      </center>
+    </a>
+    <a{% if comic.slug == latestComic.slug %} disabled{% else %} href="/comics/"{% endif %}>
+      <center>
+        <i class="fa-solid fa-fast-forward"></i>
+        Latest
+      </center>
+    </a>
+  </div>
+  <div class="segmented-control">
+    <a id="copyBtn" onclick="copyComicLink()" style="cursor:pointer;">
+      <center>
+        <i class="fa-solid fa-link"></i>
+        Copy Comic Link
+      </center>
+    </a>
+    <a id="copyImgBtn" onclick="copyComicImageLink()" style="cursor:pointer;">
+      <center>
+        <i class="fa-solid fa-image"></i>
+        Copy Comic Image Link
+      </center>
+    </a>
+  </div>
+</div>
+<footer>
+  <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
+</footer>
+<script>
+async function copyWithFallback(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (err) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    let ok = false;
+    try {
+      ok = document.execCommand('copy');
+    } catch (copyErr) {
+      console.error('Copy failed', copyErr);
+    }
+    document.body.removeChild(textarea);
+    return ok;
+  }
+}
+
+function showCopied(buttonId, success) {
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+  const originalHTML = btn.innerHTML;
+  btn.innerHTML = success ? '<center><i class="fa-solid fa-check"></i>Copied!</center>' : '<center><i class="fa-solid fa-xmark"></i>Copy failed</center>';
+  setTimeout(() => {
+    btn.innerHTML = originalHTML;
+  }, 2000);
+}
+
+async function copyComicLink() {
+  const link = window.location.origin + '/comics/{{ comic.slug }}/';
+  const ok = await copyWithFallback(link);
+  showCopied('copyBtn', ok);
+}
+
+async function copyComicImageLink() {
+  const fullURL = new URL('{{ comic.image }}', window.location.origin).href;
+  const ok = await copyWithFallback(fullURL);
+  showCopied('copyImgBtn', ok);
+}
+</script>

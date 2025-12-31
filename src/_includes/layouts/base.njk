@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "head.njk" %}
+</head>
+<body class="{{ bodyClass | default('') }}">
+  {{ content | safe }}
+  {% if pageScripts %}{{ pageScripts | safe }}{% endif %}
+</body>
+</html>

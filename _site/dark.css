@@ -1,0 +1,111 @@
+@media (prefers-color-scheme: dark) {
+  body, .page-top.white {
+    background: rgb(32, 32, 32);
+  }
+  .page-top.white a, .page-padding a {
+    color: #5bb1e2 !important;
+  }
+  .page-top.white #logo, .page-top.crossbeam #logo {
+    background-image: url("images/logo-lightblue.png") !important;
+    color: rgb(92, 177, 227);
+  }
+  .page-top.white nav, .page-top.crossbeam nav {
+    color: rgb(92, 177, 227);
+  }
+  .page-top.white .menu a, .page-top.white .menu .social, .page-top.crossbeam .menu a, .page-top.crossbeam .menu .social {
+    color: rgb(92, 177, 227);
+  }
+  .page-top.white .menu a:hover, .page-top.crossbeam .menu a:hover {
+    border-color: rgba(92, 177, 227, 0.3) !important;
+  }
+  .segmented-control {
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+  .segmented-control a {
+    color: #fff !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+  .segmented-control img {
+    filter: invert(100%);
+  }
+  .content {
+    color: #fff;
+  }
+  .content .item-content:hover {
+    box-shadow: inset rgba(255, 255, 255, 0.05) 0 0 0 1px;
+  }
+  .content .item-content.faceports {
+    background-color: rgb(50, 50, 50);
+    background-image: url(images/faceports-preview-dark.png);
+  }
+  .content .item-content.collx {
+    background-color: rgb(50, 50, 50);
+    background-image: url(images/collx-preview-dark.png);
+  }
+  .content .item-content.crossbeam {
+    background-color: rgb(50, 50, 50);
+    background-image: url(images/crossbeam-preview-dark.png);
+  }
+  .content .item-content.squareknot {
+    background-color: #323232;
+  }
+  footer {
+    background: rgb(32, 32, 32);
+    color: #fff;
+  }
+  .quote-grid blockquote, .squareknot-slogan {
+    color: #ccc !important;
+  }
+  .page-top.index nav #logo, .page-top.goldenchaos-btt nav #logo, .page-top.faceports nav #logo, .page-top.collx nav #logo, .page-top.crossbeam nav #logo {
+    background-image: url("images/logo-lightblue.png");
+  }
+  .page-top.index nav .menu a, .page-top.index nav .social, .page-top.goldenchaos-btt nav .menu a, .page-top.goldenchaos-btt nav .social, .page-top.faceports nav .menu a, .page-top.faceports nav .social, .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.crossbeam nav .menu a, .page-top.crossbeam nav .social {
+    color: #5ab1e1;
+  }
+  .page-top.index nav .menu a:hover, .page-top.goldenchaos-btt nav .menu a:hover, .page-top.faceports nav .menu a:hover, .page-top.collx nav .menu a:hover, .page-top.crossbeam nav .menu a:hover {
+    border-color: rgba(90, 177, 225, 0.3);
+  }
+  .page-top.collx nav #logo, .page-top.squareknot nav #logo {
+    background-image: url("images/logo.png");
+  }
+  .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.squareknot nav .menu a, .page-top.squareknot nav .social {
+    color: #fff;
+  }
+  .page-top.collx nav .menu a:hover, .page-top.squareknot nav .menu a:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  .page-top .splash-bg .meta {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .page-top .splash-bg .meta a {
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .page-top .splash-bg .meta a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .page-top .splash-bg .meta .round-link .desc {
+    color: #fff;
+  }
+  .page-top .splash-bg.collx {
+    background-color: #2f3235;
+  }
+  .page-top .splash-bg.collx .site-logo {
+    background-image: url(images/collx-logo-white.png);
+  }
+  .page-top .splash-bg.crossbeam {
+    background-color: #313131;
+  }
+  .page-top .splash-bg.crossbeam .site-logo {
+    background-image: url(images/crossbeam-logo-white.png);
+  }
+  .page-top .splash-bg.squareknot {
+    background-color: #313131;
+  }
+  .page-top .splash-bg.squareknot .slogan {
+    color: #fff;
+  }
+}
+
+/*# sourceMappingURL=dark.css.map */

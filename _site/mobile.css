@@ -1,0 +1,334 @@
+/* Mobile */
+@media only screen and (max-width: 700px) {
+  .desktop {
+    display: none !important;
+  }
+  .mobile {
+    display: block !important;
+  }
+  blockquote {
+    line-height: 36px;
+    margin: 20px 20px 0 20px;
+  }
+  blockquote span {
+    margin-top: 6px !important;
+  }
+  h1 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  h1.title {
+    font-size: 32px;
+    line-height: 36px;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+    font-weight: 500;
+  }
+  .page-top {
+    height: calc(100vh - 75px) !important;
+    min-height: 0 !important;
+  }
+  .page-top nav {
+    height: 50px;
+    width: 100vw;
+    z-index: 1000;
+  }
+  .page-top nav #logo {
+    height: 50px;
+    width: 50px;
+    background-size: 21px;
+  }
+  .page-top nav #logo.back-logo {
+    width: 90px;
+  }
+  .page-top nav #logo.back-logo i {
+    font-size: 22px;
+    line-height: 50px;
+    padding-left: 12px;
+  }
+  .page-top nav .menu {
+    font-size: 11px;
+    right: 0px;
+    bottom: 0px;
+  }
+  .page-top nav .menu div {
+    display: flex;
+  }
+  .page-top nav .menu div:last-of-type {
+    display: none;
+  }
+  .page-top nav .menu a {
+    margin: 0;
+    padding: 2px 4px;
+  }
+  .page-top nav .menu span {
+    margin-bottom: 4px;
+  }
+  .page-top nav .menu span .fas {
+    font-size: 10px !important;
+    margin-right: 6px !important;
+  }
+  .page-top nav .menu .social {
+    width: 44px;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+    text-align: center;
+  }
+  .page-top nav .menu .social i {
+    position: relative;
+    top: 4px;
+  }
+  .page-top nav .menu .social:last-of-type {
+    margin: 0;
+  }
+  .page-top .splash-bg {
+    position: absolute;
+  }
+  .page-top .splash-bg .site-logo {
+    margin-top: 104px;
+    background-size: contain !important;
+  }
+  .page-top .splash-bg .meta {
+    font-size: 14px;
+    width: auto !important;
+    margin: 20px 20px 48px 20px !important;
+    padding: 20px;
+    flex-direction: column;
+  }
+  .page-top .splash-bg .meta .links-wrapper {
+    width: 100%;
+    gap: 0;
+  }
+  .page-top .splash-bg .meta .links-wrapper .links {
+    width: 100%;
+  }
+  .page-top .splash-bg .meta .links-wrapper .links a {
+    font-size: 14px;
+    padding: 8px;
+    margin-top: 8px;
+  }
+  .page-top .splash-bg .chevron {
+    bottom: 10px;
+    display: block;
+  }
+  .page-top .splash-bg.index {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: absolute;
+    height: 100%;
+  }
+  .page-top .splash-bg.index .about {
+    flex-shrink: 1;
+    flex-direction: column;
+    padding: 21px;
+    margin: 60px 20px 0 20px;
+  }
+  .page-top .splash-bg.index .about .desc h1 div {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 4px;
+  }
+  .page-top .splash-bg.index .about .desc p {
+    margin-right: 0;
+    line-height: 22px;
+  }
+  .page-top .splash-bg.index .about .me {
+    margin: 0 0 18px 0;
+    width: 150px;
+  }
+  .page-top .splash-bg.index .about .me img {
+    max-width: none;
+  }
+  .page-top .splash-bg.index .segmented-control {
+    display: flex;
+    margin-top: 20px;
+    max-width: calc(100vw - 32px);
+  }
+  .page-top .splash-bg.collx {
+    background-size: 100%, 85%;
+  }
+  .page-top .splash-bg.collx .site-logo {
+    background-size: 90vw !important;
+    background-position: center 20%;
+  }
+  .page-top .splash-bg.crossbeam {
+    background-position: center 250px;
+  }
+  .page-top .splash-bg.crossbeam .site-logo {
+    background-size: 80vw !important;
+  }
+  .page-top .splash-bg.squareknot {
+    background-size: 100vh;
+  }
+  .page-top .splash-bg.squareknot .site-logo {
+    background-size: 90vw !important;
+  }
+  .page-top .splash-bg.zelda-universe .site-logo {
+    background-size: 90vw !important;
+  }
+  .page-top .splash-bg.zelda-maps {
+    background-size: auto, auto, cover;
+    background-position: top, center bottom 80px, right top;
+  }
+  .page-top .splash-bg.zelda-wiki {
+    background-size: auto, cover;
+  }
+  .page-top .splash-bg.goodsemester {
+    background-position: center bottom 38%;
+  }
+  .page-top .splash-bg.goodsemester .site-logo {
+    width: 90vw !important;
+  }
+  .page-top .splash-bg.venti {
+    background-size: 80vw, auto, cover;
+  }
+  .content.page .page-padding {
+    padding: 24px !important;
+  }
+  .content.page .page-padding .squareknot-logo {
+    display: none;
+  }
+  .content.page .page-padding .squareknot-slogan {
+    display: none;
+  }
+  .content.page .page-padding .wiki-duo img {
+    height: auto !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    max-height: none;
+  }
+  .content.page .page-padding .soon {
+    font-size: 24px;
+  }
+  .content.page .full-width {
+    padding: 0 20px;
+  }
+  .content.page .full-width img {
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 32px 64px;
+  }
+  .content.page .item-wrapper {
+    width: auto !important;
+    height: 58vw !important;
+    margin: 20px 20px 0 20px !important;
+  }
+  .content.page .item-wrapper:last-of-type {
+    margin-bottom: 20px !important;
+  }
+  .content.page .item-wrapper span {
+    bottom: 20px !important;
+    font-size: 3.5vw !important;
+  }
+  .content.page .item-content.goldenchaos-btt span {
+    top: 32%;
+  }
+  .content.page .item-content.goldenchaos-btt span div {
+    font-size: 6vw;
+  }
+  .content.page .item-content.master-sword span {
+    font-size: 6vw !important;
+  }
+  .content.page .item-content.master-sword span b {
+    font-size: 4vw;
+  }
+  .content.index {
+    flex-flow: column;
+  }
+  .screenshot-grid-2-col,
+.screenshot-grid-3-col,
+.screenshot-grid-4-col,
+.screenshot-grid-5-col {
+    display: block;
+    padding: 0 20px;
+  }
+  .screenshot-grid-2-col img,
+.screenshot-grid-3-col img,
+.screenshot-grid-4-col img,
+.screenshot-grid-5-col img {
+    margin: 0 20px 20px 0;
+    width: 46%;
+    max-width: 46%;
+    box-sizing: border-box;
+  }
+  .screenshot-grid-3-col img:nth-of-type(3n),
+.screenshot-grid-4-col img:nth-of-type(4n),
+.screenshot-grid-5-col img:nth-of-type(5n) {
+    margin-right: 20px;
+  }
+  .screenshot-grid-3-col img:nth-of-type(2n),
+.screenshot-grid-4-col img:nth-of-type(2n),
+.screenshot-grid-5-col img:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .video {
+    height: 53vw;
+  }
+  .quote-grid {
+    flex-direction: column-reverse;
+  }
+  .quote-grid blockquote {
+    width: auto;
+    margin: 24px !important;
+  }
+  .quote-grid blockquote:nth-of-type(even) {
+    display: none;
+  }
+}
+/* iPhone SE 2020 */
+@media only screen and (device-width: 375px) and (-webkit-device-pixel-ratio: 2) {
+  .about .desc .title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .about .desc p {
+    line-height: 18px;
+  }
+  .about .me {
+    margin: -4px auto 12px auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    width: 29% !important;
+  }
+}
+/* iPhone 13 mini */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .about .desc .title {
+    font-size: 30px;
+  }
+  .about .me {
+    min-width: 0 !important;
+    max-width: none !important;
+    width: 50% !important;
+  }
+}
+/* iPhone 13/13 Pro */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  .about .me {
+    min-width: 0 !important;
+    max-width: none !important;
+    width: 59% !important;
+  }
+}
+/* iPhone 13 Pro Max */
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+  .about .me {
+    min-width: 0 !important;
+    max-width: none !important;
+    width: 81% !important;
+  }
+}
+
+/*# sourceMappingURL=mobile.css.map */

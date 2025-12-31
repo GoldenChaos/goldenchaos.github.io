@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+permalink: comics/all/index.html
+eleventyComputed:
+  title: "GoldenChaos Comics - All Comics"
+  description: "GoldenChaos Comics - All Comics"
+  ogImage: "{{ comics[comics.length - 1].ogImage }}"
+  twitterImage: "{{ comics[comics.length - 1].twitterImage }}"
+bodyClass: ""
+---
+{% set backHref = '/' %}
+{% set desktopBack = { href: '/', label: 'Back to Home', icon: 'fas fa-chevron-left', iconStyle: 'font-size:14px;margin-right:3px;' } %}
+<div class="page-top white goldenchaos-btt">
+  {% include "nav.njk" %}
+</div>
+<div class="content index page" id="comic-title">
+  <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">All Comics</h1>
+</div>
+<div class="content page">
+  <style>
+    .comics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    @media (max-width: 720px) {
+      .comics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        padding: 0;
+      }
+      .comic-item h3 {
+        display: none;
+        margin: 0;
+      }
+    }
+    .comic-item {
+      text-align: center;
+      margin: 0;
+    }
+    .comic-item a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+    }
+    .comic-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    .comic-item h3 {
+      margin: 8px 0 0 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  </style>
+  <div class="comics-grid" style="margin-top: 32px;">
+    {% for c in comics %}
+    <div class="comic-item">
+      <a href="/comics/{{ c.slug }}/">
+        <img src="{{ c.image }}" alt="Comic #{{ c.number }} - {{ c.title }}">
+        <h3>#{{ c.number }} - {{ c.title }}</h3>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<footer>
+  <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
+</footer>

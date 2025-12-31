@@ -1,0 +1,29 @@
+<nav>
+    <a id="logo" class="{% if backHref %}back-logo{% endif %}" href="{{ backHref or '/' }}">
+        {% if backHref %}
+            <i class="fas fa-chevron-left mobile"></i>
+        {% endif %}
+    </a>
+    <div class="menu">
+        <div>
+            {% for social in site.social %}
+                <a class="social" href="{{ social.href }}" target="_blank"{% if social.hidden %} style="display:none;"{% endif %}><i class="{{ social.icon }}"></i></a>
+            {% endfor %}
+        </div>
+        {% if navLinks or desktopBack %}
+        <div class="desktop">
+            {% if navLinks %}
+                {% for link in navLinks %}
+                    <a href="{{ link.href }}">{{ link.label }}</a>
+                {% endfor %}
+            {% endif %}
+            {% if desktopBack %}
+                <a href="{{ desktopBack.href }}">
+                    {% if desktopBack.icon %}<i class="{{ desktopBack.icon }}"{% if desktopBack.iconStyle %} style="{{ desktopBack.iconStyle }}"{% endif %}></i>{% endif %}
+                    {{ desktopBack.label }}
+                </a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</nav>

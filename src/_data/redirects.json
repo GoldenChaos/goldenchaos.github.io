@@ -1,0 +1,19 @@
+[
+  { "from": "squareknot.html", "to": "/squareknot/" },
+  { "from": "crossbeam.html", "to": "/crossbeam/" },
+  { "from": "goodsemester.html", "to": "/goodsemester/" },
+  { "from": "collx.html", "to": "/collx/" },
+  { "from": "zelda-universe.html", "to": "/zelda-universe/" },
+  { "from": "zelda-wiki.html", "to": "/zelda-wiki/" },
+  { "from": "zelda-maps.html", "to": "/zelda-maps/" },
+  { "from": "zodttd-icons.html", "to": "/zodttd-icons/" },
+  { "from": "goldenchaos-btt.html", "to": "/goldenchaos-btt/" },
+  { "from": "goldenchaos-btt-docs.html", "to": "/goldenchaos-btt-docs/" },
+  { "from": "goldenchaos-btt-sdk.html", "to": "/goldenchaos-btt-sdk/" },
+  { "from": "master-sword.html", "to": "/master-sword/" },
+  { "from": "the-jason-effect.html", "to": "/the-jason-effect/" },
+  { "from": "venti.html", "to": "/venti/" },
+  { "from": "faceports.html", "to": "/faceports/" },
+  { "from": "compare.html", "to": "/compare/" },
+  { "from": "desktop-icons.html", "to": "/desktop-icons/" }
+]

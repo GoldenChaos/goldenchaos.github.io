@@ -1,0 +1,18 @@
+{
+  "title": "GoldenChaos - UI Design and Comics by Jess Rappaport",
+  "description": "UI Design and Comics by Jess Rappaport",
+  "url": "https://goldenchaos.net",
+  "author": "Jess Rappaport",
+  "ogImage": "/og-image.png",
+  "twitterHandle": "@goldenchaos",
+  "social": [
+    { "name": "Twitch", "icon": "fab fa-twitch", "href": "https://twitch.tv/jessrappaport", "hidden": false },
+    { "name": "Discord", "icon": "fab fa-discord", "href": "https://discord.gg/kp3s6ysCtn", "hidden": true },
+    { "name": "X", "icon": "fa-brands fa-x-twitter", "href": "https://twitter.com/goldenchaos", "hidden": false },
+    { "name": "Instagram", "icon": "fab fa-instagram", "href": "https://instagram.com/goldenchaos", "hidden": false },
+    { "name": "Threads", "icon": "fa-brands fa-threads", "href": "https://threads.net/@goldenchaos", "hidden": false },
+    { "name": "Bluesky", "icon": "fa-brands fa-bluesky", "href": "https://bsky.app/profile/goldenchaos.bsky.social", "hidden": false },
+    { "name": "LinkedIn", "icon": "fab fa-linkedin", "href": "https://www.linkedin.com/in/goldenchaos", "hidden": false },
+    { "name": "Email", "icon": "fa fa-envelope-square", "href": "mailto:jess@goldenchaos.net", "hidden": true }
+  ]
+}
