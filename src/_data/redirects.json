@@ -1,4 +1,5 @@
 [
+  { "from": "index.html", "to": "/" },
   { "from": "squareknot.html", "to": "/squareknot/" },
   { "from": "crossbeam.html", "to": "/crossbeam/" },
   { "from": "goodsemester.html", "to": "/goodsemester/" },
@@ -14,6 +15,5 @@
   { "from": "the-jason-effect.html", "to": "/the-jason-effect/" },
   { "from": "venti.html", "to": "/venti/" },
   { "from": "faceports.html", "to": "/faceports/" },
-  { "from": "compare.html", "to": "/compare/" },
   { "from": "desktop-icons.html", "to": "/desktop-icons/" }
 ]
