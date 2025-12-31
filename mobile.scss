@@ -1,4 +1,4 @@
-/* Mobile */
+/* Mobile - Styles for screens up to 700px wide */
 @media only screen and (max-width: 700px) {
 
 .desktop {
@@ -40,23 +40,36 @@ h2 {
 }
 
 .page-top {
-	height: calc(100vh - 75px) !important;
-	min-height: 0 !important;
+	height: calc(175vw) !important;
+	min-height: 720px !important;
+	&.index {
+		height: auto !important;
+		min-height: auto !important;
+		max-height: none !important;
+		overflow: visible !important;
+	}
 	nav {
-		height: 50px;
-		// position: fixed;
-		width: 100vw;
+		height: 54px;
+		width: calc(100vw - 32px);
+		left: 16px;
 		z-index: 1000;
+		min-width: 315px;
 		#logo {
-			height: 50px;
-			width: 50px;
+			height: 54px;
+			width: 54px;
 			background-size: 21px;
+			background-position-y: 16px;
+			background-position-x: 10px;
 			&.back-logo {
-				width: 90px;
+				width: 89px;
+				background-position-x: 28px;
+				background-position-y: 16px;
 				i {
 					font-size: 22px;
-					line-height: 50px;
-					padding-left: 12px;
+					line-height: 56px;
+					padding-left: 4px;
+					color: #4083a0;
+					transform: translateY(2px);
 				}
 			}
 		}
@@ -100,6 +113,9 @@ h2 {
 			}
 		}
 	}
+	&.crossbeam nav #logo.back-logo i {
+		color: #437ea3 !important;
+	}
 	.splash-bg {
 		position: absolute;
 		.site-logo {
@@ -117,6 +133,7 @@ h2 {
 			.links-wrapper {
 				width: 100%;
 				gap: 0;
+				margin-top: 8px;
 				.links {
 					width: 100%;
 					a {
@@ -130,49 +147,6 @@ h2 {
 		.chevron {
 			bottom: 10px;
 			display: block;
-		}
-		&.index {
-			display: flex;
-			flex-direction: column;
-			flex-wrap: nowrap;
-			position: absolute;
-			height: 100%;
-			.about {
-				//height: calc(100% - 24px);
-				flex-shrink: 1;
-				flex-direction: column;
-				padding: 21px;
-				margin: 60px 20px 0 20px;
-				.desc {
-					h1 {
-						div {
-							font-size: 18px;
-							line-height: 24px;
-							margin-top: 4px;
-						}
-					}
-					p {
-						margin-right: 0;
-						line-height: 22px;
-					}
-				}
-				.me {
-					margin: 0 0 18px 0;
-					width: 150px;
-					img {
-						max-width: none;
-					}
-				}
-			}
-			.segmented-control {
-				display: flex;
-				margin-top: 20px;
-				max-width: calc(100vw - 32px);
-				//animation: 4s ease-in-out 0s 1 bounce3;
-			}
-			.chevron {
-				//animation: 4.4s ease-in-out 0s 1 bounce2;
-			}
 		}
 	}
 	.splash-bg.collx {
@@ -219,6 +193,58 @@ h2 {
 	}
 	.splash-bg.venti {
 		background-size: 80vw, auto, cover;
+	}
+}
+
+.splash-bg.index {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	position: static;
+	height: auto;
+	.about {
+		//height: calc(100% - 24px);
+		flex-shrink: 1;
+		flex-direction: column;
+		padding: 21px;
+		margin: 24px 20px 0 20px;
+		.desc {
+			h1 {
+				div {
+					font-size: 18px;
+					line-height: 24px;
+					margin-top: 4px;
+				}
+			}
+			.title {
+				text-align: center;
+			}
+			p {
+				margin-right: 0;
+				line-height: 22px;
+				text-align: center;
+				max-width: 400px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		.me {
+			margin: 0 0 16px 0;
+			width: 150px;
+			img {
+				max-width: none;
+			}
+		}
+	}
+	.segmented-control {
+		display: flex;
+		margin: 20px 20px 0 20px;
+		width: calc(100% - 40px);
+		max-width: none;
+		//animation: 4s ease-in-out 0s 1 bounce3;
+	}
+	.chevron {
+		//animation: 4.4s ease-in-out 0s 1 bounce2;
 	}
 }
 
@@ -281,6 +307,10 @@ h2 {
 	}
 	&.index {
 		flex-flow: column;
+		.item-wrapper.placeholder,
+		.item-content.placeholder {
+			display: none;
+		}
 	}
 }
 
@@ -333,6 +363,18 @@ h2 {
 			display: none;
 		}
 	}
+}
+
+.item-content.app-icons span,
+.item-content.zodttd-icons span {
+	bottom: 6px !important;
+	font-size: 18px !important;
+	padding: 14px 18px !important;
+	position: absolute !important;
+}
+
+.item-content.zodttd-icons span {
+	bottom: 6px !important;
 }
 
 }
@@ -404,3 +446,12 @@ h2 {
 			width: 81% !important;
 		}
 	}
+@media (max-width: 720px) {
+.comic-img {
+width: calc(100% - 40px);
+margin: 20px;
+}
+.content.index.page#comic-title h1 {
+padding-top: 24px;
+}
+}

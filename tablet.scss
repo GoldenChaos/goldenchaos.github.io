@@ -1,4 +1,22 @@
 /* Tablet (Landscape) */
+@media only screen and (max-width: 1000px) and (min-width: 701px) {
+	.content.page {
+		.full-width {
+			padding: 0 16px;
+		}
+		.page-padding {
+			padding: 0 16px;
+			&:first-of-type {
+				padding-top: 16px;
+			}
+			&:last-of-type {
+				padding-bottom: 16px;
+			}
+		}
+	}
+}
+
+/* Tablet (Landscape) */
 @media only screen and
 	(min-device-width : 768px) 
 	and (max-device-width : 1024px) 

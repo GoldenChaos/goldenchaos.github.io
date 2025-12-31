@@ -172,7 +172,7 @@ a {
 blockquote {
   font-size: 32px;
   color: #888;
-  text-transform: none;
+  text-transform: uppercase;
   font-style: italic;
 }
 blockquote span {
@@ -265,11 +265,14 @@ pre {
 .page-top nav #logo.back-logo i {
   color: #fff !important;
 }
-.page-top.squareknot nav #logo.back-logo i {
-  color: #437ea3 !important;
+.page-top nav #logo:hover {
+  opacity: 0.75;
 }
-.page-top.white nav #logo.back-logo i {
-  color: #437ea3 !important;
+.page-top nav #logo.back-logo:hover {
+  opacity: 0.75;
+}
+.page-top nav #logo.back-logo:hover i {
+  opacity: 1;
 }
 .page-top nav .menu {
   text-align: right;
@@ -291,15 +294,6 @@ pre {
   color: inherit !important;
   border-color: inherit;
   opacity: 0.75;
-}
-.page-top nav #logo:hover {
-  opacity: 0.75;
-}
-.page-top nav #logo.back-logo:hover {
-  opacity: 0.75;
-}
-.page-top nav #logo.back-logo:hover i {
-  opacity: 1;
 }
 .page-top nav .menu span {
   padding: 2px 8px;
@@ -332,6 +326,12 @@ pre {
 .page-top nav .menu .social:last-of-type {
   margin-right: 8px;
 }
+.page-top.squareknot nav #logo.back-logo i {
+  color: #437ea3 !important;
+}
+.page-top.white nav #logo.back-logo i {
+  color: #437ea3 !important;
+}
 .page-top .splash-bg {
   position: absolute;
   top: 0;
@@ -351,12 +351,14 @@ pre {
   flex-grow: 1;
   margin-top: 140px;
 }
+
 .inline-emoji.flag {
-  height: 1em;
+  height: 1.2em;
   width: auto;
-  vertical-align: -0.1em;
-  margin-right: 4px;
+  vertical-align: -0.3em;
+  margin-right: 2px;
 }
+
 .segmented-control {
   width: calc(100% - 40px);
   max-width: 600px;
@@ -419,6 +421,7 @@ pre {
   height: 36px;
   margin-top: -4px;
 }
+
 .page-top .splash-bg .chevron {
   animation: 7s ease-in-out 3s 10 pulseBounce;
 }
@@ -551,6 +554,7 @@ pre {
   height: auto;
   max-height: none;
 }
+
 .splash-bg.index {
   position: static;
   overflow: visible;
@@ -755,7 +759,7 @@ pre {
   background-image: url(images/master-sword-preview.png);
 }
 .content .item-content.master-sword span {
-  text-transform: none;
+  text-transform: uppercase;
   font-weight: bold;
   font-size: 2vw;
   text-shadow: rgb(0, 0, 0) 0 0 32px;
@@ -775,30 +779,47 @@ pre {
   color: #000;
   text-shadow: none;
 }
+.content .item-content.app-icons, .content .item-content.zodttd-icons {
+  background-color: transparent;
+}
 .content .item-content.app-icons {
   background-image: url(images/app-icons-preview.png);
-  background-color: transparent;
 }
 .content .item-content.zodttd-icons {
   background-image: url(images/zodttd-icons-preview.png);
-  background-color: transparent;
 }
 .content .item-content.app-icons span, .content .item-content.zodttd-icons span {
   color: #000;
   font-weight: bold;
-  font-size: 28px;
-  padding: 40% 0 22px 0;
-  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
-  bottom: 0 !important;
-  text-shadow: rgb(255, 255, 255) 0 0 24px;
-  border-radius: 0 0 16px 16px;
-  display: none;
+  font-size: 1.4vw;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  bottom: 6px !important;
+  left: 6px;
+  right: 6px;
+  text-shadow: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: auto;
+  box-sizing: border-box;
 }
 .content .item-content.venti {
   background: url(images/venti-logo.png), linear-gradient(rgb(120, 212, 235), rgba(120, 212, 235, 0) 50%), url(images/venti-bg-preview.jpg);
   background-size: 65%, auto, cover;
   background-repeat: no-repeat;
   background-position: center top 45%, center top, center bottom;
+}
+.content .item-wrapper.placeholder .item-content {
+  pointer-events: none;
+}
+.content .item-wrapper.placeholder .item-content:hover {
+  box-shadow: inset rgba(0, 0, 0, 0.03) 0 0 0 1px;
+  transform: none;
 }
 
 .content.index {
@@ -808,6 +829,10 @@ pre {
 
 .content.index.page#comic-title {
   justify-content: center;
+}
+
+.content.index.page#comic-title h1 {
+  text-align: center;
 }
 
 .content.page {
@@ -916,6 +941,7 @@ pre {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: 8px;
 }
 .meta .links-wrapper .links {
   display: flex;
@@ -968,7 +994,7 @@ pre {
 .meta label {
   font-weight: 500;
   display: block;
-  text-transform: none;
+  text-transform: uppercase;
   font-size: 13px;
   opacity: 0.5;
   letter-spacing: 0.5px;
@@ -1097,7 +1123,7 @@ pre {
 .soon {
   font-size: 48px;
   font-style: italic;
-  text-transform: none;
+  text-transform: uppercase;
   color: rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 182px 32px 150px 32px;
@@ -1115,6 +1141,28 @@ footer span {
   text-align: center;
 }
 
+.item-content.app-icons span,
+.item-content.zodttd-icons span {
+  bottom: 6px !important;
+  display: flex !important;
+}
+
+.content.page .item-wrapper .item-content.app-icons span,
+.content.page .item-wrapper .item-content.zodttd-icons span {
+  bottom: 6px !important;
+}
+
+.comic-img {
+  max-width: 720px;
+  height: auto;
+  margin: 20px auto;
+}
+
+@media (min-width: 721px) {
+  .segmented-control {
+    margin: 0 auto 16px auto;
+  }
+}
 @media (prefers-color-scheme: dark) {
   body, .page-top.white {
     background: rgb(32, 32, 32);
@@ -1126,9 +1174,8 @@ footer span {
     background-image: url("images/logo-lightblue.png") !important;
     color: rgb(92, 177, 227);
   }
-  .page-top.white nav #logo.back-logo i {
-    color: rgb(92, 177, 227);
-    color: rgb(92, 177, 227) !important;
+  .page-top.white nav #logo.back-logo i, .page-top.crossbeam nav #logo.back-logo i {
+    color: #5bb1e2 !important;
   }
   .page-top.white nav, .page-top.crossbeam nav {
     color: rgb(92, 177, 227);
@@ -1137,7 +1184,7 @@ footer span {
     color: rgb(92, 177, 227);
   }
   .page-top.white .menu a:hover, .page-top.crossbeam .menu a:hover {
-    opacity: 0.8;
+    border-color: rgba(92, 177, 227, 0.3) !important;
   }
   .segmented-control {
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
@@ -1177,23 +1224,26 @@ footer span {
   .quote-grid blockquote, .squareknot-slogan {
     color: #ccc !important;
   }
-  .page-top.index nav #logo, .page-top.goldenchaos-btt nav #logo, .page-top.faceports nav #logo, .page-top.collx nav #logo, .page-top.crossbeam nav #logo {
+  .page-top.index nav #logo.back-logo i, .page-top.goldenchaos-btt nav #logo.back-logo i, .page-top.faceports nav #logo.back-logo i, .page-top.collx nav #logo.back-logo i, .page-top.crossbeam nav #logo.back-logo i, .page-top.squareknot nav #logo.back-logo i {
+    color: #5bb1e1 !important;
+  }
+  .page-top.index nav #logo, .page-top.goldenchaos-btt nav #logo, .page-top.faceports nav #logo, .page-top.collx nav #logo, .page-top.crossbeam nav #logo, .page-top.squareknot nav #logo {
     background-image: url("images/logo-lightblue.png");
   }
-  .page-top.index nav .menu a, .page-top.index nav .social, .page-top.goldenchaos-btt nav .menu a, .page-top.goldenchaos-btt nav .social, .page-top.faceports nav .menu a, .page-top.faceports nav .social, .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.crossbeam nav .menu a, .page-top.crossbeam nav .social {
+  .page-top.index nav .menu a, .page-top.index nav .social, .page-top.goldenchaos-btt nav .menu a, .page-top.goldenchaos-btt nav .social, .page-top.faceports nav .menu a, .page-top.faceports nav .social, .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.crossbeam nav .menu a, .page-top.crossbeam nav .social, .page-top.squareknot nav .menu a, .page-top.squareknot nav .social {
     color: #5ab1e1;
   }
-  .page-top.index nav .menu a:hover, .page-top.goldenchaos-btt nav .menu a:hover, .page-top.faceports nav .menu a:hover, .page-top.collx nav .menu a:hover, .page-top.crossbeam nav .menu a:hover {
-    opacity: 0.8;
+  .page-top.index nav .menu a:hover, .page-top.goldenchaos-btt nav .menu a:hover, .page-top.faceports nav .menu a:hover, .page-top.collx nav .menu a:hover, .page-top.crossbeam nav .menu a:hover, .page-top.squareknot nav .menu a:hover {
+    border-color: rgba(90, 177, 225, 0.3);
   }
-  .page-top.collx nav #logo, .page-top.squareknot nav #logo {
+  .page-top.collx nav #logo {
     background-image: url("images/logo.png");
   }
-  .page-top.collx nav .menu a, .page-top.collx nav .social, .page-top.squareknot nav .menu a, .page-top.squareknot nav .social {
-    color: #fff;
+  .page-top.collx nav #logo.back-logo i, .page-top.collx nav .menu a, .page-top.collx nav .social {
+    color: #fff !important;
   }
-  .page-top.collx nav .menu a:hover, .page-top.squareknot nav .menu a:hover {
-    opacity: 0.8;
+  .page-top.collx nav .menu a:hover {
+    border-color: rgba(255, 255, 255, 0.3);
   }
   .page-top .splash-bg .meta {
     color: #fff;
@@ -1339,7 +1389,7 @@ footer span {
     height: 415px;
   }
   .screenshot-grid-2-col,
-.screenshot-grid-3-col {
+  .screenshot-grid-3-col {
     padding: 0 16px;
   }
   .screenshot-grid-2-col img {
@@ -1363,7 +1413,7 @@ footer span {
     font-size: 24px !important;
   }
 }
-/* Mobile */
+/* Mobile - Styles for screens up to 700px wide */
 @media only screen and (max-width: 700px) {
   .desktop {
     display: none !important;
@@ -1398,7 +1448,7 @@ footer span {
     font-weight: 500;
   }
   .page-top {
-    height: calc(175vw) !important;
+    height: 175vw !important;
     min-height: 720px !important;
   }
   .page-top.index {
@@ -1432,9 +1482,6 @@ footer span {
     padding-left: 4px;
     color: #4083a0;
     transform: translateY(2px);
-  }
-  .page-top.crossbeam nav #logo.back-logo i {
-    color: #437ea3 !important;
   }
   .page-top nav .menu {
     font-size: 11px;
@@ -1475,26 +1522,22 @@ footer span {
   .page-top nav .menu .social:last-of-type {
     margin: 0;
   }
+  .page-top.crossbeam nav #logo.back-logo i {
+    color: #437ea3 !important;
+  }
   .page-top .splash-bg {
     position: absolute;
   }
   .page-top .splash-bg .site-logo {
     margin-top: 104px;
     background-size: contain !important;
-    height: 40vh;
-    min-height: 200px;
-    max-height: 360px;
   }
   .page-top .splash-bg .meta {
     font-size: 14px;
-    width: calc(100% - 40px) !important;
-    max-width: 980px;
+    width: auto !important;
     margin: 20px 20px 48px 20px !important;
     padding: 20px;
-    box-sizing: border-box;
     flex-direction: column;
-    flex-shrink: 0;
-    align-self: center;
   }
   .page-top .splash-bg .meta .links-wrapper {
     width: 100%;
@@ -1512,6 +1555,47 @@ footer span {
   .page-top .splash-bg .chevron {
     bottom: 10px;
     display: block;
+  }
+  .page-top .splash-bg.collx .site-logo {
+    background-size: 90vw !important;
+    background-position: center 20%;
+  }
+  .page-top .splash-bg.collx {
+    background-size: 100%, 85%;
+  }
+  .page-top .splash-bg.crossbeam .site-logo {
+    background-size: 80vw !important;
+  }
+  .page-top .splash-bg.crossbeam {
+    background-position: center 250px;
+  }
+  .page-top .splash-bg.squareknot {
+    background-size: 100vh;
+  }
+  .page-top .splash-bg.squareknot .site-logo {
+    background-size: 90vw !important;
+  }
+  .page-top .splash-bg.zelda-universe .site-logo {
+    background-size: 90vw !important;
+  }
+  .page-top .splash-bg.zelda-maps {
+    background-size: auto, auto, cover;
+    background-position: top, center bottom 80px, right top;
+  }
+  .page-top .splash-bg.zelda-wiki .site-logo {
+    background-size: 90vw !important;
+  }
+  .page-top .splash-bg.zelda-wiki {
+    background-size: auto, cover;
+  }
+  .page-top .splash-bg.goodsemester {
+    background-position: center bottom 38%;
+  }
+  .page-top .splash-bg.goodsemester .site-logo {
+    width: 90vw !important;
+  }
+  .page-top .splash-bg.venti {
+    background-size: 80vw, auto, cover;
   }
   .splash-bg.index {
     display: flex;
@@ -1554,53 +1638,6 @@ footer span {
     margin: 20px 20px 0 20px;
     width: calc(100% - 40px);
     max-width: none;
-  }
-  .page-top .splash-bg.collx {
-    background-size: 100%, 85%;
-  }
-  .page-top .splash-bg.collx .site-logo {
-    background-size: 90vw !important;
-    background-position: center 20%;
-  }
-  .page-top .splash-bg.crossbeam {
-    background-position: center 250px;
-  }
-  .page-top .splash-bg.crossbeam .site-logo {
-    background-size: 80vw !important;
-  }
-  .page-top .splash-bg.squareknot {
-    background-size: 100vh;
-  }
-  .page-top .splash-bg.squareknot .site-logo {
-    background-size: 90vw !important;
-  }
-  .page-top .splash-bg.zelda-universe .site-logo {
-    background-size: 90vw !important;
-  }
-  .page-top .splash-bg.zelda-wiki .site-logo {
-    background-size: 90vw !important;
-  }
-  .page-top .splash-bg.zelda-maps {
-    background-size: auto, auto, cover;
-    background-position: top, center bottom 80px, right top;
-  }
-  .page-top .splash-bg.zelda-wiki {
-    background-size: auto, cover;
-  }
-
-  @media (prefers-color-scheme: light) {
-    .zelda-wiki-logo {
-      filter: invert(1);
-    }
-  }
-  .page-top .splash-bg.goodsemester {
-    background-position: center bottom 38%;
-  }
-  .page-top .splash-bg.goodsemester .site-logo {
-    width: 90vw !important;
-  }
-  .page-top .splash-bg.venti {
-    background-size: 80vw, auto, cover;
   }
   .content.page .page-padding {
     padding: 24px !important;
@@ -1654,10 +1691,14 @@ footer span {
   .content.index {
     flex-flow: column;
   }
+  .content.index .item-wrapper.placeholder,
+  .content.index .item-content.placeholder {
+    display: none;
+  }
   .screenshot-grid-2-col,
-.screenshot-grid-3-col,
-.screenshot-grid-4-col,
-.screenshot-grid-5-col {
+  .screenshot-grid-3-col,
+  .screenshot-grid-4-col,
+  .screenshot-grid-5-col {
     display: block;
     padding: 0 20px;
   }
@@ -1668,21 +1709,21 @@ footer span {
     box-sizing: border-box;
   }
   .screenshot-grid-3-col img,
-.screenshot-grid-4-col img,
-.screenshot-grid-5-col img {
+  .screenshot-grid-4-col img,
+  .screenshot-grid-5-col img {
     margin: 0 20px 20px 0;
     width: 46%;
     max-width: 46%;
     box-sizing: border-box;
   }
   .screenshot-grid-3-col img:nth-of-type(3n),
-.screenshot-grid-4-col img:nth-of-type(4n),
-.screenshot-grid-5-col img:nth-of-type(5n) {
+  .screenshot-grid-4-col img:nth-of-type(4n),
+  .screenshot-grid-5-col img:nth-of-type(5n) {
     margin-right: 20px;
   }
   .screenshot-grid-3-col img:nth-of-type(2n),
-.screenshot-grid-4-col img:nth-of-type(2n),
-.screenshot-grid-5-col img:nth-of-type(2n) {
+  .screenshot-grid-4-col img:nth-of-type(2n),
+  .screenshot-grid-5-col img:nth-of-type(2n) {
     margin-right: 0;
   }
   .video {
@@ -1697,6 +1738,16 @@ footer span {
   }
   .quote-grid blockquote:nth-of-type(even) {
     display: none;
+  }
+  .item-content.app-icons span,
+  .item-content.zodttd-icons span {
+    bottom: 6px !important;
+    font-size: 18px !important;
+    padding: 14px 18px !important;
+    position: absolute !important;
+  }
+  .item-content.zodttd-icons span {
+    bottom: 6px !important;
   }
 }
 /* iPhone SE 2020 */
@@ -1742,13 +1793,6 @@ footer span {
     width: 81% !important;
   }
 }
-
-.comic-img {
-  max-width: 720px;
-  height: auto;
-  margin: 20px auto;
-}
-
 @media (max-width: 720px) {
   .comic-img {
     width: calc(100% - 40px);
@@ -1758,11 +1802,3 @@ footer span {
     padding-top: 24px;
   }
 }
-
-@media (min-width: 721px) {
-  .segmented-control {
-    margin: 0 auto 16px auto;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */
