@@ -292,7 +292,13 @@ h2 {
 	padding: 0 20px;
 }
 
-.screenshot-grid-2-col img,
+.screenshot-grid-2-col img {
+	margin: 0 0 20px 0;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
 .screenshot-grid-3-col img,
 .screenshot-grid-4-col img,
 .screenshot-grid-5-col img {

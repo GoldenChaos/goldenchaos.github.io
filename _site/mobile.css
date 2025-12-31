@@ -110,6 +110,7 @@
   .page-top .splash-bg .meta .links-wrapper {
     width: 100%;
     gap: 0;
+    margin-top: 8px;
   }
   .page-top .splash-bg .meta .links-wrapper .links {
     width: 100%;
@@ -254,8 +255,13 @@
     display: block;
     padding: 0 20px;
   }
-  .screenshot-grid-2-col img,
-.screenshot-grid-3-col img,
+  .screenshot-grid-2-col img {
+    margin: 0 0 20px 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .screenshot-grid-3-col img,
 .screenshot-grid-4-col img,
 .screenshot-grid-5-col img {
     margin: 0 20px 20px 0;
