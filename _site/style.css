@@ -1591,6 +1591,12 @@ footer span {
   .page-top .splash-bg.zelda-wiki {
     background-size: auto, cover;
   }
+
+  @media (prefers-color-scheme: light) {
+    .zelda-wiki-logo {
+      filter: invert(1);
+    }
+  }
   .page-top .splash-bg.goodsemester {
     background-position: center bottom 38%;
   }
