@@ -285,7 +285,46 @@
     <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
 </footer>
 
+<script>
+async function copyWithFallback(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+        return true;
+    } catch (err) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        let ok = false;
+        try {
+            ok = document.execCommand('copy');
+        } catch (copyErr) {
+            console.error('Copy failed', copyErr);
+        }
+        document.body.removeChild(textarea);
+        return ok;
+    }
+}
 
+function showCopied(buttonId, success) {
+    const btn = document.getElementById(buttonId);
+    if (!btn) return;
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = success ? '<center><i class="fa-solid fa-check"></i>Copied!</center>' : '<center><i class="fa-solid fa-xmark"></i>Copy failed</center>';
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+    }, 2000);
+}
+
+async function copyComicLink() {
+    const link = window.location.origin + '/comics/4/';
+    const ok = await copyWithFallback(link);
+    showCopied('copyBtn', ok);
+}
+</script>
 
   
 </body>
