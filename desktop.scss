@@ -61,7 +61,7 @@ h2 {
 	font-size: 20px;
 	line-height: 26px;
 	margin: 0;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 small {
@@ -1125,5 +1125,11 @@ footer {
 @media (min-width: 721px) {
 	.segmented-control {
 		margin: 0 auto 16px auto;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.zelda-wiki-logo {
+		filter: invert(1);
 	}
 }
