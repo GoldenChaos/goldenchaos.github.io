@@ -338,7 +338,14 @@ pre {
 	
 	&.pending .switch-toggle .switch-circle {
 		width: 26px;
+	}
+	
+	&.pending:not(.active) .switch-toggle .switch-circle {
 		left: 4px;
+	}
+	
+	&.pending.active .switch-toggle .switch-circle {
+		left: 14px;
 	}
 	
 	&.active .switch-toggle {
@@ -349,7 +356,7 @@ pre {
 		}
 		
 		&:active .switch-circle {
-			left: 18px;
+			left: 14px;
 			transition: left 0.1s ease, width 0.1s ease;
 		}
 	}

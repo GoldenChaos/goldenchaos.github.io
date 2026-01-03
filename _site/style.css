@@ -481,7 +481,12 @@ pre {
 }
 .toggle-switch.pending .switch-toggle .switch-circle {
   width: 26px;
+}
+.toggle-switch.pending:not(.active) .switch-toggle .switch-circle {
   left: 4px;
+}
+.toggle-switch.pending.active .switch-toggle .switch-circle {
+  left: 14px;
 }
 .toggle-switch.active .switch-toggle {
   background-color: #437ea3;
@@ -490,7 +495,7 @@ pre {
   left: 22px;
 }
 .toggle-switch.active .switch-toggle:active .switch-circle {
-  left: 18px;
+  left: 14px;
   transition: left 0.1s ease, width 0.1s ease;
 }
 .toggle-switch.active i {
