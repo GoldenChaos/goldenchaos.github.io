@@ -55,20 +55,12 @@
         <link rel="manifest" href="/manifest.webmanifest">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
         {% if onesignal and onesignal.enabled and onesignal.appId and onesignal.appId != "YOUR-ONESIGNAL-APP-ID" %}
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
         <script>
-            window.OneSignal = window.OneSignal || [];
-            OneSignal.push(function() {
-                {% set notifyButtonEnabled = true %}
-                {% if onesignal.notifyButton is defined %}
-                    {% set notifyButtonEnabled = onesignal.notifyButton %}
-                {% endif %}
-                OneSignal.init({
-                    appId: "{{ onesignal.appId }}",
-                    {% if onesignal.safariWebId %}safari_web_id: "{{ onesignal.safariWebId }}",{% endif %}
-                    notifyButton: { enable: {% if notifyButtonEnabled %}true{% else %}false{% endif %} },
-                    serviceWorkerParam: { scope: "/" },
-                    serviceWorkerPath: "/OneSignalSDKWorker.js"
+            window.OneSignalDeferred = window.OneSignalDeferred || [];
+            OneSignalDeferred.push(async function(OneSignal) {
+                await OneSignal.init({
+                    appId: "{{ onesignal.appId }}"
                 });
             });
         </script>

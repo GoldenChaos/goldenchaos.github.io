@@ -144,48 +144,45 @@ function updateBellIcon(buttonId, isSubscribed) {
   btn.innerHTML = '<center><i class="' + bellClass + ' fa-bell"></i>Get notified about new comics</center>';
 }
 
-function checkNotificationStatus(buttonId) {
-  if (!window.OneSignal || !OneSignal.push) return;
-  OneSignal.push(function() {
-    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-      updateBellIcon(buttonId, isEnabled);
-    });
+async function checkNotificationStatus(buttonId) {
+  if (!window.OneSignalDeferred) return;
+  OneSignalDeferred.push(async function(OneSignal) {
+    const permission = await OneSignal.Notifications.permission;
+    updateBellIcon(buttonId, permission);
   });
 }
 
-function requestNotifications(buttonId) {
+async function requestNotifications(buttonId) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
-  const original = btn.innerHTML;
   const setStatus = (html) => { btn.innerHTML = html; setTimeout(() => { checkNotificationStatus(buttonId); }, 2500); };
-  if (!window.OneSignal || !OneSignal.push) {
+  if (!window.OneSignalDeferred) {
     setStatus('<i class="fa-solid fa-triangle-exclamation"></i> Notifications unavailable');
     return;
   }
   btn.disabled = true;
-  OneSignal.push(function() {
-    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-      if (isEnabled) {
+  OneSignalDeferred.push(async function(OneSignal) {
+    try {
+      const permission = await OneSignal.Notifications.permission;
+      if (permission) {
         setStatus('<i class="fa-solid fa-check"></i> You are subscribed');
         btn.disabled = false;
         return;
       }
-      OneSignal.registerForPushNotifications()
-        .then(function() {
-          setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
-          updateBellIcon(buttonId, true);
-          btn.disabled = false;
-        })
-        .catch(function() {
-          setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
-          btn.disabled = false;
-        });
-    });
+      await OneSignal.Slidedown.promptPush();
+      setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
+      updateBellIcon(buttonId, true);
+      btn.disabled = false;
+    } catch (error) {
+      console.error('Notification request error:', error);
+      setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
+      btn.disabled = false;
+    }
   });
 }
 
-if (window.OneSignal) {
-  OneSignal.push(function() {
+if (window.OneSignalDeferred) {
+  OneSignalDeferred.push(async function(OneSignal) {
     checkNotificationStatus('notifyLatest');
   });
 }
