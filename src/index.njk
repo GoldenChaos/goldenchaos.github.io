@@ -109,10 +109,10 @@ bodyClass: ""
         </a>
     </div>
     <div class="segmented-control">
-        <button id="notifyLatest" class="toggle-switch no-transition" onclick="requestNotifications('notifyLatest');">
+        <button id="notifyLatest" class="toggle-switch no-transition">
             <i class="fa-solid fa-bell"></i>
             <span>Push notifications for new comics</span>
-            <div class="switch-toggle">
+            <div class="switch-toggle" onclick="requestNotifications('notifyLatest'); event.stopPropagation();">
                 <div class="switch-circle"></div>
             </div>
         </button>
@@ -333,13 +333,14 @@ async function requestNotifications(buttonId) {
     return;
   }
   
-  // Set pending state (half-toggled)
-  btn.classList.add('pending');
-  btn.disabled = true;
+  // Don't set pending state yet - wait until OneSignal callback starts
   console.log('Pushing to OneSignalDeferred...');
   OneSignalDeferred.push(async function(OneSignal) {
     console.log('Inside OneSignalDeferred, OneSignal:', OneSignal);
     try {
+      btn.classList.add('pending');
+      btn.disabled = true;
+      
       // Check browser native permission state
       const browserPermission = Notification.permission;
       console.log('Browser native permission:', browserPermission);
@@ -368,18 +369,35 @@ async function requestNotifications(buttonId) {
         return;
       }
       
+      // Set a safety timeout to clear pending state if something goes wrong
+      const timeoutId = setTimeout(() => {
+        btn.classList.remove('pending');
+        btn.disabled = false;
+        console.warn('Notification request timed out');
+      }, 10000);
+      
       // If browser permission is default (never asked or reset), or if granted but opted out, prompt
       console.log('Calling promptPush...');
       
       // Try the native OneSignal method for v16
       try {
-        await OneSignal.User.PushSubscription.optIn();
-        console.log('optIn() succeeded');
-      } catch (optInError) {
-        console.error('optIn() failed, trying Slidedown:', optInError);
-        await OneSignal.Slidedown.promptPush();
+        try {
+          await OneSignal.User.PushSubscription.optIn();
+          console.log('optIn() succeeded');
+        } catch (optInError) {
+          console.error('optIn() failed, trying Slidedown:', optInError);
+          await OneSignal.Slidedown.promptPush();
+        }
+      } catch (promptError) {
+        clearTimeout(timeoutId);
+        btn.classList.remove('pending');
+        btn.disabled = false;
+        console.error('Prompt error:', promptError);
+        alert('Failed to show notification prompt. Please try again.');
+        return;
       }
       
+      clearTimeout(timeoutId);
       console.log('Prompt completed');
       
       // Check if permission was actually granted

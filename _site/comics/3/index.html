@@ -134,10 +134,10 @@
 </div>
 <div class="content index page" style="margin-bottom:0;margin-top:20px;">
   <div class="segmented-control">
-    <button id="notifyComic" class="toggle-switch no-transition" onclick="requestNotifications('notifyComic');">
+    <button id="notifyComic" class="toggle-switch no-transition">
       <i class="fa-solid fa-bell"></i>
       <span>Push notifications for new comics</span>
-      <div class="switch-toggle">
+      <div class="switch-toggle" onclick="requestNotifications('notifyComic'); event.stopPropagation();">
         <div class="switch-circle"></div>
       </div>
     </button>
@@ -323,10 +323,11 @@ async function requestNotifications(buttonId) {
     return;
   }
   
-  btn.classList.add('pending');
-  btn.disabled = true;
+  // Don't set pending state yet - wait until OneSignal callback starts
   OneSignalDeferred.push(async function(OneSignal) {
     try {
+      btn.classList.add('pending');
+      btn.disabled = true;
       // Check if already subscribed with OneSignal
       const subscriptionId = await OneSignal.User.PushSubscription.id;
       const optedIn = await OneSignal.User.PushSubscription.optedIn;
@@ -347,14 +348,31 @@ async function requestNotifications(buttonId) {
         return;
       }
       
-      // Try optIn first (v16 native method)
+      // Set a safety timeout to clear pending state if something goes wrong
+      const timeoutId = setTimeout(() => {
+        btn.classList.remove('pending');
+        btn.disabled = false;
+        console.warn('Notification request timed out');
+      }, 10000);
+      
       try {
-        await OneSignal.User.PushSubscription.optIn();
-      } catch (optInError) {
-        // Fallback to Slidedown
-        await OneSignal.Slidedown.promptPush();
+        // Try optIn first (v16 native method)
+        try {
+          await OneSignal.User.PushSubscription.optIn();
+        } catch (optInError) {
+          // Fallback to Slidedown
+          await OneSignal.Slidedown.promptPush();
+        }
+      } catch (promptError) {
+        clearTimeout(timeoutId);
+        btn.classList.remove('pending');
+        btn.disabled = false;
+        console.error('Prompt error:', promptError);
+        alert('Failed to show notification prompt. Please try again.');
+        return;
       }
       
+      clearTimeout(timeoutId);
       const newPermission = Notification.permission;
       if (newPermission === 'granted') {
         // Wait for OneSignal to sync the subscription to their servers
