@@ -59,7 +59,10 @@
             window.OneSignalDeferred = window.OneSignalDeferred || [];
             OneSignalDeferred.push(async function(OneSignal) {
                 await OneSignal.init({
-                    appId: "72940797-fce4-4404-92c2-a33aa17e19b3"
+                    appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
+                    safari_web_id: "web.onesignal.auto.72940797-fce4-4404-92c2-a33aa17e19b3",
+                    autoRegister: false,
+                    allowLocalhostAsSecureOrigin: true
                 });
             });
         </script>
