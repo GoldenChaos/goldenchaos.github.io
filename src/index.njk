@@ -108,7 +108,7 @@ bodyClass: ""
             </center>
         </a>
     </div>
-    <div class="segmented-control" style="display:none;">
+    <div class="segmented-control">
         <a id="notifyLatest" onclick="requestNotifications('notifyLatest')" style="cursor:pointer;">
             <center>
                 <i class="fa-regular fa-bell"></i>
@@ -278,23 +278,34 @@ async function checkNotificationStatus(buttonId) {
 }
 
 async function requestNotifications(buttonId) {
+  console.log('requestNotifications called, buttonId:', buttonId);
   const btn = document.getElementById(buttonId);
-  if (!btn) return;
+  if (!btn) {
+    console.error('Button not found:', buttonId);
+    return;
+  }
+  console.log('Button found, checking OneSignalDeferred:', window.OneSignalDeferred);
   const setStatus = (html) => { btn.innerHTML = html; setTimeout(() => { checkNotificationStatus(buttonId); }, 2500); };
   if (!window.OneSignalDeferred) {
+    console.error('OneSignalDeferred not available');
     setStatus('<i class="fa-solid fa-triangle-exclamation"></i> Notifications unavailable');
     return;
   }
   btn.disabled = true;
+  console.log('Pushing to OneSignalDeferred...');
   OneSignalDeferred.push(async function(OneSignal) {
+    console.log('Inside OneSignalDeferred, OneSignal:', OneSignal);
     try {
       const permission = await OneSignal.Notifications.permission;
+      console.log('Current permission:', permission);
       if (permission) {
         setStatus('<i class="fa-solid fa-check"></i> You are subscribed');
         btn.disabled = false;
         return;
       }
+      console.log('Calling promptPush...');
       await OneSignal.Slidedown.promptPush();
+      console.log('promptPush succeeded');
       setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
       updateBellIcon(buttonId, true);
       btn.disabled = false;
@@ -314,8 +325,12 @@ async function requestNotifications(buttonId) {
 }
 
 if (window.OneSignalDeferred) {
+  console.log('OneSignalDeferred detected, checking notification status');
   OneSignalDeferred.push(async function(OneSignal) {
+    console.log('OneSignal loaded:', OneSignal);
     checkNotificationStatus('notifyLatest');
   });
+} else {
+  console.warn('OneSignalDeferred not found on page load');
 }
 </script>
