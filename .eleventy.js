@@ -33,11 +33,21 @@ module.exports = function(eleventyConfig) {
     compileSass();
   });
 
+  // RSS-friendly date filter using RFC-1123 format
+  eleventyConfig.addFilter("rssDate", (value) => {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value;
+    return date.toUTCString();
+  });
+
   // Static assets passthrough
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("og-image.png");
   eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy({ "src/manifest.webmanifest": "manifest.webmanifest" });
+  eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKWorker.js": "OneSignalSDKWorker.js" });
+  eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKUpdaterWorker.js": "OneSignalSDKUpdaterWorker.js" });
   eleventyConfig.addPassthroughCopy({
     "goldenchaos-btt-docs.html": "goldenchaos-btt-docs.html",
     "goldenchaos-btt-sdk.html": "goldenchaos-btt-sdk.html",

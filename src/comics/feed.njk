@@ -1,0 +1,31 @@
+---
+permalink: comics/feed.xml
+eleventyExcludeFromCollections: true
+layout: null
+---
+{% set feedTitle = "GoldenChaos Comics" %}
+{% set feedDescription = "Comics by Jess Rappaport" %}
+{% set feedLink = site.url + "/comics/" %}
+{% set feedSelf = site.url + "/comics/feed.xml" %}
+{% set buildDate = page.date %}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ feedTitle }}</title>
+    <link>{{ feedLink }}</link>
+    <atom:link href="{{ feedSelf }}" rel="self" type="application/rss+xml" />
+    <description>{{ feedDescription }}</description>
+    <language>en</language>
+    <lastBuildDate>{{ buildDate | rssDate }}</lastBuildDate>
+    {% for comic in comics | reverse %}
+      {% set itemDate = comic.date or buildDate %}
+    <item>
+      <title><![CDATA[#{{ comic.number }} - {{ comic.title }}]]></title>
+      <link>{{ site.url }}/comics/{{ comic.slug }}/</link>
+      <guid isPermaLink="true">{{ site.url }}/comics/{{ comic.slug }}/</guid>
+      <description><![CDATA[<p>#{{ comic.number }} - {{ comic.title }}</p><img src="{{ site.url }}{{ comic.image }}" alt="{{ comic.alt | escape }}">]]></description>
+      <pubDate>{{ itemDate | rssDate }}</pubDate>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

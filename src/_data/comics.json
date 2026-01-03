@@ -4,6 +4,7 @@
     "slug": "1",
     "title": "Alopecia",
     "alt": "1 - Alopecia",
+    "date": "2025-09-08T12:00:00-04:00",
     "image": "/images/comics/1_alopecia.png",
     "ogImage": "/images/comics/1_alopecia.png",
     "twitterImage": "/images/comics/og/1_alopecia-og.png"
@@ -13,6 +14,7 @@
     "slug": "2",
     "title": "Latte Art",
     "alt": "2 - Latte Art",
+    "date": "2025-09-13T12:00:00-04:00",
     "image": "/images/comics/2_latte_art.png",
     "ogImage": "/images/comics/2_latte_art.png",
     "twitterImage": "/images/comics/og/2_latte_art-og.png"
@@ -22,6 +24,7 @@
     "slug": "3",
     "title": "Yuri Mustache",
     "alt": "3 - Yuri Mustache",
+    "date": "2025-10-01T12:00:00-04:00",
     "image": "/images/comics/3_yuri_mustache.png",
     "ogImage": "/images/comics/3_yuri_mustache.png",
     "twitterImage": "/images/comics/og/3_yuri_mustache-og.png"
@@ -32,6 +35,7 @@
     "title": "Don't Tell Me My Age",
     "alt": "People are going to think I'm 37!! ;_;",
     "titleText": "People are going to think I'm 37!! ;_;",
+    "date": "2025-12-04T12:00:00-05:00",
     "image": "/images/comics/4_dont_tell_me_my_age.png",
     "ogImage": "/images/comics/4_dont_tell_me_my_age.png",
     "twitterImage": "/images/comics/og/4_dont_tell_me_my_age-og.png"

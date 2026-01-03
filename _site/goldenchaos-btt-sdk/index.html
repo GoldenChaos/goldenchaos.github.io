@@ -41,6 +41,7 @@
     <meta name="twitter:creator" content="@GoldenChaos">
     <meta name="twitter:image" content="https://goldenchaos.net/og-image.png">
     <meta name="twitter:image:alt" content="SDK resources for GoldenChaos-BTT.">
+        <link rel="alternate" type="application/rss+xml" title="GoldenChaos Comics RSS" href="/comics/feed.xml">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Jess Rappaport">
@@ -50,7 +51,27 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     <link rel="mask-icon" href="/website_icon.svg" color="#4083a0">
+        <link rel="manifest" href="/manifest.webmanifest">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+        
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script>
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                
+                
+                    
+                
+                OneSignal.init({
+                    appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
+                    
+                    notifyButton: { enable: true },
+                    serviceWorkerParam: { scope: "/" },
+                    serviceWorkerPath: "/OneSignalSDKWorker.js"
+                });
+            });
+        </script>
+        
 
 </head>
 <body class="">

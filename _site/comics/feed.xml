@@ -1,0 +1,53 @@
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GoldenChaos Comics</title>
+    <link>https://goldenchaos.net/comics/</link>
+    <atom:link href="https://goldenchaos.net/comics/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Comics by Jess Rappaport</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Jan 2026 01:35:50 GMT</lastBuildDate>
+    
+      
+    <item>
+      <title><![CDATA[#4 - Don&#39;t Tell Me My Age]]></title>
+      <link>https://goldenchaos.net/comics/4/</link>
+      <guid isPermaLink="true">https://goldenchaos.net/comics/4/</guid>
+      <description><![CDATA[<p>#4 - Don&#39;t Tell Me My Age</p><img src="https://goldenchaos.net/images/comics/4_dont_tell_me_my_age.png" alt="People are going to think I&#39;m 37!! ;_;">]]></description>
+      <pubDate>Thu, 04 Dec 2025 17:00:00 GMT</pubDate>
+    </item>
+    
+      
+    <item>
+      <title><![CDATA[#3 - Yuri Mustache]]></title>
+      <link>https://goldenchaos.net/comics/3/</link>
+      <guid isPermaLink="true">https://goldenchaos.net/comics/3/</guid>
+      <description><![CDATA[<p>#3 - Yuri Mustache</p><img src="https://goldenchaos.net/images/comics/3_yuri_mustache.png" alt="3 - Yuri Mustache">]]></description>
+      <pubDate>Wed, 01 Oct 2025 16:00:00 GMT</pubDate>
+    </item>
+    
+      
+    <item>
+      <title><![CDATA[#2 - Latte Art]]></title>
+      <link>https://goldenchaos.net/comics/2/</link>
+      <guid isPermaLink="true">https://goldenchaos.net/comics/2/</guid>
+      <description><![CDATA[<p>#2 - Latte Art</p><img src="https://goldenchaos.net/images/comics/2_latte_art.png" alt="2 - Latte Art">]]></description>
+      <pubDate>Sat, 13 Sep 2025 16:00:00 GMT</pubDate>
+    </item>
+    
+      
+    <item>
+      <title><![CDATA[#1 - Alopecia]]></title>
+      <link>https://goldenchaos.net/comics/1/</link>
+      <guid isPermaLink="true">https://goldenchaos.net/comics/1/</guid>
+      <description><![CDATA[<p>#1 - Alopecia</p><img src="https://goldenchaos.net/images/comics/1_alopecia.png" alt="1 - Alopecia">]]></description>
+      <pubDate>Mon, 08 Sep 2025 16:00:00 GMT</pubDate>
+    </item>
+    
+  </channel>
+</rss>

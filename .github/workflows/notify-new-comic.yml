@@ -1,0 +1,53 @@
+name: Notify New Comic
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/_data/comics.json'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect new comic and send push notification
+        env:
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: |
+          # Get the latest comic from comics.json
+          LATEST_COMIC=$(jq '.[-1]' src/_data/comics.json)
+          COMIC_NUMBER=$(echo "$LATEST_COMIC" | jq -r '.number')
+          COMIC_TITLE=$(echo "$LATEST_COMIC" | jq -r '.title')
+          COMIC_SLUG=$(echo "$LATEST_COMIC" | jq -r '.slug')
+          COMIC_IMAGE=$(echo "$LATEST_COMIC" | jq -r '.ogImage')
+          
+          # Build notification payload
+          NOTIFICATION_PAYLOAD=$(jq -n \
+            --arg heading "New Comic: #$COMIC_NUMBER - $COMIC_TITLE" \
+            --arg content "Check out the latest GoldenChaos comic!" \
+            --arg url "https://goldenchaos.net/comics/$COMIC_SLUG/" \
+            --arg image "https://goldenchaos.net$COMIC_IMAGE" \
+            --arg appId "$ONESIGNAL_APP_ID" \
+            '{
+              app_id: $appId,
+              headings: {"en": $heading},
+              contents: {"en": $content},
+              url: $url,
+              big_picture: $image,
+              included_segments: ["Subscribed Users"]
+            }')
+          
+          # Send notification via OneSignal REST API
+          curl -X POST https://onesignal.com/api/v1/notifications \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Basic $ONESIGNAL_REST_API_KEY" \
+            -d "$NOTIFICATION_PAYLOAD"
+          
+          echo "✅ Push notification sent for comic #$COMIC_NUMBER - $COMIC_TITLE"

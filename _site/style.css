@@ -410,6 +410,10 @@ pre {
 .segmented-control a:last-of-type {
   border-radius: 0 24px 24px 0;
 }
+.segmented-control a:only-child {
+  border-left: none !important;
+  border-radius: 24px;
+}
 .segmented-control img, .segmented-control i {
   font-size: 26px;
   width: 36px;

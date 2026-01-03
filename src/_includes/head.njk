@@ -42,6 +42,7 @@
     <meta name="twitter:creator" content="@GoldenChaos">
     <meta name="twitter:image" content="{{ twitterImg }}">
     <meta name="twitter:image:alt" content="{{ description or title or site.title }}">
+        <link rel="alternate" type="application/rss+xml" title="GoldenChaos Comics RSS" href="/comics/feed.xml">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="{{ site.author }}">
@@ -51,4 +52,24 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     <link rel="mask-icon" href="/website_icon.svg" color="#4083a0">
+        <link rel="manifest" href="/manifest.webmanifest">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+        {% if onesignal and onesignal.enabled and onesignal.appId and onesignal.appId != "YOUR-ONESIGNAL-APP-ID" %}
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script>
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                {% set notifyButtonEnabled = true %}
+                {% if onesignal.notifyButton is defined %}
+                    {% set notifyButtonEnabled = onesignal.notifyButton %}
+                {% endif %}
+                OneSignal.init({
+                    appId: "{{ onesignal.appId }}",
+                    {% if onesignal.safariWebId %}safari_web_id: "{{ onesignal.safariWebId }}",{% endif %}
+                    notifyButton: { enable: {% if notifyButtonEnabled %}true{% else %}false{% endif %} },
+                    serviceWorkerParam: { scope: "/" },
+                    serviceWorkerPath: "/OneSignalSDKWorker.js"
+                });
+            });
+        </script>
+        {% endif %}

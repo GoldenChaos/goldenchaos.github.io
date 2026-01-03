@@ -82,6 +82,14 @@ bodyClass: ""
       </center>
     </a>
   </div>
+  <div class="segmented-control">
+    <a id="notifyLatest" onclick="requestNotifications('notifyLatest')" style="cursor:pointer;">
+      <center>
+        <i class="fa-regular fa-bell"></i>
+        Get notified about new comics
+      </center>
+    </a>
+  </div>
 </div>
 <footer>
   <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
@@ -127,5 +135,58 @@ async function copyComicImageLink() {
   const fullURL = new URL('{{ latestComic.image }}', window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
+}
+
+function updateBellIcon(buttonId, isSubscribed) {
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+  const bellClass = isSubscribed ? 'fa-solid' : 'fa-regular';
+  btn.innerHTML = '<center><i class="' + bellClass + ' fa-bell"></i>Get notified about new comics</center>';
+}
+
+function checkNotificationStatus(buttonId) {
+  if (!window.OneSignal || !OneSignal.push) return;
+  OneSignal.push(function() {
+    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+      updateBellIcon(buttonId, isEnabled);
+    });
+  });
+}
+
+function requestNotifications(buttonId) {
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+  const original = btn.innerHTML;
+  const setStatus = (html) => { btn.innerHTML = html; setTimeout(() => { checkNotificationStatus(buttonId); }, 2500); };
+  if (!window.OneSignal || !OneSignal.push) {
+    setStatus('<i class="fa-solid fa-triangle-exclamation"></i> Notifications unavailable');
+    return;
+  }
+  btn.disabled = true;
+  OneSignal.push(function() {
+    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+      if (isEnabled) {
+        setStatus('<i class="fa-solid fa-check"></i> You are subscribed');
+        btn.disabled = false;
+        return;
+      }
+      OneSignal.registerForPushNotifications()
+        .then(function() {
+          setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
+          updateBellIcon(buttonId, true);
+          btn.disabled = false;
+        })
+        .catch(function() {
+          setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
+          btn.disabled = false;
+        });
+    });
+  });
+}
+
+if (window.OneSignal) {
+  OneSignal.push(function() {
+    checkNotificationStatus('notifyLatest');
+  });
 }
 </script>

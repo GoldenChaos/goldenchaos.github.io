@@ -259,6 +259,10 @@ pre {
 		&:last-of-type {
 			border-radius: 0 24px 24px 0;
 		}
+		&:only-child {
+			border-left: none !important;
+			border-radius: 24px;
+		}
 	}
 	img, i {
 		font-size: 26px;
