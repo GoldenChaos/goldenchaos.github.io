@@ -479,6 +479,10 @@ pre {
   left: 4px;
   transition: left 0.1s ease, width 0.1s ease;
 }
+.toggle-switch.pending .switch-toggle .switch-circle {
+  width: 26px;
+  left: 4px;
+}
 .toggle-switch.active .switch-toggle {
   background-color: #437ea3;
 }

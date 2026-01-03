@@ -336,6 +336,11 @@ pre {
 		}
 	}
 	
+	&.pending .switch-toggle .switch-circle {
+		width: 26px;
+		left: 4px;
+	}
+	
 	&.active .switch-toggle {
 		background-color: #437ea3;
 		

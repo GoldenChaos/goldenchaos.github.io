@@ -275,35 +275,44 @@ async function requestNotifications(buttonId) {
     return;
   }
   
-  // Optimistically toggle the switch immediately
   const wasActive = btn.classList.contains('active');
-  updateBellIcon(buttonId, !wasActive);
   
+  // If currently subscribed, handle unsubscribe
+  if (wasActive) {
+    btn.classList.add('pending');
+    btn.disabled = true;
+    OneSignalDeferred.push(async function(OneSignal) {
+      try {
+        await OneSignal.User.PushSubscription.optOut();
+        btn.classList.remove('pending', 'active');
+        updateBellIcon(buttonId, false);
+      } catch (error) {
+        console.error('Unsubscribe error:', error);
+        btn.classList.remove('pending');
+        alert('Failed to unsubscribe. Please try again.');
+      } finally {
+        btn.disabled = false;
+      }
+    });
+    return;
+  }
+  
+  btn.classList.add('pending');
   btn.disabled = true;
   OneSignalDeferred.push(async function(OneSignal) {
     try {
       const permission = await OneSignal.Notifications.permission;
-      
-      // If already subscribed and toggle was active, unsubscribe
-      if (permission && wasActive) {
-        console.log('Unsubscribing...');
-        await OneSignal.User.PushSubscription.optOut();
-        console.log('Unsubscribed successfully');
-        updateBellIcon(buttonId, false);
-        btn.disabled = false;
-        return;
-      }
-      
-      // If already subscribed but toggle was inactive, just update UI
       if (permission) {
-        console.log('Already subscribed');
+        btn.classList.remove('pending');
+        btn.classList.add('active');
+        updateBellIcon(buttonId, true);
         btn.disabled = false;
         return;
       }
       const browserPermission = Notification.permission;
       if (browserPermission === 'denied') {
         alert('Push notifications are blocked. Please enable them in your browser settings.');
-        updateBellIcon(buttonId, wasActive); // Revert toggle
+        btn.classList.remove('pending');
         btn.disabled = false;
         return;
       }
@@ -322,9 +331,11 @@ async function requestNotifications(buttonId) {
         await new Promise(resolve => setTimeout(resolve, 1500));
         
         // Check if subscription is actually registered with OneSignal
-        const isPushSubscribed = await OneSignal.User.PushSubscription.isPushSubscriptionEnabled();
+        const subscriptionId = await OneSignal.User.PushSubscription.id;
         
-        if (isPushSubscribed) {
+        if (subscriptionId) {
+          btn.classList.remove('pending');
+          btn.classList.add('active');
           updateBellIcon(buttonId, true);
           // Track subscription in Google Analytics
           if (typeof gtag !== 'undefined') {
@@ -335,19 +346,19 @@ async function requestNotifications(buttonId) {
           }
         } else {
           alert('Permission granted, but subscription sync failed. Please try again.');
-          updateBellIcon(buttonId, wasActive); // Revert toggle
+          btn.classList.remove('pending');
         }
       } else if (newPermission === 'denied') {
         alert('You denied push notification permission.');
-        updateBellIcon(buttonId, wasActive); // Revert toggle
+        btn.classList.remove('pending');
       } else {
-        updateBellIcon(buttonId, wasActive); // Revert toggle
+        btn.classList.remove('pending');
       }
       btn.disabled = false;
     } catch (error) {
       console.error('Notification request error:', error);
       alert('Subscription failed. Please try again.');
-      updateBellIcon(buttonId, wasActive); // Revert toggle
+      btn.classList.remove('pending');
       btn.disabled = false;
     }
   });
