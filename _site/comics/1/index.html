@@ -275,8 +275,9 @@ function updateBellIcon(buttonId, isSubscribed) {
 async function checkNotificationStatus(buttonId) {
   if (!window.OneSignalDeferred) return;
   OneSignalDeferred.push(async function(OneSignal) {
-    const permission = await OneSignal.Notifications.permission;
-    updateBellIcon(buttonId, permission);
+    const subscriptionId = await OneSignal.User.PushSubscription.id;
+    const isSubscribed = !!subscriptionId;
+    updateBellIcon(buttonId, isSubscribed);
   });
 }
 
