@@ -110,7 +110,7 @@ bodyClass: ""
     </div>
     <div class="segmented-control">
         <button id="notifyLatest" class="toggle-switch">
-            <i class="fa-regular fa-bell"></i>
+            <i class="fa-solid fa-bell"></i>
             <span>Push notifications for new comics</span>
             <div class="switch-toggle" onclick="requestNotifications('notifyLatest'); event.stopPropagation();">
                 <div class="switch-circle"></div>
@@ -270,10 +270,9 @@ async function copyComicLink() {
 function updateBellIcon(buttonId, isSubscribed) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
-  const bellClass = isSubscribed ? 'fa-solid' : 'fa-regular';
   const icon = btn.querySelector('i');
   if (icon) {
-    icon.className = bellClass + ' fa-bell';
+    icon.className = 'fa-solid fa-bell';
   }
   btn.classList.toggle('active', isSubscribed);
 }
@@ -313,6 +312,13 @@ async function requestNotifications(buttonId) {
         console.log('Unsubscribed successfully');
         btn.classList.remove('pending', 'active');
         updateBellIcon(buttonId, false);
+        // Track unsubscribe in Google Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'notification_unsubscribe', {
+            'event_category': 'engagement',
+            'event_label': 'comic_notifications'
+          });
+        }
       } catch (error) {
         console.error('Unsubscribe error:', error);
         btn.classList.remove('pending');
