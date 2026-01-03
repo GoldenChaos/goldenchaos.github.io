@@ -322,8 +322,11 @@ async function requestNotifications(buttonId) {
   btn.disabled = true;
   OneSignalDeferred.push(async function(OneSignal) {
     try {
-      const permission = await OneSignal.Notifications.permission;
-      if (permission) {
+      // Check if already subscribed with OneSignal
+      const subscriptionId = await OneSignal.User.PushSubscription.id;
+      
+      // If already subscribed, just update UI
+      if (subscriptionId) {
         btn.classList.remove('pending');
         btn.classList.add('active');
         updateBellIcon(buttonId, true);

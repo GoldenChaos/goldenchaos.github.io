@@ -342,22 +342,12 @@ async function requestNotifications(buttonId) {
       const browserPermission = Notification.permission;
       console.log('Browser native permission:', browserPermission);
       
-      const permission = await OneSignal.Notifications.permission;
-      console.log('Current permission:', permission);
+      // Check if already subscribed with OneSignal
+      const subscriptionId = await OneSignal.User.PushSubscription.id;
+      console.log('Current subscription ID:', subscriptionId);
       
-      // If already subscribed and toggle was active, unsubscribe
-      if (permission && wasActive) {
-        console.log('Unsubscribing...');
-        await OneSignal.User.PushSubscription.optOut();
-        console.log('Unsubscribed successfully');
-        btn.classList.remove('pending', 'active');
-        updateBellIcon(buttonId, false);
-        btn.disabled = false;
-        return;
-      }
-      
-      // If already subscribed but toggle was inactive, just update UI
-      if (permission) {
+      // If already subscribed, just update UI
+      if (subscriptionId) {
         console.log('Already subscribed');
         btn.classList.remove('pending');
         btn.classList.add('active');
