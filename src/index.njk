@@ -365,6 +365,7 @@ async function requestNotifications(buttonId) {
         return;
       }
       
+      // If browser permission is default (never asked or reset), or if granted but opted out, prompt
       console.log('Calling promptPush...');
       
       // Try the native OneSignal method for v16
