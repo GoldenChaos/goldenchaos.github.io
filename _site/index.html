@@ -389,12 +389,16 @@ async function requestNotifications(buttonId) {
     return;
   }
   console.log('Button found, checking OneSignalDeferred:', window.OneSignalDeferred);
-  const setStatus = (html) => { btn.innerHTML = html; setTimeout(() => { checkNotificationStatus(buttonId); }, 2500); };
   if (!window.OneSignalDeferred) {
     console.error('OneSignalDeferred not available');
-    setStatus('<i class="fa-solid fa-triangle-exclamation"></i> Notifications unavailable');
+    alert('Push notifications are not available.');
     return;
   }
+  
+  // Optimistically toggle the switch immediately
+  const wasActive = btn.classList.contains('active');
+  updateBellIcon(buttonId, !wasActive);
+  
   btn.disabled = true;
   console.log('Pushing to OneSignalDeferred...');
   OneSignalDeferred.push(async function(OneSignal) {
@@ -407,7 +411,7 @@ async function requestNotifications(buttonId) {
       const permission = await OneSignal.Notifications.permission;
       console.log('Current permission:', permission);
       if (permission) {
-        setStatus('<i class="fa-solid fa-check"></i> You are subscribed');
+        console.log('Already subscribed');
         btn.disabled = false;
         return;
       }
@@ -415,7 +419,8 @@ async function requestNotifications(buttonId) {
       // If browser permission is denied, show message
       if (browserPermission === 'denied') {
         console.error('Browser permission is denied - user must enable in browser settings');
-        setStatus('<i class="fa-solid fa-ban"></i> Blocked - enable in browser settings');
+        alert('Push notifications are blocked. Please enable them in your browser settings.');
+        updateBellIcon(buttonId, wasActive); // Revert toggle
         btn.disabled = false;
         return;
       }
@@ -445,12 +450,11 @@ async function requestNotifications(buttonId) {
         console.log('Waited for subscription sync');
         
         // Check if subscription is actually registered with OneSignal
-        const isPushSubscribed = await OneSignal.User.PushSubscription.isPushSubscriptionEnabled;
+        const isPushSubscribed = await OneSignal.User.PushSubscription.isPushSubscriptionEnabled();
         console.log('isPushSubscriptionEnabled:', isPushSubscribed);
         
         if (isPushSubscribed) {
           console.log('Subscription verified with OneSignal!');
-          setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
           updateBellIcon(buttonId, true);
           // Track subscription in Google Analytics
           if (typeof gtag !== 'undefined') {
@@ -461,20 +465,22 @@ async function requestNotifications(buttonId) {
           }
         } else {
           console.warn('Permission granted but subscription not verified with OneSignal');
-          setStatus('<i class="fa-solid fa-exclamation"></i> Permission granted, awaiting sync...');
-          updateBellIcon(buttonId, false);
+          alert('Permission granted, but subscription sync failed. Please try again.');
+          updateBellIcon(buttonId, wasActive); // Revert toggle
         }
       } else if (newPermission === 'denied') {
         console.warn('Permission denied');
-        setStatus('<i class="fa-solid fa-xmark"></i> Permission denied');
+        alert('You denied push notification permission.');
+        updateBellIcon(buttonId, wasActive); // Revert toggle
       } else {
         console.warn('Permission state:', newPermission);
-        setStatus('<i class="fa-solid fa-question"></i> No response');
+        updateBellIcon(buttonId, wasActive); // Revert toggle
       }
       btn.disabled = false;
     } catch (error) {
       console.error('Notification request error:', error);
-      setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
+      alert('Subscription failed. Please try again.');
+      updateBellIcon(buttonId, wasActive); // Revert toggle
       btn.disabled = false;
     }
   });

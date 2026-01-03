@@ -270,23 +270,28 @@ async function checkNotificationStatus(buttonId) {
 async function requestNotifications(buttonId) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
-  const setStatus = (html) => { btn.innerHTML = html; setTimeout(() => { checkNotificationStatus(buttonId); }, 2500); };
   if (!window.OneSignalDeferred) {
-    setStatus('<i class="fa-solid fa-triangle-exclamation"></i> Notifications unavailable');
+    alert('Push notifications are not available.');
     return;
   }
+  
+  // Optimistically toggle the switch immediately
+  const wasActive = btn.classList.contains('active');
+  updateBellIcon(buttonId, !wasActive);
+  
   btn.disabled = true;
   OneSignalDeferred.push(async function(OneSignal) {
     try {
       const permission = await OneSignal.Notifications.permission;
       if (permission) {
-        setStatus('<i class="fa-solid fa-check"></i> You are subscribed');
+        console.log('Already subscribed');
         btn.disabled = false;
         return;
       }
       const browserPermission = Notification.permission;
       if (browserPermission === 'denied') {
-        setStatus('<i class="fa-solid fa-ban"></i> Blocked - enable in browser settings');
+        alert('Push notifications are blocked. Please enable them in your browser settings.');
+        updateBellIcon(buttonId, wasActive); // Revert toggle
         btn.disabled = false;
         return;
       }
@@ -305,10 +310,9 @@ async function requestNotifications(buttonId) {
         await new Promise(resolve => setTimeout(resolve, 1500));
         
         // Check if subscription is actually registered with OneSignal
-        const isPushSubscribed = await OneSignal.User.PushSubscription.isPushSubscriptionEnabled;
+        const isPushSubscribed = await OneSignal.User.PushSubscription.isPushSubscriptionEnabled();
         
         if (isPushSubscribed) {
-          setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
           updateBellIcon(buttonId, true);
           // Track subscription in Google Analytics
           if (typeof gtag !== 'undefined') {
@@ -318,18 +322,20 @@ async function requestNotifications(buttonId) {
             });
           }
         } else {
-          setStatus('<i class="fa-solid fa-exclamation"></i> Permission granted, awaiting sync...');
-          updateBellIcon(buttonId, false);
+          alert('Permission granted, but subscription sync failed. Please try again.');
+          updateBellIcon(buttonId, wasActive); // Revert toggle
         }
       } else if (newPermission === 'denied') {
-        setStatus('<i class="fa-solid fa-xmark"></i> Permission denied');
+        alert('You denied push notification permission.');
+        updateBellIcon(buttonId, wasActive); // Revert toggle
       } else {
-        setStatus('<i class="fa-solid fa-question"></i> No response');
+        updateBellIcon(buttonId, wasActive); // Revert toggle
       }
       btn.disabled = false;
     } catch (error) {
       console.error('Notification request error:', error);
-      setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
+      alert('Subscription failed. Please try again.');
+      updateBellIcon(buttonId, wasActive); // Revert toggle
       btn.disabled = false;
     }
   });
