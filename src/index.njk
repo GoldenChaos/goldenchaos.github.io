@@ -346,11 +346,12 @@ async function requestNotifications(buttonId) {
       
       // Check if already subscribed with OneSignal
       const subscriptionId = await OneSignal.User.PushSubscription.id;
-      console.log('Current subscription ID:', subscriptionId);
+      const optedIn = await OneSignal.User.PushSubscription.optedIn;
+      console.log('Current subscription ID:', subscriptionId, 'optedIn:', optedIn);
       
-      // If already subscribed, just update UI
-      if (subscriptionId) {
-        console.log('Already subscribed');
+      // If already subscribed and opted in, just update UI
+      if (subscriptionId && optedIn) {
+        console.log('Already subscribed and opted in');
         btn.classList.remove('pending');
         btn.classList.add('active');
         updateBellIcon(buttonId, true);
