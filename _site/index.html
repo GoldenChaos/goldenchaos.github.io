@@ -395,6 +395,10 @@ async function requestNotifications(buttonId) {
   OneSignalDeferred.push(async function(OneSignal) {
     console.log('Inside OneSignalDeferred, OneSignal:', OneSignal);
     try {
+      // Check browser native permission state
+      const browserPermission = Notification.permission;
+      console.log('Browser native permission:', browserPermission);
+      
       const permission = await OneSignal.Notifications.permission;
       console.log('Current permission:', permission);
       if (permission) {
@@ -402,19 +406,44 @@ async function requestNotifications(buttonId) {
         btn.disabled = false;
         return;
       }
-      console.log('Calling promptPush...');
-      await OneSignal.Slidedown.promptPush();
-      console.log('promptPush succeeded');
-      setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
-      updateBellIcon(buttonId, true);
-      btn.disabled = false;
-      // Track subscription in Google Analytics
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'notification_subscribe', {
-          'event_category': 'engagement',
-          'event_label': 'comic_notifications'
-        });
+      
+      // If browser permission is denied, show message
+      if (browserPermission === 'denied') {
+        console.error('Browser permission is denied - user must enable in browser settings');
+        setStatus('<i class="fa-solid fa-ban"></i> Blocked - enable in browser settings');
+        btn.disabled = false;
+        return;
       }
+      
+      console.log('Calling promptPush...');
+      const result = await OneSignal.Slidedown.promptPush();
+      console.log('promptPush result:', result);
+      
+      // Check if permission was actually granted
+      const newPermission = Notification.permission;
+      console.log('Permission after prompt:', newPermission);
+      
+      if (newPermission === 'granted') {
+        console.log('Permission granted!');
+      if (newPermission === 'granted') {
+        console.log('Permission granted!');
+        setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
+        updateBellIcon(buttonId, true);
+        // Track subscription in Google Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'notification_subscribe', {
+            'event_category': 'engagement',
+            'event_label': 'comic_notifications'
+          });
+        }
+      } else if (newPermission === 'denied') {
+        console.warn('Permission denied');
+        setStatus('<i class="fa-solid fa-xmark"></i> Permission denied');
+      } else {
+        console.warn('Permission state:', newPermission);
+        setStatus('<i class="fa-solid fa-question"></i> No response');
+      }
+      btn.disabled = false;
     } catch (error) {
       console.error('Notification request error:', error);
       setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
