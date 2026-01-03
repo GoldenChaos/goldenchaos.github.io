@@ -264,6 +264,10 @@ async function copyComicLink() {
             'event_label': 'comic_link'
         });
     }
+}
+
+function updateBellIcon(buttonId, isSubscribed) {
+  const btn = document.getElementById(buttonId);
   if (!btn) return;
   const bellClass = isSubscribed ? 'fa-solid' : 'fa-regular';
   btn.innerHTML = '<center><i class="' + bellClass + ' fa-bell"></i>Get notified about new comics</center>';
