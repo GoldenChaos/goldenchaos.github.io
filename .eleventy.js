@@ -46,6 +46,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("og-image.png");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy({ "src/manifest.webmanifest": "manifest.webmanifest" });
+  eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKWorker.js": "OneSignalSDKWorker.js" });
+  eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKUpdaterWorker.js": "OneSignalSDKUpdaterWorker.js" });
   eleventyConfig.addPassthroughCopy({
     "goldenchaos-btt-docs.html": "goldenchaos-btt-docs.html",
     "goldenchaos-btt-sdk.html": "goldenchaos-btt-sdk.html",
