@@ -434,14 +434,30 @@ async function requestNotifications(buttonId) {
       
       if (newPermission === 'granted') {
         console.log('Permission granted!');
-        setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
-        updateBellIcon(buttonId, true);
-        // Track subscription in Google Analytics
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'notification_subscribe', {
-            'event_category': 'engagement',
-            'event_label': 'comic_notifications'
-          });
+        
+        // Wait for OneSignal to sync the subscription to their servers
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        console.log('Waited for subscription sync');
+        
+        // Check if subscription is actually registered with OneSignal
+        const isPushSubscribed = await OneSignal.User.PushSubscription.isPushSubscriptionEnabled;
+        console.log('isPushSubscriptionEnabled:', isPushSubscribed);
+        
+        if (isPushSubscribed) {
+          console.log('Subscription verified with OneSignal!');
+          setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
+          updateBellIcon(buttonId, true);
+          // Track subscription in Google Analytics
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'notification_subscribe', {
+              'event_category': 'engagement',
+              'event_label': 'comic_notifications'
+            });
+          }
+        } else {
+          console.warn('Permission granted but subscription not verified with OneSignal');
+          setStatus('<i class="fa-solid fa-exclamation"></i> Permission granted, awaiting sync...');
+          updateBellIcon(buttonId, false);
         }
       } else if (newPermission === 'denied') {
         console.warn('Permission denied');

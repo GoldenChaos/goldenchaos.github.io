@@ -181,17 +181,49 @@ async function requestNotifications(buttonId) {
         btn.disabled = false;
         return;
       }
-      await OneSignal.Slidedown.promptPush();
-      setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
-      updateBellIcon(buttonId, true);
-      btn.disabled = false;
-      // Track subscription in Google Analytics
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'notification_subscribe', {
-          'event_category': 'engagement',
-          'event_label': 'comic_notifications'
-        });
+      const browserPermission = Notification.permission;
+      if (browserPermission === 'denied') {
+        setStatus('<i class="fa-solid fa-ban"></i> Blocked - enable in browser settings');
+        btn.disabled = false;
+        return;
       }
+      
+      // Try optIn first (v16 native method)
+      try {
+        await OneSignal.User.PushSubscription.optIn();
+      } catch (optInError) {
+        // Fallback to Slidedown
+        await OneSignal.Slidedown.promptPush();
+      }
+      
+      const newPermission = Notification.permission;
+      if (newPermission === 'granted') {
+        // Wait for OneSignal to sync the subscription to their servers
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Check if subscription is actually registered with OneSignal
+        const isPushSubscribed = await OneSignal.User.PushSubscription.isPushSubscriptionEnabled;
+        
+        if (isPushSubscribed) {
+          setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
+          updateBellIcon(buttonId, true);
+          // Track subscription in Google Analytics
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'notification_subscribe', {
+              'event_category': 'engagement',
+              'event_label': 'comic_notifications'
+            });
+          }
+        } else {
+          setStatus('<i class="fa-solid fa-exclamation"></i> Permission granted, awaiting sync...');
+          updateBellIcon(buttonId, false);
+        }
+      } else if (newPermission === 'denied') {
+        setStatus('<i class="fa-solid fa-xmark"></i> Permission denied');
+      } else {
+        setStatus('<i class="fa-solid fa-question"></i> No response');
+      }
+      btn.disabled = false;
     } catch (error) {
       console.error('Notification request error:', error);
       setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
