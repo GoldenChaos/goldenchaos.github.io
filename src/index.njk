@@ -333,14 +333,13 @@ async function requestNotifications(buttonId) {
     return;
   }
   
-  // Don't set pending state yet - wait until OneSignal callback starts
+  // Set pending state immediately for visual feedback
+  btn.classList.add('pending');
+  btn.disabled = true;
   console.log('Pushing to OneSignalDeferred...');
   OneSignalDeferred.push(async function(OneSignal) {
     console.log('Inside OneSignalDeferred, OneSignal:', OneSignal);
     try {
-      btn.classList.add('pending');
-      btn.disabled = true;
-      
       // Check browser native permission state
       const browserPermission = Notification.permission;
       console.log('Browser native permission:', browserPermission);

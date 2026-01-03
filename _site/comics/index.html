@@ -312,11 +312,11 @@ async function requestNotifications(buttonId) {
     return;
   }
   
-  // Don't set pending state yet - wait until OneSignal callback starts
+  // Set pending state immediately for visual feedback
+  btn.classList.add('pending');
+  btn.disabled = true;
   OneSignalDeferred.push(async function(OneSignal) {
     try {
-      btn.classList.add('pending');
-      btn.disabled = true;
       // Check if already subscribed with OneSignal
       const subscriptionId = await OneSignal.User.PushSubscription.id;
       const optedIn = await OneSignal.User.PushSubscription.optedIn;
