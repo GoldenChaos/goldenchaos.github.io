@@ -339,8 +339,6 @@ async function requestNotifications(buttonId) {
       
       if (newPermission === 'granted') {
         console.log('Permission granted!');
-      if (newPermission === 'granted') {
-        console.log('Permission granted!');
         setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
         updateBellIcon(buttonId, true);
         // Track subscription in Google Analytics
@@ -348,6 +346,9 @@ async function requestNotifications(buttonId) {
           gtag('event', 'notification_subscribe', {
             'event_category': 'engagement',
             'event_label': 'comic_notifications'
+          });
+        }
+      } else if (newPermission === 'denied') {
           });
         }
       } else if (newPermission === 'denied') {
