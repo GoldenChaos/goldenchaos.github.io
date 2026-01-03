@@ -426,6 +426,88 @@ pre {
   margin-top: -4px;
 }
 
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: none;
+  background-color: transparent;
+  color: #437ea3;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: default;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.toggle-switch i {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.toggle-switch span {
+  flex: 1;
+}
+.toggle-switch .switch-toggle {
+  width: 44px;
+  height: 24px;
+  background-color: #ddd;
+  border-radius: 12px;
+  position: relative;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.toggle-switch .switch-toggle .switch-circle {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.3s ease, width 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.toggle-switch .switch-toggle:active .switch-circle {
+  width: 26px;
+  left: 4px;
+  transition: left 0.1s ease, width 0.1s ease;
+}
+.toggle-switch.active .switch-toggle {
+  background-color: #437ea3;
+}
+.toggle-switch.active .switch-toggle .switch-circle {
+  left: 22px;
+}
+.toggle-switch.active .switch-toggle:active .switch-circle {
+  left: 18px;
+  transition: left 0.1s ease, width 0.1s ease;
+}
+.toggle-switch.active i {
+  font-weight: bold;
+}
+.toggle-switch:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@media (prefers-color-scheme: dark) {
+  .toggle-switch {
+    color: inherit;
+  }
+  .toggle-switch .switch-toggle {
+    background-color: #444;
+  }
+  .toggle-switch.active .switch-toggle {
+    background-color: #5a9bc4;
+  }
+}
+
 .page-top .splash-bg .chevron {
   animation: 7s ease-in-out 3s 10 pulseBounce;
 }

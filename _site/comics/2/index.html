@@ -194,13 +194,14 @@
     </a>
   </div>
   <div class="segmented-control" style="display:none;">
-      <a id="notifyComic" onclick="requestNotifications('notifyComic')" style="cursor:pointer;">
-        <center>
-          <i class="fa-regular fa-bell"></i>
-          Get notified about new comics
-        </center>
-      </a>
-    </div>
+    <button id="notifyComic" class="toggle-switch">
+      <i class="fa-regular fa-bell"></i>
+      <span>Get notified about new comics</span>
+      <div class="switch-toggle" onclick="requestNotifications('notifyComic'); event.stopPropagation();">
+        <div class="switch-circle"></div>
+      </div>
+    </button>
+  </div>
 </div>
 <footer>
   <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
@@ -267,7 +268,11 @@ function updateBellIcon(buttonId, isSubscribed) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
   const bellClass = isSubscribed ? 'fa-solid' : 'fa-regular';
-  btn.innerHTML = '<center><i class="' + bellClass + ' fa-bell"></i>Get notified about new comics</center>';
+  const icon = btn.querySelector('i');
+  if (icon) {
+    icon.className = bellClass + ' fa-bell';
+  }
+  btn.classList.toggle('active', isSubscribed);
 }
 
 async function checkNotificationStatus(buttonId) {
