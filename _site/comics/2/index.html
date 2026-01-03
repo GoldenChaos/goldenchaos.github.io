@@ -132,6 +132,17 @@
 </nav>
 
 </div>
+<div class="content index page" style="margin-bottom:0;margin-top:20px;">
+  <div class="segmented-control">
+    <button id="notifyComic" class="toggle-switch no-transition">
+      <i class="fa-solid fa-bell"></i>
+      <span>Push notifications for new comics</span>
+      <div class="switch-toggle" onclick="requestNotifications('notifyComic'); event.stopPropagation();">
+        <div class="switch-circle"></div>
+      </div>
+    </button>
+  </div>
+</div>
 <div class="content index page" id="comic-title">
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">#2 - Latte Art</h1>
 </div>
@@ -192,15 +203,6 @@
         Copy Comic Image Link
       </center>
     </a>
-  </div>
-  <div class="segmented-control">
-    <button id="notifyComic" class="toggle-switch">
-      <i class="fa-solid fa-bell"></i>
-      <span>Push notifications for new comics</span>
-      <div class="switch-toggle" onclick="requestNotifications('notifyComic'); event.stopPropagation();">
-        <div class="switch-circle"></div>
-      </div>
-    </button>
   </div>
 </div>
 <footer>

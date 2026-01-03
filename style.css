@@ -444,6 +444,9 @@ pre {
   flex: 1 1 0;
   min-width: 0;
 }
+.toggle-switch.no-transition, .toggle-switch.no-transition * {
+  transition: none !important;
+}
 .toggle-switch i {
   font-size: 18px;
   width: 18px;

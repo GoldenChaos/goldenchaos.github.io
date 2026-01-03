@@ -116,6 +116,17 @@
 </nav>
 
 </div>
+<div class="content index page" style="margin-bottom:0;margin-top:20px;">
+  <div class="segmented-control" style="margin-bottom:0;">
+    <button id="notifyLatestComic" class="toggle-switch no-transition">
+      <i class="fa-solid fa-bell"></i>
+      <span>Push notifications for new comics</span>
+      <div class="switch-toggle" onclick="requestNotifications('notifyLatestComic'); event.stopPropagation();">
+        <div class="switch-circle"></div>
+      </div>
+    </button>
+  </div>
+</div>
 <div class="content index page" id="comic-title">
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">Latest Comic</h1>
 </div>
@@ -179,15 +190,6 @@
         Copy Comic Image Link
       </center>
     </a>
-  </div>
-  <div class="segmented-control">
-    <button id="notifyLatestComic" class="toggle-switch">
-      <i class="fa-solid fa-bell"></i>
-      <span>Push notifications for new comics</span>
-      <div class="switch-toggle" onclick="requestNotifications('notifyLatestComic'); event.stopPropagation();">
-        <div class="switch-circle"></div>
-      </div>
-    </button>
   </div>
 </div>
 <footer>
@@ -265,6 +267,11 @@ async function checkNotificationStatus(buttonId) {
     const optedIn = await OneSignal.User.PushSubscription.optedIn;
     const isSubscribed = subscriptionId && optedIn;
     updateBellIcon(buttonId, isSubscribed);
+    // Remove no-transition class after initial state is set
+    const btn = document.getElementById(buttonId);
+    if (btn) {
+      setTimeout(() => btn.classList.remove('no-transition'), 50);
+    }
   });
 }
 
