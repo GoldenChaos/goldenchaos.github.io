@@ -7,7 +7,7 @@
   "theme_color": "#2f5d7c",
   "icons": [
     {
-      "src": "/images/app-icons/apple-touch-icon-precomposed.png",
+      "src": "/apple-touch-icon-precomposed.png",
       "sizes": "180x180",
       "type": "image/png"
     },
