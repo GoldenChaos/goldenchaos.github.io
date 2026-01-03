@@ -185,6 +185,18 @@ async function requestNotifications(buttonId) {
   OneSignalDeferred.push(async function(OneSignal) {
     try {
       const permission = await OneSignal.Notifications.permission;
+      
+      // If already subscribed and toggle was active, unsubscribe
+      if (permission && wasActive) {
+        console.log('Unsubscribing...');
+        await OneSignal.User.PushSubscription.optOut();
+        console.log('Unsubscribed successfully');
+        updateBellIcon(buttonId, false);
+        btn.disabled = false;
+        return;
+      }
+      
+      // If already subscribed but toggle was inactive, just update UI
       if (permission) {
         console.log('Already subscribed');
         btn.disabled = false;
