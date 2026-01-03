@@ -134,10 +134,10 @@
 </div>
 <div class="content index page" style="margin-bottom:0;margin-top:20px;">
   <div class="segmented-control">
-    <button id="notifyComic" class="toggle-switch no-transition">
+    <button id="notifyComic" class="toggle-switch no-transition" onclick="requestNotifications('notifyComic');">
       <i class="fa-solid fa-bell"></i>
       <span>Push notifications for new comics</span>
-      <div class="switch-toggle" onclick="requestNotifications('notifyComic'); event.stopPropagation();">
+      <div class="switch-toggle">
         <div class="switch-circle"></div>
       </div>
     </button>

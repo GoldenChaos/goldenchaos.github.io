@@ -204,10 +204,10 @@
         </a>
     </div>
     <div class="segmented-control">
-        <button id="notifyLatest" class="toggle-switch no-transition">
+        <button id="notifyLatest" class="toggle-switch no-transition" onclick="requestNotifications('notifyLatest');">
             <i class="fa-solid fa-bell"></i>
             <span>Push notifications for new comics</span>
-            <div class="switch-toggle" onclick="requestNotifications('notifyLatest'); event.stopPropagation();">
+            <div class="switch-toggle">
                 <div class="switch-circle"></div>
             </div>
         </button>
