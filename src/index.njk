@@ -375,25 +375,50 @@ async function requestNotifications(buttonId) {
         console.warn('Notification request timed out');
       }, 10000);
       
+      // Detect Safari
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      console.log('Browser detection - isSafari:', isSafari);
+      
       // If browser permission is default (never asked or reset), or if granted but opted out, prompt
       console.log('Calling promptPush...');
       
-      // Try the native OneSignal method for v16
-      try {
+      // For Safari, try native Notification API first, then OneSignal
+      if (isSafari && browserPermission === 'default') {
         try {
-          await OneSignal.User.PushSubscription.optIn();
-          console.log('optIn() succeeded');
-        } catch (optInError) {
-          console.error('optIn() failed, trying Slidedown:', optInError);
-          await OneSignal.Slidedown.promptPush();
+          console.log('Safari detected, using native Notification.requestPermission()');
+          const permission = await Notification.requestPermission();
+          console.log('Native permission result:', permission);
+          
+          if (permission === 'granted') {
+            // Now register with OneSignal
+            try {
+              await OneSignal.User.PushSubscription.optIn();
+              console.log('OneSignal optIn() succeeded after native prompt');
+            } catch (optInError) {
+              console.error('OneSignal optIn() failed:', optInError);
+            }
+          }
+        } catch (nativeError) {
+          console.error('Native Notification.requestPermission() failed:', nativeError);
         }
-      } catch (promptError) {
-        clearTimeout(timeoutId);
-        btn.classList.remove('pending');
-        btn.disabled = false;
-        console.error('Prompt error:', promptError);
-        alert('Failed to show notification prompt. Please try again.');
-        return;
+      } else {
+        // Try the native OneSignal method for v16
+        try {
+          try {
+            await OneSignal.User.PushSubscription.optIn();
+            console.log('optIn() succeeded');
+          } catch (optInError) {
+            console.error('optIn() failed, trying Slidedown:', optInError);
+            await OneSignal.Slidedown.promptPush();
+          }
+        } catch (promptError) {
+          clearTimeout(timeoutId);
+          btn.classList.remove('pending');
+          btn.disabled = false;
+          console.error('Prompt error:', promptError);
+          alert('Failed to show notification prompt. Please try again.');
+          return;
+        }
       }
       
       clearTimeout(timeoutId);
