@@ -54,20 +54,12 @@
         <link rel="manifest" href="/manifest.webmanifest">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
         
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
         <script>
-            window.OneSignal = window.OneSignal || [];
-            OneSignal.push(function() {
-                
-                
-                    
-                
-                OneSignal.init({
-                    appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
-                    
-                    notifyButton: { enable: true },
-                    serviceWorkerParam: { scope: "/" },
-                    serviceWorkerPath: "/OneSignalSDKWorker.js"
+            window.OneSignalDeferred = window.OneSignalDeferred || [];
+            OneSignalDeferred.push(async function(OneSignal) {
+                await OneSignal.init({
+                    appId: "72940797-fce4-4404-92c2-a33aa17e19b3"
                 });
             });
         </script>
@@ -156,7 +148,7 @@
         Previous
       </center>
     </a>
-    <a href="/comics/all/">
+    <a href="/comics/all/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'view_all'})">
       <center>
         <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" style="width: 26px; height: 26px; display: block; margin: 0 auto 8px;">
           <rect x="2" y="2" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
@@ -172,13 +164,13 @@
         View All
       </center>
     </a>
-    <a href="/comics/2/">
+    <a href="/comics/2/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'next'})">
       <center>
         <i class="fa-solid fa-forward"></i>
         Next
       </center>
     </a>
-    <a href="/comics/">
+    <a href="/comics/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'latest'})">
       <center>
         <i class="fa-solid fa-fast-forward"></i>
         Latest
@@ -249,12 +241,24 @@ async function copyComicLink() {
   const link = window.location.origin + '/comics/1/';
   const ok = await copyWithFallback(link);
   showCopied('copyBtn', ok);
+  if (ok && typeof gtag !== 'undefined') {
+    gtag('event', 'copy_link', {
+      'event_category': 'engagement',
+      'event_label': 'comic_link'
+    });
+  }
 }
 
 async function copyComicImageLink() {
   const fullURL = new URL('/images/comics/1_alopecia.png', window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
+  if (ok && typeof gtag !== 'undefined') {
+    gtag('event', 'copy_link', {
+      'event_category': 'engagement',
+      'event_label': 'comic_image_link'
+    });
+  }
 }
 
 function updateBellIcon(buttonId, isSubscribed) {
@@ -264,48 +268,52 @@ function updateBellIcon(buttonId, isSubscribed) {
   btn.innerHTML = '<center><i class="' + bellClass + ' fa-bell"></i>Get notified about new comics</center>';
 }
 
-function checkNotificationStatus(buttonId) {
-  if (!window.OneSignal || !OneSignal.push) return;
-  OneSignal.push(function() {
-    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-      updateBellIcon(buttonId, isEnabled);
-    });
+async function checkNotificationStatus(buttonId) {
+  if (!window.OneSignalDeferred) return;
+  OneSignalDeferred.push(async function(OneSignal) {
+    const permission = await OneSignal.Notifications.permission;
+    updateBellIcon(buttonId, permission);
   });
 }
 
-function requestNotifications(buttonId) {
+async function requestNotifications(buttonId) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
-  const original = btn.innerHTML;
   const setStatus = (html) => { btn.innerHTML = html; setTimeout(() => { checkNotificationStatus(buttonId); }, 2500); };
-  if (!window.OneSignal || !OneSignal.push) {
+  if (!window.OneSignalDeferred) {
     setStatus('<i class="fa-solid fa-triangle-exclamation"></i> Notifications unavailable');
     return;
   }
   btn.disabled = true;
-  OneSignal.push(function() {
-    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-      if (isEnabled) {
+  OneSignalDeferred.push(async function(OneSignal) {
+    try {
+      const permission = await OneSignal.Notifications.permission;
+      if (permission) {
         setStatus('<i class="fa-solid fa-check"></i> You are subscribed');
         btn.disabled = false;
         return;
       }
-      OneSignal.registerForPushNotifications()
-        .then(function() {
-          setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
-          updateBellIcon(buttonId, true);
-          btn.disabled = false;
-        })
-        .catch(function() {
-          setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
-          btn.disabled = false;
+      await OneSignal.Slidedown.promptPush();
+      setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
+      updateBellIcon(buttonId, true);
+      btn.disabled = false;
+      // Track subscription in Google Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'notification_subscribe', {
+          'event_category': 'engagement',
+          'event_label': 'comic_notifications'
         });
-    });
+      }
+    } catch (error) {
+      console.error('Notification request error:', error);
+      setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
+      btn.disabled = false;
+    }
   });
 }
 
-if (window.OneSignal) {
-  OneSignal.push(function() {
+if (window.OneSignalDeferred) {
+  OneSignalDeferred.push(async function(OneSignal) {
     checkNotificationStatus('notifyLatest');
   });
 }

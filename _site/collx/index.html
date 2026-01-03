@@ -54,20 +54,12 @@
         <link rel="manifest" href="/manifest.webmanifest">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
         
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
         <script>
-            window.OneSignal = window.OneSignal || [];
-            OneSignal.push(function() {
-                
-                
-                    
-                
-                OneSignal.init({
-                    appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
-                    
-                    notifyButton: { enable: true },
-                    serviceWorkerParam: { scope: "/" },
-                    serviceWorkerPath: "/OneSignalSDKWorker.js"
+            window.OneSignalDeferred = window.OneSignalDeferred || [];
+            OneSignalDeferred.push(async function(OneSignal) {
+                await OneSignal.init({
+                    appId: "72940797-fce4-4404-92c2-a33aa17e19b3"
                 });
             });
         </script>

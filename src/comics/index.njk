@@ -27,19 +27,19 @@ bodyClass: ""
 <div class="content page" style="text-align:center;">
   <img src="{{ latestComic.image }}" alt="{{ latestComic.alt }}"{% if latestComic.titleText %} title="{{ latestComic.titleText }}"{% endif %} class="comic-img">
   <div class="segmented-control">
-    <a{% if latestComic.slug == firstComic.slug %} disabled{% else %} href="/comics/{{ firstComic.slug }}/"{% endif %}>
+    <a{% if latestComic.slug == firstComic.slug %} disabled{% else %} href="/comics/{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
       <center>
         <i class="fa-solid fa-fast-backward"></i>
         First
       </center>
     </a>
-    <a{% if prevComic %} href="/comics/{{ prevComic.slug }}/"{% else %} disabled{% endif %}>
+    <a{% if prevComic %} href="/comics/{{ prevComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})"{% else %} disabled{% endif %}>
       <center>
         <i class="fa-solid fa-backward"></i>
         Previous
       </center>
     </a>
-    <a href="/comics/all/">
+    <a href="/comics/all/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'view_all'})">
       <center>
         <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" style="width: 26px; height: 26px; display: block; margin: 0 auto 8px;">
           <rect x="2" y="2" width="7" height="7" rx="1.5" ry="1.5" fill="currentColor"/>
@@ -130,11 +130,23 @@ async function copyComicLink() {
   const link = window.location.origin + '/comics/{{ latestComic.slug }}/';
   const ok = await copyWithFallback(link);
   showCopied('copyBtn', ok);
+  if (ok && typeof gtag !== 'undefined') {
+    gtag('event', 'copy_link', {
+      'event_category': 'engagement',
+      'event_label': 'comic_link'
+    });
+  }
 }
 async function copyComicImageLink() {
   const fullURL = new URL('{{ latestComic.image }}', window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
+  if (ok && typeof gtag !== 'undefined') {
+    gtag('event', 'copy_link', {
+      'event_category': 'engagement',
+      'event_label': 'comic_image_link'
+    });
+  }
 }
 
 function updateBellIcon(buttonId, isSubscribed) {
@@ -173,6 +185,13 @@ async function requestNotifications(buttonId) {
       setStatus('<i class="fa-solid fa-check"></i> Subscribed!');
       updateBellIcon(buttonId, true);
       btn.disabled = false;
+      // Track subscription in Google Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'notification_subscribe', {
+          'event_category': 'engagement',
+          'event_label': 'comic_notifications'
+        });
+      }
     } catch (error) {
       console.error('Notification request error:', error);
       setStatus('<i class="fa-solid fa-xmark"></i> Subscription failed');
