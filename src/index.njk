@@ -321,8 +321,17 @@ async function requestNotifications(buttonId) {
       }
       
       console.log('Calling promptPush...');
-      const result = await OneSignal.Slidedown.promptPush();
-      console.log('promptPush result:', result);
+      
+      // Try the native OneSignal method for v16
+      try {
+        await OneSignal.User.PushSubscription.optIn();
+        console.log('optIn() succeeded');
+      } catch (optInError) {
+        console.error('optIn() failed, trying Slidedown:', optInError);
+        await OneSignal.Slidedown.promptPush();
+      }
+      
+      console.log('Prompt completed');
       
       // Check if permission was actually granted
       const newPermission = Notification.permission;
