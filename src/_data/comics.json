@@ -39,5 +39,15 @@
     "image": "/images/comics/4_dont_tell_me_my_age.png",
     "ogImage": "/images/comics/4_dont_tell_me_my_age.png",
     "twitterImage": "/images/comics/og/4_dont_tell_me_my_age-og.png"
+  },
+  {
+    "number": 5,
+    "slug": "5",
+    "title": "Freckles",
+    "alt": "5 - Freckles",
+    "date": "2026-01-07T12:00:00-05:00",
+    "image": "/images/comics/5_freckles.png",
+    "ogImage": "/images/comics/5_freckles.png",
+    "twitterImage": "/images/comics/og/5_freckles-og.png"
   }
 ]
