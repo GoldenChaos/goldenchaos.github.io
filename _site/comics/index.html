@@ -10,7 +10,7 @@
         gtag('config', 'UA-317947-1');
     </script>
     <meta charset="utf-8">
-    <title>GoldenChaos Comics - Latest Comic</title>
+    <title>GoldenChaos Comics - Latest Comic - #5 Freckles</title>
     <meta name="description" content="Comics by Jess Rappaport!">
 
         
@@ -26,7 +26,7 @@
         <!-- Facebook / Open Graph -->
         <meta property="og:url" content="https://goldenchaos.net/comics/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="GoldenChaos Comics - Latest Comic">
+        <meta property="og:title" content="GoldenChaos Comics - Latest Comic - #5 Freckles">
         <meta property="og:description" content="Comics by Jess Rappaport!">
         <meta property="og:image" content="https://goldenchaos.net/images/comics/5_freckles.png">
         <meta property="og:image:alt" content="Comics by Jess Rappaport!">
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="goldenchaos.net">
     <meta property="twitter:url" content="https://goldenchaos.net/comics/">
-    <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic">
+    <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic - #5 Freckles">
     <meta name="twitter:description" content="Comics by Jess Rappaport!">
     <meta name="twitter:site" content="@GoldenChaos">
     <meta name="twitter:creator" content="@GoldenChaos">
@@ -259,21 +259,32 @@ function updateBellIcon(buttonId, isSubscribed) {
   if (icon) {
     icon.className = 'fa-solid fa-bell';
   }
-  btn.classList.toggle('active', isSubscribed);
+  if (isSubscribed) {
+    btn.classList.add('active');
+  } else {
+    btn.classList.remove('active');
+  }
 }
 
 async function checkNotificationStatus(buttonId) {
-  if (!window.OneSignalDeferred) return;
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+  // Start with inactive state
+  btn.classList.remove('active');
+  
+  if (!window.OneSignalDeferred) {
+    // Remove no-transition after initial state is set
+    setTimeout(() => btn.classList.remove('no-transition'), 50);
+    return;
+  }
   OneSignalDeferred.push(async function(OneSignal) {
-    const subscriptionId = await OneSignal.User.PushSubscription.id;
-    const optedIn = await OneSignal.User.PushSubscription.optedIn;
-    const isSubscribed = subscriptionId && optedIn;
+    const subscriptionId = OneSignal.User.PushSubscription.id;
+    const optedIn = OneSignal.User.PushSubscription.optedIn;
+    // Only consider subscribed if we have a valid ID AND opted in is true
+    const isSubscribed = (typeof subscriptionId === 'string' && subscriptionId.length > 0 && optedIn === true);
     updateBellIcon(buttonId, isSubscribed);
-    // Remove no-transition class after initial state is set
-    const btn = document.getElementById(buttonId);
-    if (btn) {
-      setTimeout(() => btn.classList.remove('no-transition'), 50);
-    }
+    // Remove no-transition after initial state is set
+    setTimeout(() => btn.classList.remove('no-transition'), 50);
   });
 }
 
@@ -320,8 +331,8 @@ async function requestNotifications(buttonId) {
   OneSignalDeferred.push(async function(OneSignal) {
     try {
       // Check if already subscribed with OneSignal
-      const subscriptionId = await OneSignal.User.PushSubscription.id;
-      const optedIn = await OneSignal.User.PushSubscription.optedIn;
+      const subscriptionId = OneSignal.User.PushSubscription.id;
+      const optedIn = OneSignal.User.PushSubscription.optedIn;
       
       // If already subscribed and opted in, just update UI
       if (subscriptionId && optedIn) {
@@ -370,7 +381,7 @@ async function requestNotifications(buttonId) {
         await new Promise(resolve => setTimeout(resolve, 1500));
         
         // Check if subscription is actually registered with OneSignal
-        const subscriptionId = await OneSignal.User.PushSubscription.id;
+        const subscriptionId = OneSignal.User.PushSubscription.id;
         
         if (subscriptionId) {
           btn.classList.remove('pending');

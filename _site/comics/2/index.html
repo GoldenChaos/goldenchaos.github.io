@@ -277,16 +277,32 @@ function updateBellIcon(buttonId, isSubscribed) {
   if (icon) {
     icon.className = 'fa-solid fa-bell';
   }
-  btn.classList.toggle('active', isSubscribed);
+  if (isSubscribed) {
+    btn.classList.add('active');
+  } else {
+    btn.classList.remove('active');
+  }
 }
 
 async function checkNotificationStatus(buttonId) {
-  if (!window.OneSignalDeferred) return;
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+  // Start with inactive state
+  btn.classList.remove('active');
+  
+  if (!window.OneSignalDeferred) {
+    // Remove no-transition after initial state is set
+    setTimeout(() => btn.classList.remove('no-transition'), 50);
+    return;
+  }
   OneSignalDeferred.push(async function(OneSignal) {
-    const subscriptionId = await OneSignal.User.PushSubscription.id;
-    const optedIn = await OneSignal.User.PushSubscription.optedIn;
-    const isSubscribed = subscriptionId && optedIn;
+    const subscriptionId = OneSignal.User.PushSubscription.id;
+    const optedIn = OneSignal.User.PushSubscription.optedIn;
+    // Only consider subscribed if we have a valid ID AND opted in is true
+    const isSubscribed = (typeof subscriptionId === 'string' && subscriptionId.length > 0 && optedIn === true);
     updateBellIcon(buttonId, isSubscribed);
+    // Remove no-transition after initial state is set
+    setTimeout(() => btn.classList.remove('no-transition'), 50);
   });
 }
 
@@ -333,8 +349,8 @@ async function requestNotifications(buttonId) {
   OneSignalDeferred.push(async function(OneSignal) {
     try {
       // Check if already subscribed with OneSignal
-      const subscriptionId = await OneSignal.User.PushSubscription.id;
-      const optedIn = await OneSignal.User.PushSubscription.optedIn;
+      const subscriptionId = OneSignal.User.PushSubscription.id;
+      const optedIn = OneSignal.User.PushSubscription.optedIn;
       
       // If already subscribed and opted in, just update UI
       if (subscriptionId && optedIn) {
@@ -383,7 +399,7 @@ async function requestNotifications(buttonId) {
         await new Promise(resolve => setTimeout(resolve, 1500));
         
         // Check if subscription is actually registered with OneSignal
-        const subscriptionId = await OneSignal.User.PushSubscription.id;
+        const subscriptionId = OneSignal.User.PushSubscription.id;
         
         if (subscriptionId) {
           btn.classList.remove('pending');
