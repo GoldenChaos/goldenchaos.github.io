@@ -57,13 +57,17 @@
         <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
         <script>
             window.OneSignalDeferred = window.OneSignalDeferred || [];
+            console.log('OneSignal: Initializing...');
             OneSignalDeferred.push(async function(OneSignal) {
+                console.log('OneSignal: SDK loaded, starting init');
                 await OneSignal.init({
                     appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
                     safari_web_id: "web.onesignal.auto.72940797-fce4-4404-92c2-a33aa17e19b3",
                     autoRegister: false,
                     allowLocalhostAsSecureOrigin: true
                 });
+                console.log('OneSignal: Init complete', OneSignal);
+                console.log('OneSignal: Notifications supported?', OneSignal.Notifications?.supported?.());
             });
         </script>
         
@@ -127,7 +131,8 @@
   <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#5 - Freckles</h2>
 </div>
 <div class="content page" style="text-align:center;">
-  <img src="/images/comics/5_freckles.png" alt="5 - Freckles" class="comic-img">
+  <img src="/images/comics/5_freckles.png" alt="5 - Freckles" title="&quot;Didn&#39;t you break the contract by making this comic??&quot;
+&quot;It... it&#39;s a loophole!!!&quot;" class="comic-img">
   <div class="segmented-control">
     <a href="/comics/1/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
       <center>

@@ -57,13 +57,17 @@
         <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
         <script>
             window.OneSignalDeferred = window.OneSignalDeferred || [];
+            console.log('OneSignal: Initializing...');
             OneSignalDeferred.push(async function(OneSignal) {
+                console.log('OneSignal: SDK loaded, starting init');
                 await OneSignal.init({
                     appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
                     safari_web_id: "web.onesignal.auto.72940797-fce4-4404-92c2-a33aa17e19b3",
                     autoRegister: false,
                     allowLocalhostAsSecureOrigin: true
                 });
+                console.log('OneSignal: Init complete', OneSignal);
+                console.log('OneSignal: Notifications supported?', OneSignal.Notifications?.supported?.());
             });
         </script>
         
@@ -346,11 +350,14 @@ async function requestNotifications(buttonId) {
   // Set pending state immediately for visual feedback
   btn.classList.add('pending');
   btn.disabled = true;
+  console.log('requestNotifications: Pushing to OneSignalDeferred for:', buttonId);
   OneSignalDeferred.push(async function(OneSignal) {
     try {
+      console.log('requestNotifications: Inside OneSignalDeferred');
       // Check if already subscribed with OneSignal
       const subscriptionId = OneSignal.User.PushSubscription.id;
       const optedIn = OneSignal.User.PushSubscription.optedIn;
+      console.log('requestNotifications: subscriptionId=', subscriptionId, 'optedIn=', optedIn);
       
       // If already subscribed and opted in, just update UI
       if (subscriptionId && optedIn) {
@@ -361,6 +368,7 @@ async function requestNotifications(buttonId) {
         return;
       }
       const browserPermission = Notification.permission;
+      console.log('requestNotifications: Notification.permission=', browserPermission);
       if (browserPermission === 'denied') {
         alert('Push notifications are blocked. Please enable them in your browser settings.');
         btn.classList.remove('pending');

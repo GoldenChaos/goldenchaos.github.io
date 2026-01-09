@@ -58,13 +58,17 @@
         <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
         <script>
             window.OneSignalDeferred = window.OneSignalDeferred || [];
+            console.log('OneSignal: Initializing...');
             OneSignalDeferred.push(async function(OneSignal) {
+                console.log('OneSignal: SDK loaded, starting init');
                 await OneSignal.init({
                     appId: "{{ onesignal.appId }}",
                     safari_web_id: "web.onesignal.auto.{{ onesignal.appId }}",
                     autoRegister: false,
                     allowLocalhostAsSecureOrigin: true
                 });
+                console.log('OneSignal: Init complete', OneSignal);
+                console.log('OneSignal: Notifications supported?', OneSignal.Notifications?.supported?.());
             });
         </script>
         {% endif %}

@@ -242,11 +242,14 @@ async function requestNotifications(buttonId) {
   // Set pending state immediately for visual feedback
   btn.classList.add('pending');
   btn.disabled = true;
+  console.log('requestNotifications: Pushing to OneSignalDeferred for:', buttonId);
   OneSignalDeferred.push(async function(OneSignal) {
     try {
+      console.log('requestNotifications: Inside OneSignalDeferred');
       // Check if already subscribed with OneSignal
       const subscriptionId = OneSignal.User.PushSubscription.id;
       const optedIn = OneSignal.User.PushSubscription.optedIn;
+      console.log('requestNotifications: subscriptionId=', subscriptionId, 'optedIn=', optedIn);
       
       // If already subscribed and opted in, just update UI
       if (subscriptionId && optedIn) {
@@ -257,6 +260,7 @@ async function requestNotifications(buttonId) {
         return;
       }
       const browserPermission = Notification.permission;
+      console.log('requestNotifications: Notification.permission=', browserPermission);
       if (browserPermission === 'denied') {
         alert('Push notifications are blocked. Please enable them in your browser settings.');
         btn.classList.remove('pending');
