@@ -48,12 +48,21 @@ bodyClass: ""
       margin: 0;
       padding: 0;
     }
-    .comic-item img {
+    .comic-item .img-container {
+      position: relative;
       width: 100%;
-      height: auto;
+      padding-bottom: 104.55%;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+    .comic-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      margin: 0;
-      padding: 0;
     }
     .comic-item h3 {
       margin: 8px 0 0 0;
@@ -65,7 +74,9 @@ bodyClass: ""
     {% for c in comics %}
     <div class="comic-item">
       <a href="/comics/{{ c.slug }}/">
-        <img src="{{ c.image }}" alt="Comic #{{ c.number }} - {{ c.title }}">
+        <div class="img-container">
+          <img src="{{ c.image }}" alt="Comic #{{ c.number }} - {{ c.title }}">
+        </div>
         <h3>#{{ c.number }} - {{ c.title }}</h3>
       </a>
     </div>

@@ -3,6 +3,19 @@ import json
 from io import BytesIO
 from PIL import Image
 import requests
+import sys
+
+# Force UTF-8 encoding for console output on Windows
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+
+# Load excluded posts (non-comics that should be skipped)
+EXCLUDED_POSTS = set()
+excluded_file = 'geckowo_excluded_posts.json'
+if os.path.exists(excluded_file):
+    with open(excluded_file, 'r', encoding='utf-8') as f:
+        EXCLUDED_POSTS = set(json.load(f))
+    print(f"Loaded {len(EXCLUDED_POSTS)} excluded post IDs")
 
 # Base posts embedded (existing set)
 BASE_POSTS = [
@@ -86,6 +99,9 @@ if os.path.exists(ADD_PATH):
 BATCH_DIR = 'geckowo_batches'
 if os.path.isdir(BATCH_DIR):
     for name in sorted(os.listdir(BATCH_DIR)):
+        # Skip doodle batches; those are handled by the doodles downloader
+        if name.lower().startswith('batch_doodles_'):
+            continue
         if name.lower().endswith('.json'):
             extend_from_json(os.path.join(BATCH_DIR, name), posts)
 
@@ -94,6 +110,11 @@ unique = {}
 for p in posts:
     try:
         sid = p['link'].split('/')[-1]
+        
+        # Skip excluded posts (non-comics)
+        if sid in EXCLUDED_POSTS:
+            continue
+            
         imgs = p.get('imgs', [])
         if sid not in unique:
             unique[sid] = { 'status_id': sid, 'link': p['link'], 'imgs': [] }
@@ -107,7 +128,7 @@ final_posts = list(unique.values())
 # Sort newest first by status_id
 final_posts.sort(key=lambda x: int(x['status_id']), reverse=True)
 
-out_dir = 'geckowo_comics'
+out_dir = 'geckowo_archive/comics'
 os.makedirs(out_dir, exist_ok=True)
 
 # Build a set of status_ids that already exist (raw or numbered) to avoid re-downloading

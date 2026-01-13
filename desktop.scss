@@ -247,9 +247,15 @@ pre {
 		&:not([disabled]):hover {
 			background-color: rgba(0,0,0,.1);
 		}
+		&.active {
+			background-color: rgba(0,0,0,.1);
+		}
 		@media (prefers-color-scheme: dark) {
 			&:not([disabled]):hover {
 				background-color: rgba(255,255,255,.1) !important;
+			}
+			&.active {
+				background-color: rgba(255,255,255,.1);
 			}
 		}
 		&:first-of-type {
@@ -1207,12 +1213,24 @@ pre {
 footer {
 	color: #000;
 	font-size: 13px;
-	line-height: 44px;
-	height: 44px;
+	line-height: normal;
+	margin-bottom: 44px;
 	span {
 		display: block;
 		width: 100%;
 		text-align: center;
+	}
+}
+
+.geckowo-footer-link {
+	color: #0071e3;
+	border-bottom: 2px solid rgba(0, 113, 227, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+	.geckowo-footer-link {
+		color: #fff;
+		border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 	}
 }
 

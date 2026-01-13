@@ -153,12 +153,21 @@
       margin: 0;
       padding: 0;
     }
-    .comic-item img {
+    .comic-item .img-container {
+      position: relative;
       width: 100%;
-      height: auto;
+      padding-bottom: 104.55%;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+    .comic-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      margin: 0;
-      padding: 0;
     }
     .comic-item h3 {
       margin: 8px 0 0 0;
@@ -170,35 +179,45 @@
     
     <div class="comic-item">
       <a href="/comics/1/">
-        <img src="/images/comics/1_alopecia.png" alt="Comic #1 - Alopecia">
+        <div class="img-container">
+          <img src="/images/comics/1_alopecia.png" alt="Comic #1 - Alopecia">
+        </div>
         <h3>#1 - Alopecia</h3>
       </a>
     </div>
     
     <div class="comic-item">
       <a href="/comics/2/">
-        <img src="/images/comics/2_latte_art.png" alt="Comic #2 - Latte Art">
+        <div class="img-container">
+          <img src="/images/comics/2_latte_art.png" alt="Comic #2 - Latte Art">
+        </div>
         <h3>#2 - Latte Art</h3>
       </a>
     </div>
     
     <div class="comic-item">
       <a href="/comics/3/">
-        <img src="/images/comics/3_yuri_mustache.png" alt="Comic #3 - Yuri Mustache">
+        <div class="img-container">
+          <img src="/images/comics/3_yuri_mustache.png" alt="Comic #3 - Yuri Mustache">
+        </div>
         <h3>#3 - Yuri Mustache</h3>
       </a>
     </div>
     
     <div class="comic-item">
       <a href="/comics/4/">
-        <img src="/images/comics/4_dont_tell_me_my_age.png" alt="Comic #4 - Don&#39;t Tell Me My Age">
+        <div class="img-container">
+          <img src="/images/comics/4_dont_tell_me_my_age.png" alt="Comic #4 - Don&#39;t Tell Me My Age">
+        </div>
         <h3>#4 - Don&#39;t Tell Me My Age</h3>
       </a>
     </div>
     
     <div class="comic-item">
       <a href="/comics/5/">
-        <img src="/images/comics/5_freckles.png" alt="Comic #5 - Freckles">
+        <div class="img-container">
+          <img src="/images/comics/5_freckles.png" alt="Comic #5 - Freckles">
+        </div>
         <h3>#5 - Freckles</h3>
       </a>
     </div>

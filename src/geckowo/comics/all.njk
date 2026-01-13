@@ -1,0 +1,98 @@
+---
+layout: layouts/base.njk
+permalink: geckowo/comics/all/index.html
+eleventyComputed:
+  title: "Geckowo Comics - All Comics"
+  description: "Geckowo Comics - All Comics"
+  ogImage: "{{ geckowo_comics[geckowo_comics.length - 1].ogImage }}"
+  twitterImage: "{{ geckowo_comics[geckowo_comics.length - 1].twitterImage }}"
+bodyClass: ""
+---
+{% set backHref = '/' %}
+{% set desktopBack = { href: '/', label: 'Back to Home', icon: 'fas fa-chevron-left', iconStyle: 'font-size:14px;margin-right:3px;' } %}
+<div class="page-top white goldenchaos-btt">
+  {% include "nav.njk" %}
+</div>
+<div class="content index page" id="comic-title">
+  <h1 id="comics" class="title" style="text-align:center;margin:0 0 16px 0;text-transform:none;">Geckowo Archive</h1>
+</div>
+<div class="content page" style="text-align:center;padding-top:0;">
+  <div class="segmented-control">
+    <a href="/geckowo/comics/all/" class="active">
+      <center>Comics</center>
+    </a>
+    <a href="/geckowo/doodles/all/">
+      <center>Doodles</center>
+    </a>
+  </div>
+</div>
+<div class="content page">
+  <style>
+    .comics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    @media (max-width: 720px) {
+      .comics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        padding: 0;
+      }
+      .comic-item h3 {
+        display: none;
+        margin: 0;
+      }
+    }
+    .comic-item {
+      text-align: center;
+      margin: 0;
+    }
+    .comic-item a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+    }
+    .comic-item .img-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 104.55%;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+    .comic-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .comic-item h3 {
+      margin: 8px 0 0 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  </style>
+  <div class="comics-grid" style="margin-top: 32px;">
+    {% for c in geckowo_comics | reverse %}
+    <div class="comic-item">
+      <a href="/geckowo/comics/{{ c.slug }}/">
+        <div class="img-container">
+          <img src="{{ c.image }}" alt="Comic #{{ c.number }}{% if c.title %} - {{ c.title }}{% endif %}">
+        </div>
+        <h3>#{{ c.number }}</h3>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<footer>
+  <span>&copy; 2024-<script>document.write(new Date().getFullYear())</script> Claire <a href="https://x.com/geckowo" target="_blank" class="geckowo-footer-link">@geckowo</a></span>
+</footer>
