@@ -71,7 +71,7 @@ bodyClass: ""
     }
   </style>
   <div class="comics-grid" style="margin-top: 32px;">
-    {% for c in comics % | reverse %}
+    {% for c in comics | reverse %}
     <div class="comic-item">
       <a href="/comics/{{ c.slug }}/">
         <div class="img-container">
