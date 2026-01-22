@@ -168,12 +168,14 @@
     <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">Latest Comic</h1>
 </div>
 <div class="content index page" id="comic-title">
-    <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#5 - Freckles</h2>
+    <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#6 - Gay</h2>
 </div>
 <div class="content page" style="text-align:center;">
     <a href="/comics/">
-        <img src="/images/comics/5_freckles.png" alt="5 - Freckles" title="&quot;Didn&#39;t you break the contract by making this comic??&quot;
-&quot;It... it&#39;s a loophole!!!&quot;" class="comic-img">
+        <img src="/images/comics/6_gay.png" alt="6 - Gay" title="&quot;I&#39;m a lesbian...&quot;
+&quot;...&quot;
+&quot;I like women...&quot;
+&quot;???&quot;" class="comic-img">
     </a>
     <div class="segmented-control">
         <a href="/comics/1/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
@@ -182,7 +184,7 @@
                 First
             </center>
         </a>
-        <a href="/comics/4/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
+        <a href="/comics/5/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
             <center>
                 <i class="fa-solid fa-backward"></i>
                 Previous
@@ -359,7 +361,7 @@ function showCopied(buttonId, success) {
 }
 
 async function copyComicLink() {
-    const link = window.location.origin + '/comics/5/';
+    const link = window.location.origin + '/comics/6/';
     const ok = await copyWithFallback(link);
     showCopied('copyBtn', ok);
     if (ok && typeof gtag !== 'undefined') {

@@ -51,4 +51,16 @@
     "ogImage": "/images/comics/5_freckles.png",
     "twitterImage": "/images/comics/og/5_freckles-og.png"
   }
+  ,
+  {
+    "number": 6,
+    "slug": "6",
+    "title": "Gay",
+    "alt": "6 - Gay",
+    "titleText": "\"I'm a lesbian...\"\n\"...\"\n\"I like women...\"\n\"???\"",
+    "date": "2026-01-22T12:00:00-05:00",
+    "image": "/images/comics/6_gay.png",
+    "ogImage": "/images/comics/6_gay.png",
+    "twitterImage": "/images/comics/6_gay.png"
+  }
 ]
