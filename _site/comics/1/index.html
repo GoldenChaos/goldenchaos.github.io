@@ -506,11 +506,11 @@ if (window.OneSignalDeferred) {
     const acc = event.accelerationIncludingGravity;
     if (!acc) return;
     const now = Date.now();
-    if (now - lastShake < 1000) return;
+    if (now - lastShake < 800) return;
     const { x = 0, y = 0, z = 0 } = acc;
     const delta = Math.abs(x - lastX) + Math.abs(y - lastY) + Math.abs(z - lastZ);
     lastX = x; lastY = y; lastZ = z;
-    if (delta > 30) {
+    if (delta > 18) {
       lastShake = now;
       const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
       setBaldMode(next);
@@ -528,7 +528,9 @@ if (window.OneSignalDeferred) {
         const askOnce = () => {
           document.removeEventListener('touchstart', askOnce, true);
           requestPermission().then((response) => {
-            if (response === 'granted') enableShake();
+            if (response === 'granted') {
+              enableShake();
+            }
           }).catch(() => {});
         };
         document.addEventListener('touchstart', askOnce, true);
@@ -536,6 +538,14 @@ if (window.OneSignalDeferred) {
         enableShake();
       }
     }
+    // Fallback: any tap/click enables shake listeners on platforms that don't need permission
+    const enableOnTap = () => {
+      enableShake();
+      document.removeEventListener('click', enableOnTap, true);
+      document.removeEventListener('touchend', enableOnTap, true);
+    };
+    document.addEventListener('click', enableOnTap, true);
+    document.addEventListener('touchend', enableOnTap, true);
   });
 })();
 </script>
