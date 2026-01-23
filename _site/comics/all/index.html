@@ -262,15 +262,6 @@
   const STORAGE_KEY = 'gc-bald-mode';
   const KONAMI = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
   let buffer = [];
-  let shakeEnabled = false;
-  let lastX = 0, lastY = 0, lastZ = 0;
-  let lastShake = 0;
-
-  function enableShake() {
-    if (shakeEnabled) return;
-    shakeEnabled = true;
-    window.addEventListener('devicemotion', handleMotion, { passive: true });
-  }
 
   function applyBaldMode(enabled) {
     const imgs = document.querySelectorAll('[data-normal-image]');
@@ -306,50 +297,10 @@
     }
   }
 
-  function handleMotion(event) {
-    const acc = event.accelerationIncludingGravity;
-    if (!acc) return;
-    const now = Date.now();
-    if (now - lastShake < 800) return;
-    const { x = 0, y = 0, z = 0 } = acc;
-    const delta = Math.abs(x - lastX) + Math.abs(y - lastY) + Math.abs(z - lastZ);
-    lastX = x; lastY = y; lastZ = z;
-    if (delta > 18) {
-      lastShake = now;
-      const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
-      setBaldMode(next);
-    }
-  }
-
   document.addEventListener('keydown', handleKeydown, true);
   document.addEventListener('DOMContentLoaded', () => {
     const enabled = sessionStorage.getItem(STORAGE_KEY) === 'on';
     applyBaldMode(enabled);
-    if (typeof DeviceMotionEvent !== 'undefined') {
-      // iOS requires a user gesture to grant motion permission
-      const requestPermission = DeviceMotionEvent.requestPermission;
-      if (typeof requestPermission === 'function') {
-        const askOnce = () => {
-          document.removeEventListener('touchstart', askOnce, true);
-          requestPermission().then((response) => {
-            if (response === 'granted') {
-              enableShake();
-            }
-          }).catch(() => {});
-        };
-        document.addEventListener('touchstart', askOnce, true);
-      } else {
-        enableShake();
-      }
-    }
-    // Fallback: any tap/click enables shake listeners on platforms that don't need permission
-    const enableOnTap = () => {
-      enableShake();
-      document.removeEventListener('click', enableOnTap, true);
-      document.removeEventListener('touchend', enableOnTap, true);
-    };
-    document.addEventListener('click', enableOnTap, true);
-    document.addEventListener('touchend', enableOnTap, true);
   });
 })();
 </script>
