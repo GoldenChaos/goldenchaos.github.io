@@ -75,7 +75,11 @@ bodyClass: ""
     <div class="comic-item">
       <a href="/comics/{{ c.slug }}/">
         <div class="img-container">
-          <img src="{{ c.image }}" alt="Comic #{{ c.number }} - {{ c.title }}">
+          <img
+            src="{{ c.image }}"
+            data-normal-image="{{ c.image }}"
+            {% if c.baldImage %}data-bald-image="{{ c.baldImage }}"{% endif %}
+            alt="Comic #{{ c.number }} - {{ c.title }}">
         </div>
         <h3>#{{ c.number }} - {{ c.title }}</h3>
       </a>
@@ -83,6 +87,7 @@ bodyClass: ""
     {% endfor %}
   </div>
 </div>
+{% include "bald-mode-script.njk" %}
 <footer>
   <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
 </footer>

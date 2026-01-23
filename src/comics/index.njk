@@ -26,7 +26,12 @@ bodyClass: ""
   <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#{{ latestComic.number }} - {{ latestComic.title }}</h2>
 </div>
 <div class="content page" style="text-align:center;">
-  <img src="{{ latestComic.image }}" alt="{{ latestComic.alt }}"{% if latestComic.titleText %} title="{{ latestComic.titleText }}"{% endif %} class="comic-img">
+  <img
+    src="{{ latestComic.image }}"
+    data-normal-image="{{ latestComic.image }}"
+    {% if latestComic.baldImage %}data-bald-image="{{ latestComic.baldImage }}"{% endif %}
+    alt="{{ latestComic.alt }}"{% if latestComic.titleText %} title="{{ latestComic.titleText }}"{% endif %}
+    class="comic-img">
   <div class="segmented-control">
     <a{% if latestComic.slug == firstComic.slug %} disabled{% else %} href="/comics/{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
       <center>
@@ -140,7 +145,9 @@ async function copyComicLink() {
   }
 }
 async function copyComicImageLink() {
-  const fullURL = new URL('{{ latestComic.image }}', window.location.origin).href;
+  const img = document.querySelector('.comic-img');
+  const src = img ? img.getAttribute('src') : '{{ latestComic.image }}';
+  const fullURL = new URL(src, window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
   if (ok && typeof gtag !== 'undefined') {
@@ -319,3 +326,4 @@ if (window.OneSignalDeferred) {
   });
 }
 </script>
+{% include "bald-mode-script.njk" %}

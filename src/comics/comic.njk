@@ -38,7 +38,12 @@ eleventyComputed:
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">#{{ comic.number }} - {{ comic.title }}</h1>
 </div>
 <div class="content page" style="text-align:center;">
-  <img src="{{ comic.image }}" alt="{{ comic.alt }}"{% if comic.titleText %} title="{{ comic.titleText }}"{% endif %} class="comic-img">
+  <img
+    src="{{ comic.image }}"
+    data-normal-image="{{ comic.image }}"
+    {% if comic.baldImage %}data-bald-image="{{ comic.baldImage }}"{% endif %}
+    alt="{{ comic.alt }}"{% if comic.titleText %} title="{{ comic.titleText }}"{% endif %}
+    class="comic-img">
   <div class="segmented-control">
     <a{% if currentIndex == 0 %} disabled{% else %} href="/comics/{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
       <center>
@@ -155,7 +160,9 @@ async function copyComicLink() {
 }
 
 async function copyComicImageLink() {
-  const fullURL = new URL('{{ comic.image }}', window.location.origin).href;
+  const img = document.querySelector('.comic-img');
+  const src = img ? img.getAttribute('src') : '{{ comic.image }}';
+  const fullURL = new URL(src, window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
   if (ok && typeof gtag !== 'undefined') {
@@ -338,3 +345,4 @@ if (window.OneSignalDeferred) {
   });
 }
 </script>
+{% include "bald-mode-script.njk" %}

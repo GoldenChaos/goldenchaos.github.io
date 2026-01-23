@@ -172,10 +172,15 @@
 </div>
 <div class="content page" style="text-align:center;">
     <a href="/comics/">
-        <img src="/images/comics/6_gay.png" alt="6 - Gay" title="&quot;I&#39;m a lesbian...&quot;
+        <img
+            src="/images/comics/6_gay.png"
+            data-normal-image="/images/comics/6_gay.png"
+            data-bald-image="/images/comics/bald/6_gay-bald.png"
+            alt="6 - Gay" title="&quot;I&#39;m a lesbian...&quot;
 &quot;...&quot;
 &quot;I like women...&quot;
-&quot;???&quot;" class="comic-img">
+&quot;???&quot;"
+            class="comic-img">
     </a>
     <div class="segmented-control">
         <a href="/comics/1/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
@@ -605,6 +610,54 @@ if (window.OneSignalDeferred) {
   console.warn('OneSignalDeferred not found on page load');
 }
 </script>
+<script>
+(function() {
+  const STORAGE_KEY = 'gc-bald-mode';
+  const KONAMI = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
+  let buffer = [];
+
+  function applyBaldMode(enabled) {
+    const imgs = document.querySelectorAll('[data-normal-image]');
+    imgs.forEach((img) => {
+      const normal = img.getAttribute('data-normal-image');
+      const bald = img.getAttribute('data-bald-image');
+      if (enabled && bald) {
+        if (img.getAttribute('src') !== bald) {
+          img.setAttribute('src', bald);
+        }
+      } else if (normal) {
+        if (img.getAttribute('src') !== normal) {
+          img.setAttribute('src', normal);
+        }
+      }
+    });
+    document.documentElement.dataset.baldMode = enabled ? 'on' : 'off';
+  }
+
+  function setBaldMode(enabled) {
+    sessionStorage.setItem(STORAGE_KEY, enabled ? 'on' : 'off');
+    applyBaldMode(enabled);
+  }
+
+  function handleKeydown(event) {
+    buffer.push(String(event.key).toLowerCase());
+    if (buffer.length > KONAMI.length) {
+      buffer.shift();
+    }
+    if (buffer.join(',') === KONAMI.join(',')) {
+      const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
+      setBaldMode(next);
+    }
+  }
+
+  document.addEventListener('keydown', handleKeydown, true);
+  document.addEventListener('DOMContentLoaded', () => {
+    const enabled = sessionStorage.getItem(STORAGE_KEY) === 'on';
+    applyBaldMode(enabled);
+  });
+})();
+</script>
+
 
   
 </body>

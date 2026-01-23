@@ -146,7 +146,12 @@
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">#1 - Alopecia</h1>
 </div>
 <div class="content page" style="text-align:center;">
-  <img src="/images/comics/1_alopecia.png" alt="1 - Alopecia" class="comic-img">
+  <img
+    src="/images/comics/1_alopecia.png"
+    data-normal-image="/images/comics/1_alopecia.png"
+    
+    alt="1 - Alopecia"
+    class="comic-img">
   <div class="segmented-control">
     <a disabled>
       <center>
@@ -263,7 +268,9 @@ async function copyComicLink() {
 }
 
 async function copyComicImageLink() {
-  const fullURL = new URL('/images/comics/1_alopecia.png', window.location.origin).href;
+  const img = document.querySelector('.comic-img');
+  const src = img ? img.getAttribute('src') : '/images/comics/1_alopecia.png';
+  const fullURL = new URL(src, window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
   if (ok && typeof gtag !== 'undefined') {
@@ -446,6 +453,54 @@ if (window.OneSignalDeferred) {
   });
 }
 </script>
+<script>
+(function() {
+  const STORAGE_KEY = 'gc-bald-mode';
+  const KONAMI = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
+  let buffer = [];
+
+  function applyBaldMode(enabled) {
+    const imgs = document.querySelectorAll('[data-normal-image]');
+    imgs.forEach((img) => {
+      const normal = img.getAttribute('data-normal-image');
+      const bald = img.getAttribute('data-bald-image');
+      if (enabled && bald) {
+        if (img.getAttribute('src') !== bald) {
+          img.setAttribute('src', bald);
+        }
+      } else if (normal) {
+        if (img.getAttribute('src') !== normal) {
+          img.setAttribute('src', normal);
+        }
+      }
+    });
+    document.documentElement.dataset.baldMode = enabled ? 'on' : 'off';
+  }
+
+  function setBaldMode(enabled) {
+    sessionStorage.setItem(STORAGE_KEY, enabled ? 'on' : 'off');
+    applyBaldMode(enabled);
+  }
+
+  function handleKeydown(event) {
+    buffer.push(String(event.key).toLowerCase());
+    if (buffer.length > KONAMI.length) {
+      buffer.shift();
+    }
+    if (buffer.join(',') === KONAMI.join(',')) {
+      const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
+      setBaldMode(next);
+    }
+  }
+
+  document.addEventListener('keydown', handleKeydown, true);
+  document.addEventListener('DOMContentLoaded', () => {
+    const enabled = sessionStorage.getItem(STORAGE_KEY) === 'on';
+    applyBaldMode(enabled);
+  });
+})();
+</script>
+
 
   
 </body>

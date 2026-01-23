@@ -70,7 +70,12 @@ bodyClass: ""
 </div>
 <div class="content page" style="text-align:center;">
     <a href="/comics/">
-        <img src="{{ latestComic.image }}" alt="{{ latestComic.alt }}"{% if latestComic.titleText %} title="{{ latestComic.titleText }}"{% endif %} class="comic-img">
+        <img
+            src="{{ latestComic.image }}"
+            data-normal-image="{{ latestComic.image }}"
+            {% if latestComic.baldImage %}data-bald-image="{{ latestComic.baldImage }}"{% endif %}
+            alt="{{ latestComic.alt }}"{% if latestComic.titleText %} title="{{ latestComic.titleText }}"{% endif %}
+            class="comic-img">
     </a>
     <div class="segmented-control">
         <a{% if latestComic.slug == firstComic.slug %} disabled{% else %} href="/comics/{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
@@ -500,3 +505,4 @@ if (window.OneSignalDeferred) {
   console.warn('OneSignalDeferred not found on page load');
 }
 </script>
+{% include "bald-mode-script.njk" %}

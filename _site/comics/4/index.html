@@ -148,7 +148,12 @@
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">#4 - Don&#39;t Tell Me My Age</h1>
 </div>
 <div class="content page" style="text-align:center;">
-  <img src="/images/comics/4_dont_tell_me_my_age.png" alt="People are going to think I&#39;m 37!! ;_;" title="People are going to think I&#39;m 37!! ;_;" class="comic-img">
+  <img
+    src="/images/comics/4_dont_tell_me_my_age.png"
+    data-normal-image="/images/comics/4_dont_tell_me_my_age.png"
+    
+    alt="People are going to think I&#39;m 37!! ;_;" title="People are going to think I&#39;m 37!! ;_;"
+    class="comic-img">
   <div class="segmented-control">
     <a href="/comics/1/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
       <center>
@@ -265,7 +270,9 @@ async function copyComicLink() {
 }
 
 async function copyComicImageLink() {
-  const fullURL = new URL('/images/comics/4_dont_tell_me_my_age.png', window.location.origin).href;
+  const img = document.querySelector('.comic-img');
+  const src = img ? img.getAttribute('src') : '/images/comics/4_dont_tell_me_my_age.png';
+  const fullURL = new URL(src, window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
   if (ok && typeof gtag !== 'undefined') {
@@ -448,6 +455,54 @@ if (window.OneSignalDeferred) {
   });
 }
 </script>
+<script>
+(function() {
+  const STORAGE_KEY = 'gc-bald-mode';
+  const KONAMI = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
+  let buffer = [];
+
+  function applyBaldMode(enabled) {
+    const imgs = document.querySelectorAll('[data-normal-image]');
+    imgs.forEach((img) => {
+      const normal = img.getAttribute('data-normal-image');
+      const bald = img.getAttribute('data-bald-image');
+      if (enabled && bald) {
+        if (img.getAttribute('src') !== bald) {
+          img.setAttribute('src', bald);
+        }
+      } else if (normal) {
+        if (img.getAttribute('src') !== normal) {
+          img.setAttribute('src', normal);
+        }
+      }
+    });
+    document.documentElement.dataset.baldMode = enabled ? 'on' : 'off';
+  }
+
+  function setBaldMode(enabled) {
+    sessionStorage.setItem(STORAGE_KEY, enabled ? 'on' : 'off');
+    applyBaldMode(enabled);
+  }
+
+  function handleKeydown(event) {
+    buffer.push(String(event.key).toLowerCase());
+    if (buffer.length > KONAMI.length) {
+      buffer.shift();
+    }
+    if (buffer.join(',') === KONAMI.join(',')) {
+      const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
+      setBaldMode(next);
+    }
+  }
+
+  document.addEventListener('keydown', handleKeydown, true);
+  document.addEventListener('DOMContentLoaded', () => {
+    const enabled = sessionStorage.getItem(STORAGE_KEY) === 'on';
+    applyBaldMode(enabled);
+  });
+})();
+</script>
+
 
   
 </body>
