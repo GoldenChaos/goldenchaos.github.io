@@ -6,6 +6,7 @@
     "alt": "1 - Alopecia",
     "date": "2025-09-08T12:00:00-04:00",
     "image": "/images/comics/1_alopecia.png",
+    "thumbImage": "/images/comics/thumb/1_alopecia-thumb.png",
     "ogImage": "/images/comics/1_alopecia.png",
     "twitterImage": "/images/comics/og/1_alopecia-og.png"
   },
@@ -16,6 +17,7 @@
     "alt": "2 - Latte Art",
     "date": "2025-09-13T12:00:00-04:00",
     "image": "/images/comics/2_latte_art.png",
+    "thumbImage": "/images/comics/thumb/2_latte_art-thumb.png",
     "ogImage": "/images/comics/2_latte_art.png",
     "twitterImage": "/images/comics/og/2_latte_art-og.png"
   },
@@ -26,6 +28,7 @@
     "alt": "3 - Yuri Mustache",
     "date": "2025-10-01T12:00:00-04:00",
     "image": "/images/comics/3_yuri_mustache.png",
+    "thumbImage": "/images/comics/thumb/3_yuri_mustache-thumb.png",
     "ogImage": "/images/comics/3_yuri_mustache.png",
     "twitterImage": "/images/comics/og/3_yuri_mustache-og.png"
   },
@@ -37,6 +40,7 @@
     "titleText": "People are going to think I'm 37!! ;_;",
     "date": "2025-12-04T12:00:00-05:00",
     "image": "/images/comics/4_dont_tell_me_my_age.png",
+    "thumbImage": "/images/comics/thumb/4_dont_tell_me_my_age-thumb.png",
     "ogImage": "/images/comics/4_dont_tell_me_my_age.png",
     "twitterImage": "/images/comics/og/4_dont_tell_me_my_age-og.png"
   },
@@ -48,6 +52,7 @@
     "titleText": "\"Didn't you break the contract by making this comic??\"\n\"It... it's a loophole!!!\"",
     "date": "2026-01-07T12:00:00-05:00",
     "image": "/images/comics/5_freckles.png",
+    "thumbImage": "/images/comics/thumb/5_freckles-thumb.png",
     "ogImage": "/images/comics/5_freckles.png",
     "twitterImage": "/images/comics/og/5_freckles-og.png"
   }
@@ -60,7 +65,9 @@
     "titleText": "\"I'm a lesbian...\"\n\"...\"\n\"I like women...\"\n\"???\"",
     "date": "2026-01-22T12:00:00-05:00",
     "image": "/images/comics/6_gay.png",
+    "thumbImage": "/images/comics/thumb/6_gay-thumb.png",
     "baldImage": "/images/comics/bald/6_gay-bald.png",
+    "baldThumbImage": "/images/comics/bald/thumb/6_gay-bald-thumb.png",
     "ogImage": "/images/comics/6_gay.png",
     "twitterImage": "/images/comics/og/6_gay-og.png"
   }
