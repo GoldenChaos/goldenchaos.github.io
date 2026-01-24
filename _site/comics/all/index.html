@@ -260,8 +260,13 @@
 <script>
 (function() {
   const STORAGE_KEY = 'gc-bald-mode';
-  const KONAMI = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
-  let buffer = [];
+  // Desktop: require full Konami plus Enter to reduce accidental triggers
+  const KONAMI_DESKTOP = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a','enter'];
+  // Mobile: D-pad only for tap gestures
+  const KONAMI_TOUCH = ['up','up','down','down','left','right','left','right'];
+  let keyBuffer = [];
+  let touchBuffer = [];
+  let touchTimeout;
 
   function applyBaldMode(enabled) {
     const imgs = document.querySelectorAll('[data-normal-image]');
@@ -286,21 +291,69 @@
     applyBaldMode(enabled);
   }
 
+  function toggleBaldMode() {
+    const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
+    setBaldMode(next);
+  }
+
   function handleKeydown(event) {
-    buffer.push(String(event.key).toLowerCase());
-    if (buffer.length > KONAMI.length) {
-      buffer.shift();
+    keyBuffer.push(String(event.key).toLowerCase());
+    if (keyBuffer.length > KONAMI_DESKTOP.length) {
+      keyBuffer.shift();
     }
-    if (buffer.join(',') === KONAMI.join(',')) {
-      const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
-      setBaldMode(next);
+    if (keyBuffer.join(',') === KONAMI_DESKTOP.join(',')) {
+      toggleBaldMode();
     }
+  }
+
+  function mapTouchDirection(evt, target) {
+    const rect = target.getBoundingClientRect();
+    const touch = evt.touches && evt.touches[0];
+    if (!touch) return null;
+    const xRatio = (touch.clientX - rect.left) / rect.width;
+    const yRatio = (touch.clientY - rect.top) / rect.height;
+    const horiz = xRatio < 0.35 ? 'left' : xRatio > 0.65 ? 'right' : null;
+    const vert = yRatio < 0.35 ? 'up' : yRatio > 0.65 ? 'down' : null;
+    // Prioritize vertical when clearly top/bottom; otherwise horizontal
+    return vert || horiz;
+  }
+
+  function resetTouchBufferSoon() {
+    clearTimeout(touchTimeout);
+    touchTimeout = setTimeout(() => {
+      touchBuffer = [];
+    }, 5000);
+  }
+
+  function handleTouch(event) {
+    const target = event.currentTarget;
+    const dir = mapTouchDirection(event, target);
+    if (!dir) return;
+    touchBuffer.push(dir);
+    if (touchBuffer.length > KONAMI_TOUCH.length) {
+      touchBuffer.shift();
+    }
+    if (touchBuffer.join(',') === KONAMI_TOUCH.join(',')) {
+      toggleBaldMode();
+      touchBuffer = [];
+      return;
+    }
+    resetTouchBufferSoon();
+  }
+
+  function attachTouchHandlers() {
+    if (!('ontouchstart' in window)) return;
+    const imgs = document.querySelectorAll('[data-normal-image]');
+    imgs.forEach((img) => {
+      img.addEventListener('touchstart', handleTouch, { passive: true });
+    });
   }
 
   document.addEventListener('keydown', handleKeydown, true);
   document.addEventListener('DOMContentLoaded', () => {
     const enabled = sessionStorage.getItem(STORAGE_KEY) === 'on';
     applyBaldMode(enabled);
+    attachTouchHandlers();
   });
 })();
 </script>
