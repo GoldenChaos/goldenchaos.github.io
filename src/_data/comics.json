@@ -35,6 +35,17 @@
     "twitterImage": "/images/comics/og/3_yuri_mustache-og.png"
   },
   {
+    "number": 3.1,
+    "slug": "3-1",
+    "title": "Important PSA",
+    "alt": "3.1 - Important PSA",
+    "date": "2025-10-15T12:00:00-04:00",
+    "image": "/images/comics/3.1_important_psa.png",
+    "thumbImage": "/images/comics/thumb/3.1_important_psa-thumb.png",
+    "ogImage": "/images/comics/3.1_important_psa.png",
+    "twitterImage": "/images/comics/og/3.1_important_psa-og.png"
+  },
+  {
     "number": 4,
     "slug": "4",
     "title": "Don't Tell Me My Age",
