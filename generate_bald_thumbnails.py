@@ -13,6 +13,7 @@ thumb_max = 500
 
 # Bald comic images to process
 bald_comics = [
+    "1_alopecia-bald.png",
     "6_gay-bald.png"
 ]
 

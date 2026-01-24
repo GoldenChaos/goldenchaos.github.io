@@ -85,7 +85,8 @@ bodyClass: ""
     <div class="comic-item">
       <a href="/geckowo/doodles/{{ d.slug }}/">
         <div class="img-container">
-          <img src="{{ d.image }}" alt="Doodle #{{ d.number }}{% if d.title %} - {{ d.title }}{% endif %}">
+          {% set thumb = d.image | replace('/images/geckowo/doodles/', '/images/geckowo/doodles/thumb/') | replace('.jpg', '-thumb.jpg') %}
+          <img src="{{ thumb }}" data-full="{{ d.image }}" alt="Doodle #{{ d.number }}{% if d.title %} - {{ d.title }}{% endif %}" onerror="this.onerror=null;this.src=this.dataset.full;">
         </div>
       </a>
     </div>
