@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 {% include "head.njk" %}
+{% include "ios-detection.njk" %}
 </head>
 <body class="{{ bodyClass | default('') }}">
   {{ content | safe }}

@@ -72,6 +72,21 @@
         </script>
         
 
+<script>
+(function() {
+  // Detect iOS and hide push notification toggles since they don't work on iOS
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS) {
+    document.documentElement.classList.add('is-ios');
+  }
+})();
+</script>
+<style>
+.is-ios .ios-hide {
+  display: none !important;
+}
+</style>
+
 </head>
 <body class="">
   <div class="page-top index">
@@ -218,7 +233,7 @@
             </center>
         </a>
     </div>
-    <div class="segmented-control">
+    <div class="segmented-control ios-hide">
         <button id="notifyLatest" class="toggle-switch no-transition">
             <i class="fa-solid fa-bell"></i>
             <span>Push notifications for new comics</span>
