@@ -12,10 +12,9 @@ os.makedirs(output_dir, exist_ok=True)
 thumb_max = 500
 
 # Bald comic images to process
-bald_comics = [
-    "1_alopecia-bald.png",
-    "6_gay-bald.png"
-]
+bald_comics = sorted(
+    name for name in os.listdir(bald_dir) if name.lower().endswith("-bald.png")
+)
 
 for comic in bald_comics:
     input_path = os.path.join(bald_dir, comic)

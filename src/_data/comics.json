@@ -20,6 +20,8 @@
     "date": "2025-09-13T12:00:00-04:00",
     "image": "/images/comics/2_latte_art.png",
     "thumbImage": "/images/comics/thumb/2_latte_art-thumb.png",
+    "baldImage": "/images/comics/bald/2_latte_art-bald.png",
+    "baldThumbImage": "/images/comics/bald/thumb/2_latte_art-bald-thumb.png",
     "ogImage": "/images/comics/2_latte_art.png",
     "twitterImage": "/images/comics/og/2_latte_art-og.png"
   },
@@ -31,6 +33,8 @@
     "date": "2025-10-01T12:00:00-04:00",
     "image": "/images/comics/3_yuri_mustache.png",
     "thumbImage": "/images/comics/thumb/3_yuri_mustache-thumb.png",
+    "baldImage": "/images/comics/bald/3_yuri_mustache-bald.png",
+    "baldThumbImage": "/images/comics/bald/thumb/3_yuri_mustache-bald-thumb.png",
     "ogImage": "/images/comics/3_yuri_mustache.png",
     "twitterImage": "/images/comics/og/3_yuri_mustache-og.png"
   },
@@ -56,6 +60,8 @@
     "date": "2025-12-04T12:00:00-05:00",
     "image": "/images/comics/4_dont_tell_me_my_age.png",
     "thumbImage": "/images/comics/thumb/4_dont_tell_me_my_age-thumb.png",
+    "baldImage": "/images/comics/bald/4_dont_tell_me_my_age-bald.png",
+    "baldThumbImage": "/images/comics/bald/thumb/4_dont_tell_me_my_age-bald-thumb.png",
     "ogImage": "/images/comics/4_dont_tell_me_my_age.png",
     "twitterImage": "/images/comics/og/4_dont_tell_me_my_age-og.png"
   },
@@ -68,6 +74,8 @@
     "date": "2026-01-07T12:00:00-05:00",
     "image": "/images/comics/5_freckles.png",
     "thumbImage": "/images/comics/thumb/5_freckles-thumb.png",
+    "baldImage": "/images/comics/bald/5_freckles-bald.png",
+    "baldThumbImage": "/images/comics/bald/thumb/5_freckles-bald-thumb.png",
     "ogImage": "/images/comics/5_freckles.png",
     "twitterImage": "/images/comics/og/5_freckles-og.png"
   }
