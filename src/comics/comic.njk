@@ -44,6 +44,15 @@ eleventyComputed:
     {% if comic.baldImage %}data-bald-image="{{ comic.baldImage }}"{% endif %}
     alt="{{ comic.alt }}"{% if comic.titleText %} title="{{ comic.titleText }}"{% endif %}
     class="comic-img">
+  <div class="segmented-control" data-bald-toggle-container style="display:none;" hidden>
+    <button id="baldModeToggle" class="toggle-switch no-transition" type="button">
+      <i class="fa-solid fa-user"></i>
+      <span>Alopecia</span>
+      <div class="switch-toggle" data-bald-toggle aria-pressed="false" role="button" tabindex="0">
+        <div class="switch-circle"></div>
+      </div>
+    </button>
+  </div>
   <div class="segmented-control">
     <a{% if currentIndex == 0 %} disabled{% else %} href="/comics/{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
       <center>

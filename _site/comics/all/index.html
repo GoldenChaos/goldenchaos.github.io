@@ -136,6 +136,17 @@
 <div class="content index page" id="comic-title">
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">All Comics</h1>
 </div>
+<div class="content page" style="text-align:center;margin-top:16px;display:none;" data-bald-toggle-container hidden>
+  <div class="segmented-control">
+    <button id="baldModeToggleAll" class="toggle-switch no-transition" type="button">
+      <i class="fa-solid fa-user"></i>
+      <span>Alopecia</span>
+      <div class="switch-toggle" data-bald-toggle aria-pressed="false" role="button" tabindex="0">
+        <div class="switch-circle"></div>
+      </div>
+    </button>
+  </div>
+</div>
 <div class="content page">
   <style>
     .comics-grid {
@@ -288,6 +299,7 @@
 <script>
 (function() {
   const STORAGE_KEY = 'gc-bald-mode';
+  const SEEN_KEY = 'gc-bald-mode-seen';
   // Desktop: require full Konami plus Enter to reduce accidental triggers
   const KONAMI_DESKTOP = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a','enter'];
   // Mobile: D-pad only for tap gestures
@@ -295,6 +307,7 @@
   let keyBuffer = [];
   let touchBuffer = [];
   let touchTimeout;
+  const toggleSelector = '[data-bald-toggle]';
 
   function applyBaldMode(enabled) {
     const imgs = document.querySelectorAll('[data-normal-image]');
@@ -312,10 +325,41 @@
       }
     });
     document.documentElement.dataset.baldMode = enabled ? 'on' : 'off';
+    syncBaldToggles(enabled);
+  }
+
+  function syncBaldToggles(enabled) {
+    const hasSeen = sessionStorage.getItem(SEEN_KEY) === 'on';
+    const containers = document.querySelectorAll('[data-bald-toggle-container]');
+    containers.forEach((container) => {
+      if (hasSeen) {
+        container.hidden = false;
+        container.style.display = '';
+      } else {
+        container.hidden = true;
+        container.style.display = 'none';
+      }
+    });
+    const toggles = document.querySelectorAll(toggleSelector);
+    toggles.forEach((toggle) => {
+      const container = toggle.closest('.toggle-switch');
+      if (enabled) {
+        toggle.classList.add('active');
+        toggle.setAttribute('aria-pressed', 'true');
+        if (container) container.classList.add('active');
+      } else {
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-pressed', 'false');
+        if (container) container.classList.remove('active');
+      }
+    });
   }
 
   function setBaldMode(enabled) {
     sessionStorage.setItem(STORAGE_KEY, enabled ? 'on' : 'off');
+    if (enabled) {
+      sessionStorage.setItem(SEEN_KEY, 'on');
+    }
     applyBaldMode(enabled);
   }
 
@@ -377,11 +421,37 @@
     });
   }
 
+  function attachToggleHandlers() {
+    const toggles = document.querySelectorAll(toggleSelector);
+    toggles.forEach((toggle) => {
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
+        setBaldMode(next);
+      });
+      toggle.addEventListener('keydown', (event) => {
+        const key = event.key;
+        if (key !== 'Enter' && key !== ' ') return;
+        event.preventDefault();
+        event.stopPropagation();
+        const next = sessionStorage.getItem(STORAGE_KEY) !== 'on';
+        setBaldMode(next);
+      });
+    });
+  }
+
   document.addEventListener('keydown', handleKeydown, true);
   document.addEventListener('DOMContentLoaded', () => {
     const enabled = sessionStorage.getItem(STORAGE_KEY) === 'on';
     applyBaldMode(enabled);
     attachTouchHandlers();
+    attachToggleHandlers();
+    setTimeout(() => {
+      document.querySelectorAll('.toggle-switch.no-transition').forEach((toggle) => {
+        toggle.classList.remove('no-transition');
+      });
+    }, 50);
   });
 })();
 </script>
