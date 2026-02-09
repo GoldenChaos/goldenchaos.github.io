@@ -10,7 +10,7 @@
         gtag('config', 'UA-317947-1');
     </script>
     <meta charset="utf-8">
-    <title>GoldenChaos Comics - Latest Comic - #6 Gay</title>
+    <title>GoldenChaos Comics - Latest Comic - #7 Ally</title>
     <meta name="description" content="Comics by Jess Rappaport!">
 
         
@@ -26,20 +26,20 @@
         <!-- Facebook / Open Graph -->
         <meta property="og:url" content="https://goldenchaos.net/comics/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="GoldenChaos Comics - Latest Comic - #6 Gay">
+        <meta property="og:title" content="GoldenChaos Comics - Latest Comic - #7 Ally">
         <meta property="og:description" content="Comics by Jess Rappaport!">
-        <meta property="og:image" content="https://goldenchaos.net/images/comics/6_gay.png">
+        <meta property="og:image" content="https://goldenchaos.net/images/comics/7_ally.png">
         <meta property="og:image:alt" content="Comics by Jess Rappaport!">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="goldenchaos.net">
     <meta property="twitter:url" content="https://goldenchaos.net/comics/">
-    <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic - #6 Gay">
+    <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic - #7 Ally">
     <meta name="twitter:description" content="Comics by Jess Rappaport!">
     <meta name="twitter:site" content="@GoldenChaos">
     <meta name="twitter:creator" content="@GoldenChaos">
-    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/og/6_gay-og.png">
+    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/og/7_ally-og.png">
     <meta name="twitter:image:alt" content="Comics by Jess Rappaport!">
         <link rel="alternate" type="application/rss+xml" title="GoldenChaos Comics RSS" href="/comics/feed.xml">
 
@@ -143,17 +143,14 @@
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">Latest Comic</h1>
 </div>
 <div class="content index page" id="comic-title">
-  <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#6 - Gay</h2>
+  <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#7 - Ally</h2>
 </div>
 <div class="content page" style="text-align:center;">
   <img
-    src="/images/comics/6_gay.png"
-    data-normal-image="/images/comics/6_gay.png"
-    data-bald-image="/images/comics/bald/6_gay-bald.png"
-    alt="6 - Gay" title="&quot;I&#39;m a lesbian...&quot;
-&quot;...&quot;
-&quot;I like women...&quot;
-&quot;???&quot;"
+    src="/images/comics/7_ally.png"
+    data-normal-image="/images/comics/7_ally.png"
+    
+    alt="7 - Ally" title="&quot;She&#39;ll always be my niece to me.&quot;"
     class="comic-img">
   <div class="segmented-control">
     <a href="/comics/1/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
@@ -162,7 +159,7 @@
         First
       </center>
     </a>
-    <a href="/comics/5/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
+    <a href="/comics/6/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
       <center>
         <i class="fa-solid fa-backward"></i>
         Previous
@@ -257,7 +254,7 @@ function showCopied(buttonId, success) {
   }, 2000);
 }
 async function copyComicLink() {
-  const link = window.location.origin + '/comics/6/';
+  const link = window.location.origin + '/comics/7/';
   const ok = await copyWithFallback(link);
   showCopied('copyBtn', ok);
   if (ok && typeof gtag !== 'undefined') {
@@ -269,7 +266,7 @@ async function copyComicLink() {
 }
 async function copyComicImageLink() {
   const img = document.querySelector('.comic-img');
-  const src = img ? img.getAttribute('src') : '/images/comics/6_gay.png';
+  const src = img ? img.getAttribute('src') : '/images/comics/7_ally.png';
   const fullURL = new URL(src, window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);

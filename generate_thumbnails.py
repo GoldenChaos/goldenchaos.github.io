@@ -18,7 +18,8 @@ comics = [
     "3_yuri_mustache.png",
     "4_dont_tell_me_my_age.png",
     "5_freckles.png",
-    "6_gay.png"
+    "6_gay.png",
+    "7_ally.png"
 ]
 
 for comic in comics:

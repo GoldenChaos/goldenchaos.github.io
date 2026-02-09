@@ -93,5 +93,17 @@
     "baldThumbImage": "/images/comics/bald/thumb/6_gay-bald-thumb.png",
     "ogImage": "/images/comics/6_gay.png",
     "twitterImage": "/images/comics/og/6_gay-og.png"
+  },
+  {
+    "number": 7,
+    "slug": "7",
+    "title": "Ally",
+    "alt": "7 - Ally",
+    "titleText": "\"She'll always be my niece to me.\"",
+    "date": "2026-02-09T12:00:00-05:00",
+    "image": "/images/comics/7_ally.png",
+    "thumbImage": "/images/comics/thumb/7_ally-thumb.png",
+    "ogImage": "/images/comics/7_ally.png",
+    "twitterImage": "/images/comics/og/7_ally-og.png"
   }
 ]
