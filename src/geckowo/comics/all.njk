@@ -85,7 +85,7 @@ bodyClass: ""
     <div class="comic-item">
       <a href="/geckowo/comics/{{ c.slug }}/">
         <div class="img-container">
-          {% set thumb = c.image | replace('/images/geckowo/comics/', '/images/geckowo/comics/thumb/') | replace('.jpg', '-thumb.jpg') %}
+          {% set thumb = c.thumbImage or (c.image | replace('/images/geckowo/comics/', '/images/geckowo/comics/thumb/') | replace('.jpg', '-thumb.jpg')) %}
           <img src="{{ thumb }}" data-full="{{ c.image }}" alt="Comic #{{ c.number }}{% if c.title %} - {{ c.title }}{% endif %}" onerror="this.onerror=null;this.src=this.dataset.full;">
         </div>
         <h3>#{{ c.number }}</h3>

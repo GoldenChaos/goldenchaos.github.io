@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GoldenChaos Admin</title>
+  <style>
+    body { margin: 0; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: #f7f8fb; }
+    .loading { min-height: 100vh; display: grid; place-items: center; color: #475467; font-size: 14px; text-align: center; padding: 24px; }
+  </style>
+</head>
+<body>
+  <div class="loading" id="adminStatus">Loading admin...</div>
+  <script>
+    (function () {
+      var status = document.getElementById('adminStatus');
+
+      function setStatus(message) {
+        if (status) status.textContent = message;
+      }
+
+      function hideStatus() {
+        if (status) status.style.display = 'none';
+      }
+
+      function loadScript(src, onError) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = function () {
+          hideStatus();
+        };
+        script.onerror = function () {
+          if (typeof onError === 'function') onError();
+        };
+        document.body.appendChild(script);
+      }
+
+      loadScript('https://cdn.jsdelivr.net/npm/decap-cms@3.8.3/dist/decap-cms.js', function () {
+        setStatus('Primary CDN failed, trying fallback...');
+        loadScript('https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js', function () {
+          setStatus('Failed to load Decap CMS script. Disable blockers or check network/console.');
+        });
+      });
+
+      window.addEventListener('error', function (event) {
+        if (!event || !event.message) return;
+        if (String(event.message).toLowerCase().indexOf('decap') !== -1) {
+          setStatus('Decap failed to initialize. Check browser console for details.');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

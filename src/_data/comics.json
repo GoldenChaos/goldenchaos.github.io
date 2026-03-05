@@ -9,7 +9,7 @@
     "thumbImage": "/images/comics/thumb/1_alopecia-thumb.png",
     "baldImage": "/images/comics/bald/1_alopecia-bald.png",
     "baldThumbImage": "/images/comics/bald/thumb/1_alopecia-bald-thumb.png",
-    "ogImage": "/images/comics/1_alopecia.png",
+    "ogImage": "/images/comics/og/1_alopecia-og.png",
     "twitterImage": "/images/comics/og/1_alopecia-og.png"
   },
   {
@@ -22,7 +22,7 @@
     "thumbImage": "/images/comics/thumb/2_latte_art-thumb.png",
     "baldImage": "/images/comics/bald/2_latte_art-bald.png",
     "baldThumbImage": "/images/comics/bald/thumb/2_latte_art-bald-thumb.png",
-    "ogImage": "/images/comics/2_latte_art.png",
+    "ogImage": "/images/comics/og/2_latte_art-og.png",
     "twitterImage": "/images/comics/og/2_latte_art-og.png"
   },
   {
@@ -35,7 +35,7 @@
     "thumbImage": "/images/comics/thumb/3_yuri_mustache-thumb.png",
     "baldImage": "/images/comics/bald/3_yuri_mustache-bald.png",
     "baldThumbImage": "/images/comics/bald/thumb/3_yuri_mustache-bald-thumb.png",
-    "ogImage": "/images/comics/3_yuri_mustache.png",
+    "ogImage": "/images/comics/og/3_yuri_mustache-og.png",
     "twitterImage": "/images/comics/og/3_yuri_mustache-og.png"
   },
   {
@@ -48,7 +48,7 @@
     "thumbImage": "/images/comics/thumb/3.1_important_psa-thumb.png",
     "baldImage": "/images/comics/bald/3.1_important_psa-bald.png",
     "baldThumbImage": "/images/comics/bald/thumb/3.1_important_psa-bald-thumb.png",
-    "ogImage": "/images/comics/3.1_important_psa.png",
+    "ogImage": "/images/comics/og/3.1_important_psa-og.png",
     "twitterImage": "/images/comics/og/3.1_important_psa-og.png"
   },
   {
@@ -62,7 +62,7 @@
     "thumbImage": "/images/comics/thumb/4_dont_tell_me_my_age-thumb.png",
     "baldImage": "/images/comics/bald/4_dont_tell_me_my_age-bald.png",
     "baldThumbImage": "/images/comics/bald/thumb/4_dont_tell_me_my_age-bald-thumb.png",
-    "ogImage": "/images/comics/4_dont_tell_me_my_age.png",
+    "ogImage": "/images/comics/og/4_dont_tell_me_my_age-og.png",
     "twitterImage": "/images/comics/og/4_dont_tell_me_my_age-og.png"
   },
   {
@@ -76,10 +76,9 @@
     "thumbImage": "/images/comics/thumb/5_freckles-thumb.png",
     "baldImage": "/images/comics/bald/5_freckles-bald.png",
     "baldThumbImage": "/images/comics/bald/thumb/5_freckles-bald-thumb.png",
-    "ogImage": "/images/comics/5_freckles.png",
+    "ogImage": "/images/comics/og/5_freckles-og.png",
     "twitterImage": "/images/comics/og/5_freckles-og.png"
-  }
-  ,
+  },
   {
     "number": 6,
     "slug": "6",
@@ -91,19 +90,21 @@
     "thumbImage": "/images/comics/thumb/6_gay-thumb.png",
     "baldImage": "/images/comics/bald/6_gay-bald.png",
     "baldThumbImage": "/images/comics/bald/thumb/6_gay-bald-thumb.png",
-    "ogImage": "/images/comics/6_gay.png",
+    "ogImage": "/images/comics/og/6_gay-og.png",
     "twitterImage": "/images/comics/og/6_gay-og.png"
   },
   {
+    "ogImage": "/images/comics/og/7_ally-og.png",
+    "baldImage": "/images/comics/bald/7_ally-bald.png",
+    "thumbImage": "/images/comics/thumb/7_ally-thumb.png",
+    "titleText": "\"She'll always be my niece to me.\"",
+    "twitterImage": "/images/comics/og/7_ally-og.png",
+    "alt": "7 - Ally",
     "number": 7,
     "slug": "7",
-    "title": "Ally",
-    "alt": "7 - Ally",
-    "titleText": "\"She'll always be my niece to me.\"",
     "date": "2026-02-09T12:00:00-05:00",
+    "title": "Ally",
     "image": "/images/comics/7_ally.png",
-    "thumbImage": "/images/comics/thumb/7_ally-thumb.png",
-    "ogImage": "/images/comics/7_ally.png",
-    "twitterImage": "/images/comics/og/7_ally-og.png"
+    "baldThumbImage": "/images/comics/bald/thumb/7_ally-bald-thumb.png"
   }
 ]

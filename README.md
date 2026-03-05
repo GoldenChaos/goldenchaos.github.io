@@ -13,11 +13,32 @@ Static portfolio site built with [Eleventy](https://www.11ty.dev/) using Nunjuck
 # Build the site
 npm run build
 
-# Start development server with live reload
+# Start development server with live reload (+ local /admin)
 npm run dev
+
+# Start local Decap admin proxy (run in a second terminal)
+npm run admin
 ```
 
 The dev server runs at `http://localhost:8080/`
+
+## Local Comics Admin (No OAuth)
+
+Use this to edit comics locally via Decap without setting up GitHub auth.
+
+1. Start site server: `npm run dev`
+2. In another terminal, start proxy: `npm run admin`
+3. Open: `http://localhost:8080/admin/`
+
+Notes:
+- `/admin/` is local-only by default in this setup. It is available in local dev and is removed from `_site` at the end of `npm run build`.
+- Decap edits one file per comic in `src/comics-data/`.
+- `npm run build` and `npm run dev` auto-sync those into `src/_data/comics.json` via `scripts/sync-comics-cms.js`.
+- During sync, comic derivative images are auto-generated from `image`/`baldImage`:
+  - `thumbImage` -> `/images/comics/thumb/*-thumb.png`
+  - `ogImage`/`twitterImage` -> `/images/comics/og/*-og.png`
+  - `baldThumbImage` -> `/images/comics/bald/thumb/*-thumb.png`
+- Commit `src/comics-data/*.json` plus any generated image/data changes after making comic edits.
 
 ## Project Structure
 

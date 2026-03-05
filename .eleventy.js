@@ -27,6 +27,8 @@ function compileSass() {
 compileSass();
 
 module.exports = function(eleventyConfig) {
+  const includeAdmin = process.env.ELEVENTY_INCLUDE_ADMIN === "true";
+
   // Watch SCSS files for changes and recompile
   eleventyConfig.addWatchTarget("*.scss");
   eleventyConfig.on("eleventy.before", () => {
@@ -50,6 +52,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/manifest.webmanifest": "manifest.webmanifest" });
   eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKWorker.js": "OneSignalSDKWorker.js" });
   eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKUpdaterWorker.js": "OneSignalSDKUpdaterWorker.js" });
+  if (includeAdmin) {
+    eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  }
   eleventyConfig.addPassthroughCopy({
     "goldenchaos-btt-docs.html": "goldenchaos-btt-docs.html",
     "goldenchaos-btt-sdk.html": "goldenchaos-btt-sdk.html",
@@ -59,6 +64,8 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
+    cleanOutputDir: true,
+    ignores: includeAdmin ? [] : ["admin/**"],
     dir: {
       input: "src",
       includes: "_includes",

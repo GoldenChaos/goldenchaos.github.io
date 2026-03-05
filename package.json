@@ -3,8 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "eleventy",
-    "dev": "eleventy --serve"
+    "sync:comics": "node scripts/sync-comics-cms.js",
+    "build": "npm run sync:comics && eleventy && node -e \"require('fs').rmSync('_site/admin',{ recursive: true, force: true })\"",
+    "dev": "npm run sync:comics && set ELEVENTY_INCLUDE_ADMIN=true&& eleventy --serve",
+    "admin": "npx decap-server"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
