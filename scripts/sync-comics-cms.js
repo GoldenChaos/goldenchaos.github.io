@@ -20,6 +20,8 @@ const tasks = [
   },
 ];
 
+const pythonCommand = process.platform === "win32" ? "py" : "python3";
+
 function fail(message) {
   console.error(`[sync-cms-data] ${message}`);
   process.exit(1);
@@ -38,15 +40,24 @@ function writeJson(filePath, data) {
 }
 
 function runPy(args) {
-  const result = spawnSync("py", args, {
+  let result = spawnSync(pythonCommand, args, {
     cwd: repoDir,
     encoding: "utf8",
   });
 
+  // Fallback for environments where python3 is not available but python is.
+  if (process.platform !== "win32" && result.error && result.error.code === "ENOENT") {
+    result = spawnSync("python", args, {
+      cwd: repoDir,
+      encoding: "utf8",
+    });
+  }
+
   if (result.status !== 0) {
     const stderr = (result.stderr || "").trim();
     const stdout = (result.stdout || "").trim();
-    fail(`Python command failed: py ${args.join(" ")}\n${stderr || stdout}`);
+    const usedCommand = process.platform === "win32" ? "py" : (result.error && result.error.code === "ENOENT" ? "python" : pythonCommand);
+    fail(`Python command failed: ${usedCommand} ${args.join(" ")}\n${stderr || stdout}`);
   }
 }
 
