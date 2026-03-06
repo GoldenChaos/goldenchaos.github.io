@@ -25,6 +25,8 @@ collections:
     format: "json"
     media_folder: "/images/comics"
     public_folder: "/images/comics"
+    sort: "number:desc"
+    sortable_fields: ["number", "title", "comicId", "date"]
     summary: "#{{fields.number}} - {{fields.title}}"
     fields:
       - { label: "Number", name: "number", widget: "number", value_type: "float", min: 0 }
@@ -44,51 +46,51 @@ collections:
   - name: "geckowo_comics_data"
     label: "Geckowo Comics"
     delete: false
+    folder: "src/geckowo-comics-data"
+    create: true
+    slug: "{{fields.slug}}"
+    extension: "json"
+    format: "json"
     media_folder: "/images/geckowo/comics"
     public_folder: "/images/geckowo/comics"
-    files:
-      - label: "Geckowo Comics"
-        name: "geckowo_comics"
-        file: "src/_data/geckowo_comics.cms.json"
-        format: "json"
-        fields:
-          - label: "Entries"
-            name: "items"
-            widget: "list"
-            summary: "#{{fields.number}} - {{fields.title}}"
-            fields:
-              - { label: "Number", name: "number", widget: "number", value_type: "int", min: 1 }
-              - { label: "Slug", name: "slug", widget: "string" }
-              - { label: "Title", name: "title", widget: "string", required: false }
-              - { label: "Alt text", name: "alt", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Thumbnail image", name: "thumbImage", widget: "string", required: false, hint: "Auto-generated from Image by sync script." }
-              - { label: "Open Graph image", name: "ogImage", widget: "image" }
-              - { label: "Twitter image", name: "twitterImage", widget: "image" }
-              - { label: "Post ID", name: "postId", widget: "string" }
+    sort: "number:desc"
+    sortable_fields: ["number", "title", "date"]
+    summary: "#{{fields.number}}{{fields.summaryTitle}}"
+    fields:
+      - { label: "Number", name: "number", widget: "number", value_type: "int", min: 1 }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
+      - { label: "Publish date", name: "date", widget: "datetime", required: false, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "YYYY-MM-DD", time_format: "HH:mm" }
+      - { label: "Summary Title", name: "summaryTitle", widget: "hidden", required: false }
+      - { label: "Alt text", name: "alt", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Thumbnail image", name: "thumbImage", widget: "string", required: false, hint: "Auto-generated from Image by sync script." }
+      - { label: "Open Graph image", name: "ogImage", widget: "image" }
+      - { label: "Twitter image", name: "twitterImage", widget: "image" }
+      - { label: "Post ID", name: "postId", widget: "hidden", required: false }
 
   - name: "geckowo_doodles_data"
     label: "Geckowo Doodles"
     delete: false
+    folder: "src/geckowo-doodles-data"
+    create: true
+    slug: "{{fields.slug}}"
+    extension: "json"
+    format: "json"
     media_folder: "/images/geckowo/doodles"
     public_folder: "/images/geckowo/doodles"
-    files:
-      - label: "Geckowo Doodles"
-        name: "geckowo_doodles"
-        file: "src/_data/geckowo_doodles.cms.json"
-        format: "json"
-        fields:
-          - label: "Entries"
-            name: "items"
-            widget: "list"
-            summary: "#{{fields.number}} - {{fields.title}}"
-            fields:
-              - { label: "Number", name: "number", widget: "number", value_type: "int", min: 1 }
-              - { label: "Slug", name: "slug", widget: "string" }
-              - { label: "Title", name: "title", widget: "string", required: false }
-              - { label: "Alt text", name: "alt", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Thumbnail image", name: "thumbImage", widget: "string", required: false, hint: "Auto-generated from Image by sync script." }
-              - { label: "Open Graph image", name: "ogImage", widget: "image" }
-              - { label: "Twitter image", name: "twitterImage", widget: "image" }
-              - { label: "Post ID", name: "postId", widget: "string" }
+    sort: "number:desc"
+    sortable_fields: ["number", "title", "date"]
+    summary: "#{{fields.number}}{{fields.summaryTitle}}"
+    fields:
+      - { label: "Number", name: "number", widget: "number", value_type: "int", min: 1 }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
+      - { label: "Publish date", name: "date", widget: "datetime", required: false, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "YYYY-MM-DD", time_format: "HH:mm" }
+      - { label: "Summary Title", name: "summaryTitle", widget: "hidden", required: false }
+      - { label: "Alt text", name: "alt", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Thumbnail image", name: "thumbImage", widget: "string", required: false, hint: "Auto-generated from Image by sync script." }
+      - { label: "Open Graph image", name: "ogImage", widget: "image" }
+      - { label: "Twitter image", name: "twitterImage", widget: "image" }
+      - { label: "Post ID", name: "postId", widget: "hidden", required: false }

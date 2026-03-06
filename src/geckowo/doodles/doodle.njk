@@ -12,6 +12,8 @@ eleventyComputed:
   description: "Doodles by Claire (@geckowo on Twitter/X)!"
   ogImage: "{{ doodle.ogImage }}"
   twitterImage: "{{ doodle.twitterImage }}"
+  ogType: "article"
+  publishDate: "{{ doodle.date }}"
 ---
 {% set doodlesList = geckowo_doodles %}
 {% set firstDoodle = doodlesList[0] %}

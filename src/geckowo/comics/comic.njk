@@ -12,6 +12,8 @@ eleventyComputed:
   description: "Comics by Claire (@geckowo on Twitter/X)!"
   ogImage: "{{ comic.ogImage }}"
   twitterImage: "{{ comic.twitterImage }}"
+  ogType: "article"
+  publishDate: "{{ comic.date }}"
 ---
 {% set comicsList = geckowo_comics %}
 {% set firstComic = comicsList[0] %}

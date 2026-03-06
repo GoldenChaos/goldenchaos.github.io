@@ -7,18 +7,27 @@ const comicsDir = path.join(repoDir, "src", "comics-data");
 const dataDir = path.join(__dirname, "..", "src", "_data");
 const imageScript = path.join(__dirname, "sync_comic_images.py");
 
-const tasks = [
+const geckowoTasks = [
   {
-    cmsFile: "geckowo_comics.cms.json",
-    cmsKey: "items",
+    name: "geckowo_comics",
+    sourceDir: path.join(repoDir, "src", "geckowo-comics-data"),
+    legacyCmsFile: "geckowo_comics.cms.json",
     outputFile: "geckowo_comics.json",
+    mode: "geckowo_comics",
+    prefix: "/images/geckowo/comics/",
+    thumbPrefix: "/images/geckowo/comics/thumb",
   },
   {
-    cmsFile: "geckowo_doodles.cms.json",
-    cmsKey: "items",
+    name: "geckowo_doodles",
+    sourceDir: path.join(repoDir, "src", "geckowo-doodles-data"),
+    legacyCmsFile: "geckowo_doodles.cms.json",
     outputFile: "geckowo_doodles.json",
+    mode: "geckowo_doodles",
+    prefix: "/images/geckowo/doodles/",
+    thumbPrefix: "/images/geckowo/doodles/thumb",
   },
 ];
+const twitterEpochMs = 1288834974657n;
 
 const pythonCommand = process.platform === "win32" ? "py" : "python3";
 const skipImageDerivatives = process.env.SYNC_SKIP_IMAGE_DERIVATIVES === "true";
@@ -99,6 +108,31 @@ function cleanFileStem(stem) {
   return stem
     .replace(/[<>:"/\\|?*\u0000-\u001F]/g, "")
     .trim();
+}
+
+function ensureDir(dirPath) {
+  fs.mkdirSync(dirPath, { recursive: true });
+}
+
+function listJsonFiles(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    return [];
+  }
+  return fs.readdirSync(dirPath)
+    .filter((file) => file.toLowerCase().endsWith(".json"))
+    .sort((a, b) => a.localeCompare(b));
+}
+
+function cleanFilename(value) {
+  const cleaned = String(value || "")
+    .trim()
+    .replace(/[<>:"/\\|?*\u0000-\u001F]/g, "");
+  return cleaned || "item";
+}
+
+function toRecordFilename(item) {
+  const base = item.slug || numberToSlug(item.number) || "item";
+  return `${cleanFilename(base)}.json`;
 }
 
 function numberToSlug(value) {
@@ -295,12 +329,184 @@ function deriveGeckowoThumb(item, mode, prefix, thumbPrefix) {
   return false;
 }
 
+function ensureGeckowoSummaryTitle(item) {
+  const title = typeof item.title === "string" ? item.title.trim() : "";
+  const summaryTitle = title ? ` - ${title}` : "";
+  if (item.summaryTitle !== summaryTitle) {
+    item.summaryTitle = summaryTitle;
+    return true;
+  }
+  return false;
+}
+
+function dateOnlyToIso(dateOnly) {
+  if (typeof dateOnly !== "string") {
+    return "";
+  }
+  const trimmed = dateOnly.trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+    return "";
+  }
+  return `${trimmed}T00:00:00.000Z`;
+}
+
+function deriveIsoFromTwitterPostId(postId) {
+  const value = String(postId || "").trim();
+  if (!/^\d+$/.test(value)) {
+    return "";
+  }
+  try {
+    const tweetId = BigInt(value);
+    const timestampMs = Number((tweetId >> 22n) + twitterEpochMs);
+    if (!Number.isFinite(timestampMs) || timestampMs <= 0) {
+      return "";
+    }
+    return new Date(timestampMs).toISOString();
+  } catch {
+    return "";
+  }
+}
+
+function loadGeckowoComicPublishDates() {
+  const map = new Map();
+  const metadataPath = path.join(repoDir, "data", "geckowo", "geckowo_comics_metadata.json");
+  if (!fs.existsSync(metadataPath)) {
+    return map;
+  }
+
+  const metadata = readJson(metadataPath);
+  if (!Array.isArray(metadata)) {
+    return map;
+  }
+
+  for (const item of metadata) {
+    const id = String(item.status_id || "").trim();
+    if (!id) {
+      continue;
+    }
+    let isoFromTimestamp = "";
+    if (typeof item.timestamp === "string" && item.timestamp.trim()) {
+      const ts = item.timestamp.trim();
+      const parsed = new Date(ts.endsWith("Z") ? ts : `${ts}Z`);
+      if (!Number.isNaN(parsed.getTime())) {
+        isoFromTimestamp = parsed.toISOString();
+      }
+    }
+    const isoFromDate = dateOnlyToIso(item.date);
+    map.set(id, isoFromTimestamp || isoFromDate || "");
+  }
+
+  return map;
+}
+
+function ensureGeckowoPublishDate(item, taskName, comicsDateMap) {
+  const current = typeof item.date === "string" ? item.date.trim() : "";
+  const postId = String(item.postId || "").trim();
+
+  let next = "";
+  if (taskName === "geckowo_comics" && postId && comicsDateMap.has(postId)) {
+    next = comicsDateMap.get(postId) || "";
+  }
+  if (!next && current) {
+    // Keep existing curated/manual date values when no authoritative comics metadata exists.
+    return false;
+  }
+  if (!next && postId) {
+    next = deriveIsoFromTwitterPostId(postId);
+  }
+  if (!next && current) {
+    next = dateOnlyToIso(current) || current;
+  }
+
+  if (!next) {
+    return false;
+  }
+  if (current !== next) {
+    item.date = next;
+    return true;
+  }
+  return false;
+}
+
 function syncGeckowoThumbs(parsed, recordsKey, mode, prefix, thumbPrefix) {
   let changed = false;
   for (const item of parsed[recordsKey]) {
     changed = deriveGeckowoThumb(item, mode, prefix, thumbPrefix) || changed;
   }
   return changed;
+}
+
+function migrateLegacyGeckowoCms(task) {
+  const legacyPath = path.join(dataDir, task.legacyCmsFile);
+  if (!fs.existsSync(legacyPath)) {
+    return 0;
+  }
+
+  const parsed = readJson(legacyPath);
+  if (!parsed || !Array.isArray(parsed.items)) {
+    fail(`Expected ${task.legacyCmsFile} to have an array at key 'items'.`);
+  }
+
+  ensureDir(task.sourceDir);
+
+  let created = 0;
+  for (const item of parsed.items) {
+    const filePath = path.join(task.sourceDir, toRecordFilename(item));
+    if (!fs.existsSync(filePath)) {
+      writeJson(filePath, item);
+      created += 1;
+    }
+  }
+
+  return created;
+}
+
+function syncGeckowoCollection(task) {
+  ensureDir(task.sourceDir);
+  let files = listJsonFiles(task.sourceDir);
+
+  if (files.length === 0) {
+    const created = migrateLegacyGeckowoCms(task);
+    if (created > 0) {
+      console.log(`[sync-cms-data] Migrated ${created} ${task.name} entries to ${path.relative(repoDir, task.sourceDir)}`);
+    }
+    files = listJsonFiles(task.sourceDir);
+  }
+
+  const records = [];
+  let updatedCount = 0;
+  const comicsDateMap = loadGeckowoComicPublishDates();
+
+  for (const file of files) {
+    const filePath = path.join(task.sourceDir, file);
+    const item = readJson(filePath);
+    let updated = false;
+    updated = ensureGeckowoSummaryTitle(item) || updated;
+    updated = ensureGeckowoPublishDate(item, task.name, comicsDateMap) || updated;
+    updated = deriveGeckowoThumb(item, task.mode, task.prefix, task.thumbPrefix) || updated;
+    if (updated) {
+      if (writeJson(filePath, item)) {
+        updatedCount += 1;
+      }
+    }
+    records.push(item);
+  }
+
+  const sorted = records
+    .slice()
+    .sort((a, b) => Number(a.number) - Number(b.number));
+
+  const outPath = path.join(dataDir, task.outputFile);
+  if (writeJson(outPath, sorted)) {
+    console.log(`[sync-cms-data] Synced ${sorted.length} items to src/_data/${task.outputFile}`);
+  }
+
+  const legacyPath = path.join(dataDir, task.legacyCmsFile);
+  writeJson(legacyPath, { items: sorted });
+
+  if (updatedCount > 0) {
+    console.log(`[sync-cms-data] Updated thumbnail fields in ${updatedCount} ${task.name} files`);
+  }
 }
 
 function syncComicsFromDirectory() {
@@ -348,51 +554,6 @@ function syncComicsFromDirectory() {
 
 syncComicsFromDirectory();
 
-for (const task of tasks) {
-  const cmsPath = path.join(dataDir, task.cmsFile);
-  const outPath = path.join(dataDir, task.outputFile);
-
-  if (!fs.existsSync(cmsPath)) {
-    fail(`Missing ${cmsPath}`);
-  }
-
-  const parsed = readJson(cmsPath);
-  if (!parsed || !Array.isArray(parsed[task.cmsKey])) {
-    fail(`Expected ${task.cmsFile} to have an array at key '${task.cmsKey}'.`);
-  }
-
-    if (task.cmsFile === "geckowo_comics.cms.json") {
-    const updated = syncGeckowoThumbs(
-      parsed,
-      task.cmsKey,
-      "geckowo_comics",
-      "/images/geckowo/comics/",
-      "/images/geckowo/comics/thumb",
-    );
-      if (updated) {
-        writeJson(cmsPath, parsed);
-        console.log("[sync-cms-data] Updated geckowo comic thumbnail fields in geckowo_comics.cms.json");
-      }
-  }
-    if (task.cmsFile === "geckowo_doodles.cms.json") {
-    const updated = syncGeckowoThumbs(
-      parsed,
-      task.cmsKey,
-      "geckowo_doodles",
-      "/images/geckowo/doodles/",
-      "/images/geckowo/doodles/thumb",
-    );
-      if (updated) {
-        writeJson(cmsPath, parsed);
-        console.log("[sync-cms-data] Updated geckowo doodle thumbnail fields in geckowo_doodles.cms.json");
-      }
-  }
-
-  const records = parsed[task.cmsKey]
-    .slice()
-    .sort((a, b) => Number(a.number) - Number(b.number));
-
-  if (writeJson(outPath, records)) {
-    console.log(`[sync-cms-data] Synced ${records.length} items to src/_data/${task.outputFile}`);
-  }
+for (const task of geckowoTasks) {
+  syncGeckowoCollection(task);
 }

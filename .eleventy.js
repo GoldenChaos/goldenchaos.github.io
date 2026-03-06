@@ -52,8 +52,8 @@ module.exports = function(eleventyConfig) {
   // Watch SCSS files for changes and recompile
   eleventyConfig.addWatchTarget("*.scss");
   eleventyConfig.addWatchTarget("src/comics-data");
-  eleventyConfig.addWatchTarget("src/_data/geckowo_comics.cms.json");
-  eleventyConfig.addWatchTarget("src/_data/geckowo_doodles.cms.json");
+  eleventyConfig.addWatchTarget("src/geckowo-comics-data");
+  eleventyConfig.addWatchTarget("src/geckowo-doodles-data");
   eleventyConfig.on("eleventy.before", () => {
     syncComicsData();
     compileSass();
