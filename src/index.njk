@@ -74,17 +74,17 @@ bodyClass: ""
             src="{{ latestComic.image }}"
             data-normal-image="{{ latestComic.image }}"
             {% if latestComic.baldImage %}data-bald-image="{{ latestComic.baldImage }}"{% endif %}
-            alt="{{ latestComic.alt }}"{% if latestComic.titleText %} title="{{ latestComic.titleText }}"{% endif %}
+            alt="{{ latestComic.alt }}"{% if latestComic.titleText or latestComic.alt %} title="{{ latestComic.titleText or latestComic.alt }}"{% endif %}
             class="comic-img">
     </a>
     <div class="segmented-control">
-        <a{% if latestComic.slug == firstComic.slug %} disabled{% else %} href="/comics/{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
+        <a{% if latestComic.number == firstComic.number %} disabled{% else %} href="/comics/{{ firstComic.comicId }}-{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
             <center>
                 <i class="fa-solid fa-fast-backward"></i>
                 First
             </center>
         </a>
-        <a{% if prevComic %} href="/comics/{{ prevComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})"{% else %} disabled{% endif %}>
+        <a{% if prevComic %} href="/comics/{{ prevComic.comicId }}-{{ prevComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})"{% else %} disabled{% endif %}>
             <center>
                 <i class="fa-solid fa-backward"></i>
                 Previous
@@ -261,7 +261,7 @@ function showCopied(buttonId, success) {
 }
 
 async function copyComicLink() {
-    const link = window.location.origin + '/comics/{{ latestComic.slug }}/';
+    const link = window.location.origin + '/comics/{{ latestComic.comicId }}-{{ latestComic.slug }}/';
     const ok = await copyWithFallback(link);
     showCopied('copyBtn', ok);
     if (ok && typeof gtag !== 'undefined') {

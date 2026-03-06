@@ -29,13 +29,15 @@ async function main() {
   }
 
   const latest = comics[comics.length - 1];
-  const slug = latest.slug || String(latest.number);
+  const comicId = latest.comicId || String(latest.number).replace(/\./g, '-');
+  const slug = latest.slug || 'comic';
+  const pathSlug = `${comicId}-${slug}`;
   let baseUrl = 'https://goldenchaos.github.io';
   if (fs.existsSync(cnamePath)) {
     const domain = fs.readFileSync(cnamePath, 'utf-8').trim();
     if (domain) baseUrl = `https://${domain}`;
   }
-  const url = `${baseUrl}/comics/${slug}/`;
+  const url = `${baseUrl}/comics/${pathSlug}/`;
 
   // Use TEST_PLAYER_ID for testing, otherwise broadcast to all subscribers
   const testPlayerId = process.env.TEST_PLAYER_ID;

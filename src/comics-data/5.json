@@ -1,6 +1,6 @@
 {
   "number": 5,
-  "slug": "5",
+  "slug": "freckles",
   "title": "Freckles",
   "alt": "5 - Freckles",
   "titleText": "\"Didn't you break the contract by making this comic??\"\n\"It... it's a loophole!!!\"",
@@ -10,6 +10,6 @@
   "baldImage": "/images/comics/bald/5_freckles-bald.png",
   "baldThumbImage": "/images/comics/bald/thumb/5_freckles-bald-thumb.png",
   "ogImage": "/images/comics/og/5_freckles-og.png",
-  "twitterImage": "/images/comics/og/5_freckles-og.png"
+  "twitterImage": "/images/comics/og/5_freckles-og.png",
+  "comicId": "5"
 }
-

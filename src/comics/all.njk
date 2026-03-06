@@ -84,13 +84,13 @@ bodyClass: ""
   <div class="comics-grid" style="margin-top: 32px; margin-bottom: 64px;">
     {% for c in comics | reverse %}
     <div class="comic-item">
-      <a href="/comics/{{ c.slug }}/">
+      <a href="/comics/{{ c.comicId }}-{{ c.slug }}/">
         <div class="img-container">
           <img
             src="{{ c.thumbImage or c.image }}"
             data-normal-image="{{ c.thumbImage or c.image }}"
             {% if c.baldImage %}data-bald-image="{{ c.baldThumbImage or c.baldImage }}"{% endif %}
-            alt="Comic #{{ c.number }} - {{ c.title }}">
+            alt="Comic #{{ c.number }} - {{ c.title }}"{% if c.titleText or c.alt %} title="{{ c.titleText or c.alt }}"{% endif %}>
         </div>
         <h3>#{{ c.number }} - {{ c.title }}</h3>
       </a>

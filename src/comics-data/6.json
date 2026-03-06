@@ -1,6 +1,6 @@
 {
   "number": 6,
-  "slug": "6",
+  "slug": "gay",
   "title": "Gay",
   "alt": "6 - Gay",
   "titleText": "\"I'm a lesbian...\"\n\"...\"\n\"I like women...\"\n\"???\"",
@@ -10,6 +10,6 @@
   "baldImage": "/images/comics/bald/6_gay-bald.png",
   "baldThumbImage": "/images/comics/bald/thumb/6_gay-bald-thumb.png",
   "ogImage": "/images/comics/og/6_gay-og.png",
-  "twitterImage": "/images/comics/og/6_gay-og.png"
+  "twitterImage": "/images/comics/og/6_gay-og.png",
+  "comicId": "6"
 }
-

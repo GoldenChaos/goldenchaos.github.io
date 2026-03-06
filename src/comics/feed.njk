@@ -21,8 +21,8 @@ layout: null
       {% set itemDate = comic.date or buildDate %}
     <item>
       <title><![CDATA[#{{ comic.number }} - {{ comic.title }}]]></title>
-      <link>{{ site.url }}/comics/{{ comic.slug }}/</link>
-      <guid isPermaLink="true">{{ site.url }}/comics/{{ comic.slug }}/</guid>
+      <link>{{ site.url }}/comics/{{ comic.comicId }}-{{ comic.slug }}/</link>
+      <guid isPermaLink="true">{{ site.url }}/comics/{{ comic.comicId }}-{{ comic.slug }}/</guid>
       <description><![CDATA[<p>#{{ comic.number }} - {{ comic.title }}</p><img src="{{ site.url }}{{ comic.image }}" alt="{{ comic.alt | escape }}">]]></description>
       <pubDate>{{ itemDate | rssDate }}</pubDate>
     </item>

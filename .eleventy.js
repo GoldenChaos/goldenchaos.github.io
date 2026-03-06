@@ -1,5 +1,7 @@
 const sass = require('sass');
 const fs = require('fs');
+const path = require('path');
+const { spawnSync } = require('child_process');
 
 // Compile SCSS before module exports
 function compileSass() {
@@ -23,6 +25,24 @@ function compileSass() {
   }
 }
 
+function syncComicsData() {
+  if (process.env.ELEVENTY_AUTO_SYNC !== "true") {
+    return;
+  }
+
+  const scriptPath = path.join(__dirname, "scripts", "sync-comics-cms.js");
+  const result = spawnSync("node", [scriptPath], {
+    cwd: __dirname,
+    encoding: "utf8"
+  });
+
+  if (result.status !== 0) {
+    const stderr = (result.stderr || "").trim();
+    const stdout = (result.stdout || "").trim();
+    throw new Error(`sync-comics-cms.js failed:\n${stderr || stdout}`);
+  }
+}
+
 // Initial compilation
 compileSass();
 
@@ -31,7 +51,11 @@ module.exports = function(eleventyConfig) {
 
   // Watch SCSS files for changes and recompile
   eleventyConfig.addWatchTarget("*.scss");
+  eleventyConfig.addWatchTarget("src/comics-data");
+  eleventyConfig.addWatchTarget("src/_data/geckowo_comics.cms.json");
+  eleventyConfig.addWatchTarget("src/_data/geckowo_doodles.cms.json");
   eleventyConfig.on("eleventy.before", () => {
+    syncComicsData();
     compileSass();
   });
 

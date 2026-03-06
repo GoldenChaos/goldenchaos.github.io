@@ -20,7 +20,7 @@ collections:
     delete: false
     folder: "src/comics-data"
     create: true
-    slug: "{{fields.slug}}"
+    slug: "{{fields.comicId}}"
     extension: "json"
     format: "json"
     media_folder: "/images/comics"
@@ -28,7 +28,8 @@ collections:
     summary: "#{{fields.number}} - {{fields.title}}"
     fields:
       - { label: "Number", name: "number", widget: "number", value_type: "float", min: 0 }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Used in URL: /comics/{slug}/" }
+      - { label: "Comic ID", name: "comicId", widget: "string", hint: "Numeric ID used in URLs, e.g. 4 or 3-1." }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Semantic part only, e.g. dont-tell-me-my-age." }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Alt text", name: "alt", widget: "string" }
       - { label: "Tooltip text", name: "titleText", widget: "text", required: false }

@@ -1,14 +1,15 @@
 {
-  "number": 1,
-  "slug": "1",
-  "title": "Alopecia",
-  "alt": "1 - Alopecia",
-  "date": "2025-09-08T12:00:00-04:00",
-  "image": "/images/comics/1_alopecia.png",
-  "thumbImage": "/images/comics/thumb/1_alopecia-thumb.png",
-  "baldImage": "/images/comics/bald/1_alopecia-bald.png",
-  "baldThumbImage": "/images/comics/bald/thumb/1_alopecia-bald-thumb.png",
   "ogImage": "/images/comics/og/1_alopecia-og.png",
-  "twitterImage": "/images/comics/og/1_alopecia-og.png"
+  "baldImage": "/images/comics/bald/1_alopecia-bald.png",
+  "thumbImage": "/images/comics/thumb/1_alopecia-thumb.png",
+  "titleText": "\"Wow, you're a non-copyright-infringing LGBT™ connecting brick figure?\"",
+  "twitterImage": "/images/comics/og/1_alopecia-og.png",
+  "alt": "1 - Alopecia",
+  "number": 1,
+  "slug": "alopecia",
+  "date": "2025-09-08T12:00:00-04:00",
+  "title": "Alopecia",
+  "image": "/images/comics/1_alopecia.png",
+  "baldThumbImage": "/images/comics/bald/thumb/1_alopecia-bald-thumb.png",
+  "comicId": "1"
 }
-

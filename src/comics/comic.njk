@@ -5,7 +5,7 @@ pagination:
   size: 1
   alias: comic
   addAllPagesToCollections: true
-permalink: "comics/{{ comic.slug }}/index.html"
+permalink: "comics/{{ comic.comicId }}-{{ comic.slug }}/index.html"
 bodyClass: ""
 eleventyComputed:
   title: "GoldenChaos Comics - #{{ comic.number }} {{ comic.title }}"
@@ -18,7 +18,7 @@ eleventyComputed:
 {% set latestComic = comicsList[comicsList.length - 1] %}
 {% set currentIndex = -1 %}
 {% for c in comicsList %}
-  {% if c.slug == comic.slug %}
+  {% if c.number == comic.number %}
     {% set currentIndex = loop.index0 %}
   {% endif %}
 {% endfor %}
@@ -42,7 +42,7 @@ eleventyComputed:
     src="{{ comic.image }}"
     data-normal-image="{{ comic.image }}"
     {% if comic.baldImage %}data-bald-image="{{ comic.baldImage }}"{% endif %}
-    alt="{{ comic.alt }}"{% if comic.titleText %} title="{{ comic.titleText }}"{% endif %}
+    alt="{{ comic.alt }}"{% if comic.titleText or comic.alt %} title="{{ comic.titleText or comic.alt }}"{% endif %}
     class="comic-img">
   <div class="segmented-control" data-bald-toggle-container style="display:none;" hidden>
     <button id="baldModeToggle" class="toggle-switch no-transition" type="button">
@@ -54,13 +54,13 @@ eleventyComputed:
     </button>
   </div>
   <div class="segmented-control">
-    <a{% if currentIndex == 0 %} disabled{% else %} href="/comics/{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
+    <a{% if currentIndex == 0 %} disabled{% else %} href="/comics/{{ firstComic.comicId }}-{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
       <center>
         <i class="fa-solid fa-fast-backward"></i>
         First
       </center>
     </a>
-    <a{% if prevComic %} href="/comics/{{ prevComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})"{% else %} disabled{% endif %}>
+    <a{% if prevComic %} href="/comics/{{ prevComic.comicId }}-{{ prevComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})"{% else %} disabled{% endif %}>
       <center>
         <i class="fa-solid fa-backward"></i>
         Previous
@@ -82,13 +82,13 @@ eleventyComputed:
         View All
       </center>
     </a>
-    <a{% if nextComic %} href="/comics/{{ nextComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'next'})"{% else %} disabled{% endif %}>
+    <a{% if nextComic %} href="/comics/{{ nextComic.comicId }}-{{ nextComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'next'})"{% else %} disabled{% endif %}>
       <center>
         <i class="fa-solid fa-forward"></i>
         Next
       </center>
     </a>
-    <a{% if comic.slug == latestComic.slug %} disabled{% else %} href="/comics/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'latest'})"{% endif %}>
+    <a{% if comic.number == latestComic.number %} disabled{% else %} href="/comics/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'latest'})"{% endif %}>
       <center>
         <i class="fa-solid fa-fast-forward"></i>
         Latest
@@ -157,7 +157,7 @@ function showCopied(buttonId, success) {
 }
 
 async function copyComicLink() {
-  const link = window.location.origin + '/comics/{{ comic.slug }}/';
+  const link = window.location.origin + '/comics/{{ comic.comicId }}-{{ comic.slug }}/';
   const ok = await copyWithFallback(link);
   showCopied('copyBtn', ok);
   if (ok && typeof gtag !== 'undefined') {

@@ -191,17 +191,17 @@
             src="/images/comics/7_ally.png"
             data-normal-image="/images/comics/7_ally.png"
             data-bald-image="/images/comics/bald/7_ally-bald.png"
-            alt="7 - Ally" title="&quot;She&#39;ll always be my niece to me.&quot;"
+            alt="7 - Ally" title="&quot;She&#39;ll always be my niece.&quot;"
             class="comic-img">
     </a>
     <div class="segmented-control">
-        <a href="/comics/1/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
+        <a href="/comics/1-alopecia/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
             <center>
                 <i class="fa-solid fa-fast-backward"></i>
                 First
             </center>
         </a>
-        <a href="/comics/6/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
+        <a href="/comics/6-gay/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
             <center>
                 <i class="fa-solid fa-backward"></i>
                 Previous
@@ -378,7 +378,7 @@ function showCopied(buttonId, success) {
 }
 
 async function copyComicLink() {
-    const link = window.location.origin + '/comics/7/';
+    const link = window.location.origin + '/comics/7-ally/';
     const ok = await copyWithFallback(link);
     showCopied('copyBtn', ok);
     if (ok && typeof gtag !== 'undefined') {
