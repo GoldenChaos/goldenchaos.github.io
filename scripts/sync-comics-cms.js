@@ -21,6 +21,8 @@ const tasks = [
 ];
 
 const pythonCommand = process.platform === "win32" ? "py" : "python3";
+const skipImageDerivatives = process.env.SYNC_SKIP_IMAGE_DERIVATIVES === "true";
+let skipNoticePrinted = false;
 
 function fail(message) {
   console.error(`[sync-cms-data] ${message}`);
@@ -40,6 +42,14 @@ function writeJson(filePath, data) {
 }
 
 function runPy(args) {
+  if (skipImageDerivatives) {
+    if (!skipNoticePrinted) {
+      console.log("[sync-cms-data] Skipping image derivative generation (SYNC_SKIP_IMAGE_DERIVATIVES=true)");
+      skipNoticePrinted = true;
+    }
+    return;
+  }
+
   let result = spawnSync(pythonCommand, args, {
     cwd: repoDir,
     encoding: "utf8",
