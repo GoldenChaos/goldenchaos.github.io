@@ -118,5 +118,18 @@
     "image": "/images/comics/7_ally.png",
     "baldThumbImage": "/images/comics/bald/thumb/7_ally-bald-thumb.png",
     "comicId": "7"
+  },
+  {
+    "number": 8,
+    "slug": "robot",
+    "title": "Robot",
+    "alt": "8 - Robot",
+    "titleText": "\"The little Jess is also a robot.\"",
+    "date": "2026-05-13T12:00:00-04:00",
+    "image": "/images/comics/8_robot.png",
+    "thumbImage": "/images/comics/thumb/8_robot-thumb.png",
+    "ogImage": "/images/comics/og/8_robot-og.png",
+    "twitterImage": "/images/comics/og/8_robot-og.png",
+    "comicId": "8"
   }
 ]
