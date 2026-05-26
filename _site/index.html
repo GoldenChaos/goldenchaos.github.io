@@ -185,15 +185,16 @@
     <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">Latest Comic</h1>
 </div>
 <div class="content index page" id="comic-title">
-    <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#8 - Robot</h2>
+    <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#9 - From Scratch</h2>
 </div>
 <div class="content page" style="text-align:center;">
     <a href="/comics/">
         <img
-            src="/images/comics/8_robot.png"
-            data-normal-image="/images/comics/8_robot.png"
+            src="/images/comics/9_from_scratch.png"
+            data-normal-image="/images/comics/9_from_scratch.png"
             
-            alt="8 - Robot" title="&quot;The little Jess is also a robot.&quot;"
+            alt="9 - From Scratch" title="&quot;Wow, it looks great! Is that your wife?&quot;
+&quot;MY WHO!?&quot;"
             class="comic-img">
     </a>
     <div class="segmented-control">
@@ -203,7 +204,7 @@
                 First
             </center>
         </a>
-        <a href="/comics/7-ally/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
+        <a href="/comics/8-robot/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
             <center>
                 <i class="fa-solid fa-backward"></i>
                 Previous
@@ -380,7 +381,7 @@ function showCopied(buttonId, success) {
 }
 
 async function copyComicLink() {
-    const link = window.location.origin + '/comics/8-robot/';
+    const link = window.location.origin + '/comics/9-from-scratch/';
     const ok = await copyWithFallback(link);
     showCopied('copyBtn', ok);
     if (ok && typeof gtag !== 'undefined') {
