@@ -23,7 +23,8 @@ comics = [
     "6_gay.png",
     "7_ally.png",
     "8_robot.png",
-    "9_from_scratch.png"
+    "9_from_scratch.png",
+    "10_dissociation.png"
 ]
 
 # Background color (white)
