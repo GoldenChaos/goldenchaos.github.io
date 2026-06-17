@@ -18,13 +18,16 @@ comics = [
     "1_alopecia.png",
     "2_latte_art.png",
     "3_yuri_mustache.png",
+    "3.1_important_psa.png",
     "4_dont_tell_me_my_age.png",
     "5_freckles.png",
     "6_gay.png",
     "7_ally.png",
     "8_robot.png",
     "9_from_scratch.png",
-    "10_dissociation.png"
+    "10_dissociation.png",
+    "11_warhammer_number.png",
+    "12_comic_rooms.png"
 ]
 
 # Background color (white)

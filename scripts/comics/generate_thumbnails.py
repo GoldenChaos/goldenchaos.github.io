@@ -8,21 +8,24 @@ output_dir = "images/comics/thumb"
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
-# Thumbnail max dimensions (fit within 500x500, maintain aspect ratio)
-thumb_max = 500
+# Thumbnail height (maintain aspect ratio, allow wide comics to exceed 500px wide)
+thumb_height_target = 500
 
 # Comic images to process
 comics = [
     "1_alopecia.png",
     "2_latte_art.png",
     "3_yuri_mustache.png",
+    "3.1_important_psa.png",
     "4_dont_tell_me_my_age.png",
     "5_freckles.png",
     "6_gay.png",
     "7_ally.png",
     "8_robot.png",
     "9_from_scratch.png",
-    "10_dissociation.png"
+    "10_dissociation.png",
+    "11_warhammer_number.png",
+    "12_comic_rooms.png"
 ]
 
 for comic in comics:
@@ -35,16 +38,11 @@ for comic in comics:
     # Open the original image
     img = Image.open(input_path)
     
-    # Calculate dimensions to fit within 500x500 while maintaining aspect ratio
+    # Scale every thumbnail to a 500px height while maintaining aspect ratio.
     img_width, img_height = img.size
     aspect_ratio = img_width / img_height
-    
-    if aspect_ratio > 1:  # Wider than tall
-        thumb_width = thumb_max
-        thumb_height = int(thumb_max / aspect_ratio)
-    else:  # Taller than wide
-        thumb_height = thumb_max
-        thumb_width = int(thumb_max * aspect_ratio)
+    thumb_height = thumb_height_target
+    thumb_width = int(thumb_height_target * aspect_ratio)
     
     # Resize the image
     thumb_img = img.resize((thumb_width, thumb_height), Image.Resampling.LANCZOS)
@@ -56,6 +54,6 @@ for comic in comics:
     
     # Save the thumbnail
     thumb_img.save(output_path, "PNG", optimize=True)
-    print(f"Created: {output_path} ({thumb_width}x{thumb_height}px, fits within 500x500)")
+    print(f"Created: {output_path} ({thumb_width}x{thumb_height}px, height 500)")
 
 print("Done! All thumbnails have been generated.")
