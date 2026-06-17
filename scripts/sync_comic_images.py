@@ -29,7 +29,10 @@ def resize_for_thumb(img: Image.Image) -> Image.Image:
 
 def render_og(img: Image.Image) -> Image.Image:
     width, height = OG_SIZE
-    canvas = Image.new("RGB", OG_SIZE, OG_BG)
+    if img.mode == "RGBA":
+        canvas = Image.new("RGBA", OG_SIZE, OG_BG + (255,))
+    else:
+        canvas = Image.new(img.mode, OG_SIZE, OG_BG)
 
     original_ratio = img.width / img.height
     target_ratio = width / height
@@ -113,7 +116,10 @@ def main() -> int:
     if args.mode == "normal" and og_path is not None:
         og = render_og(img)
         ensure_parent_dir(og_path)
-        og.save(og_path, "PNG")
+        og_kwargs = {}
+        if "icc_profile" in img.info:
+            og_kwargs["icc_profile"] = img.info["icc_profile"]
+        og.save(og_path, "PNG", **og_kwargs)
 
     return 0
 

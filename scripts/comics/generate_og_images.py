@@ -44,8 +44,12 @@ for comic in comics:
     img = Image.open(input_path)
     
     for size_name, (width, height) in sizes.items():
-        # Create a new image with the target size and white background
-        new_img = Image.new("RGB", (width, height), background_color)
+        # Create a new image with the target size and white background.
+        # Match thumbnail behavior by keeping the source image mode/profile.
+        if img.mode == "RGBA":
+            new_img = Image.new("RGBA", (width, height), background_color + (255,))
+        else:
+            new_img = Image.new(img.mode, (width, height), background_color)
         
         # Calculate aspect ratios
         original_ratio = img.width / img.height
@@ -76,8 +80,11 @@ for comic in comics:
         output_filename = f"{base_name}-og.png"
         output_path = os.path.join(output_dir, output_filename)
         
-        # Save the new image
-        new_img.save(output_path, "PNG")
+        # Save the new image, preserving the source color profile when present.
+        save_kwargs = {}
+        if "icc_profile" in img.info:
+            save_kwargs["icc_profile"] = img.info["icc_profile"]
+        new_img.save(output_path, "PNG", **save_kwargs)
         print(f"Created: {output_path}")
 
 print("Done! All og:images have been generated.")
