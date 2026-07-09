@@ -25,7 +25,8 @@ comics = [
     "9_from_scratch.png",
     "10_dissociation.png",
     "11_warhammer_number.png",
-    "12_comic_rooms.png"
+    "12_comic_rooms.png",
+    "13_new_outfit.png"
 ]
 
 for comic in comics:

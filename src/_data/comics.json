@@ -183,5 +183,18 @@
     "ogImage": "/images/comics/og/12_comic_rooms-og.png",
     "twitterImage": "/images/comics/og/12_comic_rooms-og.png",
     "comicId": "12"
+  },
+  {
+    "number": 13,
+    "slug": "new-outfit",
+    "title": "New Outfit",
+    "alt": "13 - New Outfit",
+    "titleText": "\"Dang, actually I wish I had an iconic outfit.\"",
+    "date": "2026-07-09T17:09:00-04:00",
+    "image": "/images/comics/13_new_outfit.png",
+    "thumbImage": "/images/comics/thumb/13_new_outfit-thumb.png",
+    "ogImage": "/images/comics/og/13_new_outfit-og.png",
+    "twitterImage": "/images/comics/og/13_new_outfit-og.png",
+    "comicId": "13"
   }
 ]

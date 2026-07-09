@@ -10,7 +10,7 @@
         gtag('config', 'UA-317947-1');
     </script>
     <meta charset="utf-8">
-    <title>GoldenChaos Comics - Latest Comic - #12 Comic Rooms</title>
+    <title>GoldenChaos Comics - Latest Comic - #13 New Outfit</title>
     <meta name="description" content="Comics by Jess Rappaport!">
 
         
@@ -26,9 +26,9 @@
         <!-- Facebook / Open Graph -->
         <meta property="og:url" content="https://goldenchaos.net/comics/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="GoldenChaos Comics - Latest Comic - #12 Comic Rooms">
+        <meta property="og:title" content="GoldenChaos Comics - Latest Comic - #13 New Outfit">
         <meta property="og:description" content="Comics by Jess Rappaport!">
-        <meta property="og:image" content="https://goldenchaos.net/images/comics/og/12_comic_rooms-og.png">
+        <meta property="og:image" content="https://goldenchaos.net/images/comics/og/13_new_outfit-og.png">
         <meta property="og:image:alt" content="Comics by Jess Rappaport!">
         
 
@@ -36,11 +36,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="goldenchaos.net">
     <meta property="twitter:url" content="https://goldenchaos.net/comics/">
-    <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic - #12 Comic Rooms">
+    <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic - #13 New Outfit">
     <meta name="twitter:description" content="Comics by Jess Rappaport!">
     <meta name="twitter:site" content="@GoldenChaos">
     <meta name="twitter:creator" content="@GoldenChaos">
-    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/og/12_comic_rooms-og.png">
+    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/og/13_new_outfit-og.png">
     <meta name="twitter:image:alt" content="Comics by Jess Rappaport!">
     
         <link rel="alternate" type="application/rss+xml" title="GoldenChaos Comics RSS" href="/comics/feed.xml">
@@ -145,14 +145,14 @@
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">Latest Comic</h1>
 </div>
 <div class="content index page" id="comic-title">
-  <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#12 - Comic Rooms</h2>
+  <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#13 - New Outfit</h2>
 </div>
 <div class="content page" style="text-align:center;">
   <img
-    src="/images/comics/12_comic_rooms.png"
-    data-normal-image="/images/comics/12_comic_rooms.png"
+    src="/images/comics/13_new_outfit.png"
+    data-normal-image="/images/comics/13_new_outfit.png"
     
-    alt="12 - Comic Rooms" title="Her SCP entry simply reads &quot;Problematic.&quot;"
+    alt="13 - New Outfit" title="&quot;Dang, actually I wish I had an iconic outfit.&quot;"
     class="comic-img">
   <div class="segmented-control">
     <a href="/comics/1-alopecia/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
@@ -161,7 +161,7 @@
         First
       </center>
     </a>
-    <a href="/comics/11-warhammer-number/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
+    <a href="/comics/12-comic-rooms/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
       <center>
         <i class="fa-solid fa-backward"></i>
         Previous
@@ -256,7 +256,7 @@ function showCopied(buttonId, success) {
   }, 2000);
 }
 async function copyComicLink() {
-  const link = window.location.origin + '/comics/12-comic-rooms/';
+  const link = window.location.origin + '/comics/13-new-outfit/';
   const ok = await copyWithFallback(link);
   showCopied('copyBtn', ok);
   if (ok && typeof gtag !== 'undefined') {
@@ -268,7 +268,7 @@ async function copyComicLink() {
 }
 async function copyComicImageLink() {
   const img = document.querySelector('.comic-img');
-  const src = img ? img.getAttribute('src') : '/images/comics/12_comic_rooms.png';
+  const src = img ? img.getAttribute('src') : '/images/comics/13_new_outfit.png';
   const fullURL = new URL(src, window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
