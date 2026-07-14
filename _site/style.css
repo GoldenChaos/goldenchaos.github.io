@@ -332,6 +332,14 @@ pre {
 .page-top.white nav #logo.back-logo i {
   color: #437ea3 !important;
 }
+.page-top.vanguard nav #logo.back-logo i,
+.page-top.vanguard nav .menu a,
+.page-top.vanguard nav .social {
+  color: #fff !important;
+}
+.page-top.vanguard nav .menu a:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
 .page-top .splash-bg {
   position: absolute;
   top: 0;
@@ -529,6 +537,15 @@ pre {
 .page-top .splash-bg .chevron {
   animation: 7s ease-in-out 3s 10 pulseBounce;
 }
+.page-top .splash-bg.vanguard {
+  background-color: #96151d;
+  background-image: radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.1), transparent 58%), linear-gradient(135deg, #96151d 0%, #7f1018 55%, #5f0c12 100%);
+}
+.page-top .splash-bg.vanguard .site-logo {
+  background-image: url(images/vanguard-logo-white.svg);
+  background-size: 60%;
+  background-position: center center;
+}
 .page-top .splash-bg.collx {
   background-color: #fafeff;
   background-image: url(images/collx-bg.svg), url(images/collx-bg-2.svg);
@@ -718,6 +735,7 @@ pre {
 .splash-bg.zelda-wiki,
 .splash-bg.master-sword,
 .splash-bg.goodsemester,
+.splash-bg.vanguard,
 .splash-bg.crossbeam,
 .splash-bg.collx {
   background-image: linear-gradient(rgba(68, 126, 163, 0.8), rgba(68, 126, 163, 0) 30%), url(images/zu-bg-full.jpg);
@@ -810,6 +828,13 @@ pre {
   background-repeat: no-repeat;
   background-size: 110%;
   background-position: top center;
+}
+.content .item-content.vanguard {
+  background-color: #96151d;
+  background-image: url(images/vanguard-logo-white.svg), radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.1), transparent 58%), linear-gradient(135deg, #96151d 0%, #7f1018 55%, #5f0c12 100%);
+  background-repeat: no-repeat;
+  background-position: center center, center center, center center;
+  background-size: 58%, auto, auto;
 }
 .content .item-content.crossbeam {
   background-image: url(images/crossbeam-preview.png);
@@ -1356,6 +1381,15 @@ footer span {
   .page-top.index nav .menu a:hover, .page-top.goldenchaos-btt nav .menu a:hover, .page-top.faceports nav .menu a:hover, .page-top.collx nav .menu a:hover, .page-top.crossbeam nav .menu a:hover, .page-top.squareknot nav .menu a:hover {
     border-color: rgba(90, 177, 225, 0.3);
   }
+  .page-top.vanguard nav #logo {
+    background-image: url("images/logo.png");
+  }
+  .page-top.vanguard nav #logo.back-logo i, .page-top.vanguard nav .menu a, .page-top.vanguard nav .social {
+    color: #fff !important;
+  }
+  .page-top.vanguard nav .menu a:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
   .page-top.collx nav #logo {
     background-image: url("images/logo.png");
   }
@@ -1378,6 +1412,13 @@ footer span {
   }
   .page-top .splash-bg .meta .round-link .desc {
     color: #fff;
+  }
+  .page-top .splash-bg.vanguard {
+    background-color: #96151d;
+    background-image: radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.1), transparent 58%), linear-gradient(135deg, #96151d 0%, #7f1018 55%, #5f0c12 100%);
+  }
+  .page-top .splash-bg.vanguard .site-logo {
+    background-image: url(images/vanguard-logo-white.svg);
   }
   .page-top .splash-bg.collx {
     background-color: #2f3235;
@@ -1688,6 +1729,12 @@ footer span {
   }
   .page-top .splash-bg.crossbeam {
     background-position: center 250px;
+  }
+  .page-top .splash-bg.vanguard .site-logo {
+    width: calc(100vw - 48px) !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    background-size: contain !important;
   }
   .page-top .splash-bg.squareknot {
     background-size: 100vh;

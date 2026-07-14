@@ -156,17 +156,25 @@ h2 {
 		}
 		background-size: 100%, 85%;
 	}
-	.splash-bg.crossbeam {
-		.site-logo {
-			background-size: 80vw !important;
+		.splash-bg.crossbeam {
+			.site-logo {
+				background-size: 80vw !important;
+			}
+			background-position: center 250px;
 		}
-		background-position: center 250px;
-	}
-	.splash-bg.squareknot {
-		background-size: 100vh;
-		.site-logo {
-			background-size: 90vw !important;
+		.splash-bg.vanguard {
+			.site-logo {
+				width: calc(100vw - 48px) !important;
+				min-width: 0 !important;
+				max-width: none !important;
+				background-size: contain !important;
+			}
 		}
+		.splash-bg.squareknot {
+			background-size: 100vh;
+			.site-logo {
+				background-size: 90vw !important;
+			}
 	}
 	.splash-bg.zelda-universe {
 		.site-logo {

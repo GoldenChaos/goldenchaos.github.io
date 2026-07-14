@@ -97,6 +97,19 @@ footer {
 			}
 		}
 	}
+	&.vanguard {
+		nav {
+			#logo {
+				background-image: url('images/logo.png');
+			}
+			#logo.back-logo i, .menu a, .social {
+				color: #fff !important;
+			}
+			.menu a:hover {
+				border-color: rgba(255, 255, 255, 0.3);
+			}
+		}
+	}
 	&.collx {
 		nav {
 			#logo {
@@ -125,6 +138,15 @@ footer {
 				.desc {
 					color: #fff;
 				}
+			}
+		}
+			&.vanguard {
+				background-color: #96151d;
+				background-image:
+					radial-gradient(circle at 18% 18%, rgba(255, 255, 255, .10), transparent 58%),
+					linear-gradient(135deg, #96151d 0%, #7f1018 55%, #5f0c12 100%);
+			.site-logo {
+				background-image: url(images/vanguard-logo-white.svg);
 			}
 		}
 		&.collx {
