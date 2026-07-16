@@ -297,9 +297,7 @@ async function requestNotifications(buttonId) {
         return;
       }
 
-      if (browserPermission !== 'granted') {
-        await window.requestOneSignalPermission(OneSignal);
-      }
+      await window.requestOneSignalPermission(OneSignal);
       const newPermission = window.getOneSignalPermissionState(OneSignal);
       if (newPermission === 'granted') {
         await OneSignal.User.PushSubscription.optIn();
