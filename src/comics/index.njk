@@ -256,38 +256,18 @@ async function requestNotifications(buttonId) {
         return;
       }
       
-      // Set a safety timeout to clear pending state if something goes wrong
-      const timeoutId = setTimeout(() => {
+      if (!OneSignal.Notifications.isPushSupported()) {
+        alert('Push notifications are not supported in this browser.');
         btn.classList.remove('pending');
         btn.disabled = false;
-        console.warn('Notification request timed out');
-      }, 10000);
-      
-      try {
-        // Try optIn first (v16 native method)
-        try {
-          await OneSignal.User.PushSubscription.optIn();
-        } catch (optInError) {
-          // Fallback to Slidedown
-          await OneSignal.Slidedown.promptPush();
-        }
-      } catch (promptError) {
-        clearTimeout(timeoutId);
-        btn.classList.remove('pending');
-        btn.disabled = false;
-        console.error('Prompt error:', promptError);
-        alert('Failed to show notification prompt. Please try again.');
         return;
       }
-      
-      clearTimeout(timeoutId);
+
+      await OneSignal.Notifications.requestPermission();
       const newPermission = Notification.permission;
       if (newPermission === 'granted') {
-        // Wait for OneSignal to sync the subscription to their servers
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        // Check if subscription is actually registered with OneSignal
-        const subscriptionId = OneSignal.User.PushSubscription.id;
+        await OneSignal.User.PushSubscription.optIn();
+        const subscriptionId = await window.waitForOneSignalSubscription(OneSignal);
         
         if (subscriptionId) {
           btn.classList.remove('pending');

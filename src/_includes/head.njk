@@ -70,12 +70,36 @@
                 console.log('OneSignal: SDK loaded, starting init');
                 await OneSignal.init({
                     appId: "{{ onesignal.appId }}",
-                    safari_web_id: "web.onesignal.auto.{{ onesignal.appId }}",
+                    {% if onesignal.safariWebId %}safari_web_id: "{{ onesignal.safariWebId }}",{% endif %}
                     autoRegister: false,
                     allowLocalhostAsSecureOrigin: true
                 });
                 console.log('OneSignal: Init complete', OneSignal);
                 console.log('OneSignal: Notifications supported?', OneSignal.Notifications?.supported?.());
             });
+
+            window.waitForOneSignalSubscription = function(OneSignal, timeoutMs = 10000) {
+                const currentId = OneSignal.User.PushSubscription.id;
+                const currentToken = OneSignal.User.PushSubscription.token;
+                if (currentId && currentToken) return Promise.resolve(currentId);
+
+                return new Promise((resolve) => {
+                    let settled = false;
+                    const finish = (subscriptionId) => {
+                        if (settled) return;
+                        settled = true;
+                        clearTimeout(timeoutId);
+                        OneSignal.User.PushSubscription.removeEventListener('change', onChange);
+                        resolve(subscriptionId || null);
+                    };
+                    const onChange = (event) => {
+                        const subscriptionId = event.current?.id || OneSignal.User.PushSubscription.id;
+                        const token = event.current?.token || OneSignal.User.PushSubscription.token;
+                        if (subscriptionId && token) finish(subscriptionId);
+                    };
+                    const timeoutId = setTimeout(() => finish(null), timeoutMs);
+                    OneSignal.User.PushSubscription.addEventListener('change', onChange);
+                });
+            };
         </script>
         {% endif %}
