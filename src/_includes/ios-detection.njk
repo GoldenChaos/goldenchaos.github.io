@@ -1,14 +1,15 @@
 <script>
 (function() {
-  // Detect iOS and hide push notification toggles since they don't work on iOS
+  // Hide push notification toggles in iOS browser tabs, but show them in the installed Home Screen app.
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  if (isIOS) {
-    document.documentElement.classList.add('is-ios');
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  if (isIOS && !isStandalone) {
+    document.documentElement.classList.add('is-ios-browser');
   }
 })();
 </script>
 <style>
-.is-ios .ios-hide {
+.is-ios-browser .ios-hide {
   display: none !important;
 }
 </style>
