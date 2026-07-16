@@ -72,7 +72,10 @@
                     appId: "{{ onesignal.appId }}",
                     {% if onesignal.safariWebId %}safari_web_id: "{{ onesignal.safariWebId }}",{% endif %}
                     autoRegister: false,
-                    allowLocalhostAsSecureOrigin: true
+                    allowLocalhostAsSecureOrigin: true,
+                    welcomeNotification: {
+                        message: "Thanks for subscribing! You'll get notifications when new comics are released <3"
+                    }
                 });
                 console.log('OneSignal: Init complete', OneSignal);
                 console.log('OneSignal: Notifications supported?', OneSignal.Notifications?.supported?.());
