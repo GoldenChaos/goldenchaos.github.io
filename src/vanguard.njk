@@ -15,7 +15,7 @@ heroMeta:
     value: "Mobile (iPhone), Mobile (Android), Tablet (iPad)"
 availableFrom:
   - href: "https://apps.apple.com/us/app/vanguard-save-invest-retire/id335186209"
-    label: "Vanguard on the App Store"
+    label: "Vanguard on<br>the App Store"
     icon: "fa-brands fa-app-store-ios"
   - href: "https://play.google.com/store/apps/details?id=com.vanguard"
     label: "Vanguard on<br>Google Play"
@@ -39,26 +39,9 @@ desktopBack:
 </div>
 
 <style>
-    .content.page .full-width.vanguard-screenshots {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 24px;
-        align-items: start;
-        margin: 0 auto 64px auto;
-    }
-
-    .vanguard-screenshots img {
-        box-shadow: none;
-        background: #fff;
-    }
-
-    @media (max-width: 900px) {
-        .vanguard-screenshots {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
+    .screenshot-grid-4-col img { box-shadow: none; }
 </style>
-<div class="full-width vanguard-screenshots">
+<div class="screenshot-grid-4-col">
     <img src="/images/vanguard/screenshots/vanguard-portfolio-home.jpg" alt="Vanguard mobile app portfolio home screen">
     <img src="/images/vanguard/screenshots/vanguard-portfolio-holdings.jpg" alt="Vanguard mobile app transaction screen">
     <img src="/images/vanguard/screenshots/vanguard-portfolio-basic.jpg" alt="Vanguard mobile app portfolio detail screen">

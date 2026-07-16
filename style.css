@@ -944,6 +944,7 @@ pre {
   background-position: center top 45%, center top, center bottom;
 }
 .content .item-wrapper.placeholder .item-content {
+  background-color: rgba(0, 0, 0, 0.05);
   pointer-events: none;
 }
 .content .item-wrapper.placeholder .item-content:hover {
@@ -1343,6 +1344,9 @@ footer span {
   }
   .content {
     color: #fff;
+  }
+  .content .item-wrapper.placeholder .item-content {
+    background-color: rgba(0, 0, 0, 0.2);
   }
   .content .item-content:hover {
     box-shadow: inset rgba(255, 255, 255, 0.05) 0 0 0 1px;
