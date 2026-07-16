@@ -204,7 +204,9 @@ async function requestNotifications(buttonId) {
   
   const wasActive = btn.classList.contains('active');
   const isSafari = navigator.vendor === 'Apple Computer, Inc.' && /Safari/.test(navigator.userAgent);
-  const safariPermissionRequest = !wasActive && isSafari && typeof Notification !== 'undefined' && Notification.permission === 'default'
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isIOSHomeScreen = isIOS && (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true);
+  const safariPermissionRequest = !wasActive && (isSafari || isIOSHomeScreen) && typeof Notification !== 'undefined' && Notification.permission === 'default'
     ? Notification.requestPermission()
     : null;
   
@@ -269,7 +271,7 @@ async function requestNotifications(buttonId) {
         return;
       }
 
-      await window.requestOneSignalPermission(OneSignal);
+      if (!isIOSHomeScreen) await window.requestOneSignalPermission(OneSignal);
       const newPermission = window.getOneSignalPermissionState(OneSignal);
       if (newPermission === 'granted') {
         await OneSignal.User.PushSubscription.optIn();
