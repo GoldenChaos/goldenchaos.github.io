@@ -227,6 +227,10 @@ async function requestNotifications(buttonId) {
   }
   
   const wasActive = btn.classList.contains('active');
+  const isSafari = navigator.vendor === 'Apple Computer, Inc.' && /Safari/.test(navigator.userAgent);
+  const safariPermissionRequest = !wasActive && isSafari && typeof Notification !== 'undefined' && Notification.permission === 'default'
+    ? Notification.requestPermission()
+    : null;
   
   // If currently subscribed, handle unsubscribe
   if (wasActive) {
@@ -261,6 +265,8 @@ async function requestNotifications(buttonId) {
   console.log('requestNotifications: Pushing to OneSignalDeferred for:', buttonId);
   OneSignalDeferred.push(async function(OneSignal) {
     try {
+      if (safariPermissionRequest) await safariPermissionRequest;
+
       console.log('requestNotifications: Inside OneSignalDeferred');
       // Check if already subscribed with OneSignal
       const subscriptionId = OneSignal.User.PushSubscription.id;
@@ -291,7 +297,9 @@ async function requestNotifications(buttonId) {
         return;
       }
 
-      await window.requestOneSignalPermission(OneSignal);
+      if (browserPermission !== 'granted') {
+        await window.requestOneSignalPermission(OneSignal);
+      }
       const newPermission = window.getOneSignalPermissionState(OneSignal);
       if (newPermission === 'granted') {
         await OneSignal.User.PushSubscription.optIn();

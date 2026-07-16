@@ -335,6 +335,10 @@ async function requestNotifications(buttonId) {
   
   // Store the initial state
   const wasActive = btn.classList.contains('active');
+  const isSafari = navigator.vendor === 'Apple Computer, Inc.' && /Safari/.test(navigator.userAgent);
+  const safariPermissionRequest = !wasActive && isSafari && typeof Notification !== 'undefined' && Notification.permission === 'default'
+    ? Notification.requestPermission()
+    : null;
   
   // If currently subscribed, handle unsubscribe
   if (wasActive) {
@@ -371,6 +375,8 @@ async function requestNotifications(buttonId) {
   OneSignalDeferred.push(async function(OneSignal) {
     console.log('Inside OneSignalDeferred, OneSignal:', OneSignal);
     try {
+      if (safariPermissionRequest) await safariPermissionRequest;
+
       // Check browser native permission state
       const browserPermission = window.getOneSignalPermissionState(OneSignal);
       console.log('Browser native permission:', browserPermission);
@@ -406,9 +412,11 @@ async function requestNotifications(buttonId) {
         return;
       }
 
-      console.log('Requesting permission through OneSignal...');
-      await window.requestOneSignalPermission(OneSignal);
-      console.log('Prompt completed');
+      if (browserPermission !== 'granted') {
+        console.log('Requesting permission through OneSignal...');
+        await window.requestOneSignalPermission(OneSignal);
+        console.log('Prompt completed');
+      }
       
       // Check if permission was actually granted
       const newPermission = window.getOneSignalPermissionState(OneSignal);
