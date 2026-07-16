@@ -971,6 +971,7 @@ pre {
   padding: 0;
   position: relative;
   z-index: 100;
+  overflow: visible;
 }
 .content.page .full-width {
   padding: 0 32px;
