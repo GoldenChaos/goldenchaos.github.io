@@ -240,7 +240,7 @@ async function requestNotifications(buttonId) {
   btn.disabled = true;
   OneSignalDeferred.push(async function(OneSignal) {
     try {
-      if (safariPermissionRequest) await safariPermissionRequest;
+      if (safariPermissionRequest) await window.waitForNativeNotificationPermission(safariPermissionRequest);
 
       // Check if already subscribed with OneSignal
       const subscriptionId = OneSignal.User.PushSubscription.id;

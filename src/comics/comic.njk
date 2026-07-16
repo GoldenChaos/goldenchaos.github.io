@@ -265,7 +265,7 @@ async function requestNotifications(buttonId) {
   console.log('requestNotifications: Pushing to OneSignalDeferred for:', buttonId);
   OneSignalDeferred.push(async function(OneSignal) {
     try {
-      if (safariPermissionRequest) await safariPermissionRequest;
+      if (safariPermissionRequest) await window.waitForNativeNotificationPermission(safariPermissionRequest);
 
       console.log('requestNotifications: Inside OneSignalDeferred');
       // Check if already subscribed with OneSignal

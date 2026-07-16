@@ -111,6 +111,27 @@
                 return 'default';
             };
 
+            window.waitForNativeNotificationPermission = function(permissionRequest, timeoutMs = 30000) {
+                if (!permissionRequest) return Promise.resolve(null);
+
+                return new Promise((resolve, reject) => {
+                    const startedAt = Date.now();
+                    const checkPermission = () => {
+                        const permission = typeof Notification !== 'undefined' ? Notification.permission : 'default';
+                        if (permission !== 'default') return resolve(permission);
+                        if (Date.now() - startedAt >= timeoutMs) {
+                            return reject(new Error('Native notification permission request timed out'));
+                        }
+                        setTimeout(checkPermission, 250);
+                    };
+
+                    Promise.resolve(permissionRequest).then((permission) => {
+                        if (permission && permission !== 'default') resolve(permission);
+                    }).catch(reject);
+                    checkPermission();
+                });
+            };
+
             window.requestOneSignalPermission = function(OneSignal, timeoutMs = 10000) {
                 return Promise.race([
                     OneSignal.Notifications.requestPermission(),

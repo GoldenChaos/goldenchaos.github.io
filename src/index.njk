@@ -375,7 +375,7 @@ async function requestNotifications(buttonId) {
   OneSignalDeferred.push(async function(OneSignal) {
     console.log('Inside OneSignalDeferred, OneSignal:', OneSignal);
     try {
-      if (safariPermissionRequest) await safariPermissionRequest;
+      if (safariPermissionRequest) await window.waitForNativeNotificationPermission(safariPermissionRequest);
 
       // Check browser native permission state
       const browserPermission = window.getOneSignalPermissionState(OneSignal);
