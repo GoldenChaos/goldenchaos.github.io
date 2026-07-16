@@ -955,6 +955,7 @@ pre {
 .content.index {
   display: flex;
   flex-wrap: wrap;
+  overflow: visible;
 }
 
 .content.index.page#comic-title {
