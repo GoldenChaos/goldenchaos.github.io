@@ -372,7 +372,7 @@ async function requestNotifications(buttonId) {
     console.log('Inside OneSignalDeferred, OneSignal:', OneSignal);
     try {
       // Check browser native permission state
-      const browserPermission = Notification.permission;
+      const browserPermission = window.getOneSignalPermissionState(OneSignal);
       console.log('Browser native permission:', browserPermission);
       
       // Check if already subscribed with OneSignal
@@ -407,11 +407,11 @@ async function requestNotifications(buttonId) {
       }
 
       console.log('Requesting permission through OneSignal...');
-      await OneSignal.Notifications.requestPermission();
+      await window.requestOneSignalPermission(OneSignal);
       console.log('Prompt completed');
       
       // Check if permission was actually granted
-      const newPermission = Notification.permission;
+      const newPermission = window.getOneSignalPermissionState(OneSignal);
       console.log('Permission after prompt:', newPermission);
       
       if (newPermission === 'granted') {

@@ -248,7 +248,7 @@ async function requestNotifications(buttonId) {
         btn.disabled = false;
         return;
       }
-      const browserPermission = Notification.permission;
+      const browserPermission = window.getOneSignalPermissionState(OneSignal);
       if (browserPermission === 'denied') {
         alert('Push notifications are blocked. Please enable them in your browser settings.');
         btn.classList.remove('pending');
@@ -263,8 +263,8 @@ async function requestNotifications(buttonId) {
         return;
       }
 
-      await OneSignal.Notifications.requestPermission();
-      const newPermission = Notification.permission;
+      await window.requestOneSignalPermission(OneSignal);
+      const newPermission = window.getOneSignalPermissionState(OneSignal);
       if (newPermission === 'granted') {
         await OneSignal.User.PushSubscription.optIn();
         const subscriptionId = await window.waitForOneSignalSubscription(OneSignal);

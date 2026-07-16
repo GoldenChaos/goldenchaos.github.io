@@ -101,5 +101,20 @@
                     OneSignal.User.PushSubscription.addEventListener('change', onChange);
                 });
             };
+
+            window.getOneSignalPermissionState = function(OneSignal) {
+                if (OneSignal.Notifications.permission) return 'granted';
+                if (typeof Notification !== 'undefined') return Notification.permission;
+                return 'default';
+            };
+
+            window.requestOneSignalPermission = function(OneSignal, timeoutMs = 10000) {
+                return Promise.race([
+                    OneSignal.Notifications.requestPermission(),
+                    new Promise((_, reject) => setTimeout(() => {
+                        reject(new Error('Notification permission request timed out'));
+                    }, timeoutMs))
+                ]);
+            };
         </script>
         {% endif %}
