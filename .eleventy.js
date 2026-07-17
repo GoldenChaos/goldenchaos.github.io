@@ -72,6 +72,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("og-image.png");
   eleventyConfig.addPassthroughCopy("apple-touch-icon-precomposed.png");
   eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("favicon-light.ico");
+  eleventyConfig.addPassthroughCopy("favicon-dark.ico");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy({ "src/manifest.webmanifest": "manifest.webmanifest" });
   eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKWorker.js": "OneSignalSDKWorker.js" });
