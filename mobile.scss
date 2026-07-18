@@ -425,14 +425,14 @@ h2 {
 		padding-right: 0;
 		padding-left: 0;
 		center {
-			grid-template-columns: 72px minmax(0, 1fr) 72px;
+			grid-template-columns: 60px minmax(0, 1fr) 60px;
 			&::after {
-				width: 72px;
+				width: 60px;
 			}
 		}
 		.control-art {
-			width: 72px;
-			padding-left: 16px;
+			width: 60px;
+			padding-left: 10px;
 			box-sizing: border-box;
 		}
 		.control-label {
@@ -445,20 +445,29 @@ h2 {
 		white-space: normal;
 	}
 	.latest-comic-control a center {
-		display: block;
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
 	}
 	.latest-comic-control a {
-		padding-bottom: 6px;
+		padding: 12px;
 	}
 	.latest-comic-control a .control-art {
-		justify-content: center;
-		width: 100%;
+		justify-content: flex-start;
+		width: auto;
+		height: auto;
 		padding-left: 0;
-		margin-bottom: 8px;
+		margin-bottom: 0;
+	}
+	.latest-comic-control .latest-comic-thumb {
+		width: auto !important;
+		max-width: 100%;
+		height: auto !important;
+		max-height: 200px;
 	}
 	.latest-comic-label {
 		min-height: 24px;
 		line-height: 18px;
+		white-space: nowrap;
 	}
 }
 

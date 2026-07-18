@@ -8,7 +8,7 @@
         <div>
             {% for social in site.social %}
                 {% if social.name != "LinkedIn" and social.name != "Reddit" %}
-                <a class="social social-{{ social.name | lower }}" href="{{ social.href }}" target="_blank"{% if social.hidden %} style="display:none;"{% endif %}><i class="{{ social.icon }}"></i></a>
+                <a class="social social-{{ social.name | lower }}" href="{{ social.href }}" target="_blank" aria-label="{% if social.name == 'Patreon' %}Support me on Patreon!{% else %}{{ social.name }}{% endif %}" title="{% if social.name == 'Patreon' %}Support me on Patreon!{% else %}{{ social.name }}{% endif %}"{% if social.hidden %} style="display:none;"{% endif %}><i class="{{ social.icon }}" aria-hidden="true"></i></a>
                 {% endif %}
             {% endfor %}
         </div>
