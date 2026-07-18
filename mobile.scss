@@ -473,6 +473,14 @@ h2 {
 
 }
 
+/* Compact 375px-wide phones */
+@media only screen and (width: 375px) {
+	.about .desc .title div {
+		font-size: 17px !important;
+		line-height: 22px;
+	}
+}
+
 /* iPhone SE 2020 */
 @media only screen 
 	and (device-width: 375px)
@@ -482,10 +490,6 @@ h2 {
 				.title {
 					font-size: 24px;
 					line-height: 24px;
-					div {
-						font-size: 17px !important;
-						line-height: 22px;
-					}
 				}
 				p {
 					line-height: 18px;
@@ -509,10 +513,6 @@ h2 {
 			.desc {
 				.title {
 					font-size: 30px;
-					div {
-						font-size: 17px !important;
-						line-height: 22px;
-					}
 				}
 			}
 			.me {
