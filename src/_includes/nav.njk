@@ -7,7 +7,7 @@
     <div class="menu">
         <div>
             {% for social in site.social %}
-                <a class="social" href="{{ social.href }}" target="_blank"{% if social.hidden %} style="display:none;"{% endif %}><i class="{{ social.icon }}"></i></a>
+                <a class="social social-{{ social.name | lower }}" href="{{ social.href }}" target="_blank"{% if social.hidden %} style="display:none;"{% endif %}><i class="{{ social.icon }}"></i></a>
             {% endfor %}
         </div>
         {% if navLinks or desktopBack %}

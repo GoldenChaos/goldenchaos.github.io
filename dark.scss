@@ -36,9 +36,10 @@ body, .page-top.white {
 		color: #fff !important;
 		border-left: 1px solid rgba(255,255,255,.15) !important;
 	}
-	img {
-		filter: invert(100%);
-	}
+}
+
+.socials-control-divider {
+	background: rgba(255,255,255,.12) !important;
 }
 
 .content {

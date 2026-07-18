@@ -4,8 +4,10 @@ permalink: socials/index.html
 title: "Jess Rappaport aka GoldenChaos - All Socials"
 description: "Creator of Zelda Universe and Zelda Wiki, proudly trans UI/UX designer and comic artist"
 ogImage: "/og-image.png"
-bodyClass: ""
+bodyClass: "socials"
 ---
+{% set backHref = '/' %}
+{% set desktopBack = { href: '/', label: 'To Home', icon: 'fas fa-chevron-left', iconStyle: 'font-size:14px;margin-right:3px;' } %}
 <div class="page-top index">
     {% include "nav.njk" %}
 </div>
@@ -30,9 +32,9 @@ bodyClass: ""
 {% set latestComic = comics[comics.length - 1] %}
 <div class="content page socials-page">
     <div class="segmented-control zelda-links">
-        <a href="https://zeldauniverse.net/" target="_blank"><center><img class="zelda-link-icon" src="/images/zu-icon.png" alt="">Zelda Universe</center></a>
-        <a href="https://zeldawiki.wiki/" target="_blank"><center><img class="zelda-link-icon" src="/images/zelda-wiki-icon.png" alt="">Zelda Wiki</center></a>
-        <a href="https://zeldamaps.com/" target="_blank"><center><img class="zelda-link-icon" src="/images/zelda-maps-icon.png" alt="">Zelda Maps</center></a>
+        <a href="https://zeldauniverse.net/" target="_blank"><center><picture><source media="(prefers-color-scheme: dark)" srcset="/images/zu-icon-white.png"><img class="zelda-link-icon" src="/images/zu-icon.png" alt=""></picture>Zelda Universe</center></a>
+        <a href="https://zeldawiki.wiki/" target="_blank"><center><picture><source media="(prefers-color-scheme: dark)" srcset="/images/zelda-wiki-icon-white.png"><img class="zelda-link-icon" src="/images/zelda-wiki-icon.png" alt=""></picture>Zelda Wiki</center></a>
+        <a href="https://zeldamaps.com/" target="_blank"><center><picture><source media="(prefers-color-scheme: dark)" srcset="/images/zelda-maps-icon-white.png"><img class="zelda-link-icon" src="/images/zelda-maps-icon.png" alt=""></picture>Zelda Maps</center></a>
     </div>
 	<div class="socials-control-divider" aria-hidden="true"></div>
 
@@ -64,6 +66,19 @@ bodyClass: ""
 						<span>Watch me draw comics on Twitch!</span>
 						<span class="stream-schedule" data-stream-schedule>Streams Tu/Th/Sa @ 7pm ET</span>
 					</span>
+				</center>
+			</a>
+		</div>
+		{% endif %}
+	{% endfor %}
+
+	{% for social in site.social %}
+		{% if social.name == "Discord" %}
+		<div class="segmented-control discord-cta">
+			<a href="{{ social.href }}" target="_blank">
+				<center>
+					<span class="control-art"><i class="{{ social.icon }}"></i></span>
+					<span class="control-label">Join my community Discord!</span>
 				</center>
 			</a>
 		</div>

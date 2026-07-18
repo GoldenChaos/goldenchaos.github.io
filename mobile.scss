@@ -9,6 +9,32 @@
 	display: block !important;
 }
 
+.page-top nav .menu .social .fa-patreon {
+	top: 2px;
+}
+
+body.socials .page-top nav .menu > div:first-child {
+	display: flex;
+}
+
+@media only screen and (max-width: 439px) {
+	.page-top nav .menu .social-linkedin {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 393px) {
+	.page-top nav .menu .social-reddit {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 349px) {
+	.page-top nav .menu .social-bluesky {
+		display: none;
+	}
+}
+
 blockquote {
 	line-height: 36px;
 	margin: 20px 20px 0 20px;
