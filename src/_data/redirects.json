@@ -15,5 +15,5 @@
   { "from": "venti.html", "to": "/venti/" },
   { "from": "faceports.html", "to": "/faceports/" },
   { "from": "desktop-icons.html", "to": "/desktop-icons/" },
-  { "from": "links/index.html", "to": "/socials/" }
+  { "from": "socials/index.html", "to": "/links/" }
 ]
