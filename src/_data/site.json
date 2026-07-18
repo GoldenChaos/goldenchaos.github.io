@@ -7,13 +7,14 @@
   "twitterHandle": "@goldenchaos",
   "social": [
     { "name": "Discord", "icon": "fab fa-discord", "href": "https://discord.gg/kp3s6ysCtn", "hidden": true },
-    { "name": "X", "icon": "fa-brands fa-x-twitter", "href": "https://twitter.com/goldenchaos", "hidden": false },
-    { "name": "Instagram", "icon": "fab fa-instagram", "href": "https://instagram.com/goldenchaos", "hidden": false },
-    { "name": "Threads", "icon": "fa-brands fa-threads", "href": "https://threads.net/@goldenchaos", "hidden": false },
-    { "name": "Bluesky", "icon": "fa-brands fa-bluesky", "href": "https://bsky.app/profile/goldenchaos.bsky.social", "hidden": false },
-    { "name": "Twitch", "icon": "fab fa-twitch", "href": "https://twitch.tv/jessrappaport", "hidden": false },
-    { "name": "Patreon", "icon": "fa-brands fa-patreon", "href": "https://www.patreon.com/GoldenChaos", "hidden": false },
-    { "name": "LinkedIn", "icon": "fab fa-linkedin", "href": "https://www.linkedin.com/in/goldenchaos", "hidden": false },
+    { "name": "X", "username": "@GoldenChaos", "icon": "fa-brands fa-x-twitter", "href": "https://twitter.com/goldenchaos", "hidden": false },
+    { "name": "Instagram", "username": "@GoldenChaos", "icon": "fab fa-instagram", "href": "https://instagram.com/goldenchaos", "hidden": false },
+    { "name": "Threads", "username": "@GoldenChaos", "icon": "fa-brands fa-threads", "href": "https://threads.net/@goldenchaos", "hidden": false },
+    { "name": "Bluesky", "username": "@goldenchaos.bsky.social", "icon": "fa-brands fa-bluesky", "href": "https://bsky.app/profile/goldenchaos.bsky.social", "hidden": false },
+    { "name": "Reddit", "username": "u/GoldenChaos", "icon": "fa-brands fa-reddit-alien", "href": "https://www.reddit.com/user/GoldenChaos", "hidden": false },
+    { "name": "Twitch", "username": "@JessRappaport", "icon": "fab fa-twitch", "href": "https://twitch.tv/jessrappaport", "hidden": false },
+    { "name": "Patreon", "username": "@GoldenChaos", "icon": "fa-brands fa-patreon", "href": "https://www.patreon.com/GoldenChaos", "hidden": false },
+    { "name": "LinkedIn", "username": "Jess Rappaport", "icon": "fab fa-linkedin", "href": "https://www.linkedin.com/in/goldenchaos", "hidden": false },
     { "name": "Email", "icon": "fa fa-envelope-square", "href": "mailto:jess@goldenchaos.net", "hidden": true }
   ]
 }

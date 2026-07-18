@@ -385,6 +385,52 @@ h2 {
 	bottom: 6px !important;
 }
 
+.socials-page {
+	.zelda-links {
+		margin-top: 24px;
+	}
+	.segmented-control a {
+		font-size: 14px;
+		padding-right: 0;
+		padding-left: 0;
+		center {
+			grid-template-columns: 72px minmax(0, 1fr) 72px;
+			&::after {
+				width: 72px;
+			}
+		}
+		.control-art {
+			width: 72px;
+			padding-left: 16px;
+			box-sizing: border-box;
+		}
+		.control-label {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+	.zelda-links a {
+		font-size: 12px;
+		white-space: normal;
+	}
+	.latest-comic-control a center {
+		display: block;
+	}
+	.latest-comic-control a {
+		padding-bottom: 6px;
+	}
+	.latest-comic-control a .control-art {
+		justify-content: center;
+		width: 100%;
+		padding-left: 0;
+		margin-bottom: 8px;
+	}
+	.latest-comic-label {
+		min-height: 24px;
+		line-height: 18px;
+	}
+}
+
 }
 
 /* iPhone SE 2020 */

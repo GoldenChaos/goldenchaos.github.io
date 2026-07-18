@@ -1,0 +1,154 @@
+---
+layout: layouts/base.njk
+permalink: socials/index.html
+title: "Jess Rappaport aka GoldenChaos - All Socials"
+description: "Find Jess Rappaport around the web"
+ogImage: "/og-image.png"
+bodyClass: ""
+---
+<div class="page-top index">
+    {% include "nav.njk" %}
+</div>
+<div class="splash-bg index">
+    <center>
+        <div class="about" id="about">
+            <div class="me">
+                <img src="/images/me2.png" alt="Jess Rappaport">
+            </div>
+            <div class="desc">
+                <h1 class="title" style="margin-bottom:0;">I'm Jess Rappaport,
+                <div>
+                    <img class="inline-emoji flag" src="/images/trans-flag-emoji.png" alt="Trans pride flag"> proud UI/UX designer and illustrator.
+                </div>
+                </h1>
+                <p>I've been creating apps, services, and communities since 2004. I also make little comics about my life!</p>
+            </div>
+        </div>
+    </center>
+</div>
+
+{% set latestComic = comics[comics.length - 1] %}
+<div class="content page socials-page">
+    <div class="segmented-control zelda-links">
+        <a href="https://zeldauniverse.net/" target="_blank"><center><img class="zelda-link-icon" src="/images/zu-icon.png" alt="">Zelda Universe</center></a>
+        <a href="https://zeldawiki.wiki/" target="_blank"><center><img class="zelda-link-icon" src="/images/zelda-wiki-icon.png" alt="">Zelda Wiki</center></a>
+        <a href="https://zeldamaps.com/" target="_blank"><center><img class="zelda-link-icon" src="/images/zelda-maps-icon.png" alt="">Zelda Maps</center></a>
+    </div>
+	<div class="socials-control-divider" aria-hidden="true"></div>
+
+    <div class="segmented-control latest-comic-control">
+        <a href="/comics/">
+            <center>
+                <span class="control-art"><img class="latest-comic-thumb" src="{{ latestComic.image }}" alt=""></span>
+                <span class="control-label latest-comic-label">Latest Comic</span>
+            </center>
+        </a>
+    </div>
+
+    <div class="segmented-control patreon-cta">
+        <a href="https://www.patreon.com/GoldenChaos" target="_blank">
+            <center>
+                <span class="control-art"><i class="fa-brands fa-patreon"></i></span>
+                <span class="control-label">Support me on Patreon for exclusive perks!</span>
+            </center>
+        </a>
+    </div>
+
+	{% for social in site.social %}
+		{% if social.name == "Twitch" %}
+		<div class="segmented-control twitch-cta">
+			<a href="{{ social.href }}" target="_blank">
+				<center>
+					<span class="control-art"><i class="{{ social.icon }}"></i></span>
+					<span class="control-label twitch-label">
+						<span>Watch me draw comics on Twitch!</span>
+						<span class="stream-schedule" data-stream-schedule>Streams Tu/Th/Sa @ 7pm ET</span>
+					</span>
+				</center>
+			</a>
+		</div>
+		{% endif %}
+	{% endfor %}
+
+    <div class="socials-title">
+        <h1 class="title">All My Socials</h1>
+    </div>
+
+    <div class="socials-directory">
+        {% for social in site.social %}
+            {% if not social.hidden and social.name != "Patreon" and social.name != "Twitch" and social.name != "LinkedIn" %}
+            <div class="segmented-control">
+                <a href="{{ social.href }}" target="_blank">
+                    <center>
+                        <span class="control-art"><i class="{{ social.icon }}"></i></span>
+                        <span class="control-label">{{ social.name }} - {{ social.username }}</span>
+                    </center>
+                </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+</div>
+
+<footer>
+    <span>&copy; 2004-<script>document.write(new Date().getFullYear())</script> Jess Rappaport</span>
+</footer>
+<script>
+(function () {
+    const schedule = document.querySelector('[data-stream-schedule]');
+    if (!schedule || !window.Intl) return;
+
+    try {
+        const easternZone = 'America/New_York';
+        const now = new Date();
+        const easternParts = new Intl.DateTimeFormat('en-US', {
+            timeZone: easternZone,
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+        }).formatToParts(now).reduce((parts, part) => {
+            if (part.type !== 'literal') parts[part.type] = Number(part.value);
+            return parts;
+        }, {});
+
+        const easternWallTime = Date.UTC(easternParts.year, easternParts.month - 1, easternParts.day, 19);
+        const offsetParts = new Intl.DateTimeFormat('en-US', {
+            timeZone: easternZone,
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hourCycle: 'h23'
+        }).formatToParts(new Date(easternWallTime)).reduce((parts, part) => {
+            if (part.type !== 'literal') parts[part.type] = Number(part.value);
+            return parts;
+        }, {});
+
+        const easternOffset = Date.UTC(
+            offsetParts.year,
+            offsetParts.month - 1,
+            offsetParts.day,
+            offsetParts.hour,
+            offsetParts.minute,
+            offsetParts.second
+        ) - easternWallTime;
+        const streamTime = new Date(easternWallTime - easternOffset);
+        const localTime = new Intl.DateTimeFormat(undefined, {
+            hour: 'numeric',
+            minute: '2-digit',
+            timeZoneName: 'shortGeneric'
+        }).format(streamTime)
+            .replace(':00', '')
+            .replace(/\s*([AP]M)\b/, function (_, period) {
+                return period.toLowerCase();
+            });
+
+        schedule.textContent = 'Streams Tu/Th/Sa @ ' + localTime;
+    } catch (error) {
+        // Keep the Eastern Time fallback when browser time-zone conversion is unavailable.
+    }
+})();
+</script>
