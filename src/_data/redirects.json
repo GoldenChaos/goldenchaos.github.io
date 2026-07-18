@@ -14,5 +14,6 @@
   { "from": "the-jason-effect.html", "to": "/the-jason-effect/" },
   { "from": "venti.html", "to": "/venti/" },
   { "from": "faceports.html", "to": "/faceports/" },
-  { "from": "desktop-icons.html", "to": "/desktop-icons/" }
+  { "from": "desktop-icons.html", "to": "/desktop-icons/" },
+  { "from": "links/index.html", "to": "/socials/" }
 ]
