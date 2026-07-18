@@ -479,6 +479,9 @@ h2 {
 		font-size: 17px !important;
 		line-height: 22px;
 	}
+	.index-services-copy {
+		display: none;
+	}
 }
 
 /* iPhone SE 2020 */
@@ -503,9 +506,6 @@ h2 {
 				width: 29% !important;
 			}
 		}
-		.index-services-copy {
-			display: none;
-		}
 	}
 
 /* iPhone 13 mini */
@@ -527,9 +527,6 @@ h2 {
 				max-width: none !important;
 				width: 50% !important;
 			}
-		}
-		.index-services-copy {
-			display: none;
 		}
 	}
 	
