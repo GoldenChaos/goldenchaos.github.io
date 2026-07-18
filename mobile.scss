@@ -9,6 +9,11 @@
 	display: block !important;
 }
 
+.segmented-control {
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .page-top nav .menu .social .fa-patreon {
 	top: 2px;
 }
@@ -412,10 +417,6 @@ h2 {
 }
 
 .socials-page {
-	.segmented-control {
-		margin-right: auto;
-		margin-left: auto;
-	}
 	.zelda-links {
 		margin-top: 24px;
 	}
