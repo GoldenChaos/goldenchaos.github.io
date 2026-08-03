@@ -111,6 +111,9 @@ def main() -> int:
         if thumb.mode in ("RGBA", "LA", "P"):
             thumb = thumb.convert("RGB")
 
+    if "icc_profile" in img.info:
+        thumb_kwargs["icc_profile"] = img.info["icc_profile"]
+
     thumb.save(thumb_path, thumb_format, **thumb_kwargs)
 
     if args.mode == "normal" and og_path is not None:
