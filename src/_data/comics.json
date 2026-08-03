@@ -209,5 +209,18 @@
     "thumbImage": "/images/comics/thumb/14_reply_guy-thumb.png",
     "ogImage": "/images/comics/og/14_reply_guy-og.png",
     "twitterImage": "/images/comics/og/14_reply_guy-og.png"
+  },
+  {
+    "number": 15,
+    "slug": "freckle-names",
+    "title": "Freckle Names",
+    "alt": "15 - Freckle Names",
+    "titleText": "\"Oh, I love 'The Rise and Fall of a Midwest Freckle'!\"",
+    "date": "2026-08-03T10:50:06-04:00",
+    "image": "/images/comics/15_freckle_names.png",
+    "comicId": "15",
+    "thumbImage": "/images/comics/thumb/15_freckle_names-thumb.png",
+    "ogImage": "/images/comics/og/15_freckle_names-og.png",
+    "twitterImage": "/images/comics/og/15_freckle_names-og.png"
   }
 ]
