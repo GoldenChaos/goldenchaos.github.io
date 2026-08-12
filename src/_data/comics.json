@@ -222,5 +222,18 @@
     "thumbImage": "/images/comics/thumb/15_freckle_names-thumb.png",
     "ogImage": "/images/comics/og/15_freckle_names-og.png",
     "twitterImage": "/images/comics/og/15_freckle_names-og.png"
+  },
+  {
+    "number": 16,
+    "slug": "beach-episode",
+    "title": "Beach Episode",
+    "alt": "16 - Beach Episode",
+    "titleText": "\"It also functions as a parachute!\"",
+    "date": "2026-08-12T00:05:59-04:00",
+    "image": "/images/comics/16_beach_episode.png",
+    "comicId": "16",
+    "thumbImage": "/images/comics/thumb/16_beach_episode-thumb.png",
+    "ogImage": "/images/comics/og/16_beach_episode-og.png",
+    "twitterImage": "/images/comics/og/16_beach_episode-og.png"
   }
 ]
