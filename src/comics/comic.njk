@@ -53,6 +53,17 @@ eleventyComputed:
       </div>
     </button>
   </div>
+  {% if comic.bonusTeaserImage %}
+</div>
+<div class="content page" style="text-align:center;">
+  <a class="comic-bonus-link" href="{{ comic.bonusPatreonUrl or 'https://www.patreon.com/GoldenChaos' }}" target="_blank" rel="noopener" aria-label="View the bonus panel on Patreon">
+    <img class="comic-bonus" src="{{ comic.bonusTeaserImage }}" alt="{{ comic.bonusTeaserAlt or ('Blurred preview of the bonus panel for ' + comic.title) }}">
+    <span class="comic-bonus-label">Bonus panel on Patreon!</span>
+  </a>
+  {% if comic.bonusCaption and comic.showBonusCaption %}<p class="comic-bonus-caption">{{ comic.bonusCaption }}</p>{% endif %}
+</div>
+<div class="content page" style="text-align:center;">
+  {% endif %}
   <div class="segmented-control">
     <a{% if currentIndex == 0 %} disabled{% else %} href="/comics/{{ firstComic.comicId }}-{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
       <center>

@@ -10,6 +10,9 @@
   "date": "2026-02-09T12:00:00-05:00",
   "title": "Ally",
   "image": "/images/comics/7_ally.png",
+  "bonusTeaserImage": "/images/comics/bonus-panels/7-bonus-hidden.png",
+  "bonusTeaserAlt": "Hidden preview of the Ally bonus panel.",
+  "bonusPatreonUrl": "https://www.patreon.com/posts/164015773?collection=2274780",
   "baldThumbImage": "/images/comics/bald/thumb/7_ally-bald-thumb.png",
   "comicId": "7"
 }

@@ -77,6 +77,17 @@ bodyClass: ""
             alt="{{ latestComic.alt }}"{% if latestComic.titleText or latestComic.alt %} title="{{ latestComic.titleText or latestComic.alt }}"{% endif %}
             class="comic-img">
     </a>
+    {% if latestComic.bonusTeaserImage %}
+</div>
+<div class="content page" style="text-align:center;">
+    <a class="comic-bonus-link" href="{{ latestComic.bonusPatreonUrl or 'https://www.patreon.com/GoldenChaos' }}" target="_blank" rel="noopener" aria-label="View the bonus panel on Patreon">
+        <img class="comic-bonus" src="{{ latestComic.bonusTeaserImage }}" alt="{{ latestComic.bonusTeaserAlt or ('Hidden preview of the bonus panel for ' + latestComic.title) }}">
+        <span class="comic-bonus-label">Bonus panel on Patreon!</span>
+    </a>
+    {% if latestComic.bonusCaption and latestComic.showBonusCaption %}<p class="comic-bonus-caption">{{ latestComic.bonusCaption }}</p>{% endif %}
+</div>
+<div class="content page" style="text-align:center;">
+    {% endif %}
     <div class="segmented-control">
         <a{% if latestComic.number == firstComic.number %} disabled{% else %} href="/comics/{{ firstComic.comicId }}-{{ firstComic.slug }}/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})"{% endif %}>
             <center>

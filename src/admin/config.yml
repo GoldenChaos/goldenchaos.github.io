@@ -35,6 +35,13 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Alt text", name: "alt", widget: "string" }
       - { label: "Tooltip text", name: "titleText", widget: "text", required: false }
+      - { label: "Bonus panel", name: "bonusImage", widget: "image", required: false, media_folder: "/images/comics/bonus-panels", public_folder: "/images/comics/bonus-panels" }
+      - { label: "Bonus panel alt text", name: "bonusAlt", widget: "text", required: false }
+      - { label: "Blurred bonus teaser", name: "bonusTeaserImage", widget: "image", required: false, media_folder: "/images/comics/bonus-panels", public_folder: "/images/comics/bonus-panels" }
+      - { label: "Blurred teaser alt text", name: "bonusTeaserAlt", widget: "text", required: false }
+      - { label: "Bonus panel Patreon URL", name: "bonusPatreonUrl", widget: "string", required: false }
+      - { label: "Bonus panel caption", name: "bonusCaption", widget: "text", required: false }
+      - { label: "Show bonus caption publicly", name: "showBonusCaption", widget: "boolean", required: false, default: false }
       - { label: "Publish date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "YYYY-MM-DD", time_format: "HH:mm" }
       - { label: "Main image", name: "image", widget: "image" }
       - { label: "Thumbnail image", name: "thumbImage", widget: "string", required: false, hint: "Auto-generated from Main image by sync script." }

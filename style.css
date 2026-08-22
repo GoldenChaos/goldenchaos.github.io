@@ -318,6 +318,11 @@ pre {
   border: 0;
   font-size: 21px;
 }
+.page-top nav .menu .social .fa-patreon {
+  font-size: 19px;
+  position: relative;
+  top: -2px;
+}
 .page-top nav .menu .social:hover {
   border: 0;
   color: rgba(255, 255, 255, 0.8);
@@ -438,6 +443,125 @@ pre {
   width: 36px;
   height: 36px;
   margin-top: -4px;
+}
+
+.socials-page {
+  padding-bottom: 32px !important;
+}
+.socials-page .zelda-links {
+  margin-bottom: 0;
+}
+.socials-page .socials-control-divider {
+  width: calc(100% - 72px);
+  max-width: 568px;
+  height: 1px;
+  margin: 16px auto;
+  background: rgba(0, 0, 0, 0.08);
+}
+.socials-page .segmented-control a {
+  padding: 12px 16px;
+  font-size: 16px;
+}
+.socials-page .segmented-control a center {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 96px;
+  align-items: center;
+  width: 100%;
+}
+.socials-page .segmented-control a center::after {
+  content: "";
+  width: 96px;
+}
+.socials-page .segmented-control a .control-art {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: center;
+  width: 96px;
+  height: 36px;
+}
+.socials-page .segmented-control a .control-art i {
+  margin: 0;
+  position: static;
+  top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 36px;
+  height: 26px;
+  line-height: 26px;
+}
+.socials-page .segmented-control a .control-art svg {
+  display: block;
+  margin: 0;
+  width: 36px;
+  height: 26px;
+  vertical-align: 0;
+}
+.socials-page .segmented-control a .control-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: normal;
+}
+.socials-page .zelda-links a center {
+  display: block;
+  width: auto;
+}
+.socials-page .zelda-links a center .zelda-link-icon {
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 8px;
+  object-fit: contain;
+}
+.socials-page .zelda-links a center::after {
+  display: none;
+}
+.socials-page .latest-comic-control a {
+  padding: 12px;
+}
+.socials-page .latest-comic-control a center {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+.socials-page .latest-comic-control a center::after {
+  display: none;
+}
+.socials-page .latest-comic-control a .control-art {
+  width: auto;
+  height: 200px;
+}
+.socials-page .latest-comic-thumb {
+  width: auto !important;
+  max-width: 200px;
+  height: 200px !important;
+  margin: 0 !important;
+  border-radius: 10px;
+}
+.socials-page .twitch-label {
+  flex-direction: column;
+  gap: 4px;
+}
+.socials-page .socials-title {
+  padding: 8px 20px 16px;
+  text-align: center;
+}
+.socials-page .socials-title h1 {
+  margin: 0;
+}
+.socials-page .socials-title p {
+  margin: 8px 0 0;
+}
+.socials-page .socials-directory {
+  margin-bottom: 16px;
+}
+
+body.socials .page-top nav #logo.back-logo i {
+  color: #437ea3 !important;
 }
 
 .toggle-switch {
@@ -1301,6 +1425,47 @@ footer span {
   margin: 20px auto;
 }
 
+.comic-bonus-link {
+  display: block;
+  position: relative;
+  max-width: 360px;
+  margin: 12px auto 32px;
+  overflow: hidden;
+}
+.comic-bonus-link:hover .comic-bonus-label {
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.comic-bonus {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.comic-bonus-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.32);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  transition: background 0.2s ease;
+}
+
+.comic-bonus-caption {
+  max-width: 360px;
+  margin: -24px auto 32px;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: pre-line;
+}
+
 @media (min-width: 721px) {
   .segmented-control {
     margin: 0 auto 16px auto;
@@ -1314,6 +1479,9 @@ footer span {
 @media (prefers-color-scheme: dark) {
   body, .page-top.white {
     background: rgb(32, 32, 32);
+  }
+  body.socials .page-top nav #logo.back-logo i {
+    color: #5bb1e2 !important;
   }
   .page-top.white a, .page-padding a {
     color: #5bb1e2 !important;
@@ -1341,8 +1509,8 @@ footer span {
     color: #fff !important;
     border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
-  .segmented-control img {
-    filter: invert(100%);
+  .socials-control-divider {
+    background: rgba(255, 255, 255, 0.12) !important;
   }
   .content {
     color: #fff;
@@ -1571,13 +1739,13 @@ footer span {
     margin-right: 0 !important;
   }
 }
-/* iPad mini 6 (Portrait) */
-@media only screen and (min-device-width: 744px) and (max-device-width: 1133px) and (orientation: portrait) {
+/* Portrait tablets, including iPad mini */
+@media only screen and (min-width: 701px) and (max-width: 900px) and (orientation: portrait) {
   .about .desc .title {
     font-size: 36px;
   }
   .about .desc .title div {
-    font-size: 24px !important;
+    font-size: 23px !important;
   }
 }
 /* Mobile - Styles for screens up to 700px wide */
@@ -1588,6 +1756,33 @@ footer span {
   .mobile {
     display: block !important;
   }
+  .segmented-control {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page-top nav .menu .social .fa-patreon {
+    top: 2px;
+  }
+  body.socials .page-top nav .menu > div:first-child {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 700px) and (max-width: 439px) {
+  .page-top nav .menu .social-linkedin {
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) and (max-width: 393px) {
+  .page-top nav .menu .social-reddit {
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) and (max-width: 349px) {
+  .page-top nav .menu .social-bluesky {
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) {
   blockquote {
     line-height: 36px;
     margin: 20px 20px 0 20px;
@@ -1922,6 +2117,65 @@ footer span {
   .item-content.zodttd-icons span {
     bottom: 6px !important;
   }
+  .socials-page .zelda-links {
+    margin-top: 24px;
+  }
+  .socials-page .segmented-control a {
+    font-size: 14px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .socials-page .segmented-control a center {
+    grid-template-columns: 60px minmax(0, 1fr) 60px;
+  }
+  .socials-page .segmented-control a center::after {
+    width: 60px;
+  }
+  .socials-page .segmented-control a .control-art {
+    width: 60px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  .socials-page .segmented-control a .control-label {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .socials-page .zelda-links a {
+    font-size: 12px;
+    white-space: normal;
+  }
+  .socials-page .latest-comic-control a center {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .socials-page .latest-comic-control a {
+    padding: 12px;
+  }
+  .socials-page .latest-comic-control a .control-art {
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .socials-page .latest-comic-control .latest-comic-thumb {
+    width: auto !important;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 200px;
+  }
+  .socials-page .latest-comic-label {
+    min-height: 24px;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+}
+/* Compact 375px-wide phones */
+@media only screen and (width: 375px) {
+  .about .desc .title div {
+    font-size: 17px !important;
+    line-height: 22px;
+  }
 }
 /* iPhone SE 2020 */
 @media only screen and (device-width: 375px) and (-webkit-device-pixel-ratio: 2) {
@@ -1930,6 +2184,7 @@ footer span {
     line-height: 24px;
   }
   .about .desc p {
+    font-size: 14px;
     line-height: 18px;
   }
   .about .me {
@@ -1943,6 +2198,9 @@ footer span {
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .about .desc .title {
     font-size: 30px;
+  }
+  .about .desc p {
+    font-size: 14px;
   }
   .about .me {
     min-width: 0 !important;
@@ -1970,6 +2228,14 @@ footer span {
   .comic-img {
     width: calc(100% - 40px);
     margin: 20px;
+  }
+  .comic-bonus-link {
+    width: calc(100% - 40px);
+    margin: 12px 20px 32px;
+  }
+  .comic-bonus-caption {
+    width: calc(100% - 40px);
+    margin: -24px 20px 32px;
   }
   .content.index.page#comic-title h1 {
     padding-top: 24px;

@@ -1416,6 +1416,48 @@ footer {
 	margin: 20px auto;
 }
 
+.comic-bonus-link {
+	display: block;
+	position: relative;
+	max-width: 360px;
+	margin: 12px auto 32px;
+	overflow: hidden;
+
+	&:hover .comic-bonus-label {
+		background: rgba(0, 0, 0, .48);
+	}
+}
+
+.comic-bonus {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.comic-bonus-label {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, .32);
+	color: #fff;
+	font-size: 22px;
+	font-weight: 600;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, .8);
+	transition: background .2s ease;
+}
+
+.comic-bonus-caption {
+	max-width: 360px;
+	margin: -24px auto 32px;
+	font-size: 14px;
+	line-height: 20px;
+	white-space: pre-line;
+}
+
 @media (min-width: 721px) {
 	.segmented-control {
 		margin: 0 auto 16px auto;
