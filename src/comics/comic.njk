@@ -42,8 +42,9 @@ eleventyComputed:
     src="{{ comic.image }}"
     data-normal-image="{{ comic.image }}"
     {% if comic.baldImage %}data-bald-image="{{ comic.baldImage }}"{% endif %}
-    alt="{{ comic.alt }}"{% if comic.titleText or comic.alt %} title="{{ comic.titleText or comic.alt }}"{% endif %}
+    alt="{{ comic.alt }}"{% if comic.titleText %} title="{{ comic.titleText }}"{% endif %}
     class="comic-img">
+  {% if comic.descriptionText %}<p class="comic-description">{{ comic.descriptionText }}</p>{% endif %}
   <div class="segmented-control" data-bald-toggle-container style="display:none;" hidden>
     <button id="baldModeToggle" class="toggle-switch no-transition" type="button">
       <i class="fa-solid fa-user"></i>

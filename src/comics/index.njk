@@ -30,8 +30,9 @@ bodyClass: ""
     src="{{ latestComic.image }}"
     data-normal-image="{{ latestComic.image }}"
     {% if latestComic.baldImage %}data-bald-image="{{ latestComic.baldImage }}"{% endif %}
-    alt="{{ latestComic.alt }}"{% if latestComic.titleText or latestComic.alt %} title="{{ latestComic.titleText or latestComic.alt }}"{% endif %}
+    alt="{{ latestComic.alt }}"{% if latestComic.titleText %} title="{{ latestComic.titleText }}"{% endif %}
     class="comic-img">
+  {% if latestComic.descriptionText %}<p class="comic-description">{{ latestComic.descriptionText }}</p>{% endif %}
   {% if latestComic.bonusTeaserImage %}
 </div>
 <div class="content page" style="text-align:center;">

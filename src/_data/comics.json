@@ -264,5 +264,19 @@
     "thumbImage": "/images/comics/thumb/17_pickup_line-thumb.png",
     "ogImage": "/images/comics/og/17_pickup_line-og.png",
     "twitterImage": "/images/comics/og/17_pickup_line-og.png"
+  },
+  {
+    "number": 18,
+    "slug": "one-year",
+    "title": "One Year",
+    "alt": "18 - One Year",
+    "titleText": null,
+    "descriptionText": "One year ago, I had the dream of drawing comics. Thank you to everyone who's supported me, it's amazing that I can now call myself an artist ❤️",
+    "date": "2026-08-26T10:38:07-04:00",
+    "image": "/images/comics/18_one_year.png",
+    "comicId": "18",
+    "thumbImage": "/images/comics/thumb/18_one_year-thumb.png",
+    "ogImage": "/images/comics/og/18_one_year-og.png",
+    "twitterImage": "/images/comics/og/18_one_year-og.png"
   }
 ]

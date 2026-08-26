@@ -1425,6 +1425,15 @@ footer span {
   margin: 20px auto;
 }
 
+.comic-description {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
 .comic-bonus-link {
   display: block;
   position: relative;
@@ -2228,6 +2237,11 @@ footer span {
   .comic-img {
     width: calc(100% - 40px);
     margin: 20px;
+  }
+  .comic-description {
+    width: calc(100% - 40px);
+    margin: 0 20px 32px;
+    font-size: 15px;
   }
   .comic-bonus-link {
     width: calc(100% - 64px);
