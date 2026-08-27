@@ -278,5 +278,18 @@
     "thumbImage": "/images/comics/thumb/18_one_year-thumb.png",
     "ogImage": "/images/comics/og/18_one_year-og.png",
     "twitterImage": "/images/comics/og/18_one_year-og.png"
+  },
+  {
+    "number": 19,
+    "comicId": "19",
+    "slug": "ginger",
+    "title": "Ginger",
+    "alt": "19 - Ginger",
+    "titleText": "You either die in the closet or live long enough to look like your mother.",
+    "date": "2026-08-27T00:00:00-04:00",
+    "image": "/images/comics/19_ginger.png",
+    "thumbImage": "/images/comics/thumb/19_ginger-thumb.png",
+    "ogImage": "/images/comics/og/19_ginger-og.png",
+    "twitterImage": "/images/comics/og/19_ginger-og.png"
   }
 ]
