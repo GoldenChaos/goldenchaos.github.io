@@ -90,7 +90,7 @@ bodyClass: ""
             src="{{ c.thumbImage or c.image }}"
             data-normal-image="{{ c.thumbImage or c.image }}"
             {% if c.baldImage %}data-bald-image="{{ c.baldThumbImage or c.baldImage }}"{% endif %}
-            alt="Comic #{{ c.number }} - {{ c.title }}"{% if c.titleText %} title="{{ c.titleText }}"{% endif %}>
+            alt="Comic #{{ c.number }} - {{ c.title }}"{% if c.titleText %} title="{{ c.titleText }}"{% endif %}{% if c.thumbPosition %} style="object-position: {{ c.thumbPosition }};"{% endif %}>
         </div>
         <h3>#{{ c.number }} - {{ c.title }}</h3>
       </a>
