@@ -318,5 +318,18 @@
     "thumbImage": "/images/comics/thumb/21_five_years-thumb.png",
     "ogImage": "/images/comics/og/21_five_years-og.png",
     "twitterImage": "/images/comics/og/21_five_years-og.png"
+  },
+  {
+    "number": 22,
+    "comicId": "22",
+    "slug": "clock",
+    "title": "Clock",
+    "alt": "22 - Clock",
+    "titleText": "WatchMoto Top 10 Ways to Not Talk To Other Trans People",
+    "date": "2026-09-30T11:28:08-04:00",
+    "image": "/images/comics/22_clock.png",
+    "thumbImage": "/images/comics/thumb/22_clock-thumb.png",
+    "ogImage": "/images/comics/og/22_clock-og.png",
+    "twitterImage": "/images/comics/og/22_clock-og.png"
   }
 ]
