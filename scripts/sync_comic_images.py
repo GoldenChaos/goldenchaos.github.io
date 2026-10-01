@@ -4,7 +4,7 @@ import argparse
 from PIL import Image
 
 
-THUMB_MAX = 500
+THUMB_HEIGHT = 500
 OG_SIZE = (1200, 630)
 OG_BG = (255, 255, 255)
 
@@ -17,12 +17,11 @@ def resize_for_thumb(img: Image.Image) -> Image.Image:
     width, height = img.size
     aspect_ratio = width / height
 
-    if aspect_ratio > 1:
-        thumb_width = THUMB_MAX
-        thumb_height = int(THUMB_MAX / aspect_ratio)
-    else:
-        thumb_height = THUMB_MAX
-        thumb_width = int(THUMB_MAX * aspect_ratio)
+    # Comic grid previews use a consistent 500px height. Wide comics are
+    # intentionally allowed to exceed 500px in width before the grid crops
+    # them, matching the site's existing thumbnail treatment.
+    thumb_height = THUMB_HEIGHT
+    thumb_width = int(THUMB_HEIGHT * aspect_ratio)
 
     return img.resize((thumb_width, thumb_height), Image.Resampling.LANCZOS)
 
