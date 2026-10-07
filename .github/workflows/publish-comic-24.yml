@@ -1,0 +1,39 @@
+name: Publish comic 24 at noon
+
+on:
+  schedule:
+    # October 7, 2026 at 12:00 PM EDT (16:00 UTC).
+    - cron: "0 16 7 10 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the release date
+        id: release-date
+        shell: bash
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" || "$(date -u +%Y-%m-%d)" == "2026-10-07" ]]; then
+            echo "should-publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should-publish=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out master
+        if: steps.release-date.outputs.should-publish == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Fast-forward master to the scheduled release
+        if: steps.release-date.outputs.should-publish == 'true'
+        shell: bash
+        run: |
+          git fetch origin scheduled/comic-24-october
+          git merge --ff-only origin/scheduled/comic-24-october
+          git push origin HEAD:master
