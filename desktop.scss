@@ -1425,6 +1425,46 @@ footer {
 	text-align: center;
 }
 
+.comic-credit {
+	width: 100%;
+	margin: 6px auto 0;
+	font-size: 16px;
+	line-height: 1.4;
+	text-align: center;
+
+	a {
+		color: #437ea3;
+		border-bottom: 1px solid rgba(67, 126, 163, .25);
+
+		&:hover {
+			border-bottom-color: rgba(67, 126, 163, .8);
+		}
+	}
+}
+
+.comic-credit-inline {
+	display: inline;
+	width: auto;
+	margin: 0 0 0 4px;
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	line-height: inherit;
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+	.comic-credit a {
+		color: #5bb1e2;
+		border-bottom-color: rgba(91, 177, 226, .3);
+
+		&:hover {
+			border-bottom-color: rgba(91, 177, 226, .8);
+		}
+	}
+}
+
 .comic-bonus-link {
 	display: block;
 	position: relative;

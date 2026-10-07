@@ -36,6 +36,7 @@ eleventyComputed:
 <!-- Notification toggle moved below copy link controls -->
 <div class="content index page" id="comic-title">
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">#{{ comic.number }} - {{ comic.title }}</h1>
+  {% if comic.featureCredit %}<p class="comic-credit">(ft. <a href="{{ comic.featureCreditUrl }}" target="_blank" rel="noopener">{{ comic.featureCredit }}</a>!)</p>{% endif %}
 </div>
 <div class="content page" style="text-align:center;">
   <img

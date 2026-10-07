@@ -64,6 +64,8 @@
     "baldImage": "/images/comics/bald/4_dont_tell_me_my_age-bald.png",
     "thumbImage": "/images/comics/thumb/4_dont_tell_me_my_age-thumb.png",
     "titleText": "\"People are going to think I'm 37!!\"",
+    "featureCredit": "@terrafically",
+    "featureCreditUrl": "https://x.com/terrafically",
     "twitterImage": "/images/comics/og/4_dont_tell_me_my_age-og.png",
     "alt": "4 - Don't Tell Me My Age",
     "number": 4,
@@ -300,6 +302,8 @@
     "title": "Puppy Competition",
     "alt": "20 - Puppy Competition",
     "titleText": "I'm in too many trans discords.",
+    "featureCredit": "@sammycore333",
+    "featureCreditUrl": "https://x.com/sammycore333",
     "thumbPosition": "top",
     "date": "2026-09-06T12:44:29-04:00",
     "image": "/images/comics/20_puppy_competition.png",
@@ -346,5 +350,20 @@
     "thumbImage": "/images/comics/thumb/23_voices-thumb.png",
     "ogImage": "/images/comics/og/23_voices-og.png",
     "twitterImage": "/images/comics/og/23_voices-og.png"
+  },
+  {
+    "number": 24,
+    "comicId": "24",
+    "slug": "october",
+    "title": "October",
+    "alt": "24 - October",
+    "titleText": "In the end, we watched horror.",
+    "featureCredit": "@terrafically",
+    "featureCreditUrl": "https://x.com/terrafically",
+    "date": "2026-10-06T21:21:30-04:00",
+    "image": "/images/comics/24_october.png",
+    "thumbImage": "/images/comics/thumb/24_october-thumb.png",
+    "ogImage": "/images/comics/og/24_october-og.png",
+    "twitterImage": "/images/comics/og/24_october-og.png"
   }
 ]
