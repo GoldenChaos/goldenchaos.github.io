@@ -365,5 +365,18 @@
     "thumbImage": "/images/comics/thumb/24_october-thumb.png",
     "ogImage": "/images/comics/og/24_october-og.png",
     "twitterImage": "/images/comics/og/24_october-og.png"
+  },
+  {
+    "number": 25,
+    "comicId": "25",
+    "slug": "pre-transition-friend",
+    "title": "Pre-Transition Friend",
+    "alt": "25 - Pre-Transition Friend",
+    "titleText": "\"It's just my voice??\"",
+    "date": "2026-10-12T23:57:21-04:00",
+    "image": "/images/comics/25_pre-transition_friend.png",
+    "thumbImage": "/images/comics/thumb/25_pre-transition_friend-thumb.png",
+    "ogImage": "/images/comics/og/25_pre-transition_friend-og.png",
+    "twitterImage": "/images/comics/og/25_pre-transition_friend-og.png"
   }
 ]
