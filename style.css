@@ -469,7 +469,7 @@ pre {
 }
 .socials-page .segmented-control a {
   padding: 12px 16px;
-  font-size: 20px;
+  font-size: 19px;
 }
 .socials-page .segmented-control a center {
   display: grid;
@@ -2195,7 +2195,7 @@ footer span {
     margin-top: 24px;
   }
   .socials-page .segmented-control a {
-    font-size: 18px;
+    font-size: 17px;
     padding-right: 0;
     padding-left: 0;
   }
