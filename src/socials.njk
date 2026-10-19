@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 permalink: links/index.html
-title: "Jess Rappaport aka GoldenChaos - All Socials"
+title: "Jess Rappaport aka GoldenChaos - Find My Socials"
 description: "Creator of Zelda Universe and Zelda Wiki, proudly trans UI/UX designer and comic artist"
 ogImage: "/og-image.png"
 bodyClass: "socials"
@@ -15,15 +15,15 @@ bodyClass: "socials"
     <center>
         <div class="about" id="about">
             <div class="me">
-                <img src="/images/me2.png" alt="Jess Rappaport">
+                <img src="/images/me6.png" alt="Jess Rappaport">
             </div>
             <div class="desc">
-                <h1 class="title" style="margin-bottom:0;">I'm Jess Rappaport,
+                <h1 class="title" style="margin-bottom:0;">Jess Rappaport
                 <div>
-                    <img class="inline-emoji flag" src="/images/trans-flag-emoji.png" alt="Trans pride flag"> proud UI/UX designer and illustrator.
+                    aka GoldenChaos
                 </div>
                 </h1>
-                <p>I've been creating apps and communities since 2004. I also make little comics about my life!</p>
+                <p>irl zelda &amp; bald lego girl | i make little comics about my life | creator of Zelda Universe, Zelda Wiki, and Zelda Maps</p>
             </div>
         </div>
     </center>
@@ -31,12 +31,15 @@ bodyClass: "socials"
 
 {% set latestComic = comics[comics.length - 1] %}
 <div class="content page socials-page">
+    {# Preserved for possible future use on the links page. #}
+    {% if false %}
     <div class="segmented-control zelda-links">
         <a href="https://zeldauniverse.net/" target="_blank"><center><picture><source media="(prefers-color-scheme: dark)" srcset="/images/zu-icon-white.png"><img class="zelda-link-icon" src="/images/zu-icon.png" alt=""></picture>Zelda Universe</center></a>
         <a href="https://zeldawiki.wiki/" target="_blank"><center><picture><source media="(prefers-color-scheme: dark)" srcset="/images/zelda-wiki-icon-white.png"><img class="zelda-link-icon" src="/images/zelda-wiki-icon.png" alt=""></picture>Zelda Wiki</center></a>
         <a href="https://zeldamaps.com/" target="_blank"><center><picture><source media="(prefers-color-scheme: dark)" srcset="/images/zelda-maps-icon-white.png"><img class="zelda-link-icon" src="/images/zelda-maps-icon.png" alt=""></picture>Zelda Maps</center></a>
     </div>
 	<div class="socials-control-divider" aria-hidden="true"></div>
+    {% endif %}
 
     <div class="segmented-control latest-comic-control">
         <a href="/comics/">
@@ -47,56 +50,84 @@ bodyClass: "socials"
         </a>
     </div>
 
-    <div class="segmented-control patreon-cta">
-        <a href="https://www.patreon.com/GoldenChaos" target="_blank">
-            <center>
-                <span class="control-art"><i class="fa-brands fa-patreon"></i></span>
-                <span class="control-label">Support me on Patreon for exclusive perks!</span>
-            </center>
-        </a>
-    </div>
-
-	{% for social in site.social %}
-		{% if social.name == "Twitch" %}
-		<div class="segmented-control twitch-cta">
-			<a href="{{ social.href }}" target="_blank">
-				<center>
-					<span class="control-art"><i class="{{ social.icon }}"></i></span>
-					<span class="control-label twitch-label">
-						<span>Watch me draw comics on Twitch!</span>
-						<span class="stream-schedule" data-stream-schedule>Streams Tu/Th/Sa @ 7pm ET</span>
-					</span>
-				</center>
-			</a>
-		</div>
-		{% endif %}
-	{% endfor %}
-
-	{% for social in site.social %}
-		{% if social.name == "Discord" %}
-		<div class="segmented-control discord-cta">
-			<a href="{{ social.href }}" target="_blank">
-				<center>
-					<span class="control-art"><i class="{{ social.icon }}"></i></span>
-					<span class="control-label">Join my community Discord!</span>
-				</center>
-			</a>
-		</div>
-		{% endif %}
-	{% endfor %}
-
     <div class="socials-title">
-        <h1 class="title">All My Socials</h1>
+        <h1 class="title">Find My Socials</h1>
     </div>
 
     <div class="socials-directory">
         {% for social in site.social %}
-            {% if not social.hidden and social.name != "Patreon" and social.name != "Twitch" and social.name != "LinkedIn" %}
+            {% if social.name == "Twitter" or social.name == "Instagram" %}
             <div class="segmented-control">
                 <a href="{{ social.href }}" target="_blank">
                     <center>
                         <span class="control-art"><i class="{{ social.icon }}"></i></span>
-                        <span class="control-label">{{ social.name }} - {{ social.username }}</span>
+                        <span class="control-label">{{ social.name }}</span>
+                    </center>
+                </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for social in site.social %}
+            {% if social.name == "Twitch" %}
+            <div class="segmented-control twitch-cta">
+                <a href="{{ social.href }}" target="_blank">
+                    <center>
+                        <span class="control-art"><i class="{{ social.icon }}"></i></span>
+                        <span class="control-label twitch-label">
+                            <span>Twitch</span>
+                            <span class="stream-schedule" data-stream-schedule>Streams Tu/Th/Sa @ 7pm ET</span>
+                        </span>
+                    </center>
+                </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="segmented-control patreon-cta">
+            <a href="https://www.patreon.com/GoldenChaos" target="_blank">
+                <center>
+                    <span class="control-art"><i class="fa-brands fa-patreon"></i></span>
+                    <span class="control-label">Patreon</span>
+                </center>
+            </a>
+        </div>
+
+        <div class="segmented-control kofi-cta">
+            <a href="https://ko-fi.com/goldenchaos" target="_blank">
+                <center>
+                    <span class="control-art">{% include "kofi-icon.njk" %}</span>
+                    <span class="control-label">Ko-Fi</span>
+                </center>
+            </a>
+        </div>
+
+        {% for social in site.social %}
+            {% if social.name == "Discord" %}
+            <div class="segmented-control discord-cta">
+                <a href="{{ social.href }}" target="_blank">
+                    <center>
+                        <span class="control-art"><i class="{{ social.icon }}"></i></span>
+                        <span class="control-label">Discord Server</span>
+                    </center>
+                </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="socials-title">
+        <h1 class="title">More Socials</h1>
+    </div>
+
+    <div class="socials-directory">
+        {% for social in site.social %}
+            {% if social.name == "Threads" or social.name == "Bluesky" or social.name == "Reddit" %}
+            <div class="segmented-control">
+                <a href="{{ social.href }}" target="_blank">
+                    <center>
+                        <span class="control-art"><i class="{{ social.icon }}"></i></span>
+                        <span class="control-label">{{ social.name }}</span>
                     </center>
                 </a>
             </div>

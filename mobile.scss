@@ -421,7 +421,7 @@ h2 {
 		margin-top: 24px;
 	}
 	.segmented-control a {
-		font-size: 14px;
+		font-size: 18px;
 		padding-right: 0;
 		padding-left: 0;
 		center {
@@ -469,6 +469,13 @@ h2 {
 		line-height: 18px;
 		white-space: nowrap;
 	}
+	.stream-schedule {
+		font-size: 14px;
+	}
+}
+
+body.socials .splash-bg.index .about {
+	margin-bottom: 24px;
 }
 
 }

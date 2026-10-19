@@ -372,6 +372,15 @@ pre {
   margin-right: 2px;
 }
 
+.kofi-icon {
+  display: inline-block;
+  width: 1.4em;
+  height: 1.15em;
+  margin: 0;
+  object-fit: contain;
+  vertical-align: -0.2em;
+}
+
 .segmented-control {
   width: calc(100% - 40px);
   max-width: 600px;
@@ -460,7 +469,7 @@ pre {
 }
 .socials-page .segmented-control a {
   padding: 12px 16px;
-  font-size: 16px;
+  font-size: 20px;
 }
 .socials-page .segmented-control a center {
   display: grid;
@@ -498,6 +507,12 @@ pre {
   height: 26px;
   vertical-align: 0;
 }
+.socials-page .segmented-control a .control-art .kofi-icon {
+  width: 36px;
+  height: auto;
+  margin: 0;
+  vertical-align: 0;
+}
 .socials-page .segmented-control a .control-label {
   display: flex;
   align-items: center;
@@ -507,6 +522,7 @@ pre {
   box-sizing: border-box;
   text-align: center;
   white-space: normal;
+  font-weight: 500;
 }
 .socials-page .zelda-links a center {
   display: block;
@@ -546,6 +562,10 @@ pre {
   flex-direction: column;
   gap: 4px;
 }
+.socials-page .stream-schedule {
+  font-size: 16px;
+  font-weight: 400;
+}
 .socials-page .socials-title {
   padding: 8px 20px 16px;
   text-align: center;
@@ -562,6 +582,15 @@ pre {
 
 body.socials .page-top nav #logo.back-logo i {
   color: #437ea3 !important;
+}
+
+body.socials .splash-bg.index .about {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  margin-right: auto;
+  margin-bottom: 32px;
+  margin-left: auto;
+  box-sizing: border-box;
 }
 
 .toggle-switch {
@@ -2166,7 +2195,7 @@ footer span {
     margin-top: 24px;
   }
   .socials-page .segmented-control a {
-    font-size: 14px;
+    font-size: 18px;
     padding-right: 0;
     padding-left: 0;
   }
@@ -2213,6 +2242,12 @@ footer span {
     min-height: 24px;
     line-height: 18px;
     white-space: nowrap;
+  }
+  .socials-page .stream-schedule {
+    font-size: 14px;
+  }
+  body.socials .splash-bg.index .about {
+    margin-bottom: 24px;
   }
 }
 /* Compact 375px-wide phones */
