@@ -421,7 +421,7 @@ h2 {
 		margin-top: 24px;
 	}
 	.segmented-control a {
-		font-size: 17px;
+		font-size: 15px;
 		padding-right: 0;
 		padding-left: 0;
 		center {
@@ -460,17 +460,17 @@ h2 {
 	}
 	.latest-comic-control .latest-comic-thumb {
 		width: auto !important;
-		max-width: 100%;
-		height: auto !important;
-		max-height: 200px;
+		max-width: 100px;
+		height: 100px !important;
+		max-height: 100px;
 	}
 	.latest-comic-label {
 		min-height: 24px;
 		line-height: 18px;
 		white-space: nowrap;
 	}
-	.stream-schedule {
-		font-size: 14px;
+	.control-secondary {
+		font-size: 12px;
 	}
 }
 

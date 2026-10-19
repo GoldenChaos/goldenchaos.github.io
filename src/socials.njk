@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 permalink: links/index.html
-title: "Jess Rappaport aka GoldenChaos - Find My Socials"
+title: "Jess Rappaport (@GoldenChaos) - Find My Socials"
 description: "Creator of Zelda Universe and Zelda Wiki, proudly trans UI/UX designer and comic artist"
 ogImage: "/og-image.png"
 bodyClass: "socials"
@@ -20,7 +20,7 @@ bodyClass: "socials"
             <div class="desc">
                 <h1 class="title" style="margin-bottom:0;">Jess Rappaport
                 <div>
-                    aka GoldenChaos
+                    @GoldenChaos
                 </div>
                 </h1>
                 <p>irl zelda &amp; bald lego girl | i make little comics about my life | creator of Zelda Universe, Zelda Wiki, and Zelda Maps</p>
@@ -45,7 +45,10 @@ bodyClass: "socials"
         <a href="/comics/">
             <center>
                 <span class="control-art"><img class="latest-comic-thumb" src="{{ latestComic.image }}" alt=""></span>
-                <span class="control-label latest-comic-label">Latest Comic</span>
+                <span class="control-label latest-comic-label">
+                    <span>Latest Comic</span>
+                    <span class="control-secondary">&ldquo;{{ latestComic.title }}&rdquo;</span>
+                </span>
             </center>
         </a>
     </div>
@@ -76,7 +79,7 @@ bodyClass: "socials"
                         <span class="control-art"><i class="{{ social.icon }}"></i></span>
                         <span class="control-label twitch-label">
                             <span>Twitch</span>
-                            <span class="stream-schedule" data-stream-schedule>Streams Tu/Th/Sa @ 7pm ET</span>
+                            <span class="stream-schedule control-secondary" data-stream-schedule>Streams Tu/Th/Sa @ 7pm ET</span>
                         </span>
                     </center>
                 </a>
