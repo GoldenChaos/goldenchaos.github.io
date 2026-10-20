@@ -454,6 +454,14 @@ pre {
   margin-top: -4px;
 }
 
+.segmented-control .kofi-support-icon .kofi-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  vertical-align: 0;
+}
+
 .socials-page {
   padding-bottom: 32px !important;
 }

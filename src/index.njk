@@ -132,16 +132,14 @@ bodyClass: ""
                 Patreon
             </center>
         </a>
-    </div>
-    <div class="segmented-control">
         <a href="https://ko-fi.com/goldenchaos" target="_blank">
             <center>
-                {% include "kofi-icon.njk" %}
+                <i class="kofi-support-icon">{% include "kofi-icon.njk" %}</i>
                 Ko-Fi
             </center>
         </a>
     </div>
-    <div class="segmented-control ios-hide">
+    <div class="segmented-control ios-hide" style="display:none;" hidden>
         <button id="notifyLatest" class="toggle-switch no-transition">
             <i class="fa-solid fa-bell"></i>
             <span>Push notifications for new comics</span>
