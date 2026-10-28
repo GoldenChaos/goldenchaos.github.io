@@ -391,5 +391,18 @@
     "thumbImage": "/images/comics/thumb/26_origin_story-thumb.png",
     "ogImage": "/images/comics/og/26_origin_story-og.png",
     "twitterImage": "/images/comics/og/26_origin_story-og.png"
+  },
+  {
+    "number": 27,
+    "comicId": "27",
+    "slug": "living-the-dream",
+    "title": "Living the Dream",
+    "alt": "27 - Living the Dream",
+    "titleText": "I turned my friends into Tomodachi Life characters, now I never have to be lonely!",
+    "date": "2026-10-28T01:29:08-04:00",
+    "image": "/images/comics/27_living_the_dream.png",
+    "thumbImage": "/images/comics/thumb/27_living_the_dream-thumb.png",
+    "ogImage": "/images/comics/og/27_living_the_dream-og.png",
+    "twitterImage": "/images/comics/og/27_living_the_dream-og.png"
   }
 ]
