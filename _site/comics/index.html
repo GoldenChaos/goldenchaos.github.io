@@ -10,7 +10,7 @@
         gtag('config', 'UA-317947-1');
     </script>
     <meta charset="utf-8">
-    <title>GoldenChaos Comics - Latest Comic - #13 New Outfit</title>
+    <title>GoldenChaos Comics - Latest Comic - #27 Living the Dream</title>
     <meta name="description" content="Comics by Jess Rappaport!">
 
         
@@ -26,9 +26,9 @@
         <!-- Facebook / Open Graph -->
         <meta property="og:url" content="https://goldenchaos.net/comics/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="GoldenChaos Comics - Latest Comic - #13 New Outfit">
+        <meta property="og:title" content="GoldenChaos Comics - Latest Comic - #27 Living the Dream">
         <meta property="og:description" content="Comics by Jess Rappaport!">
-        <meta property="og:image" content="https://goldenchaos.net/images/comics/og/13_new_outfit-og.png">
+        <meta property="og:image" content="https://goldenchaos.net/images/comics/og/27_living_the_dream-og.png">
         <meta property="og:image:alt" content="Comics by Jess Rappaport!">
         
 
@@ -36,11 +36,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="goldenchaos.net">
     <meta property="twitter:url" content="https://goldenchaos.net/comics/">
-    <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic - #13 New Outfit">
+    <meta name="twitter:title" content="GoldenChaos Comics - Latest Comic - #27 Living the Dream">
     <meta name="twitter:description" content="Comics by Jess Rappaport!">
     <meta name="twitter:site" content="@GoldenChaos">
     <meta name="twitter:creator" content="@GoldenChaos">
-    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/og/13_new_outfit-og.png">
+    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/og/27_living_the_dream-og.png">
     <meta name="twitter:image:alt" content="Comics by Jess Rappaport!">
     
         <link rel="alternate" type="application/rss+xml" title="GoldenChaos Comics RSS" href="/comics/feed.xml">
@@ -51,8 +51,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://kit.fontawesome.com/ede7ed9b9e.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon-light.ico?v=2" type="image/x-icon" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/favicon-dark.ico?v=2" type="image/x-icon" media="(prefers-color-scheme: dark)">
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
-    <link rel="mask-icon" href="/website_icon.svg" color="#4083a0">
         <link rel="manifest" href="/manifest.webmanifest">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
         
@@ -64,27 +65,91 @@
                 console.log('OneSignal: SDK loaded, starting init');
                 await OneSignal.init({
                     appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
-                    safari_web_id: "web.onesignal.auto.72940797-fce4-4404-92c2-a33aa17e19b3",
+                    safari_web_id: "web.onesignal.auto.27841aa0-90c9-472e-b116-e68b5f82c9c6",
                     autoRegister: false,
-                    allowLocalhostAsSecureOrigin: true
+                    allowLocalhostAsSecureOrigin: true,
+                    welcomeNotification: {
+                        message: "Thanks for subscribing! You'll get notifications when new comics are released <3"
+                    }
                 });
                 console.log('OneSignal: Init complete', OneSignal);
                 console.log('OneSignal: Notifications supported?', OneSignal.Notifications?.supported?.());
             });
+
+            window.waitForOneSignalSubscription = function(OneSignal, timeoutMs = 10000) {
+                const currentId = OneSignal.User.PushSubscription.id;
+                const currentToken = OneSignal.User.PushSubscription.token;
+                if (currentId && currentToken) return Promise.resolve(currentId);
+
+                return new Promise((resolve) => {
+                    let settled = false;
+                    const finish = (subscriptionId) => {
+                        if (settled) return;
+                        settled = true;
+                        clearTimeout(timeoutId);
+                        OneSignal.User.PushSubscription.removeEventListener('change', onChange);
+                        resolve(subscriptionId || null);
+                    };
+                    const onChange = (event) => {
+                        const subscriptionId = event.current?.id || OneSignal.User.PushSubscription.id;
+                        const token = event.current?.token || OneSignal.User.PushSubscription.token;
+                        if (subscriptionId && token) finish(subscriptionId);
+                    };
+                    const timeoutId = setTimeout(() => finish(null), timeoutMs);
+                    OneSignal.User.PushSubscription.addEventListener('change', onChange);
+                });
+            };
+
+            window.getOneSignalPermissionState = function(OneSignal) {
+                if (OneSignal.Notifications.permission) return 'granted';
+                if (typeof Notification !== 'undefined') return Notification.permission;
+                return 'default';
+            };
+
+            window.waitForNativeNotificationPermission = function(permissionRequest, timeoutMs = 30000) {
+                if (!permissionRequest) return Promise.resolve(null);
+
+                return new Promise((resolve, reject) => {
+                    const startedAt = Date.now();
+                    const checkPermission = () => {
+                        const permission = typeof Notification !== 'undefined' ? Notification.permission : 'default';
+                        if (permission !== 'default') return resolve(permission);
+                        if (Date.now() - startedAt >= timeoutMs) {
+                            return reject(new Error('Native notification permission request timed out'));
+                        }
+                        setTimeout(checkPermission, 250);
+                    };
+
+                    Promise.resolve(permissionRequest).then((permission) => {
+                        if (permission && permission !== 'default') resolve(permission);
+                    }).catch(reject);
+                    checkPermission();
+                });
+            };
+
+            window.requestOneSignalPermission = function(OneSignal, timeoutMs = 10000) {
+                return Promise.race([
+                    OneSignal.Notifications.requestPermission(),
+                    new Promise((_, reject) => setTimeout(() => {
+                        reject(new Error('Notification permission request timed out'));
+                    }, timeoutMs))
+                ]);
+            };
         </script>
         
 
 <script>
 (function() {
-  // Detect iOS and hide push notification toggles since they don't work on iOS
+  // Hide push notification toggles in iOS browser tabs, but show them in the installed Home Screen app.
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  if (isIOS) {
-    document.documentElement.classList.add('is-ios');
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  if (isIOS && !isStandalone) {
+    document.documentElement.classList.add('is-ios-browser');
   }
 })();
 </script>
 <style>
-.is-ios .ios-hide {
+.is-ios-browser .ios-hide {
   display: none !important;
 }
 </style>
@@ -108,21 +173,41 @@
     <div class="menu">
         <div>
             
-                <a class="social" href="https://twitch.tv/jessrappaport" target="_blank"><i class="fab fa-twitch"></i></a>
+                
+                <a class="social social-discord" href="https://discord.gg/M3b2sKTGwH" target="_blank" aria-label="Discord" title="Discord" style="display:none;"><i class="fab fa-discord" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://discord.gg/kp3s6ysCtn" target="_blank" style="display:none;"><i class="fab fa-discord"></i></a>
+                
+                <a class="social social-patreon" href="https://www.patreon.com/GoldenChaos" target="_blank" aria-label="Patreon" title="Patreon"><i class="fa-brands fa-patreon" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://twitter.com/goldenchaos" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                
+                <a class="social social-twitch" href="https://twitch.tv/jessrappaport" target="_blank" aria-label="Twitch" title="Twitch"><i class="fab fa-twitch" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://instagram.com/goldenchaos" target="_blank"><i class="fab fa-instagram"></i></a>
+                
+                <a class="social social-twitter" href="https://twitter.com/goldenchaos" target="_blank" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://threads.net/@goldenchaos" target="_blank"><i class="fa-brands fa-threads"></i></a>
+                
+                <a class="social social-instagram" href="https://instagram.com/goldenchaos" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://bsky.app/profile/goldenchaos.bsky.social" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
+                
+                <a class="social social-threads" href="https://threads.net/@goldenchaos" target="_blank" aria-label="Threads" title="Threads"><i class="fa-brands fa-threads" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://www.linkedin.com/in/goldenchaos" target="_blank"><i class="fab fa-linkedin"></i></a>
+                
+                <a class="social social-bluesky" href="https://bsky.app/profile/goldenchaos.bsky.social" target="_blank" aria-label="Bluesky" title="Bluesky"><i class="fa-brands fa-bluesky" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="mailto:jess@goldenchaos.net" target="_blank" style="display:none;"><i class="fa fa-envelope-square"></i></a>
+                
+            
+                
+            
+                
+                <a class="social social-email" href="mailto:jess@goldenchaos.net" target="_blank" aria-label="Email" title="Email" style="display:none;"><i class="fa fa-envelope-square" aria-hidden="true"></i></a>
+                
             
         </div>
         
@@ -145,15 +230,17 @@
   <h1 id="comics" class="title" style="text-align:center;margin:0;text-transform:none;">Latest Comic</h1>
 </div>
 <div class="content index page" id="comic-title">
-  <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#13 - New Outfit</h2>
+  <h2 class="title" style="text-align:center;margin:0;text-transform:none;">#27 - Living the Dream</h2>
 </div>
 <div class="content page" style="text-align:center;">
   <img
-    src="/images/comics/13_new_outfit.png"
-    data-normal-image="/images/comics/13_new_outfit.png"
+    src="/images/comics/27_living_the_dream.png"
+    data-normal-image="/images/comics/27_living_the_dream.png"
     
-    alt="13 - New Outfit" title="&quot;Dang, actually I wish I had an iconic outfit.&quot;"
+    alt="27 - Living the Dream" title="I turned my friends into Tomodachi Life characters, now I never have to be lonely!"
     class="comic-img">
+  
+  
   <div class="segmented-control">
     <a href="/comics/1-alopecia/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'first'})">
       <center>
@@ -161,7 +248,7 @@
         First
       </center>
     </a>
-    <a href="/comics/12-comic-rooms/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
+    <a href="/comics/26-origin-story/" onclick="if(typeof gtag!=='undefined')gtag('event','comic_navigation',{'event_category':'engagement','event_label':'previous'})">
       <center>
         <i class="fa-solid fa-backward"></i>
         Previous
@@ -210,7 +297,31 @@
       </center>
     </a>
   </div>
-  <div class="segmented-control ios-hide">
+  <div class="segmented-control">
+    <a href="https://www.patreon.com/GoldenChaos" target="_blank">
+      <center>
+        <i class="fa-brands fa-patreon"></i>
+        Patreon
+      </center>
+    </a>
+    <a href="https://ko-fi.com/goldenchaos" target="_blank">
+      <center>
+        <i class="kofi-support-icon"><svg class="kofi-icon" viewBox="0 0 241 194" aria-hidden="true" focusable="false">
+  <mask id="kofi-symbol-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="241" height="194">
+    <rect width="241" height="194" fill="black"/>
+    <path d="M15.1975 67.7674C15.1975 37.5285 33.3866 21.164 54.7559 18.4334C70.8987 16.387 90.906 16.1589 114.544 16.1589C151.372 16.1589 160.919 16.6151 174.559 17.9772C206.617 21.1576 225.255 40.937 225.255 69.3577V72.9941C225.255 99.3687 205.932 120.966 179.786 123.234C177.74 130.058 174.559 136.874 170.238 143.698C160.235 159.156 140.228 178.707 103.4 178.707H96.1264C66.1155 178.707 42.9277 165.751 29.0595 142.107C16.7814 121.422 15.1912 98.4563 15.1912 67.7674" fill="white"/>
+    <path d="M32.2469 67.9899C32.2469 97.3168 34.0654 116.184 43.6127 133.689C54.5225 153.924 74.3018 161.653 96.8117 161.653H103.857C133.411 161.653 147.736 147.329 155.693 134.829C159.558 128.462 162.966 121.417 164.784 112.547L166.147 106.864H174.332C192.521 106.864 208.208 92.09 208.208 73.2166V69.8082C208.208 48.6669 195.024 37.5228 172.058 34.7987C159.102 33.6646 151.372 33.2084 114.538 33.2084C89.7602 33.2084 72.0272 33.4364 58.6152 35.4828C39.7483 38.2134 32.2407 48.8951 32.2407 67.9899" fill="black"/>
+    <path d="M166.158 83.6801C166.158 86.4107 168.204 88.4572 171.841 88.4572C183.435 88.4572 189.802 81.8619 189.802 70.9523C189.802 60.0427 183.435 53.2195 171.841 53.2195C168.204 53.2195 166.158 55.2657 166.158 57.9963V83.6866V83.6801Z" fill="white"/>
+    <path d="M54.5321 82.3198C54.5321 95.732 62.0332 107.326 71.5807 116.424C77.9478 122.562 87.9515 128.93 94.7685 133.022C96.8147 134.157 98.8611 134.841 101.136 134.841C103.866 134.841 106.134 134.157 107.959 133.022C114.782 128.93 124.779 122.562 130.919 116.424C140.694 107.332 148.195 95.7383 148.195 82.3198C148.195 67.7673 137.286 54.8115 121.599 54.8115C112.28 54.8115 105.912 59.5882 101.136 66.1772C96.8147 59.582 90.2259 54.8115 80.9001 54.8115C64.9855 54.8115 54.5256 67.7673 54.5256 82.3198" fill="white"/>
+  </mask>
+  <rect width="241" height="194" fill="currentColor" mask="url(#kofi-symbol-mask)"/>
+</svg>
+</i>
+        Ko-Fi
+      </center>
+    </a>
+  </div>
+  <div class="segmented-control ios-hide" style="display:none;" hidden>
     <button id="notifyLatestComic" class="toggle-switch no-transition">
       <i class="fa-solid fa-bell"></i>
       <span>Push notifications for new comics</span>
@@ -256,7 +367,7 @@ function showCopied(buttonId, success) {
   }, 2000);
 }
 async function copyComicLink() {
-  const link = window.location.origin + '/comics/13-new-outfit/';
+  const link = window.location.origin + '/comics/27-living-the-dream/';
   const ok = await copyWithFallback(link);
   showCopied('copyBtn', ok);
   if (ok && typeof gtag !== 'undefined') {
@@ -268,7 +379,7 @@ async function copyComicLink() {
 }
 async function copyComicImageLink() {
   const img = document.querySelector('.comic-img');
-  const src = img ? img.getAttribute('src') : '/images/comics/13_new_outfit.png';
+  const src = img ? img.getAttribute('src') : '/images/comics/27_living_the_dream.png';
   const fullURL = new URL(src, window.location.origin).href;
   const ok = await copyWithFallback(fullURL);
   showCopied('copyImgBtn', ok);
@@ -325,6 +436,12 @@ async function requestNotifications(buttonId) {
   }
   
   const wasActive = btn.classList.contains('active');
+  const isSafari = navigator.vendor === 'Apple Computer, Inc.' && /Safari/.test(navigator.userAgent);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isIOSHomeScreen = isIOS && (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true);
+  const safariPermissionRequest = !wasActive && (isSafari || isIOSHomeScreen) && typeof Notification !== 'undefined' && Notification.permission === 'default'
+    ? Notification.requestPermission()
+    : null;
   
   // If currently subscribed, handle unsubscribe
   if (wasActive) {
@@ -358,6 +475,8 @@ async function requestNotifications(buttonId) {
   btn.disabled = true;
   OneSignalDeferred.push(async function(OneSignal) {
     try {
+      if (safariPermissionRequest) await window.waitForNativeNotificationPermission(safariPermissionRequest);
+
       // Check if already subscribed with OneSignal
       const subscriptionId = OneSignal.User.PushSubscription.id;
       const optedIn = OneSignal.User.PushSubscription.optedIn;
@@ -370,7 +489,7 @@ async function requestNotifications(buttonId) {
         btn.disabled = false;
         return;
       }
-      const browserPermission = Notification.permission;
+      const browserPermission = window.getOneSignalPermissionState(OneSignal);
       if (browserPermission === 'denied') {
         alert('Push notifications are blocked. Please enable them in your browser settings.');
         btn.classList.remove('pending');
@@ -378,38 +497,18 @@ async function requestNotifications(buttonId) {
         return;
       }
       
-      // Set a safety timeout to clear pending state if something goes wrong
-      const timeoutId = setTimeout(() => {
+      if (!OneSignal.Notifications.isPushSupported()) {
+        alert('Push notifications are not supported in this browser.');
         btn.classList.remove('pending');
         btn.disabled = false;
-        console.warn('Notification request timed out');
-      }, 10000);
-      
-      try {
-        // Try optIn first (v16 native method)
-        try {
-          await OneSignal.User.PushSubscription.optIn();
-        } catch (optInError) {
-          // Fallback to Slidedown
-          await OneSignal.Slidedown.promptPush();
-        }
-      } catch (promptError) {
-        clearTimeout(timeoutId);
-        btn.classList.remove('pending');
-        btn.disabled = false;
-        console.error('Prompt error:', promptError);
-        alert('Failed to show notification prompt. Please try again.');
         return;
       }
-      
-      clearTimeout(timeoutId);
-      const newPermission = Notification.permission;
+
+      if (!isIOSHomeScreen) await window.requestOneSignalPermission(OneSignal);
+      const newPermission = window.getOneSignalPermissionState(OneSignal);
       if (newPermission === 'granted') {
-        // Wait for OneSignal to sync the subscription to their servers
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        // Check if subscription is actually registered with OneSignal
-        const subscriptionId = OneSignal.User.PushSubscription.id;
+        await OneSignal.User.PushSubscription.optIn();
+        const subscriptionId = await window.waitForOneSignalSubscription(OneSignal);
         
         if (subscriptionId) {
           btn.classList.remove('pending');

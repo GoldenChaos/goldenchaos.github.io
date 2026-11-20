@@ -51,8 +51,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://kit.fontawesome.com/ede7ed9b9e.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon-light.ico?v=2" type="image/x-icon" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/favicon-dark.ico?v=2" type="image/x-icon" media="(prefers-color-scheme: dark)">
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
-    <link rel="mask-icon" href="/website_icon.svg" color="#4083a0">
         <link rel="manifest" href="/manifest.webmanifest">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
         
@@ -64,27 +65,91 @@
                 console.log('OneSignal: SDK loaded, starting init');
                 await OneSignal.init({
                     appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
-                    safari_web_id: "web.onesignal.auto.72940797-fce4-4404-92c2-a33aa17e19b3",
+                    safari_web_id: "web.onesignal.auto.27841aa0-90c9-472e-b116-e68b5f82c9c6",
                     autoRegister: false,
-                    allowLocalhostAsSecureOrigin: true
+                    allowLocalhostAsSecureOrigin: true,
+                    welcomeNotification: {
+                        message: "Thanks for subscribing! You'll get notifications when new comics are released <3"
+                    }
                 });
                 console.log('OneSignal: Init complete', OneSignal);
                 console.log('OneSignal: Notifications supported?', OneSignal.Notifications?.supported?.());
             });
+
+            window.waitForOneSignalSubscription = function(OneSignal, timeoutMs = 10000) {
+                const currentId = OneSignal.User.PushSubscription.id;
+                const currentToken = OneSignal.User.PushSubscription.token;
+                if (currentId && currentToken) return Promise.resolve(currentId);
+
+                return new Promise((resolve) => {
+                    let settled = false;
+                    const finish = (subscriptionId) => {
+                        if (settled) return;
+                        settled = true;
+                        clearTimeout(timeoutId);
+                        OneSignal.User.PushSubscription.removeEventListener('change', onChange);
+                        resolve(subscriptionId || null);
+                    };
+                    const onChange = (event) => {
+                        const subscriptionId = event.current?.id || OneSignal.User.PushSubscription.id;
+                        const token = event.current?.token || OneSignal.User.PushSubscription.token;
+                        if (subscriptionId && token) finish(subscriptionId);
+                    };
+                    const timeoutId = setTimeout(() => finish(null), timeoutMs);
+                    OneSignal.User.PushSubscription.addEventListener('change', onChange);
+                });
+            };
+
+            window.getOneSignalPermissionState = function(OneSignal) {
+                if (OneSignal.Notifications.permission) return 'granted';
+                if (typeof Notification !== 'undefined') return Notification.permission;
+                return 'default';
+            };
+
+            window.waitForNativeNotificationPermission = function(permissionRequest, timeoutMs = 30000) {
+                if (!permissionRequest) return Promise.resolve(null);
+
+                return new Promise((resolve, reject) => {
+                    const startedAt = Date.now();
+                    const checkPermission = () => {
+                        const permission = typeof Notification !== 'undefined' ? Notification.permission : 'default';
+                        if (permission !== 'default') return resolve(permission);
+                        if (Date.now() - startedAt >= timeoutMs) {
+                            return reject(new Error('Native notification permission request timed out'));
+                        }
+                        setTimeout(checkPermission, 250);
+                    };
+
+                    Promise.resolve(permissionRequest).then((permission) => {
+                        if (permission && permission !== 'default') resolve(permission);
+                    }).catch(reject);
+                    checkPermission();
+                });
+            };
+
+            window.requestOneSignalPermission = function(OneSignal, timeoutMs = 10000) {
+                return Promise.race([
+                    OneSignal.Notifications.requestPermission(),
+                    new Promise((_, reject) => setTimeout(() => {
+                        reject(new Error('Notification permission request timed out'));
+                    }, timeoutMs))
+                ]);
+            };
         </script>
         
 
 <script>
 (function() {
-  // Detect iOS and hide push notification toggles since they don't work on iOS
+  // Hide push notification toggles in iOS browser tabs, but show them in the installed Home Screen app.
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  if (isIOS) {
-    document.documentElement.classList.add('is-ios');
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  if (isIOS && !isStandalone) {
+    document.documentElement.classList.add('is-ios-browser');
   }
 })();
 </script>
 <style>
-.is-ios .ios-hide {
+.is-ios-browser .ios-hide {
   display: none !important;
 }
 </style>
@@ -100,21 +165,41 @@
     <div class="menu">
         <div>
             
-                <a class="social" href="https://twitch.tv/jessrappaport" target="_blank"><i class="fab fa-twitch"></i></a>
+                
+                <a class="social social-discord" href="https://discord.gg/M3b2sKTGwH" target="_blank" aria-label="Discord" title="Discord" style="display:none;"><i class="fab fa-discord" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://discord.gg/kp3s6ysCtn" target="_blank" style="display:none;"><i class="fab fa-discord"></i></a>
+                
+                <a class="social social-patreon" href="https://www.patreon.com/GoldenChaos" target="_blank" aria-label="Patreon" title="Patreon"><i class="fa-brands fa-patreon" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://twitter.com/goldenchaos" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                
+                <a class="social social-twitch" href="https://twitch.tv/jessrappaport" target="_blank" aria-label="Twitch" title="Twitch"><i class="fab fa-twitch" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://instagram.com/goldenchaos" target="_blank"><i class="fab fa-instagram"></i></a>
+                
+                <a class="social social-twitter" href="https://twitter.com/goldenchaos" target="_blank" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://threads.net/@goldenchaos" target="_blank"><i class="fa-brands fa-threads"></i></a>
+                
+                <a class="social social-instagram" href="https://instagram.com/goldenchaos" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://bsky.app/profile/goldenchaos.bsky.social" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
+                
+                <a class="social social-threads" href="https://threads.net/@goldenchaos" target="_blank" aria-label="Threads" title="Threads"><i class="fa-brands fa-threads" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://www.linkedin.com/in/goldenchaos" target="_blank"><i class="fab fa-linkedin"></i></a>
+                
+                <a class="social social-bluesky" href="https://bsky.app/profile/goldenchaos.bsky.social" target="_blank" aria-label="Bluesky" title="Bluesky"><i class="fa-brands fa-bluesky" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="mailto:jess@goldenchaos.net" target="_blank" style="display:none;"><i class="fa fa-envelope-square"></i></a>
+                
+            
+                
+            
+                
+                <a class="social social-email" href="mailto:jess@goldenchaos.net" target="_blank" aria-label="Email" title="Email" style="display:none;"><i class="fa fa-envelope-square" aria-hidden="true"></i></a>
+                
             
         </div>
         

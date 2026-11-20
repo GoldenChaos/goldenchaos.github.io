@@ -28,7 +28,7 @@
         <meta property="og:type" content="website">
         <meta property="og:title" content="GoldenChaos Comics - All Comics">
         <meta property="og:description" content="GoldenChaos Comics - All Comics">
-        <meta property="og:image" content="https://goldenchaos.net/images/comics/og/13_new_outfit-og.png">
+        <meta property="og:image" content="https://goldenchaos.net/images/comics/og/27_living_the_dream-og.png">
         <meta property="og:image:alt" content="GoldenChaos Comics - All Comics">
         
 
@@ -40,7 +40,7 @@
     <meta name="twitter:description" content="GoldenChaos Comics - All Comics">
     <meta name="twitter:site" content="@GoldenChaos">
     <meta name="twitter:creator" content="@GoldenChaos">
-    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/og/13_new_outfit-og.png">
+    <meta name="twitter:image" content="https://goldenchaos.net/images/comics/og/27_living_the_dream-og.png">
     <meta name="twitter:image:alt" content="GoldenChaos Comics - All Comics">
     
         <link rel="alternate" type="application/rss+xml" title="GoldenChaos Comics RSS" href="/comics/feed.xml">
@@ -51,8 +51,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://kit.fontawesome.com/ede7ed9b9e.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon-light.ico?v=2" type="image/x-icon" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/favicon-dark.ico?v=2" type="image/x-icon" media="(prefers-color-scheme: dark)">
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
-    <link rel="mask-icon" href="/website_icon.svg" color="#4083a0">
         <link rel="manifest" href="/manifest.webmanifest">
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
         
@@ -64,27 +65,91 @@
                 console.log('OneSignal: SDK loaded, starting init');
                 await OneSignal.init({
                     appId: "72940797-fce4-4404-92c2-a33aa17e19b3",
-                    safari_web_id: "web.onesignal.auto.72940797-fce4-4404-92c2-a33aa17e19b3",
+                    safari_web_id: "web.onesignal.auto.27841aa0-90c9-472e-b116-e68b5f82c9c6",
                     autoRegister: false,
-                    allowLocalhostAsSecureOrigin: true
+                    allowLocalhostAsSecureOrigin: true,
+                    welcomeNotification: {
+                        message: "Thanks for subscribing! You'll get notifications when new comics are released <3"
+                    }
                 });
                 console.log('OneSignal: Init complete', OneSignal);
                 console.log('OneSignal: Notifications supported?', OneSignal.Notifications?.supported?.());
             });
+
+            window.waitForOneSignalSubscription = function(OneSignal, timeoutMs = 10000) {
+                const currentId = OneSignal.User.PushSubscription.id;
+                const currentToken = OneSignal.User.PushSubscription.token;
+                if (currentId && currentToken) return Promise.resolve(currentId);
+
+                return new Promise((resolve) => {
+                    let settled = false;
+                    const finish = (subscriptionId) => {
+                        if (settled) return;
+                        settled = true;
+                        clearTimeout(timeoutId);
+                        OneSignal.User.PushSubscription.removeEventListener('change', onChange);
+                        resolve(subscriptionId || null);
+                    };
+                    const onChange = (event) => {
+                        const subscriptionId = event.current?.id || OneSignal.User.PushSubscription.id;
+                        const token = event.current?.token || OneSignal.User.PushSubscription.token;
+                        if (subscriptionId && token) finish(subscriptionId);
+                    };
+                    const timeoutId = setTimeout(() => finish(null), timeoutMs);
+                    OneSignal.User.PushSubscription.addEventListener('change', onChange);
+                });
+            };
+
+            window.getOneSignalPermissionState = function(OneSignal) {
+                if (OneSignal.Notifications.permission) return 'granted';
+                if (typeof Notification !== 'undefined') return Notification.permission;
+                return 'default';
+            };
+
+            window.waitForNativeNotificationPermission = function(permissionRequest, timeoutMs = 30000) {
+                if (!permissionRequest) return Promise.resolve(null);
+
+                return new Promise((resolve, reject) => {
+                    const startedAt = Date.now();
+                    const checkPermission = () => {
+                        const permission = typeof Notification !== 'undefined' ? Notification.permission : 'default';
+                        if (permission !== 'default') return resolve(permission);
+                        if (Date.now() - startedAt >= timeoutMs) {
+                            return reject(new Error('Native notification permission request timed out'));
+                        }
+                        setTimeout(checkPermission, 250);
+                    };
+
+                    Promise.resolve(permissionRequest).then((permission) => {
+                        if (permission && permission !== 'default') resolve(permission);
+                    }).catch(reject);
+                    checkPermission();
+                });
+            };
+
+            window.requestOneSignalPermission = function(OneSignal, timeoutMs = 10000) {
+                return Promise.race([
+                    OneSignal.Notifications.requestPermission(),
+                    new Promise((_, reject) => setTimeout(() => {
+                        reject(new Error('Notification permission request timed out'));
+                    }, timeoutMs))
+                ]);
+            };
         </script>
         
 
 <script>
 (function() {
-  // Detect iOS and hide push notification toggles since they don't work on iOS
+  // Hide push notification toggles in iOS browser tabs, but show them in the installed Home Screen app.
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  if (isIOS) {
-    document.documentElement.classList.add('is-ios');
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  if (isIOS && !isStandalone) {
+    document.documentElement.classList.add('is-ios-browser');
   }
 })();
 </script>
 <style>
-.is-ios .ios-hide {
+.is-ios-browser .ios-hide {
   display: none !important;
 }
 </style>
@@ -103,21 +168,41 @@
     <div class="menu">
         <div>
             
-                <a class="social" href="https://twitch.tv/jessrappaport" target="_blank"><i class="fab fa-twitch"></i></a>
+                
+                <a class="social social-discord" href="https://discord.gg/M3b2sKTGwH" target="_blank" aria-label="Discord" title="Discord" style="display:none;"><i class="fab fa-discord" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://discord.gg/kp3s6ysCtn" target="_blank" style="display:none;"><i class="fab fa-discord"></i></a>
+                
+                <a class="social social-patreon" href="https://www.patreon.com/GoldenChaos" target="_blank" aria-label="Patreon" title="Patreon"><i class="fa-brands fa-patreon" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://twitter.com/goldenchaos" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                
+                <a class="social social-twitch" href="https://twitch.tv/jessrappaport" target="_blank" aria-label="Twitch" title="Twitch"><i class="fab fa-twitch" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://instagram.com/goldenchaos" target="_blank"><i class="fab fa-instagram"></i></a>
+                
+                <a class="social social-twitter" href="https://twitter.com/goldenchaos" target="_blank" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://threads.net/@goldenchaos" target="_blank"><i class="fa-brands fa-threads"></i></a>
+                
+                <a class="social social-instagram" href="https://instagram.com/goldenchaos" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://bsky.app/profile/goldenchaos.bsky.social" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
+                
+                <a class="social social-threads" href="https://threads.net/@goldenchaos" target="_blank" aria-label="Threads" title="Threads"><i class="fa-brands fa-threads" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="https://www.linkedin.com/in/goldenchaos" target="_blank"><i class="fab fa-linkedin"></i></a>
+                
+                <a class="social social-bluesky" href="https://bsky.app/profile/goldenchaos.bsky.social" target="_blank" aria-label="Bluesky" title="Bluesky"><i class="fa-brands fa-bluesky" aria-hidden="true"></i></a>
+                
             
-                <a class="social" href="mailto:jess@goldenchaos.net" target="_blank" style="display:none;"><i class="fa fa-envelope-square"></i></a>
+                
+            
+                
+            
+                
+                <a class="social social-email" href="mailto:jess@goldenchaos.net" target="_blank" aria-label="Email" title="Email" style="display:none;"><i class="fa fa-envelope-square" aria-hidden="true"></i></a>
+                
             
         </div>
         
@@ -206,6 +291,188 @@
   <div class="comics-grid" style="margin-top: 32px; margin-bottom: 64px;">
     
     <div class="comic-item">
+      <a href="/comics/27-living-the-dream/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/27_living_the_dream-thumb.png"
+            data-normal-image="/images/comics/thumb/27_living_the_dream-thumb.png"
+            
+            alt="Comic #27 - Living the Dream" title="I turned my friends into Tomodachi Life characters, now I never have to be lonely!">
+        </div>
+        <h3>#27 - Living the Dream</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/26-origin-story/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/26_origin_story-thumb.png"
+            data-normal-image="/images/comics/thumb/26_origin_story-thumb.png"
+            
+            alt="Comic #26 - Origin Story" title="There was no going back.">
+        </div>
+        <h3>#26 - Origin Story</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/25-pre-transition-friend/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/25_pre-transition_friend-thumb.png"
+            data-normal-image="/images/comics/thumb/25_pre-transition_friend-thumb.png"
+            
+            alt="Comic #25 - Pre-Transition Friend" title="&quot;It&#39;s just my voice??&quot;">
+        </div>
+        <h3>#25 - Pre-Transition Friend</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/24-october/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/24_october-thumb.png"
+            data-normal-image="/images/comics/thumb/24_october-thumb.png"
+            
+            alt="Comic #24 - October" title="In the end, we watched horror.">
+        </div>
+        <h3>#24 - October</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/23-voices/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/23_voices-thumb.png"
+            data-normal-image="/images/comics/thumb/23_voices-thumb.png"
+            
+            alt="Comic #23 - Voices" title="Tony Soprano is an amazing voice trainer." style="object-position: top;">
+        </div>
+        <h3>#23 - Voices</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/22-clock/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/22_clock-thumb.png"
+            data-normal-image="/images/comics/thumb/22_clock-thumb.png"
+            
+            alt="Comic #22 - Clock" title="WatchMojo Top 10 Ways to Not Talk To Other Trans People">
+        </div>
+        <h3>#22 - Clock</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/21-five-years/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/21_five_years-thumb.png"
+            data-normal-image="/images/comics/thumb/21_five_years-thumb.png"
+            
+            alt="Comic #21 - Five Years" title="I know he would be proud.">
+        </div>
+        <h3>#21 - Five Years</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/20-puppy-competition/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/20_puppy_competition-thumb.png"
+            data-normal-image="/images/comics/thumb/20_puppy_competition-thumb.png"
+            
+            alt="Comic #20 - Puppy Competition" title="I&#39;m in too many trans discords." style="object-position: top;">
+        </div>
+        <h3>#20 - Puppy Competition</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/19-ginger/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/19_ginger-thumb.png"
+            data-normal-image="/images/comics/thumb/19_ginger-thumb.png"
+            
+            alt="Comic #19 - Ginger" title="You either die in the closet or live long enough to look like your mother.">
+        </div>
+        <h3>#19 - Ginger</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/18-one-year/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/18_one_year-thumb.png"
+            data-normal-image="/images/comics/thumb/18_one_year-thumb.png"
+            
+            alt="Comic #18 - One Year">
+        </div>
+        <h3>#18 - One Year</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/17-pickup-line/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/17_pickup_line-thumb.png"
+            data-normal-image="/images/comics/thumb/17_pickup_line-thumb.png"
+            
+            alt="Comic #17 - Pickup Line" title="&quot;DO NOT. FUMBLE. THIS. JESS.&quot;">
+        </div>
+        <h3>#17 - Pickup Line</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/16-beach-episode/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/16_beach_episode-thumb.png"
+            data-normal-image="/images/comics/thumb/16_beach_episode-thumb.png"
+            
+            alt="Comic #16 - Beach Episode" title="&quot;It also functions as a parachute! I haven&#39;t tested that yet, though.&quot;">
+        </div>
+        <h3>#16 - Beach Episode</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/15-freckle-names/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/15_freckle_names-thumb.png"
+            data-normal-image="/images/comics/thumb/15_freckle_names-thumb.png"
+            
+            alt="Comic #15 - Freckle Names" title="&quot;Oh, I love &#39;The Rise and Fall of a Midwest Freckle&#39;!&quot;">
+        </div>
+        <h3>#15 - Freckle Names</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
+      <a href="/comics/14-reply-guy/">
+        <div class="img-container">
+          <img
+            src="/images/comics/thumb/14_reply_guy-thumb.png"
+            data-normal-image="/images/comics/thumb/14_reply_guy-thumb.png"
+            
+            alt="Comic #14 - Reply Guy" title="&quot;...why are there hundreds of these??&quot;">
+        </div>
+        <h3>#14 - Reply Guy</h3>
+      </a>
+    </div>
+    
+    <div class="comic-item">
       <a href="/comics/13-new-outfit/">
         <div class="img-container">
           <img
@@ -238,7 +505,7 @@
             src="/images/comics/thumb/11_warhammer_number-thumb.png"
             data-normal-image="/images/comics/thumb/11_warhammer_number-thumb.png"
             
-            alt="Comic #11 - Warhammer Number" title="thank you for 40,000 followers on twitter ♡">
+            alt="Comic #11 - Warhammer Number" title="thank you for 40,000 followers on twitter ♡" style="object-position: top;">
         </div>
         <h3>#11 - Warhammer Number</h3>
       </a>
