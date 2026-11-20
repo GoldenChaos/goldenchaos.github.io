@@ -1,0 +1,10 @@
+{% if comics.latest %}
+  {% set comic = comics.latest %}
+  {% set previous = comics.all | previousComic(comic.number) %}
+  {% set next = comics.all | nextComic(comic.number) %}
+  <div class="content page comic-content">
+    <a href="{{ ('/comics/' ~ comic.comicId ~ '/') | url }}"><img class="comic-img" src="{{ comic.image | url }}" alt=""{% if comic.hoverText %} title="{{ comic.hoverText }}"{% endif %}></a>
+    {% if comic.caption %}<p class="comic-description">{{ comic.caption }}</p>{% endif %}
+    {% include "comic-nav.njk" %}
+  </div>
+{% endif %}

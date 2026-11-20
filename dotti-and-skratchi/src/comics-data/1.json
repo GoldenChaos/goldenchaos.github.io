@@ -1,0 +1,16 @@
+{
+  "number": 1,
+  "comicId": "1",
+  "slug": "crush",
+  "title": "",
+  "date": "2026-11-12T12:00:00Z",
+  "image": "/images/comics/1-crush.jpeg",
+  "layout": "grid",
+  "alt": "",
+  "hoverText": "",
+  "caption": "",
+  "thumbPosition": "center",
+  "thumbImage": "/images/comics/thumb/1-crush-thumb.png",
+  "ogImage": "/images/comics/og/1-crush-og.png",
+  "twitterImage": "/images/comics/og/1-crush-og.png"
+}

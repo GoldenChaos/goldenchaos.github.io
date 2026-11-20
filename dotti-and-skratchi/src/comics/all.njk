@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+permalink: /comics/all/index.html
+---
+<div class="content page">
+  {% if comics.all.length %}
+    <div class="comics-grid">
+      {% for comic in comics.all | reverse %}
+        <article class="comic-item">
+          <a href="{{ ('/comics/' ~ comic.comicId ~ '/') | url }}">
+            <div class="img-container"><img src="{{ (comic.thumbImage or comic.image) | url }}" alt=""{% if comic.hoverText %} title="{{ comic.hoverText }}"{% endif %}{% if comic.thumbPosition %} style="object-position: {{ comic.thumbPosition }};"{% endif %}></div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

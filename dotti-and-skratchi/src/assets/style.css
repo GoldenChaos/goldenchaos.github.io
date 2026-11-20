@@ -1,0 +1,473 @@
+:root {
+  --page: #fff;
+  --text: #000;
+  --line: rgba(0,0,0,.2);
+  --soft-line: rgba(0,0,0,.1);
+  font-family: "Arial Rounded MT Bold", "Arial Rounded MT", Arial, sans-serif;
+  color: var(--text);
+  background: var(--page);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--page);
+  cursor: url("images/cursor-regular.png") 7 7, auto;
+}
+
+/* Theme placeholders: add Dotti-specific visual overrides here. */
+body.theme-dotti {
+  --page: #ffe2f5;
+}
+
+body.theme-dotti .header-character.dotti {
+  content: url("images/dotti-theme-dotti.png");
+  width: 90.5px;
+  height: 98px;
+}
+
+body.theme-dotti .header-character.skratchi {
+  content: url("images/skratchi-theme-dotti.png");
+  width: 102.5px;
+  height: 86.5px;
+}
+
+body.theme-dotti .series-logo img {
+  content: url("images/header-theme-dotti.png");
+  width: 355.5px;
+  height: 95px;
+  margin: 0 auto;
+}
+
+/* Theme placeholders: add Skratchi-specific visual overrides here. */
+body.theme-skratchi {
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a, button, [role="button"] {
+  cursor: url("images/cursor-regular.png") 7 7, pointer;
+}
+
+body:active, a:active, button:active, [role="button"]:active {
+  cursor: url("images/cursor-click.png") 6 6, pointer;
+}
+
+.skip-link {
+  position: fixed;
+  top: -80px;
+  left: 16px;
+  z-index: 2000;
+  padding: 10px 14px;
+  background: var(--shelley-blue);
+  color: #fff;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.page-top.white {
+  height: auto;
+  padding: 20px 0 32px;
+  overflow-x: auto;
+}
+
+.character-header {
+  display: grid;
+  grid-template-columns: 99px 451.5px 102.5px;
+  column-gap: 24px;
+  width: 701px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-character {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: auto;
+}
+
+.theme-trigger {
+  display: block;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  line-height: 0;
+}
+
+.theme-trigger.dotti {
+  justify-self: start;
+}
+
+.theme-trigger.skratchi {
+  justify-self: end;
+}
+
+.header-character.dotti {
+  width: 99px;
+  height: 100px;
+}
+
+.header-character.skratchi {
+  width: 102.5px;
+  height: 91px;
+}
+
+.header-center {
+  min-width: 0;
+  text-align: center;
+}
+
+.series-logo {
+  display: block;
+  width: 100%;
+}
+
+.series-logo img {
+  display: block;
+  width: 451.5px;
+  max-width: none;
+  height: 41px;
+}
+
+.series-logo:hover, .menu a:hover {
+  opacity: .7;
+}
+
+.menu {
+  display: flex;
+  margin-top: 12px;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu a {
+  color: #000;
+  font-size: 22px;
+  font-weight: normal;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.content {
+  width: 100%;
+  color: var(--text);
+  overflow: visible;
+}
+
+.content.index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content.index.page#comic-title {
+  justify-content: center;
+}
+
+.content.page {
+  position: relative;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+h1 {
+  margin: 32px 0 24px;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1.title {
+  margin-bottom: 32px;
+  font-size: 48px;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.comic-subtitle {
+  justify-content: center;
+  margin-top: -20px;
+}
+
+.comic-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.comic-content > a {
+  display: block;
+  width: 100%;
+}
+
+.comic-img {
+  display: block;
+  width: auto;
+  max-width: 720px;
+  height: auto;
+  margin: 20px auto;
+}
+
+.comic-description {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.segmented-control {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 136.5fr)
+    minmax(0, 99.5fr)
+    minmax(0, 97fr)
+    minmax(0, 97fr)
+    minmax(0, 99.5fr);
+  width: min(529.5px, calc(100vw - 24px));
+  max-width: none;
+  margin: 0 auto 32px;
+  align-items: stretch;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+.segmented-control a {
+  display: flex;
+  min-width: 0;
+  padding: clamp(6px, 1.9vw, 10px) clamp(2px, 1.5vw, 8px) clamp(8px, 2.6vw, 14px);
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  color: #000;
+  font-size: clamp(12px, 3.4vw, 18px);
+  white-space: nowrap;
+  transition: background-color .2s linear;
+}
+
+.segmented-control a[aria-disabled="true"] {
+  opacity: .5;
+  pointer-events: none;
+}
+
+.segmented-control span {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.segmented-control img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.segmented-control img[src$="control-oldest.png"] {
+  width: 83.5px;
+  height: auto;
+}
+
+.segmented-control img[src$="control-previous.png"] {
+  width: 81px;
+  height: auto;
+}
+
+.segmented-control img[src$="control-all.png"] {
+  width: 120.5px;
+  height: auto;
+}
+
+.segmented-control img.flipped {
+  transform: scaleX(-1);
+}
+
+.segmented-control .oldest:hover img {
+  content: url("images/control-oldest-dotti.png");
+}
+
+.segmented-control .previous:hover img {
+  content: url("images/control-previous-dotti.png");
+}
+
+.segmented-control .next:hover img {
+  content: url("images/control-previous-skratchi.png");
+}
+
+.segmented-control .newest:hover img {
+  content: url("images/control-oldest-skratchi.png");
+}
+
+.comics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 32px auto 64px;
+  padding: 0 16px;
+}
+
+.comic-item {
+  margin: 0;
+  text-align: center;
+}
+
+.comic-item a {
+  display: block;
+}
+
+.comic-item .img-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 104.55%;
+  overflow: hidden;
+  background: #eee;
+}
+
+.comic-item img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comic-item h2 {
+  margin: 8px 0 0;
+  font-size: 18px;
+}
+
+.empty-state {
+  max-width: 600px;
+  margin: 20px auto 64px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.empty-state.compact {
+  margin-top: 32px;
+}
+
+.empty-comic {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 16/10;
+  margin-bottom: 24px;
+  place-items: center;
+  background: rgba(0,0,0,.05);
+  color: rgba(0,0,0,.2);
+  font-size: 72px;
+}
+
+.empty-state p, .about-copy {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.about-copy {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  min-height: 48vh;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+footer {
+  margin-bottom: 44px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+footer span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .page-top.white {
+    padding-top: 14px;
+  }
+
+  h1.title {
+    padding-top: 24px;
+    font-size: 40px;
+  }
+
+  .comic-img {
+    width: calc(100% - 40px);
+    margin: 20px;
+  }
+
+  .comic-description {
+    margin: 0 20px 32px;
+    font-size: 15px;
+  }
+
+  .comic-content {
+    overflow-x: visible;
+    align-items: center;
+  }
+
+  .comic-content > a, .comic-description {
+    align-self: center;
+  }
+
+  .comics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 0 20px;
+  }
+
+  .comic-item h2 {
+    display: none;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+}

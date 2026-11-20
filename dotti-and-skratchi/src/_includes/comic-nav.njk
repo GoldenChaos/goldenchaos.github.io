@@ -1,0 +1,7 @@
+<nav class="segmented-control">
+  <a class="view-all" href="{{ '/comics/all/' | url }}"><span><img src="{{ '/assets/images/control-all.png' | url }}" alt=""></span></a>
+  <a class="oldest" href="{{ ('/comics/' ~ comics.all[0].comicId ~ '/') | url }}"><span><img src="{{ '/assets/images/control-oldest.png' | url }}" alt="">Oldest</span></a>
+  {% if previous %}<a class="previous" href="{{ ('/comics/' ~ previous.comicId ~ '/') | url }}"><span><img src="{{ '/assets/images/control-previous.png' | url }}" alt="">Previous</span></a>{% else %}<a class="previous" aria-disabled="true"><span><img src="{{ '/assets/images/control-previous.png' | url }}" alt="">Previous</span></a>{% endif %}
+  {% if next %}<a class="next" href="{{ ('/comics/' ~ next.comicId ~ '/') | url }}"><span><img class="flipped" src="{{ '/assets/images/control-previous.png' | url }}" alt="">Next</span></a>{% else %}<a class="next" aria-disabled="true"><span><img class="flipped" src="{{ '/assets/images/control-previous.png' | url }}" alt="">Next</span></a>{% endif %}
+  <a class="newest" href="{{ '/comics/' | url }}"><span><img class="flipped" src="{{ '/assets/images/control-oldest.png' | url }}" alt="">Newest</span></a>
+</nav>

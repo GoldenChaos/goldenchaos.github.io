@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: comics.all
+  size: 1
+  alias: comic
+permalink: "/comics/{{ comic.comicId }}/index.html"
+eleventyComputed:
+  socialImage: "{{ comic.ogImage }}"
+---
+{% set previous = comics.all | previousComic(comic.number) %}
+{% set next = comics.all | nextComic(comic.number) %}
+<article>
+  <div class="content page comic-content">
+    <img class="comic-img" src="{{ comic.image | url }}" alt=""{% if comic.hoverText %} title="{{ comic.hoverText }}"{% endif %}>
+    {% if comic.caption %}<p class="comic-description">{{ comic.caption }}</p>{% endif %}
+    {% include "comic-nav.njk" %}
+  </div>
+</article>

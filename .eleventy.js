@@ -78,6 +78,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/manifest.webmanifest": "manifest.webmanifest" });
   eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKWorker.js": "OneSignalSDKWorker.js" });
   eleventyConfig.addPassthroughCopy({ "src/OneSignalSDKUpdaterWorker.js": "OneSignalSDKUpdaterWorker.js" });
+  eleventyConfig.addPassthroughCopy({
+    "dotti-and-skratchi/_site": "dotti-and-skratchi"
+  });
   if (includeAdmin) {
     eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
   }

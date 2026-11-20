@@ -1,0 +1,48 @@
+backend:
+  name: github
+  repo: REPLACE_WITH_OWNER/REPLACE_WITH_REPOSITORY
+  branch: main
+  # Add the production authentication provider when the repository is created.
+
+local_backend:
+  url: http://localhost:8081/api/v1
+
+publish_mode: editorial_workflow
+media_folder: "images/comics"
+public_folder: "/images/comics"
+
+collections:
+  - name: "comics"
+    label: "Comics"
+    label_singular: "Comic"
+    folder: "src/comics-data"
+    create: true
+    delete: false
+    extension: "json"
+    format: "json"
+    slug: "{{fields.comicId}}"
+    summary: "Comic #{{fields.number}}"
+    sortable_fields: ["number", "title", "date"]
+    fields:
+      - { label: "Comic number", name: "number", widget: "number", value_type: "int", min: 1 }
+      - { label: "Comic ID", name: "comicId", widget: "string" }
+      - { label: "URL name", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
+      - { label: "Publish date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "YYYY-MM-DD", time_format: "HH:mm" }
+      - { label: "Comic image", name: "image", widget: "image", media_folder: "/images/comics", public_folder: "/images/comics" }
+      - label: "Panel layout"
+        name: "layout"
+        widget: "select"
+        default: "grid"
+        options:
+          - { label: "Standard grid / four panels", value: "grid" }
+          - { label: "One panel", value: "single" }
+          - { label: "Two panels side by side", value: "horizontal-two-panel" }
+          - { label: "Two panels stacked vertically", value: "vertical-two-panel" }
+      - { label: "Hover text", name: "hoverText", widget: "text", required: false }
+      - { label: "Caption below comic", name: "caption", widget: "text", required: false }
+      - { label: "Thumbnail", name: "thumbImage", widget: "hidden", required: false }
+      - { label: "Thumbnail position", name: "thumbPosition", widget: "hidden", required: false }
+      - { label: "Social preview", name: "ogImage", widget: "hidden", required: false }
+      - { label: "Twitter preview", name: "twitterImage", widget: "hidden", required: false }
+

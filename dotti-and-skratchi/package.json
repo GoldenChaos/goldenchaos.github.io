@@ -1,0 +1,16 @@
+{
+  "name": "dotti-and-skratchi",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/sync-comics.mjs && eleventy",
+    "dev": "node scripts/dev.mjs",
+    "admin": "decap-server",
+    "sync:comics": "node scripts/sync-comics.mjs",
+    "setup:images": "python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "decap-server": "^3.3.1"
+  }
+}
