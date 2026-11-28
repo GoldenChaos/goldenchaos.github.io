@@ -404,5 +404,18 @@
     "thumbImage": "/images/comics/thumb/27_living_the_dream-thumb.png",
     "ogImage": "/images/comics/og/27_living_the_dream-og.png",
     "twitterImage": "/images/comics/og/27_living_the_dream-og.png"
+  },
+  {
+    "number": 28,
+    "comicId": "28",
+    "slug": "sound-system",
+    "title": "Sound System",
+    "alt": "28 - Sound System",
+    "titleText": "A shocking number of people have learned about sound systems from this comic",
+    "date": "2026-11-28",
+    "image": "/images/comics/28_sound_system.png",
+    "thumbImage": "/images/comics/thumb/28_sound_system-thumb.png",
+    "ogImage": "/images/comics/og/28_sound_system-og.png",
+    "twitterImage": "/images/comics/og/28_sound_system-og.png"
   }
 ]
